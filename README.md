@@ -3,7 +3,7 @@
 [![coverage](https://github.com/kkmann/workshop-r-swe/actions/workflows/covr.yml/badge.svg)](https://github.com/kkmann/workshop-r-swe/actions/workflows/covr.yml)
 [![pkgdown](https://github.com/kkmann/workshop-r-swe/actions/workflows/pkgdown.yml/badge.svg)](https://github.com/kkmann/workshop-r-swe/actions/workflows/pkgdown.yml)
 [![metacran version](https://www.r-pkg.org/badges/version/simulatr)](https://cran.r-project.org/package=simulatr)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kkmann/workshop-r-swe/HEAD?labpath=rstudio)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kkmann/workshop-r-swe/HEAD?urlpath=rstudio)
 
 
 # simulatr
