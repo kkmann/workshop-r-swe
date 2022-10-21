@@ -27,5 +27,7 @@ simulate_longitudinal_data <- function(
   if (!is.null(seed)) { # set seed if specified
     set.seed(seed)
   }
+  # better start with the r function an let the write the docs?
+  # complete this function and let them implement a plot?
   warning("TODO: implement ;)")
 }
