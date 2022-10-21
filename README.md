@@ -1,3 +1,11 @@
+[![R-CMD-check](https://github.com/kkmann/workshop-r-swe/actions/workflows/check.yml/badge.svg)](https://github.com/kkmann/workshop-r-swe/actions/workflows/check.yml)
+[![lint](https://github.com/kkmann/workshop-r-swe/actions/workflows/lint.yml/badge.svg)](https://github.com/kkmann/workshop-r-swe/actions/workflows/lint.yml)
+[![coverage](https://github.com/kkmann/workshop-r-swe/actions/workflows/covr.yml/badge.svg)](https://github.com/kkmann/workshop-r-swe/actions/workflows/covr.yml)
+[![pkgdown](https://github.com/kkmann/workshop-r-swe/actions/workflows/pkgdown.yml/badge.svg)](https://github.com/kkmann/workshop-r-swe/actions/workflows/pkgdown.yml)
+[![metacran version](https://www.r-pkg.org/badges/version/simulatr)](https://cran.r-project.org/package=simulatr)
+[![Lifecycle:Experimental](https://img.shields.io/badge/Lifecycle-Experimental-339999)](https://github.com/kkmann/simulatr)
+
+
 # simulatr
 
 **tl;dr:** *simulatr is an unfinished R package that is intended as interactive educational material. Can you and your team finish it?*
