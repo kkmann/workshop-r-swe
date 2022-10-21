@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^workshop-materials$
+^LICENSE\.md$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^.lintr$
+^.github$
