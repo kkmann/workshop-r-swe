@@ -2,7 +2,7 @@ Package: simulatr
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0.9000
-Author: Authors@R: c(
+Authors@R: c(
     person("Daniel", "Sabanes Bove", , "daniel.sabanes_bove@roche.com", role = c("aut", "cre")),
     person("Kevin", "Kunzmann", , "kevin.kunzmann@boehringer-ingelheim.com", role = "aut"),
     person("Friedrich", "Pahlke", , "friedrich.pahlke@rpact.com", role = "aut")

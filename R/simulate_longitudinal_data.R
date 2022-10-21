@@ -1,8 +1,8 @@
 #' Simulate Longitudinal Data
 #'
 #' This function generates a data frame according to a simple linear
-#' model with subject-specific random effects
-#' [https://en.wikipedia.org/wiki/Random_effects_model].
+#' model with subject-specific
+#' [random effects](https://en.wikipedia.org/wiki/Random_effects_model).
 #' The random slope and intercept are allowed to be correlated.
 #'
 #'
@@ -28,5 +28,5 @@ simulate_longitudinal_data <- function(
   if (!is.null(seed)) { # set seed if specified
     set.seed(seed)
   }
-  stop("TODO: implement ;)")
+  warning("TODO: implement ;)")
 }

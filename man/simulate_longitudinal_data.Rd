@@ -38,7 +38,7 @@ observed outcome of the subject at time point t according to the model.
 }
 \description{
 This function generates a data frame according to a simple linear
-model with subject-specific random effects
-\link{https://en.wikipedia.org/wiki/Random_effects_model}.
+model with subject-specific
+\href{https://en.wikipedia.org/wiki/Random_effects_model}{random effects}.
 The random slope and intercept are allowed to be correlated.
 }
