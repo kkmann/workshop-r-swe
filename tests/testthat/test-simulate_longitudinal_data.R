@@ -11,9 +11,9 @@ test_that("can generate longitudinal data", {
     seed = 42L
   )
   # check for correct column names, for instance
-  # expect_true(all(names(tbl) == c("subject_id", "t", "value")))
+  # expect_true(all(names(tbl) == c("subject_id", "t", "value"))) # nolint
   # check correct number of rows
-  # expect_true(nrow(tbl) == 50)
+  # expect_true(nrow(tbl) == 50) # nolint
 })
 
 test_that("seed is respected", {
@@ -40,7 +40,7 @@ test_that("seed is respected", {
     seed = 42L
   )
   # should return the exact same data
-  #expect_true(all(tbl1 == tbl2))
+  # expect_true(all(tbl1 == tbl2)) # nolint
 })
 
 test_that("test that marginal parameters can be recovered from data", {

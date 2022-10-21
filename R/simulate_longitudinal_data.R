@@ -23,8 +23,7 @@
 #' @export
 simulate_longitudinal_data <- function(
   slope, intercept, random_effects_vcov, residual_sd,
-  observation_times, n_individuals, seed = NULL)
-{
+  observation_times, n_individuals, seed = NULL) {
   if (!is.null(seed)) { # set seed if specified
     set.seed(seed)
   }
