@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kkmann/workshop-r-swe/HEAD?urlpath=rstudio)
+
 # title
 
 
