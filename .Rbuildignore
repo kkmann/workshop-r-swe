@@ -7,5 +7,3 @@
 ^pkgdown$
 ^.lintr$
 ^.github$
-^install.R$
-^runtime.txt$
