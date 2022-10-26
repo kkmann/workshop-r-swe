@@ -20,3 +20,7 @@
 9. Have a collaborator review the code and approve the pull request
 10. Merge back into main
 10. Celebrate and check out the updated documentation after a few minutes
+
+## Useful references
+
+* [first steps with git & github by RStudio](https://www.youtube.com/watch?v=jN6tvgt3GK8)
