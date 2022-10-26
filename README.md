@@ -24,3 +24,4 @@
 ## Useful references
 
 * [first steps with git & github by RStudio](https://www.youtube.com/watch?v=jN6tvgt3GK8)
+* [RStudio cheatsheets/ Git & GitHub](https://github.com/rstudio/cheatsheets/blob/main/git-github.pdf)
