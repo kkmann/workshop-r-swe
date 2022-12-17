@@ -5,4 +5,5 @@ Depends:
   tidygraph,
   ggraph,
   fontawesome,
+  emoji,
   knitr
