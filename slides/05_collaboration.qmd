@@ -1,5 +1,5 @@
 ---
-title: "Scaling & Collaboration"
+title: "Collaboration"
 author: "Kevin"
 format: 
   revealjs
