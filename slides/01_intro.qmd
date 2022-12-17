@@ -1,0 +1,16 @@
+---
+title: "Introduction & Outline"
+author: "Daniel, Friedrich, Kevin"
+format: 
+  revealjs
+description: description. Photo CC0 by Mabel Amber on pexels.com.
+image: thumbnails/hello.jpg
+---
+
+## Introduction
+
+Why are you here today?
+
+## Outline
+
+Why GSWEP, applications, learning objectives

@@ -1,0 +1,12 @@
+---
+title: "Scaling & Collaboration"
+author: "Kevin"
+format: 
+  revealjs
+description: description. Photo CC0 by THIS IS ZUN on pexels.com.
+image: thumbnails/collaboration.jpg
+---
+
+VCS (\<-\> quality), github
+
+demo / exercise

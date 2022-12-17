@@ -1,0 +1,8 @@
+---
+title: "Publication"
+author: "..."
+format: 
+  revealjs
+description: description. Photo CC0 by Andrea Piacquadio on pexels.com.
+image: thumbnails/publish.jpg
+---

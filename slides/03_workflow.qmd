@@ -1,0 +1,10 @@
+---
+title: "A Package Engineering Workflow"
+author: "Friedrich"
+format: 
+  revealjs
+description: description. Photo CC0 by Andrea Piacquadio on pexels.com.
+image: thumbnails/workflow.jpg
+---
+
+scripts / function / design docs / packaging, orga
