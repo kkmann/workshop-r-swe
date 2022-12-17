@@ -3,7 +3,7 @@ on: pull_request
 name: check render
 
 jobs:
-  build:
+  build-site:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -19,8 +19,8 @@ jobs:
         with:
           cache-version: 2
 
-     - name: Render Quarto Project
-       uses: quarto-dev/quarto-actions/render@v2
-       with:
-         to: html # If set, it will be equivalent to `quarto render --to html`
-         path: source-folder # By default, the current working dir is used i.e `quarto render .`
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          to: html # If set, it will be equivalent to `quarto render --to html`
+          path: source-folder # By default, the current working dir is used i.e `quarto render .`
