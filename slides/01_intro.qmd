@@ -13,7 +13,9 @@ image: thumbnails/hello.jpg
 
 ## Introduction
 
-Why are you here today?
+Why are you here today? consider embedding slido :)
+
+<iframe src="https://app.sli.do/event/aw8yLdhevoVZxt8CJ5ytHG/embed/polls/bc0601b1-0e82-47e4-bf29-ee84a1f22742" width="250" height="400"></iframe>
 
 ## Why care about GSWEP\*?
 
