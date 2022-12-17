@@ -9,4 +9,24 @@ image: thumbnails/collaboration.jpg
 
 VCS (\<-\> quality), github
 
+
+## Mermaid takes the pain out of git diagrams :)
+
+```{mermaid}
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
+```
+
+
+## Demo
+
 demo / exercise
