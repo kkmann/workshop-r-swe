@@ -1,3 +1,4 @@
+Package: workshop.gswep
 Depends:
   tidyverse,
   tidygraph,
