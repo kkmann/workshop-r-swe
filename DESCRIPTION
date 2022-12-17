@@ -1,0 +1,6 @@
+Depends:
+  tidyverse,
+  tidygraph,
+  ggraph,
+  fontawesome,
+  knitr

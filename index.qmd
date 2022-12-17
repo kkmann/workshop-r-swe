@@ -2,55 +2,41 @@
 title: "Good Software Engineering Practice for R Packages"
 ---
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kkmann/workshop-r-swe/HEAD?urlpath=rstudio) [![Join the chat at https://gitter.im/workshop-r-swe/community](https://badges.gitter.im/workshop-r-swe/community.svg)](https://gitter.im/workshop-r-swe/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+<!-- badges: start -->
+[![Join the chat at https://gitter.im/workshop-r-swe/community](https://badges.gitter.im/workshop-r-swe/community.svg)](https://gitter.im/workshop-r-swe/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+<!-- badges: end -->
 
-Welcome to the homepage of the workshop *"Good Software Engineering Practice for R Packages"*.
-In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops.
-
+Welcome to the homepage of the workshop *"Good Software Engineering Practice for R Packages"*. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops.
 
 ## Next Event
 
 The next event will be held on 10 February 2023 jointly with the BBS as face-to-face meeting in Basel. Registration is closed but there is a [waiting list](https://docs.google.com/forms/d/e/1FAIpQLSdFycbT9dHO-oOyYLUqkKJjM6j5hcL6dQ4uVKC5y8b9RastsA/viewform).
 
-
 ## Communication
 
-We offer a [GITTER channel](https://gitter.im/workshop-r-swe) to communicate
-before, during, and after the course.
-The workshop organizers will monitor the channel between ??? and ??? but feel
-free to use the chat for peer-support before and after this period. 
-
+We offer a [GITTER channel](https://gitter.im/workshop-r-swe) to communicate before, during, and after the course. The workshop organizers will monitor the channel between ??? and ??? but feel free to use the chat for peer-support before and after this period.
 
 ## Workshop Program
 
-| Time          | Topic         |
-| :------------ |:--------------|
-| xxx-xxx      | xxxxxxxxx |
-
-
+| Time    | Topic     |
+|:--------|:----------|
+| xxx-xxx | xxxxxxxxx |
 
 ## Prerequisites & Technical Setup
 
 Prior to the course, participants should
 
-* set up a (free) [GitHub.com account](https://github.com/join). There are other
-git Platforms like [Gitlab](https://about.gitlab.com/) or [Bitbucket](https://bitbucket.org/)
-but we made the choice to go with GitHub.com for the course since it is by far the
-most relevant git platform in the R community.
-* either make sure they have a working R software development setup on their
-own laptop (up-to-date git/Rtools/R/RStudio) or get access to [https://posit.cloud](https://posit.cloud).
-The latter offers a free tier account with 25 hours of computing time per months
-and can be accessed using ones GitHub.com account.
+-   set up a (free) [GitHub.com account](https://github.com/join). There are other git Platforms like [Gitlab](https://about.gitlab.com/) or [Bitbucket](https://bitbucket.org/) but we made the choice to go with GitHub.com for the course since it is by far the most relevant git platform in the R community.
+-   either make sure they have a working R software development setup on their own laptop (up-to-date git/Rtools/R/RStudio) or get access to <https://posit.cloud>. The latter offers a free tier account with 25 hours of computing time per months and can be accessed using ones GitHub.com account.
 
-For the course, participants are required to bring their own laptop to be able 
-to participate in the exercises.
+For the course, participants are required to bring their own laptop to be able to participate in the exercises.
 
 ### Optional reading list
 
-* Excellent and very comprehensive [R Packages (2e)](https://r-pkgs.org/)
-* (Hardcore) description of how [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html) works
-* [GitHub 'Hello World'](https://docs.github.com/en/get-started/quickstart/hello-world) tutorial on how to use GitHub.com (does not require git command line knowledge)
-* Tutorial on [version control with git and SVn](https://support.posit.co/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN) (we will be using git)
-* Command line git mini intro [trygit](https://trygit.js.org/)
-* [first steps with git & github by RStudio](https://www.youtube.com/watch?v=jN6tvgt3GK8)
-* [RStudio cheatsheets/ Git & GitHub](https://github.com/rstudio/cheatsheets/blob/main/git-github.pdf)
+-   Excellent and very comprehensive [R Packages (2e)](https://r-pkgs.org/)
+-   (Hardcore) description of how [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html) works
+-   [GitHub 'Hello World'](https://docs.github.com/en/get-started/quickstart/hello-world) tutorial on how to use GitHub.com (does not require git command line knowledge)
+-   Tutorial on [version control with git and SVn](https://support.posit.co/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN) (we will be using git)
+-   Command line git mini intro [trygit](https://trygit.js.org/)
+-   [first steps with git & github by RStudio](https://www.youtube.com/watch?v=jN6tvgt3GK8)
+-   [RStudio cheatsheets/ Git & GitHub](https://github.com/rstudio/cheatsheets/blob/main/git-github.pdf)

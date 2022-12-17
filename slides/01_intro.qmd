@@ -7,10 +7,112 @@ description: description. Photo CC0 by Mabel Amber on pexels.com.
 image: thumbnails/hello.jpg
 ---
 
+## Program
+
+(tabellar overview)
+
 ## Introduction
 
 Why are you here today?
 
-## Outline
+## Why care about GSWEP\*?
 
-Why GSWEP, applications, learning objectives
+::: footer
+\*Good Software Engineering Practice
+:::
+
+-   GxP is about *quality*, widely applies in pharma/life-sciences
+-   Analyses increasingly require complex scripts/programs </br> $\leadsto$ line between programming and data analysis blurs
+-   GSWEP extends quality promise to
+    -   single-use scripts: analyses
+    -   reusable software: R packages $\quad\leftarrow\quad$ today's focus
+-   De-risking, easier training, faster updates
+
+## Starting small - improving quality of scripts
+
+1.  Encapsulate behaviour (functions)
+
+-   makes it easier to reason about behavior
+-   easier to test
+
+2.  Avoid global variables wherever possible
+3.  Adopt consistent coding style and document well
+
+$\leadsto$ R package (already very close)
+
+## The R package ecosystem (1/2)
+
+```{r cran-pkg-network}
+if (!file.exists("resources/pkg_graph.png")) { # primitive caching
+  library(tidyverse)
+  local({
+    r <- getOption("repos")
+    r["CRAN"] <- "https://cloud.r-project.org" 
+    options(repos = r)
+  })
+  # get pkg cumulative downloads from last month
+  db <- tools::CRAN_package_db()
+  tbl_dl_ <- db %>%
+      group_by(chunk = row_number() %/% 100) %>% # chunk to comply with API limit
+      nest() %>%
+      mutate(
+          res = purrr::map2(
+              data, chunk,
+              function(data, id) {
+                  cranlogs::cran_downloads(data$Package, when = "last-month") %>%
+                      group_by(package) %>%
+                      summarize(count = sum(count))
+              }
+          )
+      ) %>%
+      ungroup() %>%
+      select(res) %>%
+      unnest(res)
+  tbl_dl <- filter(tbl_dl_, count >= 10000L, !is.na(count))
+  tbl_deps <- tools::package_dependencies(tbl_dl$package, which = c("Imports", "Depends", "LinkingTo")) %>% 
+      enframe(name = "from", value = "to") %>% 
+      unnest(to)
+  grph_deps <- tidygraph::as_tbl_graph(tbl_deps) %>% 
+      left_join(tbl_dl_, by = c(name = "package")) %>% 
+      filter(!is.na(count)) # remove base packages
+  plt <- ggraph::ggraph(grph_deps, layout = "linear", circular = TRUE) +
+      ggraph::geom_edge_link(alpha = .033) + 
+      ggraph::geom_node_label(
+          aes(label = if_else(count > quantile(count, 0.975, na.rm = TRUE), name, NA_character_)),
+          repel = TRUE
+      )
+  ggsave("resources/pkg_graph.png", plot = plt, width = 8, height = 8/1.61, dpi = 300)
+}
+knitr::include_graphics("resources/pkg_graph.png")
+```
+
+## The R package ecosystem (2/2)
+
+-   Packages arguable huge role in R's success
+-   Make behaviour
+    -   testable
+    -   sharable
+    -   easier to document
+
+$\leadsto$ excellent strategy in GxP environments!
+
+But: how to ensure package quality?
+
+## What you will learn today
+
+-   Understand the basic structure of an R package
+-   Learn & apply a professional package development workflow
+-   Learn & apply fundamental of quality control for R pkgs
+-   Learn & apply version control to stay organized
+-   Learn & apply modern collaboratio ntechniques using github
+-   Learn how to make packages available to otherss
+
+## What you will need
+
+-   Github.com (free) account `r fontawesome::fa("github")`
+-   Working R development environment
+    -   git `r fontawesome::fa("git-alt")`
+    -   Rtools/R/Rstudio IDE `r fontawesome::fa("r-project")`
+    -   **Alternative:** access to posit.cloud (free tier sufficient) `r fontawesome::fa("cloud")`
+-   Curiosity `r emoji::emoji("curious")`
+-   Positive attitude `r emoji::emoji("smile")`
