@@ -1,0 +1,1 @@
+Sitemap: https://github.com/kkmann/workshop-r-swe/sitemap.xml
