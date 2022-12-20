@@ -1,0 +1,10 @@
+---
+title: "Ensuring Quality"
+author: "Friedrich"
+format: 
+  revealjs
+description: description. Photo CC0 by Pixabay on pexels.com.
+image: thumbnails/quality.jpg
+---
+
+testing, code style, (return) types, spelling, documentation (?)

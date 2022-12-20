@@ -1,0 +1,9 @@
+Package: workshop.gswep
+Version: 0.1.0.9000
+Depends:
+  tidyverse,
+  tidygraph,
+  ggraph,
+  fontawesome,
+  emoji,
+  knitr

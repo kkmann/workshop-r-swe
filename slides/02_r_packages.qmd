@@ -1,0 +1,12 @@
+---
+title: "R packages"
+author: "Daniel"
+format: 
+  revealjs
+description: description. Photo CC0 by cottonbro studio on pexels.com.
+image: thumbnails/packages.jpg
+---
+
+Structure
+
+exercise

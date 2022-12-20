@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: "GSWEP4R Workshop"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: slides/listing.qmd
+        text: Slides
+  page-footer:
+    center:
+      - text: "About the Software Engineering Working Group"
+        href: https://rconsortium.github.io/asa-biop-swe-wg/
+      - text: "Source code on GitHub"
+        href: https://github.com/kkmann/workshop-r-swe
+
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+
+editor: visual
+

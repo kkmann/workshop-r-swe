@@ -1,0 +1,32 @@
+---
+title: "Collaboration"
+author: "Kevin"
+format: 
+  revealjs
+description: description. Photo CC0 by THIS IS ZUN on pexels.com.
+image: thumbnails/collaboration.jpg
+---
+
+VCS (\<-\> quality), github
+
+
+## Mermaid takes the pain out of git diagrams :)
+
+```{mermaid}
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
+```
+
+
+## Demo
+
+demo / exercise
