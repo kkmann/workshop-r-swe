@@ -11,7 +11,7 @@ website:
         text: Slides
   page-footer:
     center:
-      - text: "About ASA Biopharmaceutical Section Software Engineering Working Group"
+      - text: "About the Software Engineering Working Group"
         href: https://rconsortium.github.io/asa-biop-swe-wg/
       - text: "Source code on GitHub"
         href: https://github.com/kkmann/workshop-r-swe
