@@ -4,4 +4,4 @@
 
 Sources and materials for the *"Good Software Engineering Practice for R Packages"*" workshop.
 
-* [Website of the ASA Biopharmaceutical Section Software Engineering Working Group](https://rconsortium.github.io/asa-biop-swe-wg/)
+* [Website of the Software Engineering Working Group](https://rconsortium.github.io/asa-biop-swe-wg/)
