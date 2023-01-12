@@ -7,6 +7,81 @@ description: description. Photo CC0 by cottonbro studio on pexels.com.
 image: thumbnails/packages.jpg
 ---
 
-Structure
+Structure and syntax incl. folders/files/documentation etc. 
+Tools: roxygen2, usethis.
 
-exercise
+## What you know already
+
+- Packages provide a mechanism for loading optional code, data and documentation as needed.
+- A library is a directory into which packages are installed. 
+- `install.packages()` and `R CMD INSTALL` is used to install packages into the library.
+- `library()` is used to load packages from the library.
+  - This attaches the packages at the same time.
+- Remember that package $\neq$ library!
+  
+## What we want to talk about now
+
+- How to write, build, test, and check your own package `r emoji::emoji("blush")`
+- How to do this in a good and sustainable way.
+- Give tips and tricks based on practical experience.
+
+## How is a package structured?
+
+Package source = directory with files and subdirectories.
+
+::: columns
+::: {.column width="50%"}
+- Mandatory:
+  - DESCRIPTION
+  - NAMESPACE
+  - R
+  - man
+:::
+
+::: {.column width="50%"}
+- Typically also:
+  - data
+  - inst
+  - src
+  - tests
+  - vignettes
+  - NEWS
+:::
+:::
+
+## How to get started quickly
+
+Once upon a time, developers would set up this structure manually. `r emoji::emoji("yawning_face")`
+
+Nowadays, it is super fast with:
+
+- `usethis::create_package()` 
+- RStudio > File > New Project > New Directory > R Package
+
+![](resources/rstudio-rpackage.png){.r-stretch}
+
+## DESCRIPTION
+
+- *Package*: Choose the name of your package. 
+  - Not unimportant!
+  - Check CRAN whether your name is still available.
+- *Title*: Add a Title for Your Package. (Title Case)
+- *Version*: Start with a low package version.
+  - Major.Minor.Patch syntax
+- *Authors@R*: Add authors and maintainer.
+- *Description*: Like an abstract, including references.
+
+## DESCRIPTION (cont'd)
+
+- *License*: 
+  - Important for open sourcing.
+  - Consider permissive licenses such as Apache and MIT.
+- Depends:
+  - Which R version users need to have at least.
+  - Packages that are loaded upon loading your package.
+- Imports: Packages which you import functions, methods, classes from.
+- Suggests: Packages which are optionally needed, e.g. for running examples, tests, vignettes.
+
+
+
+## Exercise
