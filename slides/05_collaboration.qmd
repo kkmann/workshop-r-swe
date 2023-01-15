@@ -7,10 +7,72 @@ description: description. Photo CC0 by THIS IS ZUN on pexels.com.
 image: thumbnails/collaboration.jpg
 ---
 
-VCS (\<-\> quality), github
+
+## Disclaimer
+
+...
 
 
-## Mermaid takes the pain out of git diagrams :)
+## {background-image=resources/scratch.jpg}
+
+::: {.absolute bottom=100 left=0 right=650}
+* Will only scratch the surface
+* Quick overview, then demo & practical
+* Check out resources on course website!
+:::
+
+::: {.footer}
+Photo by <a href="https://unsplash.com/@rhubbardstockfootage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rich @ rhubbardstockfootage</a> on <a href="https://unsplash.com/photos/dEATKItQazc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+:::
+
+
+## Trade-off in code development
+
+:::: {.columns}
+
+::: {.column width="50%"}
+working alone
+:::
+
+::: {.column width="50%"}
+working in a team
+:::
+
+::::
+
+
+## {background-image=resources/complexity.jpg}
+
+::: {.absolute top=200 left=625}
+Common theme: **manage complexity** over time or between people
+:::
+
+::: {.footer}
+Photo from <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tim Mossholder</a> on <a href="https://unsplash.com/de/fotos/FwzhysPCQZc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+:::
+
+
+## Version control systems
+
+* manage different versions of a piece of work
+* compare and merge diverged versions effectively
+
+```{mermaid}
+flowchart LR
+  A[Kevin v1] --> B[Kevin v2]
+  B --> C[Kevin v3]
+  B --> D[Daniel v1]
+  D --> E[Kevin + Daniel v4]
+  C --> E
+```
+
+* merging parallel edits is not trivial (try it in MS Word 365)
+
+
+## The de-facto standard: git
+
+
+## A local git workflow
 
 ```{mermaid}
 gitGraph
@@ -27,6 +89,54 @@ gitGraph
 ```
 
 
+## Collaboration?
+
+
+## GitHub.com
+
+
+## A GitHub.com change cycle {.scrollable}
+
+```{mermaid}
+sequenceDiagram
+    participant K as Kevin
+    participant GH as Github server
+    participant D as Daniel
+    K->>K: make change locally & commit to <feature>
+    K->>GH: push commit
+    K->>GH: open pull request <br> & request review
+    GH->>GH: run automated checks
+    GH->>D: notify of request
+    D->>D: review code
+    D->>GH: request changes
+    GH->>K: notify of change requests
+    K->>K: implement changes locally & commit
+    K->>GH: push commit to open pull request
+    GH->>GH: run automated checks
+    K->>GH: re-request review
+    GH->>D: notify of request
+    D->>D: review code
+    D->>GH: approve changes
+    GH->>K: forward approval
+    K->>GH: merge <feature> into <main>
+    D->>GH: pull newest version of <main>
+```
+
+## Looks awefully complicated, why?
+
+* Reviewer: wait for all automated checks to pass
+  * static code analysis (style, linting)
+  * passing all unit tests
+  * building documentation
+* Safe collaboration with less experienced / untrusted people
+* Reduces burden on maintainer, scales collaboration
+* Single-source-of-truth: main branch
+* Asynchronous work on features
+
+
 ## Demo
 
-demo / exercise
+demo 
+
+## Practical
+
