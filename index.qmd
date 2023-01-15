@@ -3,24 +3,32 @@ title: "Good Software Engineering Practice for R Packages"
 ---
 
 <!-- badges: start -->
+
 [![Join the chat at https://gitter.im/workshop-r-swe/community](https://badges.gitter.im/workshop-r-swe/community.svg)](https://gitter.im/workshop-r-swe/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <!-- badges: end -->
 
 Welcome to the homepage of the workshop *"Good Software Engineering Practice for R Packages"*. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops.
+
 
 ## Next Event
 
 The next event will be held on 10 February 2023 jointly with the BBS as face-to-face meeting in Basel. Registration is closed but there is a [waiting list](https://docs.google.com/forms/d/e/1FAIpQLSdFycbT9dHO-oOyYLUqkKJjM6j5hcL6dQ4uVKC5y8b9RastsA/viewform).
 
+
 ## Communication
 
-We offer a [GITTER channel](https://gitter.im/workshop-r-swe) to communicate before, during, and after the course. The workshop organizers will monitor the channel between ??? and ??? but feel free to use the chat for peer-support before and after this period.
+We offer a [gitter chat channel](https://gitter.im/workshop-r-swe) to communicate before, during, and after the course.
+
 
 ## Workshop Program
 
-| Time    | Topic     |
-|:--------|:----------|
-| xxx-xxx | xxxxxxxxx |
+```{r}
+#| echo: false
+readr::read_csv("slides/resources/program.csv", col_types = "cc") |>
+  knitr::kable(col.names = c("", ""))
+```
+
 
 ## Prerequisites & Technical Setup
 
@@ -36,7 +44,7 @@ For the course, participants are required to bring their own laptop to be able t
 -   Excellent and very comprehensive [R Packages (2e)](https://r-pkgs.org/)
 -   (Hardcore) description of how [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html) works
 -   [GitHub 'Hello World'](https://docs.github.com/en/get-started/quickstart/hello-world) tutorial on how to use GitHub.com (does not require git command line knowledge)
--   Tutorial on [version control with git and SVn](https://support.posit.co/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN) (we will be using git)
+-   Tutorial on [version control with git and SVN](https://support.posit.co/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN) (we will be using git)
 -   Command line git mini intro [trygit](https://trygit.js.org/)
 -   [first steps with git & github by RStudio](https://www.youtube.com/watch?v=jN6tvgt3GK8)
 -   [RStudio cheatsheets/ Git & GitHub](https://github.com/rstudio/cheatsheets/blob/main/git-github.pdf)
