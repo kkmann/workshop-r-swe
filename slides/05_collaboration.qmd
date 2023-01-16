@@ -95,6 +95,9 @@ gitGraph
 ## GitHub.com
 
 
+## {background-iframe="https://r-universe.dev/search/" background-interactive="true"}
+
+
 ## A GitHub.com change cycle {.scrollable}
 
 ```{mermaid}
@@ -104,39 +107,48 @@ sequenceDiagram
     participant D as Daniel
     K->>K: make change locally & commit to <feature>
     K->>GH: push commit
-    K->>GH: open pull request <br> & request review
+    K->>GH: open pull request
     GH->>GH: run automated checks
-    GH->>D: notify of request
+    K->>D: request review
     D->>D: review code
-    D->>GH: request changes
-    GH->>K: notify of change requests
+    D->>K: request changes
     K->>K: implement changes locally & commit
-    K->>GH: push commit to open pull request
+    K->>GH: push commit
     GH->>GH: run automated checks
-    K->>GH: re-request review
-    GH->>D: notify of request
+    K->>D: request review
     D->>D: review code
-    D->>GH: approve changes
-    GH->>K: forward approval
+    D->>GH: approve changes, unblocking merge
     K->>GH: merge <feature> into <main>
+    GH->>GH: run automated checks on <main>
     D->>GH: pull newest version of <main>
 ```
 
+
 ## Looks awefully complicated, why?
 
-* Reviewer: wait for all automated checks to pass
+* Safe/efficient collaboration with novice/untrusted people
+* Reviewer: rely on automated checks to reduce burden
   * static code analysis (style, linting)
   * passing all unit tests
   * building documentation
-* Safe collaboration with less experienced / untrusted people
-* Reduces burden on maintainer, scales collaboration
-* Single-source-of-truth: main branch
 * Asynchronous work on features
+
+$\leadsto$ making code-collaboration scalable
 
 
 ## Demo
 
-demo 
+* Live demonstration of a github cycle
+* Dummy template repository at ...
+  * Can be 'copied' by anyone
+* I will make a change and have it reviewed
+* Follow along live on the repository
+
 
 ## Practical
+
+* Work in teams of 3
+* Go to [https://github.com/kkmann/simulatr](https://github.com/kkmann/simulatr) and read through the instructions
+* One(!) team member clicks on 'Use this template' button and invites the others as collaborators
+* ...
 
