@@ -3,7 +3,7 @@ title: "Introduction"
 author: "Daniel, Friedrich, Kevin"
 format: 
   revealjs: 
-    theme: [default, custom_styles.scss]
+    fontsize: 32px
 description: "Introduction of speakers, get-to-know the audience, organisation, outline of program.</br>Photo CC0 by Mabel Amber on pexels.com."
 image: thumbnails/hello.jpg
 ---
@@ -23,8 +23,7 @@ image: thumbnails/hello.jpg
 
 ::: {.column width="70%"}
 -   Statistician (Ph.D. in 2013 on Bayesian Model Selection)
--   Biostatistician at Roche for 5 years, Data Scientist at Google for 2 years,
-    Statistical Software Engineer at Roche for the last 3 years
+-   Biostatistician at Roche for 5 years, Data Scientist at Google for 2 years, Statistical Software Engineer at Roche for the last 3 years
 -   Multiple R packages on CRAN and Bioconductor, co-wrote book on Likelihood and Bayesian Inference, chair of the ASA BIOP working group on Software Engineering (SWE WG)
 -   feel free to connect at `r fontawesome::fa("linkedin")` [LinkedIn](https://www.linkedin.com/in/danielsabanesbove/) or `r fontawesome::fa("github")` [Github](https://github.com/danielinteractive)
 :::
@@ -33,19 +32,17 @@ image: thumbnails/hello.jpg
 ## Friedrich
 
 ::: columns
-
 ::: {.column width="70%"}
-- Since 2008 self-employed consultant for computer science and data science as well as biostatistics
-- Co-founder and CEO of RPACT, a company developing the formally validated R package [rpact](https://cran.r-project.org/package=rpact "rpact: Confirmatory Adaptive Clinical Trial Design and Analysis") with 21 releases on CRAN since 2018
-- Trained software architect; R programmer since 2004; R Shiny developer since 2019
-- Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/pahlke "Friedrich Pahlke at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/fpahlke "Friedrich Pahlke at GitHub")
+-   Since 2008 self-employed consultant for computer science and data science as well as biostatistics
+-   Co-founder and CEO of RPACT, a company developing the formally validated R package [rpact](https://cran.r-project.org/package=rpact "rpact: Confirmatory Adaptive Clinical Trial Design and Analysis") with 21 releases on CRAN since 2018
+-   Trained software architect; R programmer since 2004; R Shiny developer since 2019
+-   Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/pahlke "Friedrich Pahlke at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/fpahlke "Friedrich Pahlke at GitHub")
 :::
 
 ::: {.column width="30%"}
 ![](resources/friedrich_pahlke.jpg)
 :::
 :::
-
 
 ## Kevin
 
