@@ -2,18 +2,22 @@
 title: "Version Control & Collaboration"
 author: "Kevin"
 format: 
-  revealjs
+  revealjs: 
+    fontsize: 32px
 description: description. Photo CC0 by THIS IS ZUN on pexels.com.
 image: thumbnails/collaboration.jpg
 ---
 
 ## Disclaimer
 
-...
+</br></br></br>
+
+*Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company.*
+
 
 ##  {background-image="resources/scratch.jpg"}
 
-::: {.absolute bottom="75" left="0" right="500"}
+::: {.absolute bottom="100" left="0" right="500"}
 -   Only scratching surface
 -   Overview, demo, practical
 -   More resources on [website](https://kkmann.github.io/workshop-r-swe/#optional-reading-list)
