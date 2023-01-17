@@ -54,8 +54,8 @@ Photo from <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&utm_
 
 ## Version control systems
 
-* manage different versions of a piece of work
-* compare and merge diverged versions effectively
+* Manage different versions of a piece of work
+* Compare and merge diverged versions effectively
 
 ```{mermaid}
 flowchart LR
@@ -66,36 +66,153 @@ flowchart LR
   C --> E
 ```
 
-* merging parallel edits is not trivial (try it in MS Word 365)
+* Merging parallel edits is not trivial (try it in MS Word 365)
 
 
-## The de-facto standard: git
+## Enter 'git'
 
 
-## A local git workflow
+## Stage & commit
 
+::: {.columns}
+:::: {.column width="30%"}
+![](resources/commit.jpg)
+::::
+:::: {.column width="70%"}
 ```{mermaid}
+%%| fig-width: 6
+%%| fig-height: 2
 gitGraph
    commit
    commit
-   branch develop
-   checkout develop
    commit
-   commit
-   checkout main
-   merge develop
    commit
    commit
 ```
 
+- permanently 'commit' commit changes to git database
+- before committing: 'stage' changes for inspection
 
-## Collaboration?
+::::
+:::
+
+::: {.footer}
+Photo by <a href="https://unsplash.com/@feliciamontenegro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Felicia Montenegro</a> on <a href="https://unsplash.com/photos/VKnWrMnxahg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+:::
+
+
+## Branching
+
+::: {.columns}
+:::: {.column width="30%"}
+![](resources/branch.jpg)
+::::
+:::: {.column width="70%"}
+```{mermaid}
+%%| fig-width: 6
+%%| fig-height: 2
+gitGraph
+   commit
+   commit
+   branch feature
+   checkout feature
+   commit
+   commit
+   checkout main
+   commit
+```
+
+- variations of repository, 'branches' 
+- work asynchronously
+
+::::
+:::
+
+::: {.footer}
+Photo by <a href="https://unsplash.com/@milatovar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mila Tovar</a> on <a href="https://unsplash.com/photos/nZ6Gg6zgfbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+:::
+
+
+
+## Merging two branches
+
+::: {.columns}
+:::: {.column width="30%"}
+![](resources/merge.jpg)
+::::
+:::: {.column width="70%"}
+```{mermaid}
+%%| fig-width: 6
+%%| fig-height: 2
+gitGraph
+   commit
+   commit
+   branch feature
+   checkout feature
+   commit
+   commit
+   checkout main
+   commit
+   merge feature
+```
+
+- consolidate diverged 'branches'
+- usually merged automergically
+- conflicting changes `r fontawesome::fa("skull")`
+
+::::
+:::
+
+::: {.footer}
+Photo by <a href="https://unsplash.com/@maxlarochelle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Max LaRochelle</a> on <a href="https://unsplash.com/photos/c-vWdiICscA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+:::
+
+
+## Example of 'gitflow'
+
+```{mermaid}
+%%| fig-width: 8
+%%| fig-height: 4
+gitGraph
+   commit tag: "v0.0.1"
+   commit
+   branch feature-1
+   checkout feature-1
+   commit
+   commit
+   branch feature-2
+   checkout feature-2
+   commit
+   checkout feature-1
+   commit
+   checkout main
+   commit tag: "bugfix"
+   merge feature-1 tag: "v0.1.0"
+   checkout feature-2
+   commit
+```
+
+- 'gitflow': specific workflow for git repositories
+- features developed on branches, then merged into 'main' 
+
+
+## Demo
+
+
+
+## Connection to Collaboration?
+
+- git helps taming chaos when multiple people work on code basis
+- transparent incremental changes (diffs)
 
 
 ## GitHub.com
 
 
 ## {background-iframe="https://r-universe.dev/search/" background-interactive="true"}
+
+
+## Github actions & CI/CD
 
 
 ## A GitHub.com change cycle {.scrollable}
