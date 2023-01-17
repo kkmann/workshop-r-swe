@@ -20,7 +20,20 @@ image: thumbnails/hello.jpg
 
 ## Friedrich
 
-...
+::: columns
+
+::: {.column width="70%"}
+- Since 2008 self-employed consultant for computer science and data science as well as biostatistics
+- Co-founder and CEO of RPACT, a company developing the formally validated R package [rpact](https://cran.r-project.org/package=rpact "rpact: Confirmatory Adaptive Clinical Trial Design and Analysis") with 21 releases on CRAN since 2018
+- Trained software architect; R programmer since 2004; R Shiny developer since 2019
+- Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/pahlke "Friedrich Pahlke at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/fpahlke "Friedrich Pahlke at GitHub")
+:::
+
+::: {.column width="30%"}
+![](resources/friedrich_pahlke.jpg)
+:::
+:::
+
 
 ## Kevin
 
@@ -60,14 +73,14 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
 
 ## House-keeping
 
--   Course website at <https://kkmann.github.io/workshop-r-swe/>
+-   Course website at [kkmann.github.io/workshop-r-swe](https://kkmann.github.io/workshop-r-swe)
     -   all slides
-    -   sources available at <https://github.com/kkmann/workshop-r-swe>
+    -   sources available at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe)
     -   all materials CC-BY 4.0
--   We have a [gittr chat channel](https://gitter.im/workshop-r-swe/community) for this course that you can connect to
+-   We have a [gitter chat channel](https://gitter.im/workshop-r-swe/community) for this course that you can connect to
     -   use to ask your peers questions
     -   will try to monitor during course
--   Slido.com: #3112331
+-   [slido.com](https://www.slido.com): #3112331
 
 ## What you will need
 
@@ -81,7 +94,7 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
 -   Curiosity `r emoji::emoji("curious")`
 -   Positive attitude `r emoji::emoji("smile")`
 
-## {background-iframe="https://wall.sli.do/event/aw8yLdhevoVZxt8CJ5ytHG?section=36e6981e-61e0-418c-aaf4-954adbedfd81" background-interactive="true"}
+##  {background-iframe="https://wall.sli.do/event/aw8yLdhevoVZxt8CJ5ytHG?section=36e6981e-61e0-418c-aaf4-954adbedfd81" background-interactive="true"}
 
 ## What do we mean by GSWEP4R\*?
 
@@ -107,13 +120,13 @@ readr::read_csv("resources/program.csv", col_types = "cc") |>
 
 ## Start small - from script to package
 
-1. Encapsulate behavior (functions)
-2. Avoid global state/variables
-3. Adopt consistent coding style
-4. Document well
-5. Add test cases
-5. Version your code
-6. Share as 'bundle'
+1.  Encapsulate behavior (functions)
+2.  Avoid global state/variables
+3.  Adopt consistent coding style
+4.  Document well
+5.  Add test cases
+6.  Version your code
+7.  Share as 'bundle'
 
 $\leadsto$ R package
 

@@ -10,16 +10,13 @@ title: "Good Software Engineering Practice for R Packages"
 
 Welcome to the homepage of the workshop *"Good Software Engineering Practice for R Packages"*. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops.
 
-
 ## Next Event
 
 The next event will be held on 10 February 2023 jointly with the BBS as face-to-face meeting in Basel. Registration is closed but there is a [waiting list](https://docs.google.com/forms/d/e/1FAIpQLSdFycbT9dHO-oOyYLUqkKJjM6j5hcL6dQ4uVKC5y8b9RastsA/viewform).
 
-
 ## Communication
 
 We offer a [gitter chat channel](https://gitter.im/workshop-r-swe) to communicate before, during, and after the course.
-
 
 ## Workshop Program
 
@@ -28,7 +25,6 @@ We offer a [gitter chat channel](https://gitter.im/workshop-r-swe) to communicat
 readr::read_csv("slides/resources/program.csv", col_types = "cc") |>
   knitr::kable(col.names = c("", ""))
 ```
-
 
 ## Prerequisites & Technical Setup
 
