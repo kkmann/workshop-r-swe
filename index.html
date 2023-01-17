@@ -80,11 +80,13 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link active" href="./index.html" aria-current="page"><i class="bi bi-house-fill" role="img">
+</i> 
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./slides/listing.html">
+    <a class="nav-link" href="./slides/listing.html"><i class="bi bi-file-earmark-slides" role="img">
+</i> 
  <span class="menu-text">Slides</span></a>
   </li>  
 </ul>
@@ -133,7 +135,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <!-- badges: start -->
-<p><a href="https://gitter.im/workshop-r-swe/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/workshop-r-swe/community.svg" class="img-fluid" alt="Join the chat at https://gitter.im/workshop-r-swe/community"></a> <!-- badges: end --></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://gitter.im/workshop-r-swe/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/workshop-r-swe/community.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Join the chat at https://gitter.im/workshop-r-swe/community</figcaption><p></p>
+</figure>
+</div>
+<!-- badges: end -->
 <p>Welcome to the homepage of the workshop <em>“Good Software Engineering Practice for R Packages”</em>. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops.</p>
 <section id="next-event" class="level2">
 <h2 class="anchored" data-anchor-id="next-event">Next Event</h2>
@@ -141,24 +149,58 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="communication" class="level2">
 <h2 class="anchored" data-anchor-id="communication">Communication</h2>
-<p>We offer a <a href="https://gitter.im/workshop-r-swe">GITTER channel</a> to communicate before, during, and after the course. The workshop organizers will monitor the channel between ??? and ??? but feel free to use the chat for peer-support before and after this period.</p>
+<p>We offer a <a href="https://gitter.im/workshop-r-swe">gitter chat channel</a> to communicate before, during, and after the course.</p>
 </section>
 <section id="workshop-program" class="level2">
 <h2 class="anchored" data-anchor-id="workshop-program">Workshop Program</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Time</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">xxx-xxx</td>
-<td style="text-align: left;">xxxxxxxxx</td>
+<td style="text-align: left;">09:00 - 09:45</td>
+<td style="text-align: left;">Introduction and outline</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">09:45 - 10:45</td>
+<td style="text-align: left;">R packages, what are they? + practical</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">10:45 - 12:00</td>
+<td style="text-align: left;">Workflow for creating R packages + practical</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12:00 - 13:00</td>
+<td style="text-align: left;">Lunch break, chat &amp; network</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13:00 - 14:00</td>
+<td style="text-align: left;">Package quality + exercise</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14:00 - 15:30</td>
+<td style="text-align: left;">Collaboration with git &amp; GitHub + group practical</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15:30 - 16:00</td>
+<td style="text-align: left;">Coffee break, chat &amp; network</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16:00 - 17:00</td>
+<td style="text-align: left;">Publication + practical</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">17:00 - 17:45</td>
+<td style="text-align: left;">Buffer, recap + wrap-up</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">18:30 - 20:30</td>
+<td style="text-align: left;">Optional dinner</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 </section>
 <section id="prerequisites-technical-setup" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites-technical-setup">Prerequisites &amp; Technical Setup</h2>
@@ -174,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Excellent and very comprehensive <a href="https://r-pkgs.org/">R Packages (2e)</a></li>
 <li>(Hardcore) description of how <a href="https://cran.r-project.org/doc/manuals/R-exts.html">Writing R Extensions</a> works</li>
 <li><a href="https://docs.github.com/en/get-started/quickstart/hello-world">GitHub ‘Hello World’</a> tutorial on how to use GitHub.com (does not require git command line knowledge)</li>
-<li>Tutorial on <a href="https://support.posit.co/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">version control with git and SVn</a> (we will be using git)</li>
+<li>Tutorial on <a href="https://support.posit.co/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">version control with git and SVN</a> (we will be using git)</li>
 <li>Command line git mini intro <a href="https://trygit.js.org/">trygit</a></li>
 <li><a href="https://www.youtube.com/watch?v=jN6tvgt3GK8">first steps with git &amp; github by RStudio</a></li>
 <li><a href="https://github.com/rstudio/cheatsheets/blob/main/git-github.pdf">RStudio cheatsheets/ Git &amp; GitHub</a></li>
@@ -316,6 +358,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp(/https:\/\/kkmann\.github\.io\/workshop-r-swe/);
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->
@@ -327,7 +385,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <a class="nav-link" href="https://rconsortium.github.io/asa-biop-swe-wg/">About the Software Engineering Working Group</a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://github.com/kkmann/workshop-r-swe">Source code on GitHub</a>
+    <a class="nav-link" href="https://github.com/kkmann/workshop-r-swe">Source Code on GitHub</a>
   </li>  
 </ul>
       </div>

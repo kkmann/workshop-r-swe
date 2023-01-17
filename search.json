@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Good Software Engineering Practice for R Packages",
     "section": "",
-    "text": "Welcome to the homepage of the workshop “Good Software Engineering Practice for R Packages”. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops."
+    "text": "Join the chat at https://gitter.im/workshop-r-swe/community\nWelcome to the homepage of the workshop “Good Software Engineering Practice for R Packages”. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops."
   },
   {
     "objectID": "index.html#next-event",
@@ -18,84 +18,119 @@
     "href": "index.html#communication",
     "title": "Good Software Engineering Practice for R Packages",
     "section": "Communication",
-    "text": "Communication\nWe offer a GITTER channel to communicate before, during, and after the course. The workshop organizers will monitor the channel between ??? and ??? but feel free to use the chat for peer-support before and after this period."
+    "text": "Communication\nWe offer a gitter chat channel to communicate before, during, and after the course."
   },
   {
     "objectID": "index.html#workshop-program",
     "href": "index.html#workshop-program",
     "title": "Good Software Engineering Practice for R Packages",
     "section": "Workshop Program",
-    "text": "Workshop Program\n\n\n\nTime\nTopic\n\n\n\n\nxxx-xxx\nxxxxxxxxx"
+    "text": "Workshop Program\n\n\n\n\n\n09:00 - 09:45\nIntroduction and outline\n\n\n09:45 - 10:45\nR packages, what are they? + practical\n\n\n10:45 - 12:00\nWorkflow for creating R packages + practical\n\n\n12:00 - 13:00\nLunch break, chat & network\n\n\n13:00 - 14:00\nPackage quality + exercise\n\n\n14:00 - 15:30\nCollaboration with git & GitHub + group practical\n\n\n15:30 - 16:00\nCoffee break, chat & network\n\n\n16:00 - 17:00\nPublication + practical\n\n\n17:00 - 17:45\nBuffer, recap + wrap-up\n\n\n18:30 - 20:30\nOptional dinner"
   },
   {
     "objectID": "index.html#prerequisites-technical-setup",
     "href": "index.html#prerequisites-technical-setup",
     "title": "Good Software Engineering Practice for R Packages",
     "section": "Prerequisites & Technical Setup",
-    "text": "Prerequisites & Technical Setup\nPrior to the course, participants should\n\nset up a (free) GitHub.com account. There are other git Platforms like Gitlab or Bitbucket but we made the choice to go with GitHub.com for the course since it is by far the most relevant git platform in the R community.\neither make sure they have a working R software development setup on their own laptop (up-to-date git/Rtools/R/RStudio) or get access to https://posit.cloud. The latter offers a free tier account with 25 hours of computing time per months and can be accessed using ones GitHub.com account.\n\nFor the course, participants are required to bring their own laptop to be able to participate in the exercises.\n\nOptional reading list\n\nExcellent and very comprehensive R Packages (2e)\n(Hardcore) description of how Writing R Extensions works\nGitHub ‘Hello World’ tutorial on how to use GitHub.com (does not require git command line knowledge)\nTutorial on version control with git and SVn (we will be using git)\nCommand line git mini intro trygit\nfirst steps with git & github by RStudio\nRStudio cheatsheets/ Git & GitHub"
+    "text": "Prerequisites & Technical Setup\nPrior to the course, participants should\n\nset up a (free) GitHub.com account. There are other git Platforms like Gitlab or Bitbucket but we made the choice to go with GitHub.com for the course since it is by far the most relevant git platform in the R community.\neither make sure they have a working R software development setup on their own laptop (up-to-date git/Rtools/R/RStudio) or get access to https://posit.cloud. The latter offers a free tier account with 25 hours of computing time per months and can be accessed using ones GitHub.com account.\n\nFor the course, participants are required to bring their own laptop to be able to participate in the exercises.\n\nOptional reading list\n\nExcellent and very comprehensive R Packages (2e)\n(Hardcore) description of how Writing R Extensions works\nGitHub ‘Hello World’ tutorial on how to use GitHub.com (does not require git command line knowledge)\nTutorial on version control with git and SVN (we will be using git)\nCommand line git mini intro trygit\nfirst steps with git & github by RStudio\nRStudio cheatsheets/ Git & GitHub"
   },
   {
     "objectID": "slides/listing.html",
     "href": "slides/listing.html",
     "title": "Slides",
     "section": "",
-    "text": "Ensuring Quality\n\n\n\n\n\ndescription. Photo CC0 by Pixabay on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nA Package Engineering Workflow\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\ndescription. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction & Outline\n\n\n\n\n\ndescription. Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\n…\n\n\n\n\n\n\nNo matching items"
+    "text": "Ensuring Quality\n\n\n\n\n\ndescription. Photo CC0 by Pixabay on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nA Package Engineering Workflow\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\ndescription. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\n\n\n\nIntroduction of speakers, get-to-know the audience, organisation, outline of program.Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\n…\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "slides/01_intro.html#program",
-    "href": "slides/01_intro.html#program",
-    "title": "Introduction & Outline",
-    "section": "Program",
-    "text": "Program\n(tabellar overview)"
+    "objectID": "slides/01_intro.html#disclaimer",
+    "href": "slides/01_intro.html#disclaimer",
+    "title": "Introduction",
+    "section": "Disclaimer",
+    "text": "Disclaimer\n\nAny opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company."
   },
   {
-    "objectID": "slides/01_intro.html#introduction",
-    "href": "slides/01_intro.html#introduction",
-    "title": "Introduction & Outline",
-    "section": "Introduction",
-    "text": "Introduction\nWhy are you here today? consider embedding slido :)"
+    "objectID": "slides/01_intro.html#daniel",
+    "href": "slides/01_intro.html#daniel",
+    "title": "Introduction",
+    "section": "Daniel",
+    "text": "Daniel\n\n\n\n\n\nStatistician (Ph.D. in 2013 on Bayesian Model Selection)\nBiostatistician at Roche for 5 years, Data Scientist at Google for 2 years, Statistical Software Engineer at Roche for the last 3 years\nMultiple R packages on CRAN and Bioconductor, co-wrote book on Likelihood and Bayesian Inference, chair of the ASA BIOP working group on Software Engineering (SWE WG)\nfeel free to connect at  LinkedIn or  Github"
   },
   {
-    "objectID": "slides/01_intro.html#why-care-about-gswep",
-    "href": "slides/01_intro.html#why-care-about-gswep",
-    "title": "Introduction & Outline",
-    "section": "Why care about GSWEP*?",
-    "text": "Why care about GSWEP*?\n\n*Good Software Engineering Practice\n\n\nGxP is about quality, widely applies in pharma/life-sciences\nAnalyses increasingly require complex scripts/programs  \\(\\leadsto\\) line between programming and data analysis blurs\nGSWEP extends quality promise to\n\nsingle-use scripts: analyses\nreusable software: R packages \\(\\quad\\leftarrow\\quad\\) today’s focus\n\nDe-risking, easier training, faster updates"
+    "objectID": "slides/01_intro.html#friedrich",
+    "href": "slides/01_intro.html#friedrich",
+    "title": "Introduction",
+    "section": "Friedrich",
+    "text": "Friedrich\n\n\n\nSince 2008 self-employed consultant for computer science and data science as well as biostatistics\nCo-founder and CEO of RPACT, a company developing the formally validated R package rpact with 21 releases on CRAN since 2018\nTrained software architect; R programmer since 2004; R Shiny developer since 2019\nFeel free to connect at  LinkedIn or  Github"
   },
   {
-    "objectID": "slides/01_intro.html#starting-small---improving-quality-of-scripts",
-    "href": "slides/01_intro.html#starting-small---improving-quality-of-scripts",
-    "title": "Introduction & Outline",
-    "section": "Starting small - improving quality of scripts",
-    "text": "Starting small - improving quality of scripts\n\nEncapsulate behaviour (functions)\n\n\nmakes it easier to reason about behavior\neasier to test\n\n\nAvoid global variables wherever possible\nAdopt consistent coding style and document well\n\n\\(\\leadsto\\) R package (already very close)"
-  },
-  {
-    "objectID": "slides/01_intro.html#the-r-package-ecosystem-12",
-    "href": "slides/01_intro.html#the-r-package-ecosystem-12",
-    "title": "Introduction & Outline",
-    "section": "The R package ecosystem (1/2)",
-    "text": "The R package ecosystem (1/2)"
-  },
-  {
-    "objectID": "slides/01_intro.html#the-r-package-ecosystem-22",
-    "href": "slides/01_intro.html#the-r-package-ecosystem-22",
-    "title": "Introduction & Outline",
-    "section": "The R package ecosystem (2/2)",
-    "text": "The R package ecosystem (2/2)\n\nPackages arguable huge role in R’s success\nMake behaviour\n\ntestable\nsharable\neasier to document\n\n\n\\(\\leadsto\\) excellent strategy in GxP environments!\nBut: how to ensure package quality?"
+    "objectID": "slides/01_intro.html#kevin",
+    "href": "slides/01_intro.html#kevin",
+    "title": "Introduction",
+    "section": "Kevin",
+    "text": "Kevin\n\n\n\n\n\nTrained in math, ‘statistical engineer’ by heart\nResearch associate in Heidelberg & Cambridge\n\noptimal clinical trial design\nstatistical genetics & high dimensional data\n\nMethodology statistician with BI since ’21\nR-tist, extensive experience with R packages, version control, and high-performance computing\nfeel free to connect at  LinkedIn or  Github"
   },
   {
     "objectID": "slides/01_intro.html#what-you-will-learn-today",
     "href": "slides/01_intro.html#what-you-will-learn-today",
-    "title": "Introduction & Outline",
+    "title": "Introduction",
     "section": "What you will learn today",
-    "text": "What you will learn today\n\nUnderstand the basic structure of an R package\nLearn & apply a professional package development workflow\nLearn & apply fundamental of quality control for R pkgs\nLearn & apply version control to stay organized\nLearn & apply modern collaboratio ntechniques using github\nLearn how to make packages available to otherss"
+    "text": "What you will learn today\n\nUnderstand the basic structure of an R \nCreate your own R package\nLearn about & apply professional  development workflow\nLearn & apply fundamentals of quality control for R \nGet crash-course in version control to stay organized\nTry out modern collaboration techniques on GitHub.com\nLearn how to make R  available to others"
+  },
+  {
+    "objectID": "slides/01_intro.html#program-outline",
+    "href": "slides/01_intro.html#program-outline",
+    "title": "Introduction",
+    "section": "Program outline",
+    "text": "Program outline\n\n\n\n\n\n09:00 - 09:45\nIntroduction and outline\n\n\n09:45 - 10:45\nR packages, what are they? + practical\n\n\n10:45 - 12:00\nWorkflow for creating R packages + practical\n\n\n12:00 - 13:00\nLunch break, chat & network\n\n\n13:00 - 14:00\nPackage quality + exercise\n\n\n14:00 - 15:30\nCollaboration with git & GitHub + group practical\n\n\n15:30 - 16:00\nCoffee break, chat & network\n\n\n16:00 - 17:00\nPublication + practical\n\n\n17:00 - 17:45\nBuffer, recap + wrap-up\n\n\n18:30 - 20:30\nOptional dinner"
+  },
+  {
+    "objectID": "slides/01_intro.html#house-keeping",
+    "href": "slides/01_intro.html#house-keeping",
+    "title": "Introduction",
+    "section": "House-keeping",
+    "text": "House-keeping\n\nCourse website at kkmann.github.io/workshop-r-swe\n\nall slides\nsources available at github.com/kkmann/workshop-r-swe\nall materials CC-BY 4.0\n\nWe have a gitter chat channel for this course that you can connect to\n\nuse to ask your peers questions\nwill try to monitor during course\n\nslido.com: #3112331"
   },
   {
     "objectID": "slides/01_intro.html#what-you-will-need",
     "href": "slides/01_intro.html#what-you-will-need",
-    "title": "Introduction & Outline",
+    "title": "Introduction",
     "section": "What you will need",
-    "text": "What you will need\n\nGithub.com (free) account \nWorking R development environment\n\ngit \nRtools/R/Rstudio IDE \nAlternative: access to posit.cloud (free tier sufficient) \n\nCuriosity 🦝\nPositive attitude 😄"
+    "text": "What you will need\n\nGithub.com (free) account \nRecommended: posit.cloud \n\nFree tier sufficient\nComes with everything installed\nAlternative: local R development environment with\n\ngit \nRtools/R/Rstudio IDE \n\n\nCuriosity 🦝\nPositive attitude 😄"
+  },
+  {
+    "objectID": "slides/01_intro.html#what-do-we-mean-by-gswep4r",
+    "href": "slides/01_intro.html#what-do-we-mean-by-gswep4r",
+    "title": "Introduction",
+    "section": "What do we mean by GSWEP4R*?",
+    "text": "What do we mean by GSWEP4R*?\n\n\nApplying concept of GxP to SWE with R\nImprove quality of R code/packages, particularly in regulated enviroments but not limited to!\nNot a fixed term, we share our perspectives\nCollection of best practices\nDo not reinvent the wheel: learn from IT/open source space\n\n\n* Good Software Engineering Practice for R"
+  },
+  {
+    "objectID": "slides/01_intro.html#why-care-about-gswep4r",
+    "href": "slides/01_intro.html#why-care-about-gswep4r",
+    "title": "Introduction",
+    "section": "Why care about GSWEP4R?",
+    "text": "Why care about GSWEP4R?\n\nMove to / integration of R in pharma is clear trend\nR is a powerful yet complex ecosystem\n\nCore component: R packages\nMature analysts: users & contributors\nDeep understanding crucial, even to just assess quality\n\nAnalyses increasingly require complex scripts/programs  \\(\\leadsto\\) line between programming and data analysis blurs\nValue: de-risking use of R and efficiency gains"
+  },
+  {
+    "objectID": "slides/01_intro.html#start-small---from-script-to-package",
+    "href": "slides/01_intro.html#start-small---from-script-to-package",
+    "title": "Introduction",
+    "section": "Start small - from script to package",
+    "text": "Start small - from script to package\n\nEncapsulate behavior (functions)\nAvoid global state/variables\nAdopt consistent coding style\nDocument well\nAdd test cases\nVersion your code\nShare as ‘bundle’\n\n\\(\\leadsto\\) R package"
+  },
+  {
+    "objectID": "slides/01_intro.html#the-r-package-ecosystem---huge-success",
+    "href": "slides/01_intro.html#the-r-package-ecosystem---huge-success",
+    "title": "Introduction",
+    "section": "The R package ecosystem - huge success",
+    "text": "The R package ecosystem - huge success"
+  },
+  {
+    "objectID": "slides/01_intro.html#gxp-r",
+    "href": "slides/01_intro.html#gxp-r",
+    "title": "Introduction",
+    "section": "GxP + R  = ",
+    "text": "GxP + R  = \n\nCore infrastructure packages only through industry\nQuality, burden sharing: open-source pharmaverse and others\nOpen methodological packages can de-risk innovative methods\nR packages make (statistical/methodological) code\n\ntestable (with documented evidence thereof, CRF 11)\nreusable\nshareable\neasier to document"
   },
   {
     "objectID": "slides/05_collaboration.html#mermaid-takes-the-pain-out-of-git-diagrams",
