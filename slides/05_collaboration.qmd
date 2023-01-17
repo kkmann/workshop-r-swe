@@ -1,5 +1,5 @@
 ---
-title: "Collaboration"
+title: "Version Control & Collaboration"
 author: "Kevin"
 format: 
   revealjs
@@ -7,55 +7,61 @@ description: description. Photo CC0 by THIS IS ZUN on pexels.com.
 image: thumbnails/collaboration.jpg
 ---
 
-
 ## Disclaimer
 
 ...
 
+##  {background-image="resources/scratch.jpg"}
 
-## {background-image=resources/scratch.jpg}
-
-::: {.absolute bottom=100 left=0 right=650}
-* Will only scratch the surface
-* Quick overview, then demo & practical
-* Check out resources on course website!
+::: {.absolute bottom="75" left="0" right="500"}
+-   Only scratching surface
+-   Overview, demo, practical
+-   More resources on [website](https://kkmann.github.io/workshop-r-swe/#optional-reading-list)
 :::
 
-::: {.footer}
-Photo by <a href="https://unsplash.com/@rhubbardstockfootage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rich @ rhubbardstockfootage</a> on <a href="https://unsplash.com/photos/dEATKItQazc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+::: footer
+Photo by <a href="https://unsplash.com/@rhubbardstockfootage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rich \@ rhubbardstockfootage</a> on <a href="https://unsplash.com/photos/dEATKItQazc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 :::
-
 
 ## Trade-off in code development
 
-:::: {.columns}
+</br>
+
+::: columns
+::: {.column width="50%"}
+### Working alone
+
+-   no coordination overhead
+-   no review
+-   lack of diversity
+-   fragile long-term maintenance
+:::
 
 ::: {.column width="50%"}
-working alone
+### Working in a team
+
+-   coordination overhead
+-   mutual review of code
+-   different approaches
+-   forced to document
+-   more robust long-term maintenance
+:::
 :::
 
-::: {.column width="50%"}
-working in a team
+##  {background-image="resources/complexity.jpg"}
+
+::: {.absolute top="250" left="625"}
+**Manage complexity** over time or between people
 :::
 
-::::
-
-
-## {background-image=resources/complexity.jpg}
-
-::: {.absolute top=200 left=625}
-Common theme: **manage complexity** over time or between people
-:::
-
-::: {.footer}
+::: footer
 Photo from <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tim Mossholder</a> on <a href="https://unsplash.com/de/fotos/FwzhysPCQZc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 :::
 
-
 ## Version control systems
 
-* Manage different versions of a piece of work
-* Compare and merge diverged versions effectively
+-   Manage different versions of a piece of work
+-   Compare and merge diverged versions effectively
 
 ```{mermaid}
 flowchart LR
@@ -66,19 +72,33 @@ flowchart LR
   C --> E
 ```
 
-* Merging parallel edits is not trivial (try it in MS Word 365)
-
+-   Merging parallel edits is not trivial (try it in MS Word 365)
 
 ## Enter 'git'
 
+::: columns
+::: {.column width="30%"}
+![](resources/linus.jpg)
+:::
+
+::: {.column width="70%"}
+-   Developed by Linux Torvalds
+-   ...
+:::
+:::
+
+::: footer
+[Photo](https://commons.wikimedia.org/w/index.php?curid=108824226) by Lf Asia & the Archive Team CC BY 3.0
+:::
 
 ## Stage & commit
 
-::: {.columns}
-:::: {.column width="30%"}
+::: columns
+::: {.column width="30%"}
 ![](resources/commit.jpg)
-::::
-:::: {.column width="70%"}
+:::
+
+::: {.column width="70%"}
 ```{mermaid}
 %%| fig-width: 6
 %%| fig-height: 2
@@ -90,24 +110,49 @@ gitGraph
    commit
 ```
 
-- permanently 'commit' commit changes to git database
-- before committing: 'stage' changes for inspection
-
-::::
+1.  'Stage' changes for inspection
+2.  Permanently 'commit' changes to git
+:::
 :::
 
-::: {.footer}
+::: footer
 Photo by <a href="https://unsplash.com/@feliciamontenegro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Felicia Montenegro</a> on <a href="https://unsplash.com/photos/VKnWrMnxahg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 :::
 
+## Line-based differences - the 'diff'
+
+![](resources/diff-example.jpg){width="80%" fig-align="center"}
+
+-   Changes in git are line-based
+-   Additions (green) & deletions (red) between commits
+
+## Going back in time
+
+::: columns
+::: {.column width="30%"}
+![](resources/delorean.jpg)
+:::
+
+::: {.column width="70%"}
+-   Every commit has unique hash value
+-   Can always 'checkout' old commit
+-   Time travelling has its dangers...
+-   Never change published history!
+:::
+:::
+
+::: footer
+Photo by <a href="https://unsplash.com/@milatovar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mila Tovar</a> on <a href="https://unsplash.com/photos/nZ6Gg6zgfbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+:::
 
 ## Branching
 
-::: {.columns}
-:::: {.column width="30%"}
+::: columns
+::: {.column width="30%"}
 ![](resources/branch.jpg)
-::::
-:::: {.column width="70%"}
+:::
+
+::: {.column width="70%"}
 ```{mermaid}
 %%| fig-width: 6
 %%| fig-height: 2
@@ -122,25 +167,23 @@ gitGraph
    commit
 ```
 
-- variations of repository, 'branches' 
-- work asynchronously
-
-::::
+-   variations of repository, 'branches'
+-   quick switching between branches
+:::
 :::
 
-::: {.footer}
+::: footer
 Photo by <a href="https://unsplash.com/@milatovar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mila Tovar</a> on <a href="https://unsplash.com/photos/nZ6Gg6zgfbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 :::
 
-
-
 ## Merging two branches
 
-::: {.columns}
-:::: {.column width="30%"}
+::: columns
+::: {.column width="30%"}
 ![](resources/merge.jpg)
-::::
-:::: {.column width="70%"}
+:::
+
+::: {.column width="70%"}
 ```{mermaid}
 %%| fig-width: 6
 %%| fig-height: 2
@@ -156,17 +199,15 @@ gitGraph
    merge feature
 ```
 
-- consolidate diverged 'branches'
-- usually merged automergically
-- conflicting changes `r fontawesome::fa("skull")`
-
-::::
+-   consolidate diverged 'branches'
+-   usually merged automergically
+-   conflicting changes `r fontawesome::fa("skull")`
+:::
 :::
 
-::: {.footer}
+::: footer
 Photo by <a href="https://unsplash.com/@maxlarochelle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Max LaRochelle</a> on <a href="https://unsplash.com/photos/c-vWdiICscA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 :::
-
 
 ## Example of 'gitflow'
 
@@ -192,28 +233,41 @@ gitGraph
    commit
 ```
 
-- 'gitflow': specific workflow for git repositories
-- features developed on branches, then merged into 'main' 
-
+-   'gitflow': specific workflow for git repositories
+-   features developed on branches, then merged into 'main'
 
 ## Demo
 
+## Version Control & Collaboration
 
+-   Github.com de-facto standard in open source
+    -   contender: Gitlab.com
+-   git limits chaos in collaborative coding
+-   transparent incremental changes (diffs)
+-   branches facilitate
+    -   asynchronous work
 
-## Connection to Collaboration?
-
-- git helps taming chaos when multiple people work on code basis
-- transparent incremental changes (diffs)
-
+    -   experimentation
 
 ## GitHub.com
 
-
-## {background-iframe="https://r-universe.dev/search/" background-interactive="true"}
-
+octocat, some stats?
 
 ## Github actions & CI/CD
 
+-   Github provides CI/CD services (cloud compute)
+
+-   Own scripting framework 'github actions'
+
+-   Can automate tasks like
+
+    -   run unittests
+
+    -   build & host documentation
+
+    -   static code analysis
+
+-   Most important for R: https://github.com/r-lib/actions
 
 ## A GitHub.com change cycle {.scrollable}
 
@@ -240,32 +294,29 @@ sequenceDiagram
     D->>GH: pull newest version of <main>
 ```
 
-
 ## Looks awefully complicated, why?
 
-* Safe/efficient collaboration with novice/untrusted people
-* Reviewer: rely on automated checks to reduce burden
-  * static code analysis (style, linting)
-  * passing all unit tests
-  * building documentation
-* Asynchronous work on features
+-   Safe/efficient collaboration with novice/untrusted people
+-   Integrated in RStudio IDE
+-   Reviewer: rely on automated checks to reduce burden
+    -   static code analysis (style, linting)
+    -   passing all unit tests
+    -   building documentation
+-   Asynchronous work on features
 
 $\leadsto$ making code-collaboration scalable
 
-
 ## Demo
 
-* Live demonstration of a github cycle
-* Dummy template repository at ...
-  * Can be 'copied' by anyone
-* I will make a change and have it reviewed
-* Follow along live on the repository
-
+-   Live demonstration of a github cycle
+-   Dummy template repository at ...
+    -   Can be 'copied' by anyone
+-   I will make a change and have it reviewed
+-   Follow along live on the repository
 
 ## Practical
 
-* Work in teams of 3
-* Go to [https://github.com/kkmann/simulatr](https://github.com/kkmann/simulatr) and read through the instructions
-* One(!) team member clicks on 'Use this template' button and invites the others as collaborators
-* ...
-
+-   Work in teams of 3
+-   Go to <https://github.com/kkmann/simulatr> and read through the instructions
+-   One(!) team member clicks on 'Use this template' button and invites the others as collaborators
+-   ...
