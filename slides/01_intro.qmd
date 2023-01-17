@@ -16,7 +16,19 @@ image: thumbnails/hello.jpg
 
 ## Daniel
 
-...
+::: columns
+::: {.column width="30%"}
+![](resources/daniel.jpg)
+:::
+
+::: {.column width="70%"}
+-   Statistician (Ph.D. in 2013 on Bayesian Model Selection)
+-   Biostatistician at Roche for 5 years, Data Scientist at Google for 2 years,
+    Statistical Software Engineer at Roche for the last 3 years
+-   Multiple R packages on CRAN and Bioconductor, co-wrote book on Likelihood and Bayesian Inference, chair of the ASA BIOP working group on Software Engineering (SWE WG)
+-   feel free to connect at `r fontawesome::fa("linkedin")` [LinkedIn](https://www.linkedin.com/in/danielsabanesbove/) or `r fontawesome::fa("github")` [Github](https://github.com/danielinteractive)
+:::
+:::
 
 ## Friedrich
 
