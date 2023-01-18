@@ -7,9 +7,6 @@ description: description. Photo CC0 by cottonbro studio on pexels.com.
 image: thumbnails/packages.jpg
 ---
 
-Structure and syntax incl. folders/files/documentation etc. 
-Tools: roxygen2, usethis.
-
 ## What you know already
 
 - Packages provide a mechanism for loading optional code, data and documentation as needed.
@@ -60,28 +57,42 @@ Nowadays, it is super fast with:
 
 ![](resources/rstudio-rpackage.png){.r-stretch}
 
-## DESCRIPTION
+## DESCRIPTION File
 
 - *Package*: Choose the name of your package. 
   - Not unimportant!
   - Check CRAN whether your name is still available.
 - *Title*: Add a Title for Your Package. (Title Case)
 - *Version*: Start with a low package version.
-  - Major.Minor.Patch syntax
+  - `Major.Minor.Patch` syntax
 - *Authors@R*: Add authors and maintainer.
 - *Description*: Like an abstract, including references.
 
-## DESCRIPTION (cont'd)
+## DESCRIPTION File (cont'd)
 
-- *License*: 
-  - Important for open sourcing.
+- *License*: Important for open sourcing.
   - Consider permissive licenses such as Apache and MIT.
-- Depends:
+- *Depends*:
   - Which R version users need to have at least.
   - Packages that are loaded upon loading your package.
-- Imports: Packages which you import functions, methods, classes from.
-- Suggests: Packages which are optionally needed, e.g. for running examples, tests, vignettes.
+- *Imports*: Packages which you import functions, methods, classes from.
+- *Suggests*: Packages for documentation processing (`roxygen2`), running examples, tests (`testthat`), vignettes.
 
+## R Folder
+
+- Only contains R code files (recommended to use `.R` suffix)
+- Assigns R objects, i.e. mostly functions, but could also be constant variables, data sets, etc.
+- Should not have any side effects, i.e. avoid `require()`, `options()` etc.
+- If certain code needs to be sourced first, use on top of file:
+```{r}
+#| echo: fenced
+#' @include dependency.R
+NULL
+```
 
 
 ## Exercise
+
+## References
+
+- [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
