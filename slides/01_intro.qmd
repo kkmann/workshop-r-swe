@@ -1,48 +1,145 @@
 ---
-title: "Introduction & Outline"
+title: "Introduction"
 author: "Daniel, Friedrich, Kevin"
 format: 
-  revealjs
-description: description. Photo CC0 by Mabel Amber on pexels.com.
+  revealjs: 
+    fontsize: 32px
+description: "Introduction of speakers, get-to-know the audience, organisation, outline of program.</br>Photo CC0 by Mabel Amber on pexels.com."
 image: thumbnails/hello.jpg
 ---
 
-## Program
+## Disclaimer
 
-(tabellar overview)
+</br></br></br>
 
-## Introduction
+*Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company.*
 
-Why are you here today? consider embedding slido :)
+## Daniel
 
-<iframe src="https://app.sli.do/event/aw8yLdhevoVZxt8CJ5ytHG/embed/polls/bc0601b1-0e82-47e4-bf29-ee84a1f22742" width="250" height="400"></iframe>
-
-## Why care about GSWEP\*?
-
-::: footer
-\*Good Software Engineering Practice
+::: columns
+::: {.column width="30%"}
+![](resources/daniel.jpg)
 :::
 
--   GxP is about *quality*, widely applies in pharma/life-sciences
+::: {.column width="70%"}
+-   Statistician (Ph.D. in 2013 on Bayesian Model Selection)
+-   Biostatistician at Roche for 5 years, Data Scientist at Google for 2 years, Statistical Software Engineer at Roche for the last 3 years
+-   Multiple R packages on CRAN and Bioconductor, co-wrote book on Likelihood and Bayesian Inference, chair of the ASA BIOP working group on Software Engineering (SWE WG)
+-   feel free to connect at `r fontawesome::fa("linkedin")` [LinkedIn](https://www.linkedin.com/in/danielsabanesbove/) or `r fontawesome::fa("github")` [Github](https://github.com/danielinteractive)
+:::
+:::
+
+## Friedrich
+
+::: columns
+::: {.column width="70%"}
+-   Since 2008 self-employed consultant for computer science and data science as well as biostatistics
+-   Co-founder and CEO of RPACT, a company developing the formally validated R package [rpact](https://cran.r-project.org/package=rpact "rpact: Confirmatory Adaptive Clinical Trial Design and Analysis") with 21 releases on CRAN since 2018
+-   Trained software architect; R programmer since 2004; R Shiny developer since 2019
+-   Feel free to connect at [`r fontawesome::fa("linkedin")` LinkedIn](http://www.linkedin.com/in/pahlke "Friedrich Pahlke at LinkedIn") or [`r fontawesome::fa("github")` Github](https://github.com/fpahlke "Friedrich Pahlke at GitHub")
+:::
+
+::: {.column width="30%"}
+![](resources/friedrich_pahlke.jpg)
+:::
+:::
+
+## Kevin
+
+::: columns
+::: {.column width="30%"}
+![](resources/kevin.jpg)
+:::
+
+::: {.column width="70%"}
+-   Trained in math, 'statistical engineer' by heart
+-   Research associate in Heidelberg & Cambridge
+    -   optimal clinical trial design
+    -   statistical genetics & high dimensional data
+-   Methodology statistician with BI since '21
+-   R-tist, extensive experience with R packages, version control, and high-performance computing
+-   feel free to connect at `r fontawesome::fa("linkedin")` [LinkedIn](https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/) or `r fontawesome::fa("github")` [Github](https://github.com/kkmann)
+:::
+:::
+
+## What you will learn today
+
+-   Understand the basic structure of an R `r fontawesome::fa("cube")`
+-   Create your own R package
+-   Learn about & apply professional `r fontawesome::fa("cube")` development workflow
+-   Learn & apply fundamentals of quality control for R `r fontawesome::fa("cube")`
+-   Get crash-course in version control to stay organized
+-   Try out modern collaboration techniques on GitHub.com
+-   Learn how to make R `r fontawesome::fa("cube")` available to others
+
+## Program outline
+
+```{r}
+#| echo: false
+readr::read_csv("resources/program.csv", col_types = "cc") |>
+  knitr::kable(col.names = c("", ""))
+```
+
+## House-keeping
+
+-   Course website at [kkmann.github.io/workshop-r-swe](https://kkmann.github.io/workshop-r-swe)
+    -   all slides
+    -   sources available at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe)
+    -   all materials CC-BY 4.0
+-   We have a [gitter chat channel](https://gitter.im/workshop-r-swe/community) for this course that you can connect to
+    -   use to ask your peers questions
+    -   will try to monitor during course
+-   [slido.com](https://www.slido.com): #3112331
+
+## What you will need
+
+-   [Github.com](https://github.com/) (free) account `r fontawesome::fa("github")`
+-   **Recommended:** [posit.cloud](https://posit.cloud/plans/free) `r fontawesome::fa("cloud")`
+    -   Free tier sufficient
+    -   Comes with everything installed
+    -   Alternative: local R development environment with
+        -   git `r fontawesome::fa("git-alt")`
+        -   Rtools/R/Rstudio IDE `r fontawesome::fa("r-project")`
+-   Curiosity `r emoji::emoji("curious")`
+-   Positive attitude `r emoji::emoji("smile")`
+
+##  {background-iframe="https://wall.sli.do/event/aw8yLdhevoVZxt8CJ5ytHG?section=36e6981e-61e0-418c-aaf4-954adbedfd81" background-interactive="true"}
+
+## What do we mean by GSWEP4R\*?
+
+::: aside
+\* Good Software Engineering Practice for R
+:::
+
+-   Applying concept of GxP to SWE with R
+-   Improve **quality** of R code/packages, particularly in regulated enviroments but not limited to!
+-   Not a fixed term, we share our perspectives
+-   Collection of best practices
+-   Do not reinvent the wheel: learn from IT/open source space
+
+## Why care about GSWEP4R?
+
+-   Move to / integration of R in pharma is clear trend
+-   R is a powerful yet complex *ecosystem*
+    -   Core component: R packages
+    -   Mature analysts: users & contributors
+    -   Deep understanding crucial, even to just assess quality
 -   Analyses increasingly require complex scripts/programs </br> $\leadsto$ line between programming and data analysis blurs
--   GSWEP extends quality promise to
-    -   single-use scripts: analyses
-    -   reusable software: R packages $\quad\leftarrow\quad$ today's focus
--   De-risking, easier training, faster updates
+-   Value: de-risking use of R and efficiency gains
 
-## Starting small - improving quality of scripts
+## Start small - from script to package
 
-1.  Encapsulate behaviour (functions)
+1.  Encapsulate behavior (functions)
+2.  Avoid global state/variables
+3.  Adopt consistent coding style
+4.  Document well
+5.  Add test cases
+6.  Version your code
+7.  Share as 'bundle'
 
--   makes it easier to reason about behavior
--   easier to test
+$\leadsto$ R package
 
-2.  Avoid global variables wherever possible
-3.  Adopt consistent coding style and document well
-
-$\leadsto$ R package (already very close)
-
-## The R package ecosystem (1/2)
+## The R package ecosystem - huge success
 
 ```{r cran-pkg-network}
 if (!file.exists("resources/pkg_graph.png")) { # primitive caching
@@ -69,52 +166,42 @@ if (!file.exists("resources/pkg_graph.png")) { # primitive caching
       ) %>%
       ungroup() %>%
       select(res) %>%
-      unnest(res)
+      unnest(res) %>%
+      distinct()
   tbl_dl <- filter(tbl_dl_, count >= 10000L, !is.na(count))
-  tbl_deps <- tools::package_dependencies(tbl_dl$package, which = c("Imports", "Depends", "LinkingTo")) %>% 
+  tbl_deps <- tools::package_dependencies(
+        tbl_dl$package,
+        which = c("Imports", "Depends", "LinkingTo")
+      ) %>% 
       enframe(name = "from", value = "to") %>% 
       unnest(to)
   grph_deps <- tidygraph::as_tbl_graph(tbl_deps) %>% 
-      left_join(tbl_dl_, by = c(name = "package")) %>% 
-      filter(!is.na(count)) # remove base packages
+    left_join(
+      tbl_dl_,
+      by = c(name = "package")
+    ) %>% 
+    filter(!is.na(count)) # remove base packages
   plt <- ggraph::ggraph(grph_deps, layout = "linear", circular = TRUE) +
       ggraph::geom_edge_link(alpha = .033) + 
       ggraph::geom_node_label(
           aes(label = if_else(count > quantile(count, 0.975, na.rm = TRUE), name, NA_character_)),
           repel = TRUE
-      )
+      ) +
+      ggraph::theme_graph()
   ggsave("resources/pkg_graph.png", plot = plt, width = 8, height = 8/1.61, dpi = 300)
 }
 knitr::include_graphics("resources/pkg_graph.png")
 ```
 
-## The R package ecosystem (2/2)
+##  {background-iframe="https://pharmaverse.org/" background-interactive="true"}
 
--   Packages arguable huge role in R's success
--   Make behaviour
-    -   testable
-    -   sharable
+## GxP + R `r fontawesome::fa("cube")` = `r fontawesome::fa("heart")`
+
+-   Core infrastructure packages only through industry
+-   Quality, burden sharing: open-source [pharmaverse](https://pharmaverse.org/) and others
+-   Open methodological packages can de-risk innovative methods
+-   R packages make (statistical/methodological) code
+    -   testable (with documented evidence thereof, CRF 11)
+    -   reusable
+    -   shareable
     -   easier to document
-
-$\leadsto$ excellent strategy in GxP environments!
-
-But: how to ensure package quality?
-
-## What you will learn today
-
--   Understand the basic structure of an R package
--   Learn & apply a professional package development workflow
--   Learn & apply fundamental of quality control for R pkgs
--   Learn & apply version control to stay organized
--   Learn & apply modern collaboratio ntechniques using github
--   Learn how to make packages available to otherss
-
-## What you will need
-
--   Github.com (free) account `r fontawesome::fa("github")`
--   Working R development environment
-    -   git `r fontawesome::fa("git-alt")`
-    -   Rtools/R/Rstudio IDE `r fontawesome::fa("r-project")`
-    -   **Alternative:** access to posit.cloud (free tier sufficient) `r fontawesome::fa("cloud")`
--   Curiosity `r emoji::emoji("curious")`
--   Positive attitude `r emoji::emoji("smile")`
