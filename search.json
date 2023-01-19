@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Good Software Engineering Practice for R Packages",
     "section": "",
-    "text": "Join the chat at https://gitter.im/workshop-r-swe/community\nWelcome to the homepage of the workshop “Good Software Engineering Practice for R Packages”. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops."
+    "text": "Welcome to the homepage of the workshop “Good Software Engineering Practice for R Packages”. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops."
   },
   {
     "objectID": "index.html#next-event",
