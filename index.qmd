@@ -2,6 +2,8 @@
 title: "Good Software Engineering Practice for R Packages"
 ---
 
+[![](https://badges.gitter.im/workshop-r-swe/community.svg){fig-align="left"}](https://gitter.im/workshop-r-swe/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 Welcome to the homepage of the workshop *"Good Software Engineering Practice for R Packages"*. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops.
 
 ## Next Event
