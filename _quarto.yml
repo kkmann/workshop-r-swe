@@ -1,19 +1,25 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "GSWEP4R Workshop"
+  description: "BBS Course: Good Software Engineering Practice with R"
+  site-url: https://kkmann.github.io/workshop-r-swe
+  search: true
   navbar:
     left:
       - href: index.qmd
         text: Home
+        icon: "house-fill"
       - href: slides/listing.qmd
         text: Slides
+        icon: "file-earmark-slides"
   page-footer:
     center:
       - text: "About the Software Engineering Working Group"
         href: https://rconsortium.github.io/asa-biop-swe-wg/
-      - text: "Source code on GitHub"
+      - text: "Source Code on GitHub"
         href: https://github.com/kkmann/workshop-r-swe
 
 format:
@@ -21,6 +27,8 @@ format:
     theme: lux
     css: styles.css
     toc: true
+    link-external-icon: false
+    link-external-newwindow: true
 
-editor: visual
+editor: source
 
