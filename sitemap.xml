@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/index.html</loc>
-    <lastmod>2023-01-17T22:28:26.461Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kkmann.github.io/workshop-r-swe/slides/04_quality.html</loc>
-    <lastmod>2023-01-17T22:28:27.837Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kkmann.github.io/workshop-r-swe/slides/listing.html</loc>
-    <lastmod>2023-01-17T22:28:28.697Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kkmann.github.io/workshop-r-swe/slides/03_workflow.html</loc>
-    <lastmod>2023-01-17T22:28:29.013Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kkmann.github.io/workshop-r-swe/slides/02_r_packages.html</loc>
-    <lastmod>2023-01-17T22:28:29.281Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kkmann.github.io/workshop-r-swe/slides/01_intro.html</loc>
-    <lastmod>2023-01-17T22:28:31.065Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kkmann.github.io/workshop-r-swe/slides/05_collaboration.html</loc>
-    <lastmod>2023-01-17T22:28:31.389Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kkmann.github.io/workshop-r-swe/slides/06_publication.html</loc>
-    <lastmod>2023-01-17T22:28:31.661Z</lastmod>
+    <lastmod>2023-01-19T16:31:28.706Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/LICENSE.html</loc>
-    <lastmod>2023-01-17T22:28:32.177Z</lastmod>
+    <lastmod>2023-01-19T16:31:29.762Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kkmann.github.io/workshop-r-swe/slides/06_publication.html</loc>
+    <lastmod>2023-01-19T16:31:32.250Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kkmann.github.io/workshop-r-swe/slides/04_quality.html</loc>
+    <lastmod>2023-01-19T16:31:32.626Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kkmann.github.io/workshop-r-swe/slides/01_intro.html</loc>
+    <lastmod>2023-01-19T16:31:34.826Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kkmann.github.io/workshop-r-swe/slides/02_r_packages.html</loc>
+    <lastmod>2023-01-19T16:31:35.206Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kkmann.github.io/workshop-r-swe/slides/05_collaboration.html</loc>
+    <lastmod>2023-01-19T16:31:35.542Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kkmann.github.io/workshop-r-swe/slides/listing.html</loc>
+    <lastmod>2023-01-19T16:31:36.622Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kkmann.github.io/workshop-r-swe/slides/03_workflow.html</loc>
+    <lastmod>2023-01-19T16:31:36.946Z</lastmod>
   </url>
 </urlset>
