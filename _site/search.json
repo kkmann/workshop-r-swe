@@ -1,0 +1,254 @@
+[
+  {
+    "objectID": "slides/01_intro.html#disclaimer",
+    "href": "slides/01_intro.html#disclaimer",
+    "title": "Introduction",
+    "section": "Disclaimer",
+    "text": "Disclaimer\n\nAny opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company."
+  },
+  {
+    "objectID": "slides/01_intro.html#daniel",
+    "href": "slides/01_intro.html#daniel",
+    "title": "Introduction",
+    "section": "Daniel",
+    "text": "Daniel\n\n\n\n\n\nStatistician (Ph.D. in 2013 on Bayesian Model Selection)\nBiostatistician at Roche for 5 years, Data Scientist at Google for 2 years, Statistical Software Engineer at Roche for the last 3 years\nMultiple R packages on CRAN and Bioconductor, co-wrote book on Likelihood and Bayesian Inference, chair of the ASA BIOP working group on Software Engineering (SWE WG)\nfeel free to connect at  LinkedIn or  Github"
+  },
+  {
+    "objectID": "slides/01_intro.html#friedrich",
+    "href": "slides/01_intro.html#friedrich",
+    "title": "Introduction",
+    "section": "Friedrich",
+    "text": "Friedrich\n\n\n\nSince 2008 self-employed consultant for computer science and data science as well as biostatistics\nCo-founder and CEO of RPACT, a company developing the formally validated R package rpact with 21 releases on CRAN since 2018\nTrained software architect; R programmer since 2004; R Shiny developer since 2019\nFeel free to connect at  LinkedIn or  Github"
+  },
+  {
+    "objectID": "slides/01_intro.html#kevin",
+    "href": "slides/01_intro.html#kevin",
+    "title": "Introduction",
+    "section": "Kevin",
+    "text": "Kevin\n\n\n\n\n\nTrained in math, ‘statistical engineer’ by heart\nResearch associate in Heidelberg & Cambridge\n\noptimal clinical trial design\nstatistical genetics & high dimensional data\n\nMethodology statistician with BI since ’21\nR-tist, extensive experience with R packages, version control, and high-performance computing\nfeel free to connect at  LinkedIn or  Github"
+  },
+  {
+    "objectID": "slides/01_intro.html#what-you-will-learn-today",
+    "href": "slides/01_intro.html#what-you-will-learn-today",
+    "title": "Introduction",
+    "section": "What you will learn today",
+    "text": "What you will learn today\n\nUnderstand the basic structure of an R \nCreate your own R package\nLearn about & apply professional  development workflow\nLearn & apply fundamentals of quality control for R \nGet crash-course in version control to stay organized\nTry out modern collaboration techniques on GitHub.com\nLearn how to make R  available to others"
+  },
+  {
+    "objectID": "slides/01_intro.html#program-outline",
+    "href": "slides/01_intro.html#program-outline",
+    "title": "Introduction",
+    "section": "Program outline",
+    "text": "Program outline\n\n\n\n\n\n09:00 - 09:45\nIntroduction and outline\n\n\n09:45 - 10:45\nR packages, what are they? + practical\n\n\n10:45 - 12:00\nWorkflow for creating R packages + practical\n\n\n12:00 - 13:00\nLunch break, chat & network\n\n\n13:00 - 14:00\nPackage quality + exercise\n\n\n14:00 - 15:30\nCollaboration with git & GitHub + group practical\n\n\n15:30 - 16:00\nCoffee break, chat & network\n\n\n16:00 - 17:00\nPublication + practical\n\n\n17:00 - 17:45\nBuffer, recap + wrap-up\n\n\n18:30 - 20:30\nOptional dinner"
+  },
+  {
+    "objectID": "slides/01_intro.html#house-keeping",
+    "href": "slides/01_intro.html#house-keeping",
+    "title": "Introduction",
+    "section": "House-keeping",
+    "text": "House-keeping\n\nCourse website at kkmann.github.io/workshop-r-swe\n\nall slides\nsources available at github.com/kkmann/workshop-r-swe\nall materials CC-BY 4.0\n\nWe have a gitter chat channel for this course that you can connect to\n\nuse to ask your peers questions\nwill try to monitor during course\n\nslido.com: #3112331"
+  },
+  {
+    "objectID": "slides/01_intro.html#what-you-will-need",
+    "href": "slides/01_intro.html#what-you-will-need",
+    "title": "Introduction",
+    "section": "What you will need",
+    "text": "What you will need\n\nGithub.com (free) account \nRecommended: posit.cloud \n\nFree tier sufficient\nComes with everything installed\nAlternative: local R development environment with\n\ngit \nRtools/R/Rstudio IDE \n\n\nCuriosity 🦝\nPositive attitude 😄"
+  },
+  {
+    "objectID": "slides/01_intro.html#what-do-we-mean-by-gswep4r",
+    "href": "slides/01_intro.html#what-do-we-mean-by-gswep4r",
+    "title": "Introduction",
+    "section": "What do we mean by GSWEP4R*?",
+    "text": "What do we mean by GSWEP4R*?\n\n\nApplying concept of GxP to SWE with R\nImprove quality of R code/packages, particularly in regulated enviroments but not limited to!\nNot a fixed term, we share our perspectives\nCollection of best practices\nDo not reinvent the wheel: learn from IT/open source space\n\n\n* Good Software Engineering Practice for R"
+  },
+  {
+    "objectID": "slides/01_intro.html#why-care-about-gswep4r",
+    "href": "slides/01_intro.html#why-care-about-gswep4r",
+    "title": "Introduction",
+    "section": "Why care about GSWEP4R?",
+    "text": "Why care about GSWEP4R?\n\nMove to / integration of R in pharma is clear trend\nR is a powerful yet complex ecosystem\n\nCore component: R packages\nMature analysts: users & contributors\nDeep understanding crucial, even to just assess quality\n\nAnalyses increasingly require complex scripts/programs  \\(\\leadsto\\) line between programming and data analysis blurs\nValue: de-risking use of R and efficiency gains"
+  },
+  {
+    "objectID": "slides/01_intro.html#start-small---from-script-to-package",
+    "href": "slides/01_intro.html#start-small---from-script-to-package",
+    "title": "Introduction",
+    "section": "Start small - from script to package",
+    "text": "Start small - from script to package\n\nEncapsulate behavior (functions)\nAvoid global state/variables\nAdopt consistent coding style\nDocument well\nAdd test cases\nVersion your code\nShare as ‘bundle’\n\n\\(\\leadsto\\) R package"
+  },
+  {
+    "objectID": "slides/01_intro.html#the-r-package-ecosystem---huge-success",
+    "href": "slides/01_intro.html#the-r-package-ecosystem---huge-success",
+    "title": "Introduction",
+    "section": "The R package ecosystem - huge success",
+    "text": "The R package ecosystem - huge success"
+  },
+  {
+    "objectID": "slides/01_intro.html#gxp-r",
+    "href": "slides/01_intro.html#gxp-r",
+    "title": "Introduction",
+    "section": "GxP + R  = ",
+    "text": "GxP + R  = \n\nCore infrastructure packages only through industry\nQuality, burden sharing: open-source pharmaverse and others\nOpen methodological packages can de-risk innovative methods\nR packages make (statistical/methodological) code\n\ntestable (with documented evidence thereof, CRF 11)\nreusable\nshareable\neasier to document"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#what-you-know-already",
+    "href": "slides/02_r_packages.html#what-you-know-already",
+    "title": "R packages",
+    "section": "What you know already",
+    "text": "What you know already\n\nPackages provide a mechanism for loading optional code, data and documentation as needed.\nA library is a directory into which packages are installed.\ninstall.packages() and R CMD INSTALL is used to install packages into the library.\nlibrary() is used to load packages from the library.\n\nThis attaches the packages at the same time.\n\nRemember that package \\(\\neq\\) library!"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#what-we-want-to-talk-about-now",
+    "href": "slides/02_r_packages.html#what-we-want-to-talk-about-now",
+    "title": "R packages",
+    "section": "What we want to talk about now",
+    "text": "What we want to talk about now\n\nHow to write, build, test, and check your own package 😊\nHow to do this in a good and sustainable way.\nGive tips and tricks based on practical experience."
+  },
+  {
+    "objectID": "slides/02_r_packages.html#how-is-a-package-structured",
+    "href": "slides/02_r_packages.html#how-is-a-package-structured",
+    "title": "R packages",
+    "section": "How is a package structured?",
+    "text": "How is a package structured?\nPackage source = directory with files and subdirectories.\n\n\n\nMandatory:\n\nDESCRIPTION\nNAMESPACE\nR\nman\n\n\n\n\nTypically also:\n\ndata\ninst\nsrc\ntests\nvignettes\nNEWS"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#how-to-get-started-quickly",
+    "href": "slides/02_r_packages.html#how-to-get-started-quickly",
+    "title": "R packages",
+    "section": "How to get started quickly",
+    "text": "How to get started quickly\nOnce upon a time, developers would set up this structure manually. 🥱\nNowadays, it is super fast with:\n\nusethis::create_package()\nRStudio > File > New Project > New Directory > R Package"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#description",
+    "href": "slides/02_r_packages.html#description",
+    "title": "R packages",
+    "section": "DESCRIPTION",
+    "text": "DESCRIPTION\n\nPackage: Choose the name of your package.\n\nNot unimportant!\nCheck CRAN whether your name is still available.\n\nTitle: Add a Title for Your Package. (Title Case)\nVersion: Start with a low package version.\n\nMajor.Minor.Patch syntax\n\nAuthors@R: Add authors and maintainer.\nDescription: Like an abstract, including references."
+  },
+  {
+    "objectID": "slides/02_r_packages.html#description-contd",
+    "href": "slides/02_r_packages.html#description-contd",
+    "title": "R packages",
+    "section": "DESCRIPTION (cont’d)",
+    "text": "DESCRIPTION (cont’d)\n\nLicense: Important for open sourcing.\n\nConsider permissive licenses such as Apache and MIT.\n\nDepends:\n\nWhich R version users need to have at least.\nPackages that are loaded upon loading your package.\n\nImports: Packages which you import functions, methods, classes from.\nSuggests: Packages for running examples, tests, vignettes."
+  },
+  {
+    "objectID": "slides/02_r_packages.html#exercise",
+    "href": "slides/02_r_packages.html#exercise",
+    "title": "R packages",
+    "section": "Exercise",
+    "text": "Exercise"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#r",
+    "href": "slides/02_r_packages.html#r",
+    "title": "R packages",
+    "section": "R",
+    "text": "R"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#description-file",
+    "href": "slides/02_r_packages.html#description-file",
+    "title": "R packages",
+    "section": "DESCRIPTION File",
+    "text": "DESCRIPTION File\n\nPackage: Choose the name of your package.\n\nNot unimportant!\nCheck CRAN whether your name is still available.\n\nTitle: Add a Title for Your Package. (Title Case)\nVersion: Start with a low package version.\n\nMajor.Minor.Patch syntax\n\nAuthors@R: Add authors and maintainer.\nDescription: Like an abstract, including references."
+  },
+  {
+    "objectID": "slides/02_r_packages.html#description-file-contd",
+    "href": "slides/02_r_packages.html#description-file-contd",
+    "title": "R packages",
+    "section": "DESCRIPTION File (cont’d)",
+    "text": "DESCRIPTION File (cont’d)\n\nLicense: Important for open sourcing.\n\nConsider permissive licenses such as Apache and MIT.\n\nDepends:\n\nWhich R version users need to have at least.\nPackages that are loaded upon loading your package.\n\nImports: Packages which you import functions, methods, classes from.\nSuggests: Packages for documentation processing (roxygen2), running examples, tests (testthat), vignettes."
+  },
+  {
+    "objectID": "slides/02_r_packages.html#r-folder",
+    "href": "slides/02_r_packages.html#r-folder",
+    "title": "R packages",
+    "section": "R Folder",
+    "text": "R Folder\n\nOnly contains R code files (recommended to use .R suffix)\n\nCan create a file with usethis::use_r(\"filename\")\n\nAssigns R objects, i.e. mostly functions, but could also be constant variables, data sets, etc.\nShould not have any side effects, i.e. avoid require(), options() etc.\nIf certain code needs to be sourced first, use on top of file:\n\n\n#' @include dependency.R\nNULL"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#references",
+    "href": "slides/02_r_packages.html#references",
+    "title": "R packages",
+    "section": "References",
+    "text": "References\n\nWriting R Extensions"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#data-folder",
+    "href": "slides/02_r_packages.html#data-folder",
+    "title": "R packages",
+    "section": "data Folder",
+    "text": "data Folder\n\nFor (example) data that you ship in your package to the user\n\nGet started with usethis::use_data()\nNote: Usually we use lazy data loading, therefore no data() call needed before using the data\n\nIf you generate the example data, save the R script, too\n\nPut that into data-raw folder, start with usethis::use_data_raw()\n\nNot for data that is used by functions in the package itself\n\nThose would go into inst/extdata folder"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#tests-folder",
+    "href": "slides/02_r_packages.html#tests-folder",
+    "title": "R packages",
+    "section": "tests Folder",
+    "text": "tests Folder\n\nHere we store the unit tests covering the functionality of the package\nGet started with usethis::use_testthat() and usethis::use_test() and populate tests/testthat folder with unit tests\nRarely, tests cannot be run within testthat framework, then these can go into R scripts directly in tests directory\nWe will look at unit tests in detail later"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#documentation-with-roxygen2",
+    "href": "slides/02_r_packages.html#documentation-with-roxygen2",
+    "title": "R packages",
+    "section": "Documentation with roxygen2",
+    "text": "Documentation with roxygen2"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#man-folder",
+    "href": "slides/02_r_packages.html#man-folder",
+    "title": "R packages",
+    "section": "man Folder",
+    "text": "man Folder\n\nContains documentation files for the objects in the package in the .Rd format\n\nThe syntax is a bit similar like LaTeX\n\nAll user level objects should be documented\nInternal objects don’t need to be documented, but may be (and I would recommend it)\nOnce upon a time, developers would set up these .Rd files and the NAMESPACE manually. 🥱\nFortunately, nowadays we have roxygen2! 🚀"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#roxygen2-to-the-rescue",
+    "href": "slides/02_r_packages.html#roxygen2-to-the-rescue",
+    "title": "R packages",
+    "section": "roxygen2 to the Rescue!",
+    "text": "roxygen2 to the Rescue!\n\nWe can include the documentation source directly in the R script, on top of the objects we are documenting\nSyntax is composed of special comments #' and special macros preceded with @\nIn RStudio running Build > More > Document will render the .Rd files and the NAMESPACE file for you\nGet started with usethis::use_roxygen_md()\nInside a function, click Code > Insert Roxygen Skeleton"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#namespace-file",
+    "href": "slides/02_r_packages.html#namespace-file",
+    "title": "R packages",
+    "section": "NAMESPACE File",
+    "text": "NAMESPACE File\n\nDefines the namespace of the package, to work with R’s namespace management system\nNamespace directives in this file allow to specify:\n\nwhich objects are exported to users and other packages\nwhich are imported from other packages"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#namespace-file-contd",
+    "href": "slides/02_r_packages.html#namespace-file-contd",
+    "title": "R packages",
+    "section": "NAMESPACE File (cont’d)",
+    "text": "NAMESPACE File (cont’d)\n\nControls the search strategy for variables:\n\nLocal (in the function body etc.)\nPackage namespace\nImports\nBase namespace\nNormal search() path"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#roxygen2-example",
+    "href": "slides/02_r_packages.html#roxygen2-example",
+    "title": "R packages",
+    "section": "roxygen2 Example",
+    "text": "roxygen2 Example\n\n#' My Summation Function\n#'\n#' This is my first function and it sums two numbers.\n#'\n#' @param x first summand.\n#' @param y second summand.\n#'\n#' @return The sum of `x` and `y`.\n#' @export\n#' \n#' @note This function is a bit boring but that is ok.\n#' @seealso [Arithmetic] for an easier way.\n#'\n#' @examples\n#' my_sum(1, 2)\nmy_sum <- function(x, y) {\n  x + y\n}"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#roxygen2-source",
+    "href": "slides/02_r_packages.html#roxygen2-source",
+    "title": "R packages",
+    "section": "roxygen2 Source",
+    "text": "roxygen2 Source\n\n#' My Summation Function\n#'\n#' This is my first function and it sums two numbers.\n#'\n#' @param x first summand.\n#' @param y second summand.\n#'\n#' @return The sum of `x` and `y`.\n#' @export\n#' \n#' @note This function is a bit boring but that is ok.\n#' @seealso [Arithmetic] for an easier way.\n#'\n#' @examples\n#' my_sum(1, 2)\nmy_sum <- function(x, y) {\n  x + y\n}"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#roxygen2-output",
+    "href": "slides/02_r_packages.html#roxygen2-output",
+    "title": "R packages",
+    "section": "roxygen2 Output",
+    "text": "roxygen2 Output\n% Generated by roxygen2: do not edit by hand\n% Please edit documentation in R/bla.R\n\\name{my_sum}\n\\alias{my_sum}\n\\title{My Summation Function}\n\\usage{\nmy_sum(x, y)\n}\n\\arguments{\n\\item{x}{first summand.}\n\n\\item{y}{second summand.}\n}\n\\value{\nThe sum of \\code{x} and \\code{y}.\n}\n\\description{\nThis is my first function and it sums two numbers.\n}\n\\note{\nThis function is a bit boring but that is ok.\n}\n\\examples{\nmy_sum(1, 2)\n}\n\\seealso{\n\\link{Arithmetic} for an easier way.\n}\n# Generated by roxygen2: do not edit by hand\n\nexport(my_sum)"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#setting-up-roxygen2-in-your-project",
+    "href": "slides/02_r_packages.html#setting-up-roxygen2-in-your-project",
+    "title": "R packages",
+    "section": "Setting up roxygen2 in your project",
+    "text": "Setting up roxygen2 in your project"
+  }
+]

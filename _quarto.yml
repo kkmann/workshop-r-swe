@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "GSWEP4R Workshop"
@@ -26,8 +27,8 @@ format:
     theme: lux
     css: styles.css
     toc: true
-    link-external-icon: true
+    link-external-icon: false
     link-external-newwindow: true
 
-editor: visual
+editor: source
 
