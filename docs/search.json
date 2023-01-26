@@ -341,5 +341,12 @@
     "title": "R packages",
     "section": "References",
     "text": "References\n\nWriting R Extensions\nRewriting R code in C++\nSuper technical details about R Markdown"
+  },
+  {
+    "objectID": "slides/02_r_packages.html#lets-try-this-out-now",
+    "href": "slides/02_r_packages.html#lets-try-this-out-now",
+    "title": "R packages",
+    "section": "Let’s try this out now 😊",
+    "text": "Let’s try this out now 😊\n\nSet up a new R package with a fancy name\nFill out the DESCRIPTION file\nInclude a new function\nAdd roxygen documentation\nExport the function to the namespace\nProduce the package documentation\nRun checks\nBuild the package"
   }
 ]

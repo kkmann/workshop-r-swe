@@ -7,6 +7,8 @@ description: description. Photo CC0 by cottonbro studio on pexels.com.
 image: thumbnails/packages.jpg
 ---
 
+# Introduction
+
 ## What you know already
 
 - Packages provide a mechanism for loading optional code, data and documentation as needed.
@@ -294,9 +296,20 @@ export(my_sum)
   - Roughly simulates what happens when package would be installed and loaded
   - Key: much faster!
 
-## Exercise
+# Exercise
 
-## References
+## Let's try this out now `r emoji::emoji("blush")`
+
+1. Set up a new R package with a fancy name
+1. Fill out the `DESCRIPTION` file
+1. Include a new function
+1. Add roxygen documentation
+1. Export the function to the namespace
+1. Produce the package documentation
+1. Run checks
+1. Build the package
+
+# References
 
 - [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
 - [Rewriting R code in C++](https://adv-r.hadley.nz/rcpp.html)
