@@ -1,0 +1,10 @@
+---
+title: "Conclusion"
+author: "Daniel"
+format: 
+  revealjs: 
+    fontsize: 32px
+description: "Discussion of learning experience, summary of workflow, conclusion and next steps.</br>Photo by Ann H on pexels.com."
+image: thumbnails/conclusion.jpg
+---
+
