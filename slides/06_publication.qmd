@@ -1,8 +1,93 @@
 ---
 title: "Publication"
-author: "..."
+author: "Daniel, Friedrich"
 format: 
-  revealjs
-description: description. Photo CC0 by Andrea Piacquadio on pexels.com.
+  revealjs: 
+    fontsize: 32px
+description: "How to prepare the R package for publication, incl. documentation, license, checks. Photo CC0 by Andrea Piacquadio on pexels.com."
 image: thumbnails/publish.jpg
 ---
+
+# Website with `pkgdown`
+
+## Setup of `pkgdown`
+
+- `pkgdown` makes it quick and easy to build a website for your package
+- After installing `pkgdown`, just use `usethis::use_pkgdown()` to get started
+- Main configuration happens in `_pkgdown.yml` file
+- Many customizations can be applied, but main work during development is to 
+  keep the `reference` section updated with names of `.Rd` files
+  
+## Example `_pkgdown.yml` file
+
+```yaml
+---
+url: https://openpharma.github.io/mmrm
+
+template:
+  bootstrap: 5
+  params:
+    ganalytics: UA-125641273-1
+
+navbar:
+  right:
+    - icon: fa-github
+      href: https://github.com/openpharma/mmrm
+
+reference:
+  - title: Package
+    contents:
+      - mmrm-package
+  - title: Functions
+    contents:
+      - mmrm
+      - fit_mmrm
+      - mmrm_control
+      - fit_single_optimizer
+      - refit_multiple_optimizers
+      - df_1d
+      - df_md
+      - component
+```
+
+## Publication as GitHub Page
+
+- It is helpful for users to read the website online
+- GitHub is very helpful here because it allows
+  - A separate branch `gh-pages` that stores the rendered website
+  - GitHub actions automatically render the website when the `main` branch
+    is updated
+- To get started, use `usethis::use_pkgdown_github_pages()`
+
+##  {background-iframe="https://openpharma.github.io/mmrm/main/" background-interactive="true"}
+
+# Licensing, Open sourcing, Versioning
+
+## Licensing
+
+- High level categorization of licenses:
+  - "Permissive": Relaxed. Can be freely copied, modified, published (under the same license).
+  - "Copyleft": Stricter. Same rights need to be preserved in derivative works.
+- R itself is licensed with the GPL, but packages can choose the license
+    - e.g. `usethis::use_mit_license()` for permissive MIT 
+    - or `usethis::use_gpl_license()` for copyleft GPL
+- Need to be careful here when you bundle any code from other software
+  - Are the licenses of your package and the source compatible?
+
+## Open Sourcing
+
+- The easiest way to "open source" your R package is to make the GitHub repository public
+- This allows for easy open source contributions from other developers via pull requests
+- Please check with your organization first: 
+  - Are they ok to publish the software?
+  - What is the appropriate copyright holder? 
+- Also allows bugs to be filed and to have
+  the GitHub issues page in the package description
+
+# References
+
+- [Licensing chapter](https://r-pkgs.org/license.html)
+
+# Exercise
+
+

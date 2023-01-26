@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.269">
 
-  <meta name="author" content="…">
+  <meta name="author" content="Daniel, Friedrich">
   <title>GSWEP4R Workshop - Publication</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,6 +28,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -329,14 +393,117 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-… 
+Daniel, Friedrich 
 </div>
 </div>
 </div>
 
 </section>
-<section class="slide level2">
+<section>
+<section id="website-with-pkgdown" class="title-slide slide level1 center">
+<h1>Website with <code>pkgdown</code></h1>
 
+</section>
+<section id="setup-of-pkgdown" class="slide level2">
+<h2>Setup of <code>pkgdown</code></h2>
+<ul>
+<li><code>pkgdown</code> makes it quick and easy to build a website for your package</li>
+<li>After installing <code>pkgdown</code>, just use <code>usethis::use_pkgdown()</code> to get started</li>
+<li>Main configuration happens in <code>_pkgdown.yml</code> file</li>
+<li>Many customizations can be applied, but main work during development is to keep the <code>reference</code> section updated with names of <code>.Rd</code> files</li>
+</ul>
+</section>
+<section id="example-_pkgdown.yml-file" class="slide level2">
+<h2>Example <code>_pkgdown.yml</code> file</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">url</span><span class="kw">:</span><span class="at"> https://openpharma.github.io/mmrm</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">template</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="at">  </span><span class="fu">bootstrap</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="at">  </span><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="at">    </span><span class="fu">ganalytics</span><span class="kw">:</span><span class="at"> UA-125641273-1</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="at">  </span><span class="fu">right</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">icon</span><span class="kw">:</span><span class="at"> fa-github</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> https://github.com/openpharma/mmrm</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="fu">reference</span><span class="kw">:</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Package</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="at">      </span><span class="kw">-</span><span class="at"> mmrm-package</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Functions</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="at">      </span><span class="kw">-</span><span class="at"> mmrm</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="at">      </span><span class="kw">-</span><span class="at"> fit_mmrm</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="at">      </span><span class="kw">-</span><span class="at"> mmrm_control</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="at">      </span><span class="kw">-</span><span class="at"> fit_single_optimizer</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="at">      </span><span class="kw">-</span><span class="at"> refit_multiple_optimizers</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="at">      </span><span class="kw">-</span><span class="at"> df_1d</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="at">      </span><span class="kw">-</span><span class="at"> df_md</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="at">      </span><span class="kw">-</span><span class="at"> component</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="publication-as-github-page" class="slide level2">
+<h2>Publication as GitHub Page</h2>
+<ul>
+<li>It is helpful for users to read the website online</li>
+<li>GitHub is very helpful here because it allows
+<ul>
+<li>A separate branch <code>gh-pages</code> that stores the rendered website</li>
+<li>GitHub actions automatically render the website when the <code>main</code> branch is updated</li>
+</ul></li>
+<li>To get started, use <code>usethis::use_pkgdown_github_pages()</code></li>
+</ul>
+</section>
+<section id="section" class="slide level2" data-background-iframe="https://openpharma.github.io/mmrm/main/" data-background-interactive="true">
+<h2></h2>
+</section></section>
+<section>
+<section id="licensing-open-sourcing-versioning" class="title-slide slide level1 center">
+<h1>Licensing, Open sourcing, Versioning</h1>
+
+</section>
+<section id="licensing" class="slide level2">
+<h2>Licensing</h2>
+<ul>
+<li>High level categorization of licenses:
+<ul>
+<li>“Permissive”: Relaxed. Can be freely copied, modified, published (under the same license).</li>
+<li>“Copyleft”: Stricter. Same rights need to be preserved in derivative works.</li>
+</ul></li>
+<li>R itself is licensed with the GPL, but packages can choose the license
+<ul>
+<li>e.g.&nbsp;<code>usethis::use_mit_license()</code> for permissive MIT</li>
+<li>or <code>usethis::use_gpl_license()</code> for copyleft GPL</li>
+</ul></li>
+<li>Need to be careful here when you bundle any code from other software
+<ul>
+<li>Are the licenses of your package and the source compatible?</li>
+</ul></li>
+</ul>
+</section>
+<section id="open-sourcing" class="slide level2">
+<h2>Open Sourcing</h2>
+<ul>
+<li>The easiest way to “open source” your R package is to make the GitHub repository public</li>
+<li>This allows for easy open source contributions from other developers via pull requests</li>
+<li>Please check with your organization first:
+<ul>
+<li>Are they ok to publish the software?</li>
+<li>What is the appropriate copyright holder?</li>
+</ul></li>
+<li>Also allows bugs to be filed and to have the GitHub issues page in the package description</li>
+</ul>
+</section></section>
+<section id="references" class="title-slide slide level1 center">
+<h1>References</h1>
+<ul>
+<li><a href="https://r-pkgs.org/license.html">Licensing chapter</a></li>
+</ul>
+</section>
+
+<section id="exercise" class="title-slide slide level1 center">
+<h1>Exercise</h1>
 
 <div class="footer footer-default">
 

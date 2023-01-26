@@ -152,5 +152,47 @@
     "title": "Slides",
     "section": "",
     "text": "Introduction\n\n\n\n\n\nIntroduction of speakers, get-to-know the audience, organisation, outline of program.Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\ndescription. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nA Package Engineering Workflow\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nEnsuring Quality\n\n\n\n\n\ndescription. Photo CC0 by Pixabay on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\n…\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides/06_publication.html#website-with-pkgdown",
+    "href": "slides/06_publication.html#website-with-pkgdown",
+    "title": "Publication",
+    "section": "Website with pkgdown",
+    "text": "Website with pkgdown\n\npkgdown makes it quick and easy to build a website for your package\nAfter installing pkgdown, just use usethis::use_pkgdown() to get started"
+  },
+  {
+    "objectID": "slides/06_publication.html#setup-of-pkgdown",
+    "href": "slides/06_publication.html#setup-of-pkgdown",
+    "title": "Publication",
+    "section": "Setup of pkgdown",
+    "text": "Setup of pkgdown\n\npkgdown makes it quick and easy to build a website for your package\nAfter installing pkgdown, just use usethis::use_pkgdown() to get started\nMain configuration happens in _pkgdown.yml file\nMany customizations can be applied, but main work during development is to keep the reference section updated with names of .Rd files"
+  },
+  {
+    "objectID": "slides/06_publication.html#example-_pkgdown.yml-file",
+    "href": "slides/06_publication.html#example-_pkgdown.yml-file",
+    "title": "Publication",
+    "section": "Example _pkgdown.yml file",
+    "text": "Example _pkgdown.yml file\n---\nurl: https://openpharma.github.io/mmrm\n\ntemplate:\n  bootstrap: 5\n  params:\n    ganalytics: UA-125641273-1\n\nnavbar:\n  right:\n    - icon: fa-github\n      href: https://github.com/openpharma/mmrm\n\nreference:\n  - title: Package\n    contents:\n      - mmrm-package\n  - title: Functions\n    contents:\n      - mmrm\n      - fit_mmrm\n      - mmrm_control\n      - fit_single_optimizer\n      - refit_multiple_optimizers\n      - df_1d\n      - df_md\n      - component"
+  },
+  {
+    "objectID": "slides/06_publication.html#publication-as-github-page",
+    "href": "slides/06_publication.html#publication-as-github-page",
+    "title": "Publication",
+    "section": "Publication as GitHub Page",
+    "text": "Publication as GitHub Page\n\nIt is helpful for users to read the website online\nGitHub is very helpful here because it allows\n\nA separate branch gh-pages that stores the rendered website\nGitHub actions automatically render the website when the main branch is updated\n\nTo get started, use usethis::use_pkgdown_github_pages()"
+  },
+  {
+    "objectID": "slides/06_publication.html#licensing",
+    "href": "slides/06_publication.html#licensing",
+    "title": "Publication",
+    "section": "Licensing",
+    "text": "Licensing\n\nHigh level categorization of licenses:\n\n“Permissive”: Relaxed. Can be freely copied, modified, published (under the same license).\n“Copyleft”: Stricter. Same rights need to be preserved in derivative works.\n\nR itself is licensed with the GPL, but packages can choose the license\n\ne.g. usethis::use_mit_license() for permissive MIT\nor usethis::use_gpl_license() for copyleft GPL\n\nNeed to be careful here when you bundle any code from other software\n\nAre the licenses of your package and the source compatible?"
+  },
+  {
+    "objectID": "slides/06_publication.html#open-sourcing",
+    "href": "slides/06_publication.html#open-sourcing",
+    "title": "Publication",
+    "section": "Open Sourcing",
+    "text": "Open Sourcing\n\nThe easiest way to “open source” your R package is to make the GitHub repository public\nThis allows for easy open source contributions from other developers via pull requests\nPlease check with your organization first:\n\nAre they ok to publish the software?\nWhat is the appropriate copyright holder?\n\nAlso allows bugs to be filed and to have the GitHub issues page in the package description"
   }
 ]
