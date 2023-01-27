@@ -7,9 +7,10 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.269">
+  <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Friedrich">
+  <meta name="dcterms.date" content="2023-02-10">
   <title>GSWEP4R Workshop - Ensuring Quality</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,6 +29,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -325,24 +390,140 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Ensuring Quality</h1>
+  <p class="subtitle">BBS Course: Good Software Engineering Practice with R</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
 Friedrich 
 </div>
-</div>
+        <p class="quarto-title-affiliation">
+            RPACT
+          </p>
+    </div>
 </div>
 
+  <p class="date">February 10, 2023</p>
 </section>
-<section class="slide level2">
+<section id="quality-workflow" class="title-slide slide level1 center">
+<h1>Quality Workflow</h1>
+<ol type="1">
+<li>Write unit tests</li>
+<li>Write integration tests</li>
+<li>What other important test types exist?</li>
+</ol>
+<!--
+refactoring, testing, code style, (return) types, spelling, documentation
+-->
+</section>
 
-<p>testing, code style, (return) types, spelling, documentation (?)</p>
+<section>
+<section id="package-testing" class="title-slide slide level1 center">
+<h1>Package Testing</h1>
+
+<img data-src="thumbnails/testing.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by ThisIsEngineering on pexels.com</span></p></section>
+<section id="verification-vs-validation" class="slide level2">
+<h2>Verification vs Validation</h2>
+<ul>
+<li>Verification: Are we building the product right?</li>
+<li>Validation: Are we building the right product?</li>
+</ul>
+<div class="author">
+<p>Barry W. Boehm</p>
+</div>
+<p>“Building the product right” checks that the specifications are correctly implemented by the system while “building the right product” refers back to the user’s needs. In some contexts, it is required to have written requirements for both as well as formal procedures or protocols for determining compliance. Ideally, formal methods provide a mathematical guarantee that software meets its specifications.</p>
+</section>
+<section id="what-are-unit-tests" class="slide level2">
+<h2>What are Unit Tests?</h2>
+<p>“Unit tests are automated tests that check individual units of code, such as functions or methods, for correctness. They are typically written by developers as part of the software development process, and are used to ensure that changes to the codebase do not break existing functionality. Unit tests are typically run automatically as part of a continuous integration pipeline, and can be run on a developer’s local machine before committing code changes.”</p>
+<p>Let’s summarize: unit tests…</p>
+<ul>
+<li>record the expected output of a function using code,</li>
+<li>ensure that code doesn’t change unexpectedly, and</li>
+<li>expresses the desired behavior in a way that a human can understand.</li>
+</ul>
+</section>
+<section id="why-are-unit-tests-important" class="slide level2">
+<h2>Why are unit tests important?</h2>
+<p>“Unit tests are important because they help to ensure that individual units of code are working correctly. By writing unit tests, developers can test small, isolated portions of their code and identify and fix bugs early on in the development process. This can save time and resources by catching issues before they become more difficult and costly to fix. Additionally, unit tests can help to prevent regressions, or bugs that are reintroduced into the codebase after they have been fixed. Overall, unit tests help to increase the reliability and maintainability of the code.”</p>
+</section>
+<section id="what-other-important-test-types-exist" class="slide level2">
+<h2>What other important test types exist?</h2>
+<ul>
+<li>Integration Testing: The ‘testthat’ package also provides integration testing. It allows you to test if different functions or scripts work together as expected.</li>
+<li>Performance Testing: The ‘microbenchmark’ package allows you to compare the performance of different R expressions and functions.</li>
+<li>Snapshot Testing</li>
+</ul>
+</section></section>
+<section>
+<section id="testing-in-practice" class="title-slide slide level1 center">
+<h1>Testing in Practice</h1>
+
+<img data-src="thumbnails/coding_markus-spiske.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by markus spiske on pexels.com</span></p></section>
+<section id="how-to-realize-testing-with-r" class="slide level2">
+<h2>How to realize testing with R?</h2>
+<ul>
+<li><a href="https://cran.r-project.org/package=testthat">testthat</a>: popular testing framework for R that is easy to learn and use</li>
+</ul>
+</section>
+<section id="how-to-check-the-package-quality" class="slide level2">
+<h2>How to check the package quality?</h2>
+<ul>
+<li><a href="https://cran.r-project.org/package=pkgbuild">pkgbuild</a>: Tools Needed to Build R Packages</li>
+<li><a href="https://cran.r-project.org/package=rcmdcheck">rcmdcheck</a>: Run <a href="https://r-pkgs.org/R-CMD-check.html">R CMD check</a> from ‘R’ and Capture Results</li>
+<li><a href="https://cran.r-project.org/package=devtools">devtools</a>: Tools to Make Developing R Packages Easier, e.g., <a href="https://rdrr.io/cran/devtools/man/check.html">check()</a> automatically builds and checks a source package, using all known best practices.</li>
+</ul>
+</section></section>
+<section>
+<section id="code-style" class="title-slide slide level1 center">
+<h1>Code Style</h1>
+
+<img data-src="thumbnails/styling.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by Pavel Danilyuk on pexels.com</span></p></section>
+<section id="why-is-code-style-important" class="slide level2">
+<h2>Why is Code Style important?</h2>
+<p>“Code style is important because it helps make the code more readable, maintainable, and consistent. It can also make it easier for others to understand and contribute to the codebase. Additionally, adhering to a consistent code style can reduce the number of errors and make debugging simpler.”</p>
+<p>Let’s summarize:</p>
+</section>
+<section id="how-to-optimize-the-code-styling" class="slide level2">
+<h2>How to optimize the code styling?</h2>
+<ul>
+<li>types, type safety,</li>
+<li>lintr/styler packages,</li>
+<li>spelling,</li>
+<li>etc.</li>
+</ul>
+</section></section>
+<section>
+<section id="exercise" class="title-slide slide level1 center">
+<h1>Exercise</h1>
+<ul>
+<li>Set up testing infrastructure,</li>
+<li>add unit tests,</li>
+<li>test-driven development,</li>
+<li>check,</li>
+<li>lintr, spelling,</li>
+<li>test coverage.</li>
+</ul>
+<p>download zip file, no git stuff here yet, so that it is independent</p>
+</section>
+<section id="workflow-example---refactoring" class="slide level2">
+<h2>Workflow Example - Refactoring</h2>
+<p>Important: Don’t repeat yourself!</p>
+<p>Remember the one-off script:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="at">group =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">50</span>)),</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb1-4"><a href="#cb1-4"></a>        <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">12</span>),</span>
+<span id="cb1-5"><a href="#cb1-5"></a>        <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">14</span>, <span class="at">sd =</span> <span class="dv">11</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    )</span>
+<span id="cb1-7"><a href="#cb1-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 <div class="footer footer-default">
-
+<p>Good Software Engineering Practice with R - <a href="../index.html" title="GSWEP4R Workshop">Home</a> | <a href="listing.html" title="Overview of all slides">Slides</a> | <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="License: CC BY-SA 4.0">License</a></p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -395,7 +576,7 @@ Friedrich
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -554,6 +735,44 @@ Friedrich
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -684,6 +903,20 @@ Friedrich
           });
         }
       }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var filterRegex = new RegExp(/https:\/\/kkmann\.github\.io\/workshop-r-swe/);
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+        var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+              // target, if specified
+              link.setAttribute("target", "_blank");
+          }
+        }
     });
     </script>
     

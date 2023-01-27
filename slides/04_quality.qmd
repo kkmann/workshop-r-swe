@@ -1,10 +1,172 @@
 ---
 title: "Ensuring Quality"
+subtitle: "BBS Course: Good Software Engineering Practice with R"
 author: "Friedrich"
+affiliation: "RPACT"
+institute: "RPACT"
+date: '2023-02-10'
+date-format: long
+tags: [R, Package]
+license: 'CC BY-SA'
+email-obfuscation: javascript
 format: 
-  revealjs
-description: description. Photo CC0 by Pixabay on pexels.com.
+  revealjs:
+    theme: [default, custom.scss]
+    fontsize: 34px
+    toc: false
+    slide-number: true
+    progress: true
+    code-line-numbers: true
+    mouse-wheel: false
+    link-external-newwindow: true
+    footer: 'Good Software Engineering Practice with R - [Home](../index.html "GSWEP4R Workshop") | [Slides](listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
+description: "Package quality + exercise<br/>[Photo CC0 by Pixabay on pexels.com]{.copyright}"
 image: thumbnails/quality.jpg
+lang: en
+editor: 
+  markdown: 
+    wrap: 80
 ---
 
-testing, code style, (return) types, spelling, documentation (?)
+# Quality Workflow
+
+1.  Write unit tests
+2.  Write integration tests
+3.  What other important test types exist?
+
+```{=html}
+<!--
+refactoring, testing, code style, (return) types, spelling, documentation
+-->
+```
+# Package Testing
+
+![[Photo CC0 by ThisIsEngineering on
+pexels.com]{.copyright}](thumbnails/testing.jpg){fig-align="center"}
+
+## Verification vs Validation
+
+-   Verification: Are we building the product right?
+-   Validation: Are we building the right product?
+
+::: author
+Barry W. Boehm
+:::
+
+"Building the product right" checks that the specifications are correctly
+implemented by the system while "building the right product" refers back to the
+user's needs. In some contexts, it is required to have written requirements for
+both as well as formal procedures or protocols for determining compliance.
+Ideally, formal methods provide a mathematical guarantee that software meets its
+specifications.
+
+
+## What are Unit Tests?
+
+"Unit tests are automated tests that check individual units of
+code, such as functions or methods, for correctness. They are typically
+written by developers as part of the software development process, and
+are used to ensure that changes to the codebase do not break existing
+functionality. Unit tests are typically run automatically as part of a
+continuous integration pipeline, and can be run on a developer's local
+machine before committing code changes."
+
+Let's summarize: unit tests...
+
+-   record the expected output of a function using code,
+-   ensure that code doesn't change unexpectedly, and
+-   expresses the desired behavior in a way that a human can understand.
+
+## Why are unit tests important?
+
+"Unit tests are important because they help to ensure that
+individual units of code are working correctly. By writing unit tests,
+developers can test small, isolated portions of their code and identify
+and fix bugs early on in the development process. This can save time and
+resources by catching issues before they become more difficult and
+costly to fix. Additionally, unit tests can help to prevent regressions,
+or bugs that are reintroduced into the codebase after they have been
+fixed. Overall, unit tests help to increase the reliability and
+maintainability of the code."
+
+## What other important test types exist?
+
+-   Integration Testing: The 'testthat' package also provides
+    integration testing. It allows you to test if different functions or
+    scripts work together as expected.
+-   Performance Testing: The 'microbenchmark' package allows you to
+    compare the performance of different R expressions and functions.
+-   Snapshot Testing
+
+# Testing in Practice
+
+![[Photo CC0 by markus spiske on
+pexels.com]{.copyright}](thumbnails/coding_markus-spiske.jpg){fig-align="center"}
+
+## How to realize testing with R?
+
+-   [testthat](https://cran.r-project.org/package=testthat): popular
+    testing framework for R that is easy to learn and use
+
+## How to check the package quality?
+
+-   [pkgbuild](https://cran.r-project.org/package=pkgbuild): Tools
+    Needed to Build R Packages
+-   [rcmdcheck](https://cran.r-project.org/package=rcmdcheck): Run [R
+    CMD check](https://r-pkgs.org/R-CMD-check.html) from 'R' and Capture
+    Results
+-   [devtools](https://cran.r-project.org/package=devtools): Tools to
+    Make Developing R Packages Easier, e.g.,
+    [check()](https://rdrr.io/cran/devtools/man/check.html)
+    automatically builds and checks a source package, using all known
+    best practices.
+
+# Code Style
+
+![[Photo CC0 by Pavel Danilyuk on
+pexels.com]{.copyright}](thumbnails/styling.jpg){fig-align="center"}
+
+## Why is Code Style important?
+
+"Code style is important because it helps make the code more
+readable, maintainable, and consistent. It can also make it easier for
+others to understand and contribute to the codebase. Additionally,
+adhering to a consistent code style can reduce the number of errors and
+make debugging simpler."
+
+Let's summarize:
+
+## How to optimize the code styling?
+
+-   types, type safety,
+-   lintr/styler packages,
+-   spelling,
+-   etc.
+
+# Exercise
+
+-   Set up testing infrastructure,
+-   add unit tests,
+-   test-driven development,
+-   check,
+-   lintr, spelling,
+-   test coverage.
+
+download zip file, no git stuff here yet, so that it is independent
+
+## Workflow Example - Refactoring
+
+Important: Don't repeat yourself!
+
+Remember the one-off script:
+
+```{r, echo = TRUE}
+dat <- data.frame(
+    group = c(rep(1, 50), rep(2, 50)),
+    values = c(
+        rnorm(n = 50, mean = 8, sd = 12),
+        rnorm(n = 50, mean = 14, sd = 11)
+    )
+)
+```
+

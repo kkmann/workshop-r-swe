@@ -1,10 +1,550 @@
 ---
-title: "A Package Engineering Workflow"
+title: "An R Package Engineering Workflow"
+subtitle: "BBS Course: Good Software Engineering Practice with R"
 author: "Friedrich"
+affiliation: "RPACT"
+institute: "RPACT"
+date: '2023-02-10'
+date-format: long
+tags: [R, Package]
+license: 'CC BY-SA'
+email-obfuscation: javascript
 format: 
-  revealjs
-description: description. Photo CC0 by Andrea Piacquadio on pexels.com.
+  revealjs:
+    theme: [default, custom.scss]
+    fontsize: 34px
+    toc: false
+    slide-number: true
+    progress: true
+    code-line-numbers: true
+    mouse-wheel: false
+    link-external-newwindow: true
+    footer: 'Good Software Engineering Practice with R - [Home](../index.html "GSWEP4R Workshop") | [Slides](listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
+description: "Workflow for creating R packages + practical<br/>[Photo CC0 by Andrea Piacquadio on pexels.com]{.copyright}"
 image: thumbnails/workflow.jpg
+lang: en
+editor: 
+  markdown: 
+    wrap: 80
 ---
 
-scripts / function / design docs / packaging, orga
+# [{{< fa face-grin-stars >}}]{.yellow} Motivation
+
+```{=html}
+<!-- 
+- One-off scripts, prototype functions
+- R generic functions
+- Design docs
+- Packaging
+- Professional workflow
+-->
+```
+::: {.callout-note appearance="simple"}
+## From an idea to a production-grade R package
+:::
+
+Example szenario: in your daily work, you notice that you need certain one-off
+scripts again and again.
+
+. . .
+
+[{{< fa lightbulb size=2x >}}]{.blue} The idea of creating an R package was born
+because you understood that "copy and paste" R scripts is inefficient and on top
+of that, you want to share your helpful R functions with colleagues and the
+world...
+
+::: columns
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+[{{< fa earth-europe size=4x >}}]{.blue}
+:::
+:::
+
+# Professional Workflow
+
+![[Photo CC0 by ELEVATE on pexels.com]{.copyright}](thumbnails/workflow1.jpg){fig-align="center"}
+
+## Typical work steps
+
+::: incremental
+::: columns
+::: {.column width="50%"}
+1.  Idea
+2.  Concept creation
+3.  Validation planning
+4.  Specification\
+    (URS, FS, and SDS)
+5.  R package programming
+:::
+
+::: {.column width="50%"}
+6.  Documented verification
+7.  Completion of formal validation
+8.  R package release
+9.  Use in production
+10. Maintenance
+:::
+:::
+:::
+
+. . .
+
+::: columns
+::: {.column width="60%"}
+:::
+
+::: {.column width="40%"}
+[{{< fa face-surprise size=1x >}}]{.yellow}
+[{{< fa face-flushed size=2x >}}]{.yellow}
+[{{< fa face-sad-cry size=3x >}}]{.yellow}
+:::
+:::
+
+
+<!-- https://en.wikipedia.org/wiki/Software_verification_and_validation -->
+
+## Agile Model
+
+<!-- https://blog.devart.com/software-development-life-cycle.html -->
+
+![](resources/agile_model.jpg "Agile Model")
+
+# Workflow in Practice
+
+![[Photo CC0 by Chevanon Photography on pexels.com]{.copyright}](thumbnails/workflow2.jpg){fig-align="center"}
+
+
+## Frequently Used Workflow in Practice
+
+::: incremental
+::: columns
+::: {.column width="50%"}
+1.  Idea
+2.  R package programming
+3.  Use in production
+4.  Bug fixing
+5.  Use in production
+:::
+
+::: {.column width="50%"}
+6.  Documentation
+7.  Use in production
+8.  Develop further
+9.  Use in production
+10. ...
+:::
+:::
+:::
+
+. . .
+
+[{{< fa face-angry size=1x >}}]{.yellow} Bad practice!
+
+. . .
+
+[{{< fa face-rolling-eyes size=1x >}}]{.yellow} Why?
+
+# Why practice good engineering?
+
+<!-- https://www.researchgate.net/figure/Cost-Distribution-among-Software-Process-Activities-12_fig1_340280214 -->
+
+```{r, echo = FALSE, eval = TRUE, render = TRUE, fig.cap = "Cost distribution among software process activities", fig.subcap = "[doi:10.14569/IJACSA.2020.0110375](https://dx.doi.org/10.14569/IJACSA.2020.0110375)"}
+library("ggplot2") 
+library("dplyr")
+classes <- c("Design (12%)", "Coding (6%)", "Testing (12%)", "Maintenance (70%)")
+effortData <- data.frame(
+  id = 1:4,
+  class = classes,
+  prop = c(12, 6, 12, 70)
+)
+
+effortData$class <- factor(effortData$class, levels = classes)
+
+effortData <- effortData %>%
+  arrange(desc(class)) %>%
+  mutate(lab.ypos = cumsum(prop) - 0.5*prop) %>%
+  arrange(desc(id))
+
+mycols <- c("#0073C2FF", "#EFC000FF", "#868686FF", "#CD534CFF")
+
+ggplot(effortData, aes(x = "", y = prop, fill = class)) +
+  geom_bar(width = 1, stat = "identity", color = "white") +
+  coord_polar("y", start = -32) +
+  geom_text(aes(y = lab.ypos, label = prop), color = "white")+
+  scale_fill_manual(values = mycols) + 
+  labs(fill = "Activity") +
+  theme_void()
+```
+
+## Why practice good engineering?
+
+```{r, echo = FALSE, eval = TRUE, render = TRUE, fig.cap = "Origin of errors in system development", fig.subcap = "[Boehm, B. (1981). Software Engineering Economics. Prentice Hall.](https://dl.acm.org/doi/10.5555/539425)"}
+library("ggplot2") 
+library("dplyr")
+classes <- c("Analysis Errors (60%)", "Design and Implementation Errors (40%)")
+effortData <- data.frame(
+  id = 1:2,
+  class = classes,
+  prop = c(60, 40)
+)
+
+effortData$class <- factor(effortData$class, levels = classes)
+
+effortData <- effortData %>%
+  arrange(desc(class)) %>%
+  mutate(lab.ypos = cumsum(prop) - 0.5*prop) %>%
+  arrange(desc(id))
+
+mycols <- c("#CD534CFF", "#0073C2FF")
+
+ggplot(effortData, aes(x = "", y = prop, fill = class)) +
+  geom_bar(width = 1, stat = "identity", color = "white") +
+  coord_polar("y", start = -32) +
+  geom_text(aes(y = lab.ypos, label = prop), color = "white")+
+  scale_fill_manual(values = mycols) + 
+  labs(fill = "Activity") +
+  theme_void()
+```
+
+## Why practice good engineering?
+
+::: columns
+::: {.column width="45%"}
+-   Don't waste time on maintenance
+-   Be faster with release on CRAN
+-   Don't waste time with inefficient and buggy further development
+:::
+
+::: {.column width="55%"}
+-   Fulfill regulatory requirements[^1]
+-   Save refactoring time when the *PoC* becomes the release version
+-   You don't have to be shy any longer about inviting other developers to
+    contribute to the package on [GitHub](https://github.com/)
+:::
+:::
+
+[^1]: Regulators want to know: is the package reliable?
+
+## Why practice good engineering?
+
+Invest time in requirements analysis, software design, and architecture...
+
+. . .
+
+... but in most cases the workflow must be workable for a single developer or a
+small team.
+
+
+# Workable Workflow
+
+![[Photo CC0 by Kateryna Babaieva on pexels.com]{.copyright}](thumbnails/workflow3.jpg){fig-align="center"}
+
+# Suggestion for a Workable Workflow
+
+1.  Idea
+2.  Design docs
+3.  R package programming
+4.  Quality check (see [Ensuring Quality](04_quality.html) by
+    [Friedrich](https://www.linkedin.com/in/pahlke))
+5.  Publication (see [Publication](06_publication.html) by
+    [Daniel](https://www.linkedin.com/in/danielsabanesbove/) and
+    [Friedrich](https://www.linkedin.com/in/pahlke))
+6.  Use in production
+
+## Example - Step 1: Idea
+
+Let's assume that you used some lines of code to create simulated data in
+multiple projects:
+
+```{r, echo = TRUE}
+dat <- data.frame(
+    group = c(rep(1, 50), rep(2, 50)),
+    values = c(
+        rnorm(n = 50, mean = 8, sd = 12),
+        rnorm(n = 50, mean = 14, sd = 11)
+    )
+)
+```
+
+Idea: put the code into a package
+
+## Example - Step 2: Design docs
+
+1.  Describe the purpose and scope of the package
+2.  Analyse and describe the requirements in clear and simple terms ("prose")
+
+| Obligation level | Key word[^2] | Description    |
+|------------------|:-------------|----------------|
+| Duty             | shall        | "must have"    |
+| Desire           | should       | "nice to have" |
+| Intention        | will         | "optional"     |
+
+[^2]: [Rupp, C., & SOPHISTen, die. (2009). Requirements-Engineering und
+    -Management: Professionelle, iterative Anforderungsanalyse für die Praxis
+    (5. Ed.). Carl Hanser Verlag GmbH & Co. KG.](https://amzn.to/3DdwiBe)
+
+## Example - Step 2: Design docs
+
+**Purpose and Scope**
+
+The R package *simlatr* shall enable the creation of reproducible fake data.
+
+**Package Requirements**
+
+*simlatr* **shall** provide a function to generate normal distributed random
+data for two independent groups. The function **shall** allow flexible
+definition of sample size per group, mean per group, standard deviation per
+group. The reproducibility of the simulated data **shall** be ensured via an
+optional seed It **should** be possible to print the function result. A
+graphical presentation of the simulated data **will** also be possible.
+
+## Example - Step 2: Design docs
+
+URS: Rmd, Quarto, README, LaTeX, Word, Polarion, ...
+
+Software design specification - A picture is worth a thousand words:
+<http://draw.io>
+
+## Example - Step 3: Packaging
+
+**R package programming**
+
+1.  Create basic package project (see [R Packages](02_r_packages.html) by
+    [Daniel](https://www.linkedin.com/in/danielsabanesbove/))
+2.  C&P existing R scripts (one-off scripts, prototype functions) and refactor
+    it if necessary
+3.  Create R generic functions
+4.  Document all functions
+
+## Example - Step 3: Packaging
+
+One-off script as starting point:
+
+```{r, echo = TRUE}
+sim.data <- function(n1, n2, m1, m2, s1, s2) {
+    data.frame(
+        group = c(rep(1, n1), rep(2, n2)),
+        values = c(
+            rnorm(n = n1, mean = m1, sd = s1),
+            rnorm(n = n2, mean = m2, sd = s2)
+        )
+    )
+}
+```
+
+## Example - Step 3: Packaging
+
+Refactored script:
+
+```{r, echo = TRUE}
+getSimluatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {
+    data.frame(
+        group = c(rep(1, n1), rep(2, n2)),
+        values = c(
+            rnorm(n = n1, mean = mean1, sd = sd1),
+            rnorm(n = n2, mean = mean2, sd = sd2)
+        )
+    )
+}
+```
+
+Almost all functions, arguments, and objects should be self-explanatory due to
+their names.
+
+## Example - Step 3: Packaging
+
+Define that the result is a list[^3] which is defined as class[^4]:
+
+[^3]: It's common practice to add the function arguments to the result
+    $\rightarrow$ should be a list or class
+
+[^4]: To implement generics, the result must be a class
+
+```{r, echo = TRUE}
+getSimluatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {
+    result <- list(n1 = n1, n2 = n2, 
+         mean1 = mean1, mean2 = mean2, sd1 = sd1, sd2 = sd2)
+    result$data <- data.frame(
+        group = c(rep(1, n1), rep(2, n2)),
+        values = c(
+            rnorm(n = n1, mean = mean1, sd = sd1),
+            rnorm(n = n2, mean = mean2, sd = sd2)
+        )
+    )
+    # set the class attribute
+    result <- structure(result, class = "SimulationResult")
+    return(result)
+}
+```
+
+## Example - Step 3: Packaging
+
+The output is impractical, e.g., we need to scroll down:
+
+```{r, echo = TRUE}
+#| code-line-numbers: false
+x <- getSimluatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)
+x
+```
+
+. . .
+
+Solution: implement generic function `print`
+
+## Example - Step 3: Packaging
+
+Generic function `print`:
+
+::: panel-tabset
+## Code
+
+```{r, echo = TRUE, eval = FALSE}
+print.SimulationResult <- function(x, ...) {
+    args <- list(n1 = x$n1, n2 = x$n2, 
+        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)
+    
+    print(list(
+        args = format(args), 
+        data = dplyr::tibble(x$data)
+    ), ...)
+}
+x
+```
+
+## Roxygen
+
+```{r, echo = TRUE, eval = FALSE}
+#' @title
+#' Print Simulation Result
+#'
+#' @description
+#' Generic function to print a \code{SimulationResult} object.
+#'
+#' @param x a \code{SimulationResult} object to print.
+#' @param ... further arguments passed to or from other methods.
+#' 
+#' @examples
+#' x <- getSimluatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, 
+#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)
+#' print(x)
+#'
+#' @export
+```
+
+## Output
+
+```{r, echo = FALSE}
+print.SimulationResult <- function(x, ...) {
+    args <- list(n1 = x$n1, n2 = x$n2, 
+        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)
+    
+    print(list(
+        args = format(args), 
+        data = dplyr::tibble(x$data)
+    ), ...)
+}
+x
+```
+:::
+
+# Exercise
+
+![[Photo CC0 by Pixabay on pexels.com]{.copyright}](thumbnails/exercise.jpg){fig-align="center"}
+
+
+## Preparation
+
+1.  Download the unfinished R package `simulatr`
+2.  Extract the package zip file
+3.  Open the project with RStudio
+4.  Complete the tasks below
+
+## Tasks
+
+::: panel-tabset
+## Task 1
+
+Add assertions to improve the usability and user experience
+
+::: callout-note
+## Tip on assertions
+
+Use the package
+[checkmate](https://cran.r-project.org/package=checkmate "checkmate: Fast and Versatile Argument Checks")
+to validate input arguments.
+:::
+
+Example:
+
+```{r, echo = TRUE, eval = FALSE}
+playWithAssertions <- function(n1) {
+  checkmate::assertInt(n1, lower = 1)
+}
+playWithAssertions(-1)
+```
+
+[Error in playWithAssertions(-1) :]{.error} [Assertion on 'n1' failed: Element 1
+is not \>= 1.]{.error}
+
+## Task 2
+
+Add three additional results:
+
+1.  n total,
+2.  creation time, and
+3.  allocation ratio
+
+::: callout-note
+## Tip on creation time
+
+`Sys.time()`, `format(Sys.time(), '%B %d, %Y')`, `Sys.Date()`
+:::
+
+## Task 3
+
+Add an additional result: `t.test` result
+
+## Task 4
+
+Add an optional *alternative* argument and pass it through `t.test`:\
+
+```{r, echo = TRUE}
+#| code-line-numbers: false
+alternative = c("two.sided", "less", "greater")
+```
+
+## Task 5
+
+Implement the generic functions `print` and `plot`.
+
+::: callout-note
+## Tip on print
+
+Use the plot example function from above and extend it.
+:::
+
+::: callout-note
+## Tip on plot
+
+Use R base
+[plot](https://bookdown.org/rdpeng/exdata/the-base-plotting-system-1.html) or
+[ggplot2](https://cran.r-project.org/package=ggplot2) to create a grouped
+boxplot of the fake data.
+:::
+
+## Task 6
+
+Implement the generic functions
+
+-   `summary`,
+-   `kable`, and
+-   `cat`.
+
+## Task 7
+
+Document your functions with
+[Roxygen2](https://cran.r-project.org/package=roxygen2)
+:::
+

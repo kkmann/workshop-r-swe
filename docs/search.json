@@ -102,7 +102,7 @@
     "href": "slides/01_intro.html#what-do-we-mean-by-gswep4r",
     "title": "Introduction",
     "section": "What do we mean by GSWEP4R*?",
-    "text": "What do we mean by GSWEP4R*?\n\n\nApplying concept of GxP to SWE with R\nImprove quality of R code/packages, particularly in regulated enviroments but not limited to!\nNot a fixed term, we share our perspectives\nCollection of best practices\nDo not reinvent the wheel: learn from IT/open source space\n\n\n* Good Software Engineering Practice for R"
+    "text": "What do we mean by GSWEP4R*?\n\n\n* Good Software Engineering Practice for R\n\nApplying concept of GxP to SWE with R\nImprove quality of R code/packages, particularly in regulated enviroments but not limited to!\nNot a fixed term, we share our perspectives\nCollection of best practices\nDo not reinvent the wheel: learn from IT/open source space"
   },
   {
     "objectID": "slides/01_intro.html#why-care-about-gswep4r",
@@ -123,7 +123,7 @@
     "href": "slides/01_intro.html#the-r-package-ecosystem---huge-success",
     "title": "Introduction",
     "section": "The R package ecosystem - huge success",
-    "text": "The R package ecosystem - huge success"
+    "text": "The R package ecosystem - huge success\n\nif (!file.exists(\"resources/pkg_graph.png\")) { # primitive caching\n  library(tidyverse)\n  local({\n    r <- getOption(\"repos\")\n    r[\"CRAN\"] <- \"https://cloud.r-project.org\" \n    options(repos = r)\n  })\n  # get pkg cumulative downloads from last month\n  db <- tools::CRAN_package_db()\n  tbl_dl_ <- db %>%\n      group_by(chunk = row_number() %/% 100) %>% # chunk to comply with API limit\n      nest() %>%\n      mutate(\n          res = purrr::map2(\n              data, chunk,\n              function(data, id) {\n                  cranlogs::cran_downloads(data$Package, when = \"last-month\") %>%\n                      group_by(package) %>%\n                      summarize(count = sum(count))\n              }\n          )\n      ) %>%\n      ungroup() %>%\n      select(res) %>%\n      unnest(res) %>%\n      distinct()\n  tbl_dl <- filter(tbl_dl_, count >= 10000L, !is.na(count))\n  tbl_deps <- tools::package_dependencies(\n        tbl_dl$package,\n        which = c(\"Imports\", \"Depends\", \"LinkingTo\")\n      ) %>% \n      enframe(name = \"from\", value = \"to\") %>% \n      unnest(to)\n  grph_deps <- tidygraph::as_tbl_graph(tbl_deps) %>% \n    left_join(\n      tbl_dl_,\n      by = c(name = \"package\")\n    ) %>% \n    filter(!is.na(count)) # remove base packages\n  plt <- ggraph::ggraph(grph_deps, layout = \"linear\", circular = TRUE) +\n      ggraph::geom_edge_link(alpha = .033) + \n      ggraph::geom_node_label(\n          aes(label = if_else(count > quantile(count, 0.975, na.rm = TRUE), name, NA_character_)),\n          repel = TRUE\n      ) +\n      ggraph::theme_graph()\n  ggsave(\"resources/pkg_graph.png\", plot = plt, width = 8, height = 8/1.61, dpi = 300)\n}\nknitr::include_graphics(\"resources/pkg_graph.png\")"
   },
   {
     "objectID": "slides/01_intro.html#gxp-r",
@@ -151,6 +151,216 @@
     "href": "slides/listing.html",
     "title": "Slides",
     "section": "",
-    "text": "Introduction\n\n\n\n\n\nIntroduction of speakers, get-to-know the audience, organisation, outline of program.Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\ndescription. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nA Package Engineering Workflow\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nEnsuring Quality\n\n\n\n\n\ndescription. Photo CC0 by Pixabay on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\n…\n\n\n\n\n\n\nNo matching items"
+    "text": "Introduction\n\n\n\n\n\nIntroduction of speakers, get-to-know the audience, organisation, outline of program.Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\ndescription. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nAn R Package Engineering Workflow\n\n\nBBS Course: Good Software Engineering Practice with R\n\n\nWorkflow for creating R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nEnsuring Quality\n\n\nBBS Course: Good Software Engineering Practice with R\n\n\nPackage quality + exercisePhoto CC0 by Pixabay on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\n…\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides/01_intro.html",
+    "href": "slides/01_intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company."
+  },
+  {
+    "objectID": "slides/02_r_packages.html",
+    "href": "slides/02_r_packages.html",
+    "title": "R packages",
+    "section": "",
+    "text": "Structure\nexercise"
+  },
+  {
+    "objectID": "slides/05_collaboration.html",
+    "href": "slides/05_collaboration.html",
+    "title": "Collaboration",
+    "section": "",
+    "text": "VCS (<-> quality), github"
+  },
+  {
+    "objectID": "slides/03_workflow.html#typical-work-steps",
+    "href": "slides/03_workflow.html#typical-work-steps",
+    "title": "An R Package Engineering Workflow",
+    "section": "Typical work steps",
+    "text": "Typical work steps\n\n\n\n\nIdea\nConcept creation\nValidation planning\nSpecification\n(URS, FS, and SDS)\nR package programming\n\n\n\nDocumented verification\nCompletion of formal validation\nR package release\nUse in production\nMaintenance"
+  },
+  {
+    "objectID": "slides/03_workflow.html#agile-model",
+    "href": "slides/03_workflow.html#agile-model",
+    "title": "An R Package Engineering Workflow",
+    "section": "Agile Model",
+    "text": "Agile Model"
+  },
+  {
+    "objectID": "slides/03_workflow.html#frequently-used-workflow-in-practice",
+    "href": "slides/03_workflow.html#frequently-used-workflow-in-practice",
+    "title": "An R Package Engineering Workflow",
+    "section": "Frequently Used Workflow in Practice",
+    "text": "Frequently Used Workflow in Practice\n\n\n\n\nIdea\nR package programming\nUse in production\nBug fixing\nUse in production\n\n\n\nDocumentation\nUse in production\nDevelop further\nUse in production\n…\n\n\n\n\n\n Bad practice!\n\n\n Why?"
+  },
+  {
+    "objectID": "slides/03_workflow.html#why-practice-good-engineering-1",
+    "href": "slides/03_workflow.html#why-practice-good-engineering-1",
+    "title": "An R Package Engineering Workflow",
+    "section": "Why practice good engineering?",
+    "text": "Why practice good engineering?\n\n\nOrigin of errors in system development\n\nBoehm, B. (1981). Software Engineering Economics. Prentice Hall."
+  },
+  {
+    "objectID": "slides/03_workflow.html#why-practice-good-engineering-2",
+    "href": "slides/03_workflow.html#why-practice-good-engineering-2",
+    "title": "An R Package Engineering Workflow",
+    "section": "Why practice good engineering?",
+    "text": "Why practice good engineering?\n\n\n\nDon’t waste time on maintenance\nBe faster with release on CRAN\nDon’t waste time with inefficient and buggy further development\n\n\n\nFulfill regulatory requirements1\nSave refactoring time when the PoC becomes the release version\nYou don’t have to be shy any longer about inviting other developers to contribute to the package on GitHub\n\n\n\nRegulators want to know: is the package reliable?"
+  },
+  {
+    "objectID": "slides/03_workflow.html#why-practice-good-engineering-3",
+    "href": "slides/03_workflow.html#why-practice-good-engineering-3",
+    "title": "An R Package Engineering Workflow",
+    "section": "Why practice good engineering?",
+    "text": "Why practice good engineering?\nInvest time in requirements analysis, software design, and architecture…\n\n… but in most cases the workflow must be workable for a single developer or a small team."
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-1-idea",
+    "href": "slides/03_workflow.html#example---step-1-idea",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 1: Idea",
+    "text": "Example - Step 1: Idea\nLet’s assume that you used some lines of code to create simulated data in multiple projects:\n\ndat <- data.frame(\n    group = c(rep(1, 50), rep(2, 50)),\n    values = c(\n        rnorm(n = 50, mean = 8, sd = 12),\n        rnorm(n = 50, mean = 14, sd = 11)\n    )\n)\n\nIdea: put the code into a package"
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-2-design-docs",
+    "href": "slides/03_workflow.html#example---step-2-design-docs",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 2: Design docs",
+    "text": "Example - Step 2: Design docs\n\nDescribe the purpose and scope of the package\nAnalyse and describe the requirements in clear and simple terms (“prose”)\n\n\n\n\nObligation level\nKey word1\nDescription\n\n\n\n\nDuty\nshall\n“must have”\n\n\nDesire\nshould\n“nice to have”\n\n\nIntention\nwill\n“optional”\n\n\n\nRupp, C., & SOPHISTen, die. (2009). Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis (5. Ed.). Carl Hanser Verlag GmbH & Co. KG."
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-2-design-docs-1",
+    "href": "slides/03_workflow.html#example---step-2-design-docs-1",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 2: Design docs",
+    "text": "Example - Step 2: Design docs\nPurpose and Scope\nThe R package simlatr shall enable the creation of reproducible fake data.\nPackage Requirements\nsimlatr shall provide a function to generate normal distributed random data for two independent groups. The function shall allow flexible definition of sample size per group, mean per group, standard deviation per group. The reproducibility of the simulated data shall be ensured via an optional seed It should be possible to print the function result. A graphical presentation of the simulated data will also be possible."
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-2-design-docs-2",
+    "href": "slides/03_workflow.html#example---step-2-design-docs-2",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 2: Design docs",
+    "text": "Example - Step 2: Design docs\nURS: Rmd, Quarto, README, LaTeX, Word, Polarion, …\nSoftware design specification - A picture is worth a thousand words: http://draw.io"
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-3-packaging",
+    "href": "slides/03_workflow.html#example---step-3-packaging",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 3: Packaging",
+    "text": "Example - Step 3: Packaging\nR package programming\n\nCreate basic package project (see R Packages by Daniel)\nC&P existing R scripts (one-off scripts, prototype functions) and refactor it if necessary\nCreate R generic functions\nDocument all functions"
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-3-packaging-1",
+    "href": "slides/03_workflow.html#example---step-3-packaging-1",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 3: Packaging",
+    "text": "Example - Step 3: Packaging\nOne-off script as starting point:\n\nsim.data <- function(n1, n2, m1, m2, s1, s2) {\n    data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = m1, sd = s1),\n            rnorm(n = n2, mean = m2, sd = s2)\n        )\n    )\n}"
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-3-packaging-2",
+    "href": "slides/03_workflow.html#example---step-3-packaging-2",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 3: Packaging",
+    "text": "Example - Step 3: Packaging\nRefactored script:\n\ngetSimluatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {\n    data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = mean1, sd = sd1),\n            rnorm(n = n2, mean = mean2, sd = sd2)\n        )\n    )\n}\n\nAlmost all functions, arguments, and objects should be self-explanatory due to their names."
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-3-packaging-3",
+    "href": "slides/03_workflow.html#example---step-3-packaging-3",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 3: Packaging",
+    "text": "Example - Step 3: Packaging\nDefine that the result is a list1 which is defined as class2:\n\ngetSimluatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {\n    result <- list(n1 = n1, n2 = n2, \n         mean1 = mean1, mean2 = mean2, sd1 = sd1, sd2 = sd2)\n    result$data <- data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = mean1, sd = sd1),\n            rnorm(n = n2, mean = mean2, sd = sd2)\n        )\n    )\n    # set the class attribute\n    result <- structure(result, class = \"SimulationResult\")\n    return(result)\n}\n\nIt’s common practice to add the function arguments to the result \\(\\rightarrow\\) should be a list or classTo implement generics, the result must be a class"
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-3-packaging-4",
+    "href": "slides/03_workflow.html#example---step-3-packaging-4",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 3: Packaging",
+    "text": "Example - Step 3: Packaging\nThe output is impractical, e.g., we need to scroll down:\n\nx <- getSimluatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)\nx\n\n$n1\n[1] 50\n\n$n2\n[1] 50\n\n$mean1\n[1] 5\n\n$mean2\n[1] 7\n\n$sd1\n[1] 3\n\n$sd2\n[1] 4\n\n$data\n    group      values\n1       1  6.03547630\n2       1  4.18566481\n3       1  6.79682934\n4       1  6.38172513\n5       1  6.85190472\n6       1  4.87129570\n7       1  2.11790887\n8       1  2.09137117\n9       1  4.38782245\n10      1 -1.77950210\n11      1  6.73697920\n12      1  5.19846757\n13      1  8.22383214\n14      1  4.81767313\n15      1  4.79926508\n16      1  8.81616639\n17      1  6.76201801\n18      1  4.19938346\n19      1  5.27904858\n20      1  2.66211594\n21      1  3.37773195\n22      1  5.33218294\n23      1  5.63940466\n24      1  1.53277979\n25      1  4.85021750\n26      1  0.80878444\n27      1  4.05254780\n28      1  6.08427479\n29      1  2.18446974\n30      1 10.05339848\n31      1  4.26959186\n32      1  9.59763754\n33      1  7.92832754\n34      1  4.25735866\n35      1  5.92442736\n36      1  5.73768316\n37      1  9.20863502\n38      1  5.24350588\n39      1  0.94823468\n40      1  1.84796521\n41      1  5.16815000\n42      1  2.61394625\n43      1  2.89934031\n44      1  7.05757115\n45      1  5.58049278\n46      1  5.05964874\n47      1  2.69368397\n48      1  1.48663154\n49      1  3.96008429\n50      1  6.47578878\n51      2  6.33725862\n52      2  6.13997883\n53      2 12.81990913\n54      2  6.20199307\n55      2 11.17558832\n56      2  4.46167505\n57      2  3.55447329\n58      2  0.40521771\n59      2  8.69307079\n60      2  8.51310648\n61      2 10.67609832\n62      2  5.15942126\n63      2  8.80210459\n64      2  3.44217194\n65      2  7.05866394\n66      2 12.31840093\n67      2 11.64466233\n68      2 11.52408013\n69      2  3.60539736\n70      2  3.48546222\n71      2 10.87102387\n72      2 15.87078662\n73      2 15.11801694\n74      2 11.75960818\n75      2 -0.34400290\n76      2  3.24670714\n77      2 -0.17075980\n78      2 -0.01819815\n79      2  3.31673858\n80      2  2.31760463\n81      2  8.36720315\n82      2  5.74023086\n83      2  6.22487057\n84      2  5.98057429\n85      2  3.77147610\n86      2  7.53801356\n87      2  7.76520371\n88      2  5.50178985\n89      2 -0.17709742\n90      2 11.13150108\n91      2  8.28120533\n92      2  5.27641167\n93      2  9.94076098\n94      2  6.68584156\n95      2  8.12658211\n96      2 10.75174842\n97      2  5.94951857\n98      2  7.43595279\n99      2  3.51090741\n100     2  1.79478448\n\nattr(,\"class\")\n[1] \"SimulationResult\"\n\n\n\nSolution: implement generic function print"
+  },
+  {
+    "objectID": "slides/03_workflow.html#example---step-3-packaging-5",
+    "href": "slides/03_workflow.html#example---step-3-packaging-5",
+    "title": "An R Package Engineering Workflow",
+    "section": "Example - Step 3: Packaging",
+    "text": "Example - Step 3: Packaging\nGeneric function print:\n\nCodeRoxygenOutput\n\n\n\nprint.SimulationResult <- function(x, ...) {\n    args <- list(n1 = x$n1, n2 = x$n2, \n        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)\n    \n    print(list(\n        args = format(args), \n        data = dplyr::tibble(x$data)\n    ), ...)\n}\nx\n\n\n\n\n#' @title\n#' Print Simulation Result\n#'\n#' @description\n#' Generic function to print a \\code{SimulationResult} object.\n#'\n#' @param x a \\code{SimulationResult} object to print.\n#' @param ... further arguments passed to or from other methods.\n#' \n#' @examples\n#' x <- getSimluatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, \n#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)\n#' print(x)\n#'\n#' @export\n\n\n\n\n\n$args\n   n1    n2 mean1 mean2   sd1   sd2 \n \"50\"  \"50\"   \"5\"   \"7\"   \"3\"   \"4\" \n\n$data\n# A tibble: 100 × 2\n   group values\n   <dbl>  <dbl>\n 1     1   6.04\n 2     1   4.19\n 3     1   6.80\n 4     1   6.38\n 5     1   6.85\n 6     1   4.87\n 7     1   2.12\n 8     1   2.09\n 9     1   4.39\n10     1  -1.78\n# … with 90 more rows"
+  },
+  {
+    "objectID": "slides/03_workflow.html#preparation",
+    "href": "slides/03_workflow.html#preparation",
+    "title": "An R Package Engineering Workflow",
+    "section": "Preparation",
+    "text": "Preparation\n\nDownload the unfinished R package simulatr\nExtract the package zip file\nOpen the project with RStudio\nComplete the tasks below"
+  },
+  {
+    "objectID": "slides/03_workflow.html#tasks",
+    "href": "slides/03_workflow.html#tasks",
+    "title": "An R Package Engineering Workflow",
+    "section": "Tasks",
+    "text": "Tasks\n\nTask 1Task 2Task 3Task 4Task 5Task 6Task 7\n\n\nAdd assertions to improve the usability and user experience\n\n\n\n\n\n\nTip on assertions\n\n\nUse the package checkmate to validate input arguments.\n\n\n\nExample:\n\nplayWithAssertions <- function(n1) {\n  checkmate::assertInt(n1, lower = 1)\n}\nplayWithAssertions(-1)\n\nError in playWithAssertions(-1) : Assertion on ‘n1’ failed: Element 1 is not >= 1.\n\n\nAdd three additional results:\n\nn total,\ncreation time, and\nallocation ratio\n\n\n\n\n\n\n\nTip on creation time\n\n\nSys.time(), format(Sys.time(), '%B %d, %Y'), Sys.Date()\n\n\n\n\n\nAdd an additional result: t.test result\n\n\nAdd an optional alternative argument and pass it through t.test:\n\n\nalternative = c(\"two.sided\", \"less\", \"greater\")\n\n\n\nImplement the generic functions print and plot.\n\n\n\n\n\n\nTip on print\n\n\nUse the plot example function from above and extend it.\n\n\n\n\n\n\n\n\n\nTip on plot\n\n\nUse R base plot or ggplot2 to create a grouped boxplot of the fake data.\n\n\n\n\n\nImplement the generic functions\n\nsummary,\nkable, and\ncat.\n\n\n\nDocument your functions with Roxygen2\n\n\n\n\n\nGood Software Engineering Practice with R - Home | Slides | License"
+  },
+  {
+    "objectID": "slides/04_quality.html#verification-vs-validation",
+    "href": "slides/04_quality.html#verification-vs-validation",
+    "title": "Ensuring Quality",
+    "section": "Verification vs Validation",
+    "text": "Verification vs Validation\n\nVerification: Are we building the product right?\nValidation: Are we building the right product?\n\n\nBarry W. Boehm\n\n“Building the product right” checks that the specifications are correctly implemented by the system while “building the right product” refers back to the user’s needs. In some contexts, it is required to have written requirements for both as well as formal procedures or protocols for determining compliance. Ideally, formal methods provide a mathematical guarantee that software meets its specifications."
+  },
+  {
+    "objectID": "slides/04_quality.html#what-are-unit-tests",
+    "href": "slides/04_quality.html#what-are-unit-tests",
+    "title": "Ensuring Quality",
+    "section": "What are Unit Tests?",
+    "text": "What are Unit Tests?\n“Unit tests are automated tests that check individual units of code, such as functions or methods, for correctness. They are typically written by developers as part of the software development process, and are used to ensure that changes to the codebase do not break existing functionality. Unit tests are typically run automatically as part of a continuous integration pipeline, and can be run on a developer’s local machine before committing code changes.”\nLet’s summarize: unit tests…\n\nrecord the expected output of a function using code,\nensure that code doesn’t change unexpectedly, and\nexpresses the desired behavior in a way that a human can understand."
+  },
+  {
+    "objectID": "slides/04_quality.html#why-are-unit-tests-important",
+    "href": "slides/04_quality.html#why-are-unit-tests-important",
+    "title": "Ensuring Quality",
+    "section": "Why are unit tests important?",
+    "text": "Why are unit tests important?\n“Unit tests are important because they help to ensure that individual units of code are working correctly. By writing unit tests, developers can test small, isolated portions of their code and identify and fix bugs early on in the development process. This can save time and resources by catching issues before they become more difficult and costly to fix. Additionally, unit tests can help to prevent regressions, or bugs that are reintroduced into the codebase after they have been fixed. Overall, unit tests help to increase the reliability and maintainability of the code.”"
+  },
+  {
+    "objectID": "slides/04_quality.html#what-other-important-test-types-exist",
+    "href": "slides/04_quality.html#what-other-important-test-types-exist",
+    "title": "Ensuring Quality",
+    "section": "What other important test types exist?",
+    "text": "What other important test types exist?\n\nIntegration Testing: The ‘testthat’ package also provides integration testing. It allows you to test if different functions or scripts work together as expected.\nPerformance Testing: The ‘microbenchmark’ package allows you to compare the performance of different R expressions and functions.\nSnapshot Testing"
+  },
+  {
+    "objectID": "slides/04_quality.html#how-to-realize-testing-with-r",
+    "href": "slides/04_quality.html#how-to-realize-testing-with-r",
+    "title": "Ensuring Quality",
+    "section": "How to realize testing with R?",
+    "text": "How to realize testing with R?\n\ntestthat: popular testing framework for R that is easy to learn and use"
+  },
+  {
+    "objectID": "slides/04_quality.html#how-to-check-the-package-quality",
+    "href": "slides/04_quality.html#how-to-check-the-package-quality",
+    "title": "Ensuring Quality",
+    "section": "How to check the package quality?",
+    "text": "How to check the package quality?\n\npkgbuild: Tools Needed to Build R Packages\nrcmdcheck: Run R CMD check from ‘R’ and Capture Results\ndevtools: Tools to Make Developing R Packages Easier, e.g., check() automatically builds and checks a source package, using all known best practices."
+  },
+  {
+    "objectID": "slides/04_quality.html#why-is-code-style-important",
+    "href": "slides/04_quality.html#why-is-code-style-important",
+    "title": "Ensuring Quality",
+    "section": "Why is Code Style important?",
+    "text": "Why is Code Style important?\n“Code style is important because it helps make the code more readable, maintainable, and consistent. It can also make it easier for others to understand and contribute to the codebase. Additionally, adhering to a consistent code style can reduce the number of errors and make debugging simpler.”\nLet’s summarize:"
+  },
+  {
+    "objectID": "slides/04_quality.html#how-to-optimize-the-code-styling",
+    "href": "slides/04_quality.html#how-to-optimize-the-code-styling",
+    "title": "Ensuring Quality",
+    "section": "How to optimize the code styling?",
+    "text": "How to optimize the code styling?\n\ntypes, type safety,\nlintr/styler packages,\nspelling,\netc."
+  },
+  {
+    "objectID": "slides/04_quality.html#workflow-example---refactoring",
+    "href": "slides/04_quality.html#workflow-example---refactoring",
+    "title": "Ensuring Quality",
+    "section": "Workflow Example - Refactoring",
+    "text": "Workflow Example - Refactoring\nImportant: Don’t repeat yourself!\nRemember the one-off script:\n\ndat <- data.frame(\n    group = c(rep(1, 50), rep(2, 50)),\n    values = c(\n        rnorm(n = 50, mean = 8, sd = 12),\n        rnorm(n = 50, mean = 14, sd = 11)\n    )\n)\n\n\n\nGood Software Engineering Practice with R - Home | Slides | License"
   }
 ]
