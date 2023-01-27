@@ -494,6 +494,36 @@ Daniel, Friedrich
 </ul></li>
 <li>Also allows bugs to be filed and to have the GitHub issues page in the package description</li>
 </ul>
+</section>
+<section id="versioning" class="slide level2">
+<h2>Versioning</h2>
+<ul>
+<li>The <code>Version</code> field gives the version of the package</li>
+<li>Syntax: At least two, usually three, integers separate by <code>.</code> or <code>-</code>
+<ul>
+<li>Canonical form is: <code>x.y-z</code>, but that is equivalent to <code>x.y.z</code></li>
+</ul></li>
+<li>Useful conventions of “semantic versioning”:
+<ul>
+<li><code>x</code> is major: Increment this for breaking changes</li>
+<li><code>y</code> is minor: Increment this for backwards-compatible new features</li>
+<li><code>z</code> is patch: Increment this for bug fixes only</li>
+<li><code>x.y.z.9000</code> and count up during development before the next release.</li>
+<li><code>usethis::use_version()</code> can help with this</li>
+</ul></li>
+<li>Keep in mind to update the <code>NEWS</code> file for any user-visible change</li>
+</ul>
+</section></section>
+<section>
+<section id="github" class="title-slide slide level1 center">
+<h1>GitHub</h1>
+
+</section>
+<section id="tags" class="slide level2">
+<h2>Tags</h2>
+</section>
+<section id="releases" class="slide level2">
+<h2>Releases</h2>
 </section></section>
 <section id="references" class="title-slide slide level1 center">
 <h1>References</h1>

@@ -83,6 +83,27 @@ reference:
   - What is the appropriate copyright holder? 
 - Also allows bugs to be filed and to have
   the GitHub issues page in the package description
+  
+## Versioning
+
+- The `Version` field gives the version of the package
+- Syntax: At least two, usually three, integers separate by `.` or `-`
+  - Canonical form is: `x.y-z`, but that is equivalent to `x.y.z`
+- Useful conventions of "semantic versioning": 
+  - `x` is major: Increment this for breaking changes
+  - `y` is minor: Increment this for backwards-compatible new features
+  - `z` is patch: Increment this for bug fixes only
+  - `x.y.z.9000` and count up during development before the next release.
+  - `usethis::use_version()` can help with this
+- Keep in mind to update the `NEWS` file for any user-visible change
+
+# GitHub
+
+## Tags
+
+
+
+## Releases
 
 # References
 
