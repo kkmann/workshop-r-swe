@@ -82,7 +82,7 @@ flowchart LR
 :::
 
 ::: {.column width="70%"}
--   Developed by Linux Torvalds
+-   Developed by Linus Torvalds
 -   ...
 :::
 :::
