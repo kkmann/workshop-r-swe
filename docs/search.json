@@ -207,13 +207,41 @@
     "href": "slides/06_publication.html#tags",
     "title": "Publication",
     "section": "Tags",
-    "text": "Tags"
+    "text": "Tags\n\nTags are a feature of Git, i.e. not specific to GitHub\nGit can tag specific points in the code history as being important\nTypically, for each release you create a tag in the format vx.y.z\nThe value here is that users can later check out the package in the state of this release version\n\nDownload in R: remotes::install_github(\"org/package\", ref = \"vx.y.z\")\nComparison of versions are also possible, etc."
   },
   {
     "objectID": "slides/06_publication.html#releases",
     "href": "slides/06_publication.html#releases",
     "title": "Publication",
     "section": "Releases",
-    "text": "Releases"
+    "text": "Releases\n\nBased on Git tags, and a feature of GitHub\nAre “deployable software packages to make them available for a wider audience to download and use”\nContain release notes and links to the binary package files for download\n\nHowever, for R packages these tar.gz package files are rarely used directly"
+  },
+  {
+    "objectID": "slides/06_publication.html#cran-the-comprehensive-r-archive-network",
+    "href": "slides/06_publication.html#cran-the-comprehensive-r-archive-network",
+    "title": "Publication",
+    "section": "CRAN (The Comprehensive R Archive Network)",
+    "text": "CRAN (The Comprehensive R Archive Network)\n\nCRAN is the central repository for R packages\nIt has additional requirements beyond the standard package ones, which are described in the Repository Policy\nSubmitting a package indicates agreement with the policy\nIn particular: “The time of the volunteers is CRAN’s most precious resource, and they reserve the right to remove or modify packages on CRAN without notice or explanation (although notification will usually be given).”"
+  },
+  {
+    "objectID": "slides/06_publication.html#cran-contd",
+    "href": "slides/06_publication.html#cran-contd",
+    "title": "Publication",
+    "section": "CRAN (cont’d)",
+    "text": "CRAN (cont’d)\n\nOnly source packages can be submitted, no binary executables are allowed\n\nBut .rda data files are allowed\n\nNeed single designated maintainer (a person, not a mailing list)\n\nAdditional Contact field could be used\n\nCitations should be in the author-year style, followed by a <doi:...>\nReducing run time of tests, checks, examples, vignettes is important\nNeed to provide cross-platform portable code: CRAN runs checks on Windows, Mac, Linux OS"
+  },
+  {
+    "objectID": "slides/06_publication.html#r-hub-to-the-rescue",
+    "href": "slides/06_publication.html#r-hub-to-the-rescue",
+    "title": "Publication",
+    "section": "R-Hub to the Rescue",
+    "text": "R-Hub to the Rescue\n\n\n\n\n\nFree R CMD check runs on different operating systems before submitting to CRAN\nSupported by the R consortium\nTypically used via the website\nThere is also an R API: rhub::check_for_cran() is comfortable"
+  },
+  {
+    "objectID": "slides/06_publication.html#tags-example",
+    "href": "slides/06_publication.html#tags-example",
+    "title": "Publication",
+    "section": "Tags: Example",
+    "text": "Tags: Example"
   }
 ]

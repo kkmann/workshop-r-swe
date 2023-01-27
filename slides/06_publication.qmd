@@ -97,17 +97,75 @@ reference:
   - `usethis::use_version()` can help with this
 - Keep in mind to update the `NEWS` file for any user-visible change
 
+# Checks before Release
+
+## CRAN (The Comprehensive R Archive Network)
+
+- CRAN is the central repository for R packages
+- It has additional requirements beyond the standard package ones, which are 
+  described in the Repository Policy
+- Submitting a package indicates agreement with the policy
+- In particular: "The time of the volunteers is CRAN’s most precious resource, and they reserve the right to remove or modify packages on CRAN without notice or explanation (although notification will usually be given)."
+
+## CRAN (cont'd)
+
+- Only source packages can be submitted, no binary executables are allowed
+  - But `.rda` data files are allowed
+- Need single designated maintainer (a person, not a mailing list)
+  - Additional `Contact` field could be used
+- Citations should be in the author-year style, followed by a `<doi:...>`
+- Reducing run time of tests, checks, examples, vignettes is important
+- Need to provide cross-platform portable code: CRAN runs checks on Windows, Mac, Linux OS
+
+## R-Hub to the Rescue
+
+::: columns
+::: {.column width="30%"}
+![](resources/r-hub.png)
+:::
+
+::: {.column width="70%"}
+- Free `R CMD check` runs on [different operating systems](https://docs.r-hub.io/#which-platform) before submitting to CRAN
+- Supported by the R consortium
+- Typically used via the [website](https://builder.r-hub.io/)
+- There is also an R API: `rhub::check_for_cran()` is comfortable
+:::
+:::
+
 # GitHub
 
 ## Tags
 
+- Tags are a feature of Git, i.e. not specific to GitHub
+- Git can tag specific points in the code history as being important
+- Typically, for each release you create a tag in the format `vx.y.z`
+- The value here is that users can later check out the package 
+  in the state of this release version
+  - Download in R: `remotes::install_github("org/package", ref = "vx.y.z")`
+  - Comparison of versions are also possible, etc.
 
+## Tags: Example
+
+![](resources/tags.png)
 
 ## Releases
+
+- Based on Git tags, and a feature of GitHub
+- Are "deployable software packages to make them available for a wider audience to download and use"
+- Contain release notes and links to the binary package files for download
+  - However, for R packages these `tar.gz` package files are rarely used directly
+
+## Releases: Example
+
+![](resources/releases.png)
 
 # References
 
 - [Licensing chapter](https://r-pkgs.org/license.html)
+- [All possible licenses for CRAN packages](https://svn.r-project.org/R/trunk/share/licenses/license.db)
+- [GitHub releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
+- [CRAN Repository Policy](https://cran.r-project.org/web/packages/policies.html)
+- [R-hub builder](https://builder.r-hub.io/)
 
 # Exercise
 

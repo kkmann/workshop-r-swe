@@ -515,20 +515,94 @@ Daniel, Friedrich
 </ul>
 </section></section>
 <section>
+<section id="checks-before-release" class="title-slide slide level1 center">
+<h1>Checks before Release</h1>
+
+</section>
+<section id="cran-the-comprehensive-r-archive-network" class="slide level2">
+<h2>CRAN (The Comprehensive R Archive Network)</h2>
+<ul>
+<li>CRAN is the central repository for R packages</li>
+<li>It has additional requirements beyond the standard package ones, which are described in the Repository Policy</li>
+<li>Submitting a package indicates agreement with the policy</li>
+<li>In particular: “The time of the volunteers is CRAN’s most precious resource, and they reserve the right to remove or modify packages on CRAN without notice or explanation (although notification will usually be given).”</li>
+</ul>
+</section>
+<section id="cran-contd" class="slide level2">
+<h2>CRAN (cont’d)</h2>
+<ul>
+<li>Only source packages can be submitted, no binary executables are allowed
+<ul>
+<li>But <code>.rda</code> data files are allowed</li>
+</ul></li>
+<li>Need single designated maintainer (a person, not a mailing list)
+<ul>
+<li>Additional <code>Contact</code> field could be used</li>
+</ul></li>
+<li>Citations should be in the author-year style, followed by a <code>&lt;doi:...&gt;</code></li>
+<li>Reducing run time of tests, checks, examples, vignettes is important</li>
+<li>Need to provide cross-platform portable code: CRAN runs checks on Windows, Mac, Linux OS</li>
+</ul>
+</section>
+<section id="r-hub-to-the-rescue" class="slide level2">
+<h2>R-Hub to the Rescue</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="resources/r-hub.png"></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li>Free <code>R CMD check</code> runs on <a href="https://docs.r-hub.io/#which-platform">different operating systems</a> before submitting to CRAN</li>
+<li>Supported by the R consortium</li>
+<li>Typically used via the <a href="https://builder.r-hub.io/">website</a></li>
+<li>There is also an R API: <code>rhub::check_for_cran()</code> is comfortable</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
 <section id="github" class="title-slide slide level1 center">
 <h1>GitHub</h1>
 
 </section>
 <section id="tags" class="slide level2">
 <h2>Tags</h2>
+<ul>
+<li>Tags are a feature of Git, i.e.&nbsp;not specific to GitHub</li>
+<li>Git can tag specific points in the code history as being important</li>
+<li>Typically, for each release you create a tag in the format <code>vx.y.z</code></li>
+<li>The value here is that users can later check out the package in the state of this release version
+<ul>
+<li>Download in R: <code>remotes::install_github("org/package", ref = "vx.y.z")</code></li>
+<li>Comparison of versions are also possible, etc.</li>
+</ul></li>
+</ul>
 </section>
+<section id="tags-example" class="slide level2">
+<h2>Tags: Example</h2>
+
+<img data-src="resources/tags.png" class="r-stretch"></section>
 <section id="releases" class="slide level2">
 <h2>Releases</h2>
+<ul>
+<li>Based on Git tags, and a feature of GitHub</li>
+<li>Are “deployable software packages to make them available for a wider audience to download and use”</li>
+<li>Contain release notes and links to the binary package files for download
+<ul>
+<li>However, for R packages these <code>tar.gz</code> package files are rarely used directly</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2" data-background-iframe="https://github.com/openpharma/mmrm/releases" data-background-interactive="false">
+<h2></h2>
 </section></section>
 <section id="references" class="title-slide slide level1 center">
 <h1>References</h1>
 <ul>
 <li><a href="https://r-pkgs.org/license.html">Licensing chapter</a></li>
+<li><a href="https://svn.r-project.org/R/trunk/share/licenses/license.db">All possible licenses for CRAN packages</a></li>
+<li><a href="https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases">GitHub releases</a></li>
+<li><a href="https://cran.r-project.org/web/packages/policies.html">CRAN Repository Policy</a></li>
+<li><a href="https://builder.r-hub.io/">R-hub builder</a></li>
 </ul>
 </section>
 
