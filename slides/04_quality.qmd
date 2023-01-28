@@ -30,6 +30,8 @@ editor:
 
 # Quality Workflow
 
+Quality assurance...
+
 1.  Write unit tests
 2.  Write integration tests
 3.  What other important test types exist?
@@ -46,56 +48,69 @@ pexels.com]{.copyright}](thumbnails/testing.jpg){fig-align="center"}
 
 ## Verification vs Validation
 
--   Verification: Are we building the product right?
--   Validation: Are we building the right product?
+::: columns
+::: {.column width="50%"}
+**Verification**:\
+Are we building the product right?
 
-::: author
-Barry W. Boehm
+-   The product meets a set of specified requirements
+-   Activities: reviews, inspections, and testing
+-   Goal: ensure that the product has been designed and implemented correctly
 :::
 
-"Building the product right" checks that the specifications are correctly
-implemented by the system while "building the right product" refers back to the
-user's needs. In some contexts, it is required to have written requirements for
-both as well as formal procedures or protocols for determining compliance.
-Ideally, formal methods provide a mathematical guarantee that software meets its
-specifications.
+::: {.column width="50%"}
+**Validation**:\
+Are we building the right product?
 
+-   Evaluate the product during or at the end of the development process
+-   Show that the product meet the specified requirements
+-   Goal: confirm that the product is fit for its intended purpose\
+    $\rightarrow$ Refers back to the user's needs
+:::
+:::
 
 ## What are Unit Tests?
 
-"Unit tests are automated tests that check individual units of
-code, such as functions or methods, for correctness. They are typically
-written by developers as part of the software development process, and
-are used to ensure that changes to the codebase do not break existing
-functionality. Unit tests are typically run automatically as part of a
-continuous integration pipeline, and can be run on a developer's local
-machine before committing code changes."
-
-Let's summarize: unit tests...
-
--   record the expected output of a function using code,
--   ensure that code doesn't change unexpectedly, and
--   expresses the desired behavior in a way that a human can understand.
+-   Automated tests
+-   Record the expected output of a function using code
+-   Check individual units of code (functions or methods) for correctness
+-   Typically written by developers as part of the software development process
+-   Typically run automatically as part of a CI/CD pipeline
+-   Can be run before committing code changes
 
 ## Why are unit tests important?
 
-"Unit tests are important because they help to ensure that
-individual units of code are working correctly. By writing unit tests,
-developers can test small, isolated portions of their code and identify
-and fix bugs early on in the development process. This can save time and
-resources by catching issues before they become more difficult and
-costly to fix. Additionally, unit tests can help to prevent regressions,
-or bugs that are reintroduced into the codebase after they have been
-fixed. Overall, unit tests help to increase the reliability and
-maintainability of the code."
+-   Help to ensure that individual units of code are working correctly
+-   Ensure that changes to the codebase do not break existing functionality
+-   Express the desired behavior in a way that a human can understand
+-   Help to identify and fix bugs early on in the development process
+-   Save time and resources by catching issues before they become more
+    difficult and costly to fix
+-   Help to prevent regressions, or bugs that are reintroduced
+    into the codebase after they have been fixed
+
+::: info-block
+
+::: columns
+::: {.column width="20%"}
+[{{< fa circle-info size=3x >}}]{.yellow}
+:::
+
+::: {.column width="80%"}
+Unit tests help to increase the reliability and maintainability of the code
+:::
+:::
+
+:::
+
 
 ## What other important test types exist?
 
--   Integration Testing: The 'testthat' package also provides
-    integration testing. It allows you to test if different functions or
-    scripts work together as expected.
--   Performance Testing: The 'microbenchmark' package allows you to
-    compare the performance of different R expressions and functions.
+-   Integration Testing: The 'testthat' package also provides integration
+    testing. It allows you to test if different functions or scripts work
+    together as expected.
+-   Performance Testing: The 'microbenchmark' package allows you to compare the
+    performance of different R expressions and functions.
 -   Snapshot Testing
 
 # Testing in Practice
@@ -105,21 +120,19 @@ pexels.com]{.copyright}](thumbnails/coding_markus-spiske.jpg){fig-align="center"
 
 ## How to realize testing with R?
 
--   [testthat](https://cran.r-project.org/package=testthat): popular
-    testing framework for R that is easy to learn and use
+-   [testthat](https://cran.r-project.org/package=testthat): popular testing
+    framework for R that is easy to learn and use
 
 ## How to check the package quality?
 
--   [pkgbuild](https://cran.r-project.org/package=pkgbuild): Tools
-    Needed to Build R Packages
--   [rcmdcheck](https://cran.r-project.org/package=rcmdcheck): Run [R
-    CMD check](https://r-pkgs.org/R-CMD-check.html) from 'R' and Capture
-    Results
--   [devtools](https://cran.r-project.org/package=devtools): Tools to
-    Make Developing R Packages Easier, e.g.,
-    [check()](https://rdrr.io/cran/devtools/man/check.html)
-    automatically builds and checks a source package, using all known
-    best practices.
+-   [pkgbuild](https://cran.r-project.org/package=pkgbuild): Tools Needed to
+    Build R Packages
+-   [rcmdcheck](https://cran.r-project.org/package=rcmdcheck): Run [R CMD
+    check](https://r-pkgs.org/R-CMD-check.html) from 'R' and Capture Results
+-   [devtools](https://cran.r-project.org/package=devtools): Tools to Make
+    Developing R Packages Easier, e.g.,
+    [check()](https://rdrr.io/cran/devtools/man/check.html) automatically builds
+    and checks a source package, using all known best practices.
 
 # Code Style
 
@@ -128,11 +141,11 @@ pexels.com]{.copyright}](thumbnails/styling.jpg){fig-align="center"}
 
 ## Why is Code Style important?
 
-"Code style is important because it helps make the code more
-readable, maintainable, and consistent. It can also make it easier for
-others to understand and contribute to the codebase. Additionally,
-adhering to a consistent code style can reduce the number of errors and
-make debugging simpler."
+"Code style is important because it helps make the code more readable,
+maintainable, and consistent. It can also make it easier for others to
+understand and contribute to the codebase. Additionally, adhering to a
+consistent code style can reduce the number of errors and make debugging
+simpler."
 
 Let's summarize:
 
@@ -169,4 +182,3 @@ dat <- data.frame(
     )
 )
 ```
-

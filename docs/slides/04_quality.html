@@ -6,7 +6,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Friedrich">
@@ -407,6 +409,7 @@ Friedrich
 </section>
 <section id="quality-workflow" class="title-slide slide level1 center">
 <h1>Quality Workflow</h1>
+<p>Quality assurance…</p>
 <ol type="1">
 <li>Write unit tests</li>
 <li>Write integration tests</li>
@@ -424,28 +427,57 @@ refactoring, testing, code style, (return) types, spelling, documentation
 <img data-src="thumbnails/testing.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by ThisIsEngineering on pexels.com</span></p></section>
 <section id="verification-vs-validation" class="slide level2">
 <h2>Verification vs Validation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Verification</strong>:<br>
+Are we building the product right?</p>
 <ul>
-<li>Verification: Are we building the product right?</li>
-<li>Validation: Are we building the right product?</li>
+<li>The product meets a set of specified requirements</li>
+<li>Activities: reviews, inspections, and testing</li>
+<li>Goal: ensure that the product has been designed and implemented correctly</li>
 </ul>
-<div class="author">
-<p>Barry W. Boehm</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Validation</strong>:<br>
+Are we building the right product?</p>
+<ul>
+<li>Evaluate the product during or at the end of the development process</li>
+<li>Show that the product meet the specified requirements</li>
+<li>Goal: confirm that the product is fit for its intended purpose<br>
+<span class="math inline">\(\rightarrow\)</span> Refers back to the user’s needs</li>
+</ul>
 </div>
-<p>“Building the product right” checks that the specifications are correctly implemented by the system while “building the right product” refers back to the user’s needs. In some contexts, it is required to have written requirements for both as well as formal procedures or protocols for determining compliance. Ideally, formal methods provide a mathematical guarantee that software meets its specifications.</p>
+</div>
 </section>
 <section id="what-are-unit-tests" class="slide level2">
 <h2>What are Unit Tests?</h2>
-<p>“Unit tests are automated tests that check individual units of code, such as functions or methods, for correctness. They are typically written by developers as part of the software development process, and are used to ensure that changes to the codebase do not break existing functionality. Unit tests are typically run automatically as part of a continuous integration pipeline, and can be run on a developer’s local machine before committing code changes.”</p>
-<p>Let’s summarize: unit tests…</p>
 <ul>
-<li>record the expected output of a function using code,</li>
-<li>ensure that code doesn’t change unexpectedly, and</li>
-<li>expresses the desired behavior in a way that a human can understand.</li>
+<li>Automated tests</li>
+<li>Record the expected output of a function using code</li>
+<li>Check individual units of code (functions or methods) for correctness</li>
+<li>Typically written by developers as part of the software development process</li>
+<li>Typically run automatically as part of a CI/CD pipeline</li>
+<li>Can be run before committing code changes</li>
 </ul>
 </section>
 <section id="why-are-unit-tests-important" class="slide level2">
 <h2>Why are unit tests important?</h2>
-<p>“Unit tests are important because they help to ensure that individual units of code are working correctly. By writing unit tests, developers can test small, isolated portions of their code and identify and fix bugs early on in the development process. This can save time and resources by catching issues before they become more difficult and costly to fix. Additionally, unit tests can help to prevent regressions, or bugs that are reintroduced into the codebase after they have been fixed. Overall, unit tests help to increase the reliability and maintainability of the code.”</p>
+<ul>
+<li>Help to ensure that individual units of code are working correctly</li>
+<li>Ensure that changes to the codebase do not break existing functionality</li>
+<li>Express the desired behavior in a way that a human can understand</li>
+<li>Help to identify and fix bugs early on in the development process</li>
+<li>Save time and resources by catching issues before they become more difficult and costly to fix</li>
+<li>Help to prevent regressions, or bugs that are reintroduced into the codebase after they have been fixed</li>
+</ul>
+<div class="info-block">
+<div class="columns">
+<div class="column" style="width:20%;">
+<p><span class="yellow"><i class="fa-solid fa-circle-info fa-3x" aria-label="circle-info"></i></span></p>
+</div><div class="column" style="width:80%;">
+<p>Unit tests help to increase the reliability and maintainability of the code</p>
+</div>
+</div>
+</div>
 </section>
 <section id="what-other-important-test-types-exist" class="slide level2">
 <h2>What other important test types exist?</h2>

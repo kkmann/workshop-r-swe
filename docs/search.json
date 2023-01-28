@@ -305,21 +305,21 @@
     "href": "slides/04_quality.html#verification-vs-validation",
     "title": "Ensuring Quality",
     "section": "Verification vs Validation",
-    "text": "Verification vs Validation\n\nVerification: Are we building the product right?\nValidation: Are we building the right product?\n\n\nBarry W. Boehm\n\n“Building the product right” checks that the specifications are correctly implemented by the system while “building the right product” refers back to the user’s needs. In some contexts, it is required to have written requirements for both as well as formal procedures or protocols for determining compliance. Ideally, formal methods provide a mathematical guarantee that software meets its specifications."
+    "text": "Verification vs Validation\n\n\nVerification:\nAre we building the product right?\n\nThe product meets a set of specified requirements\nActivities: reviews, inspections, and testing\nGoal: ensure that the product has been designed and implemented correctly\n\n\nValidation:\nAre we building the right product?\n\nEvaluate the product during or at the end of the development process\nShow that the product meet the specified requirements\nGoal: confirm that the product is fit for its intended purpose\n\\(\\rightarrow\\) Refers back to the user’s needs"
   },
   {
     "objectID": "slides/04_quality.html#what-are-unit-tests",
     "href": "slides/04_quality.html#what-are-unit-tests",
     "title": "Ensuring Quality",
     "section": "What are Unit Tests?",
-    "text": "What are Unit Tests?\n“Unit tests are automated tests that check individual units of code, such as functions or methods, for correctness. They are typically written by developers as part of the software development process, and are used to ensure that changes to the codebase do not break existing functionality. Unit tests are typically run automatically as part of a continuous integration pipeline, and can be run on a developer’s local machine before committing code changes.”\nLet’s summarize: unit tests…\n\nrecord the expected output of a function using code,\nensure that code doesn’t change unexpectedly, and\nexpresses the desired behavior in a way that a human can understand."
+    "text": "What are Unit Tests?\n\nAutomated tests\nRecord the expected output of a function using code\nCheck individual units of code (functions or methods) for correctness\nTypically written by developers as part of the software development process\nTypically run automatically as part of a CI/CD pipeline\nCan be run before committing code changes"
   },
   {
     "objectID": "slides/04_quality.html#why-are-unit-tests-important",
     "href": "slides/04_quality.html#why-are-unit-tests-important",
     "title": "Ensuring Quality",
     "section": "Why are unit tests important?",
-    "text": "Why are unit tests important?\n“Unit tests are important because they help to ensure that individual units of code are working correctly. By writing unit tests, developers can test small, isolated portions of their code and identify and fix bugs early on in the development process. This can save time and resources by catching issues before they become more difficult and costly to fix. Additionally, unit tests can help to prevent regressions, or bugs that are reintroduced into the codebase after they have been fixed. Overall, unit tests help to increase the reliability and maintainability of the code.”"
+    "text": "Why are unit tests important?\n\nHelp to ensure that individual units of code are working correctly\nEnsure that changes to the codebase do not break existing functionality\nExpress the desired behavior in a way that a human can understand\nHelp to identify and fix bugs early on in the development process\nSave time and resources by catching issues before they become more difficult and costly to fix\nHelp to prevent regressions, or bugs that are reintroduced into the codebase after they have been fixed\n\n\n\n\n\n\nUnit tests help to increase the reliability and maintainability of the code"
   },
   {
     "objectID": "slides/04_quality.html#what-other-important-test-types-exist",

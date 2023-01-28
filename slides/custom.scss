@@ -54,3 +54,13 @@ $tabset-border-color: lighten($body-color, 30%);
   text-align: center;
 }
 
+.info-block {
+  background-color: #EEEEEE !important;
+  width: 100% !important;
+  border: solid;
+  border-width: 2px;
+  border-color: #777777;
+  padding: 10px;
+  font-weight: normal;
+}
+
