@@ -407,22 +407,61 @@ Friedrich
 
   <p class="date">February 10, 2023</p>
 </section>
-<section id="quality-workflow" class="title-slide slide level1 center">
-<h1>Quality Workflow</h1>
-<p>Quality assurance…</p>
-<ol type="1">
-<li>Write unit tests</li>
-<li>Write integration tests</li>
-<li>What other important test types exist?</li>
-</ol>
-<!--
-refactoring, testing, code style, (return) types, spelling, documentation
--->
-</section>
+<section>
+<section id="apply-clean-code-rules" class="title-slide slide level1 center">
+<h1>Apply Clean Code Rules</h1>
 
+<img data-src="thumbnails/styling.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by Pavel Danilyuk on pexels.com</span></p></section>
+<section id="why-is-clean-code-important" class="slide level2">
+<h2>Why is Clean Code important?</h2>
+<ul>
+<li><strong>Maintainability</strong>: The code is readable and understandable and has a reduced complexity, i.e., it’s easier to fix bugs</li>
+<li><strong>Extensibility</strong>: The architecture is simpler, cleaner, and more expressive, i.e., it’s easier to extend the capabilities and the risk of introducing bugs is reduced</li>
+<li><strong>Performance</strong>: The code often runs faster, uses less memory, or is easier to optimize</li>
+</ul>
+</section>
+<section id="what-are-common-clean-code-rules" class="slide level2">
+<h2>What are common clean code rules?</h2>
+<div>
+<ol type="1">
+<li class="fragment"><strong>Naming</strong>: Use descriptive and meaningful names for variables, functions, and classes.</li>
+<li class="fragment"><strong>Formatting</strong>: Adhere to consistent indentation, spacing, and bracketing to make the code easy to read.</li>
+<li class="fragment"><strong>Simplicity</strong>: Keep the code as simple and straightforward as possible, avoiding unnecessary complexity.</li>
+<li class="fragment"><strong>Single Responsibility Principle (SRP)</strong>: Each function should have a single, well-defined purpose.</li>
+<li class="fragment"><strong>Don’t Repeat Yourself (DRY)</strong>: Avoid duplication of code, either by reusing existing code or creating functions.</li>
+</ol>
+</div>
+</section>
+<section id="what-are-common-clean-code-rules-1" class="slide level2">
+<h2>What are common clean code rules?</h2>
+<div>
+<ol start="6" type="1">
+<li class="fragment"><strong>Comments</strong>: Use comments to explain the purpose of code blocks and to clarify complex logic.</li>
+<li class="fragment"><strong>Error Handling</strong>: Include error handling code to gracefully handle exceptions and unexpected situations.</li>
+<li class="fragment"><strong>Test-Driven Development (TDD)</strong>: Write tests for your code to ensure it behaves as expected and to catch bugs early.</li>
+<li class="fragment"><strong>Refactoring</strong>: Regularly refactor your code to keep it clean, readable, and maintainable.</li>
+<li class="fragment"><strong>Code Review</strong>: Have other team members review your code to catch potential issues and improve its quality.</li>
+</ol>
+</div>
+</section>
+<section id="how-to-apply-clean-code-rules" class="slide level2">
+<h2>How to apply clean code rules?</h2>
+<p>Recommended quality workflow for R packages:</p>
+<ul>
+<li>Strictly follow the naming policy (#1)</li>
+<li>Continuously write tests and optimize the code coverage with help of tools (#7, #8)</li>
+<li>Optimize the code style and check spelling (#2)</li>
+<li>Document the package and functions (#6)</li>
+<li>Regularly refactor your code (#3, #4, #5, #7, #9)</li>
+<li>Publish your code on <a href="https://github.com">GitHub</a> and invite colleagues to contribute (#10)</li>
+</ul>
+</section></section>
 <section>
 <section id="package-testing" class="title-slide slide level1 center">
 <h1>Package Testing</h1>
+<div class="clean-code-rule">
+<p>CCR#8: TDD</p>
+</div>
 
 <img data-src="thumbnails/testing.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by ThisIsEngineering on pexels.com</span></p></section>
 <section id="verification-vs-validation" class="slide level2">
@@ -461,13 +500,15 @@ Are we building the right product?</p>
 </section>
 <section id="why-are-unit-tests-important" class="slide level2">
 <h2>Why are unit tests important?</h2>
+<div class="clean-code-rule">
+<p>CCR#8: TDD</p>
+</div>
 <ul>
 <li>Help to ensure that individual units of code are working correctly</li>
 <li>Ensure that changes to the codebase do not break existing functionality</li>
 <li>Express the desired behavior in a way that a human can understand</li>
 <li>Help to identify and fix bugs early on in the development process</li>
 <li>Save time and resources by catching issues before they become more difficult and costly to fix</li>
-<li>Help to prevent regressions, or bugs that are reintroduced into the codebase after they have been fixed</li>
 </ul>
 <div class="info-block">
 <div class="columns">
@@ -482,52 +523,171 @@ Are we building the right product?</p>
 <section id="what-other-important-test-types-exist" class="slide level2">
 <h2>What other important test types exist?</h2>
 <ul>
-<li>Integration Testing: The ‘testthat’ package also provides integration testing. It allows you to test if different functions or scripts work together as expected.</li>
-<li>Performance Testing: The ‘microbenchmark’ package allows you to compare the performance of different R expressions and functions.</li>
-<li>Snapshot Testing</li>
+<li><strong>Integration Testing</strong>: Test if different functions or scripts work together as expected</li>
+<li><strong>Performance Testing</strong>: Analyze the performance of the implemented functions and check whether they meet the requirements (UR/UX)</li>
+<li><strong>Snapshot Testing</strong>: Record the results in a separate human-readable file and compare it to the output during the test; useful for large/complex outputs and binary formats like plots</li>
 </ul>
 </section></section>
 <section>
 <section id="testing-in-practice" class="title-slide slide level1 center">
 <h1>Testing in Practice</h1>
 
-<img data-src="thumbnails/coding_markus-spiske.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by markus spiske on pexels.com</span></p></section>
+<img data-src="thumbnails/coding_cottonbro-studio.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by cottonbro studio on pexels.com</span></p></section>
 <section id="how-to-realize-testing-with-r" class="slide level2">
 <h2>How to realize testing with R?</h2>
+<p>R package <a href="https://cran.r-project.org/package=testthat">testthat</a></p>
 <ul>
-<li><a href="https://cran.r-project.org/package=testthat">testthat</a>: popular testing framework for R that is easy to learn and use</li>
+<li>Popular testing framework for R that is easy to learn and use</li>
+<li>Unit testing, integration testing, and <a href="https://cran.r-project.org/web/packages/testthat/vignettes/snapshotting.html">snapshot testing</a> supported</li>
+<li>Also performance testing, e.g., with help of <a href="https://cran.r-project.org/package=microbenchmark">microbenchmark</a> package</li>
 </ul>
 </section>
 <section id="how-to-check-the-package-quality" class="slide level2">
 <h2>How to check the package quality?</h2>
 <ul>
-<li><a href="https://cran.r-project.org/package=pkgbuild">pkgbuild</a>: Tools Needed to Build R Packages</li>
-<li><a href="https://cran.r-project.org/package=rcmdcheck">rcmdcheck</a>: Run <a href="https://r-pkgs.org/R-CMD-check.html">R CMD check</a> from ‘R’ and Capture Results</li>
-<li><a href="https://cran.r-project.org/package=devtools">devtools</a>: Tools to Make Developing R Packages Easier, e.g., <a href="https://rdrr.io/cran/devtools/man/check.html">check()</a> automatically builds and checks a source package, using all known best practices.</li>
+<li><a href="https://cran.r-project.org/package=pkgbuild">pkgbuild</a>: Tools needed to build R packages</li>
+<li><a href="https://cran.r-project.org/package=rcmdcheck">rcmdcheck</a>: Run <a href="https://r-pkgs.org/R-CMD-check.html">R CMD check</a> from R and capture results</li>
+<li><a href="https://cran.r-project.org/package=devtools">devtools</a>: Tools to make developing R packages easier, e.g., <a href="https://rdrr.io/cran/devtools/man/check.html">check()</a> automatically builds and checks a source package, using all known best practices</li>
 </ul>
-</section></section>
+</section>
+<section id="how-to-improve-the-test-coverage" class="slide level2">
+<h2>How to improve the test coverage?</h2>
+<p><a href="https://cran.r-project.org/package=covr">covr</a>: Track and report code coverage for your package</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(covr)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>x <span class="ot">&lt;-</span> <span class="fu">package_coverage</span>()</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">report</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><img data-src="resources/covr_full.png"></p>
+</div>
+</section>
+<section id="example-on-test-coverage" class="slide level2">
+<h2>Example on test coverage</h2>
+<p>Let’s assume we have added a generic function to cat a simulation result:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#' </span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#' @export</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#'</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>cat.SimulationResult <span class="ot">&lt;-</span> <span class="cf">function</span>(... , <span class="at">file =</span> <span class="st">""</span>, <span class="at">sep =</span> <span class="st">" "</span>, </span>
+<span id="cb2-5"><a href="#cb2-5"></a>        <span class="at">fill =</span> <span class="cn">FALSE</span>, <span class="at">labels =</span> <span class="cn">NULL</span>, <span class="at">append =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    args <span class="ot">&lt;-</span> <span class="fu">list</span>(...)</span>
+<span id="cb2-7"><a href="#cb2-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>But we forgot to finalize the implementation and didn’t create unit tests.</p>
+<p>Re-execution of</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">report</span>(<span class="fu">package_coverage</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>then results in…</p>
+</div>
+</section>
+<section id="example-on-test-coverage-1" class="slide level2">
+<h2>Example on test coverage</h2>
+
+<img data-src="resources/covr_example_1.png" class="r-stretch"></section>
+<section id="example-on-test-coverage-2" class="slide level2">
+<h2>Example on test coverage</h2>
+<p>We can go into the details by clicking on a file name:</p>
+
+<img data-src="resources/covr_example_2.png" class="r-stretch"></section></section>
 <section>
 <section id="code-style" class="title-slide slide level1 center">
 <h1>Code Style</h1>
+<div class="clean-code-rule">
+<p>CCR#2: Formatting</p>
+</div>
 
 <img data-src="thumbnails/styling.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by Pavel Danilyuk on pexels.com</span></p></section>
+<section id="example-of-an-r-script-with-poor-code-style" class="slide level2">
+<h2>Example of an R script with poor code style</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>a<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>b<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){x<span class="ot">&lt;-</span>a[i]<span class="sc">+</span>b[i];<span class="fu">print</span>(x)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This code has several issues with code style:</p>
+<ol type="1">
+<li>Inconsistent indentation: There’s no clear structure to the code and it’s difficult to quickly see what each line of code is doing.</li>
+<li>No white space: The code is difficult to read because there’s no white space between expressions and statements.</li>
+<li>Abbreviated variable names: The variable names a, b, and x are not descriptive and make the code less readable.</li>
+<li>Inadequate commenting: There’s no commentary explaining what the code does, making it difficult for someone else to understand or use the code.</li>
+</ol>
+</section>
 <section id="why-is-code-style-important" class="slide level2">
 <h2>Why is Code Style important?</h2>
-<p>“Code style is important because it helps make the code more readable, maintainable, and consistent. It can also make it easier for others to understand and contribute to the codebase. Additionally, adhering to a consistent code style can reduce the number of errors and make debugging simpler.”</p>
-<p>Let’s summarize:</p>
+<div class="clean-code-rule">
+<p>CCR#2: Formatting</p>
+</div>
+<ul>
+<li>Make the code more readable, maintainable, and consistent</li>
+<li>Make it easier for others to understand and contribute to the codebase</li>
+<li>Adhering to a consistent code style can reduce the number of errors and make debugging simpler</li>
+<li>“Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.” (<a href="https://style.tidyverse.org">The tidyverse style guide</a>)</li>
+</ul>
 </section>
 <section id="how-to-optimize-the-code-styling" class="slide level2">
 <h2>How to optimize the code styling?</h2>
+<p>Two popular R packages support the <a href="https://style.tidyverse.org">tidyverse style guide</a>:</p>
 <ul>
-<li>types, type safety,</li>
-<li>lintr/styler packages,</li>
-<li>spelling,</li>
-<li>etc.</li>
+<li><a href="https://styler.r-lib.org">styler</a>: interactively restyle selected text, files, or entire projects</li>
+<li><a href="https://github.com/jimhester/lintr">lintr</a>: perform automated checks to confirm that you conform to the style guide</li>
 </ul>
+<!--
+-   types, type safety,
+-   spelling,
+-->
+</section></section>
+<section>
+<section id="refactoring" class="title-slide slide level1 center">
+<h1>Refactoring</h1>
+<div class="clean-code-rule">
+<p>CCR#9: Refactoring</p>
+</div>
+
+<img data-src="thumbnails/refactoring_Fabio-Teixeira.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by Fabio Teixeira on pexels.com</span></p></section>
+<section id="how-to-do-refactoring" class="slide level2">
+<h2>How to do refactoring?</h2>
+<div class="clean-code-rule">
+<p>CCR#9: Refactoring</p>
+</div>
+<p>Check if other clean code rules are broken:</p>
+<ul>
+<li>CCR#5 (DRY): Outsource redundant code blocks to functions</li>
+<li>CCR#1 (Naming): Improve the naming of files, classes, functions, and arguments</li>
+<li>CCR#3 (Simplicity): Split large<sup>1</sup> source files into multiple files</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>General guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability</p></li></ol></aside></section>
+<section id="example-dont-repeat-yourself" class="slide level2">
+<h2>Example: Don’t repeat yourself!</h2>
+<div class="clean-code-rule">
+<p>CCR#5: DRY</p>
+</div>
+<p>Suppose you have a code block that performs the same calculation multiple times:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>result1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>result2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>result3 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">7</span> <span class="sc">+</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Create a function to encapsulate this calculation and reuse it multiple times:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>calculate <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>}</span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a>result1 <span class="ot">&lt;-</span> <span class="fu">calculate</span>(<span class="dv">3</span>)</span>
+<span id="cb6-6"><a href="#cb6-6"></a>result2 <span class="ot">&lt;-</span> <span class="fu">calculate</span>(<span class="dv">5</span>)</span>
+<span id="cb6-7"><a href="#cb6-7"></a>result3 <span class="ot">&lt;-</span> <span class="fu">calculate</span>(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section></section>
 <section>
 <section id="exercise" class="title-slide slide level1 center">
 <h1>Exercise</h1>
+
+<img data-src="thumbnails/exercise.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by Pixabay on pexels.com</span></p></section>
+<section id="preparation" class="slide level2">
+<h2>Preparation</h2>
 <ul>
 <li>Set up testing infrastructure,</li>
 <li>add unit tests,</li>
@@ -540,22 +700,22 @@ Are we building the right product?</p>
 </section>
 <section id="workflow-example---refactoring" class="slide level2">
 <h2>Workflow Example - Refactoring</h2>
-<p>Important: Don’t repeat yourself!</p>
 <p>Remember the one-off script:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-2"><a href="#cb1-2"></a>    <span class="at">group =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">50</span>)),</span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb1-4"><a href="#cb1-4"></a>        <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">12</span>),</span>
-<span id="cb1-5"><a href="#cb1-5"></a>        <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">14</span>, <span class="at">sd =</span> <span class="dv">11</span>)</span>
-<span id="cb1-6"><a href="#cb1-6"></a>    )</span>
-<span id="cb1-7"><a href="#cb1-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="at">group =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">50</span>)),</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb7-4"><a href="#cb7-4"></a>        <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">12</span>),</span>
+<span id="cb7-5"><a href="#cb7-5"></a>        <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">14</span>, <span class="at">sd =</span> <span class="dv">11</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    )</span>
+<span id="cb7-7"><a href="#cb7-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="footer footer-default">
 <p>Good Software Engineering Practice with R - <a href="../index.html" title="GSWEP4R Workshop">Home</a> | <a href="listing.html" title="Overview of all slides">Slides</a> | <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="License: CC BY-SA 4.0">License</a></p>
 </div>
 </section></section>
+
     </div>
   </div>
 

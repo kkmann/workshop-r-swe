@@ -28,20 +28,69 @@ editor:
     wrap: 80
 ---
 
-# Quality Workflow
+# Apply Clean Code Rules
 
-Quality assurance...
+![[Photo CC0 by Pavel Danilyuk on
+pexels.com]{.copyright}](thumbnails/styling.jpg){fig-align="center"}
 
-1.  Write unit tests
-2.  Write integration tests
-3.  What other important test types exist?
+## Why is Clean Code important?
 
-```{=html}
-<!--
-refactoring, testing, code style, (return) types, spelling, documentation
--->
-```
+-   **Maintainability**: The code is readable and understandable and has a
+    reduced complexity, i.e., it's easier to fix bugs
+-   **Extensibility**: The architecture is simpler, cleaner, and more
+    expressive, i.e., it's easier to extend the capabilities and the risk of
+    introducing bugs is reduced
+-   **Performance**: The code often runs faster, uses less memory, or is easier
+    to optimize
+
+## What are common clean code rules?
+
+::: incremental
+1.  **Naming**: Use descriptive and meaningful names for variables, functions,
+    and classes.
+2.  **Formatting**: Adhere to consistent indentation, spacing, and bracketing to
+    make the code easy to read.
+3.  **Simplicity**: Keep the code as simple and straightforward as possible,
+    avoiding unnecessary complexity.
+4.  **Single Responsibility Principle (SRP)**: Each function should have a
+    single, well-defined purpose.
+5.  **Don't Repeat Yourself (DRY)**: Avoid duplication of code, either by
+    reusing existing code or creating functions.
+:::
+
+## What are common clean code rules?
+
+::: incremental
+6.  **Comments**: Use comments to explain the purpose of code blocks and to
+    clarify complex logic.
+7.  **Error Handling**: Include error handling code to gracefully handle
+    exceptions and unexpected situations.
+8.  **Test-Driven Development (TDD)**: Write tests for your code to ensure it
+    behaves as expected and to catch bugs early.
+9.  **Refactoring**: Regularly refactor your code to keep it clean, readable,
+    and maintainable.
+10. **Code Review**: Have other team members review your code to catch potential
+    issues and improve its quality.
+:::
+
+## How to apply clean code rules?
+
+Recommended quality workflow for R packages:
+
+-   Strictly follow the naming policy (#1)
+-   Continuously write tests and optimize the code coverage with help of tools
+    (#7, #8)
+-   Optimize the code style and check spelling (#2)
+-   Document the package and functions (#6)
+-   Regularly refactor your code (#3, #4, #5, #7, #9)
+-   Publish your code on [GitHub](https://github.com) and invite colleagues to
+    contribute (#10)
+
 # Package Testing
+
+::: clean-code-rule
+CCR#8: TDD
+:::
 
 ![[Photo CC0 by ThisIsEngineering on
 pexels.com]{.copyright}](thumbnails/testing.jpg){fig-align="center"}
@@ -80,17 +129,18 @@ Are we building the right product?
 
 ## Why are unit tests important?
 
+::: clean-code-rule
+CCR#8: TDD
+:::
+
 -   Help to ensure that individual units of code are working correctly
 -   Ensure that changes to the codebase do not break existing functionality
 -   Express the desired behavior in a way that a human can understand
 -   Help to identify and fix bugs early on in the development process
--   Save time and resources by catching issues before they become more
-    difficult and costly to fix
--   Help to prevent regressions, or bugs that are reintroduced
-    into the codebase after they have been fixed
+-   Save time and resources by catching issues before they become more difficult
+    and costly to fix
 
 ::: info-block
-
 ::: columns
 ::: {.column width="20%"}
 [{{< fa circle-info size=3x >}}]{.yellow}
@@ -100,63 +150,211 @@ Are we building the right product?
 Unit tests help to increase the reliability and maintainability of the code
 :::
 :::
-
 :::
-
 
 ## What other important test types exist?
 
--   Integration Testing: The 'testthat' package also provides integration
-    testing. It allows you to test if different functions or scripts work
-    together as expected.
--   Performance Testing: The 'microbenchmark' package allows you to compare the
-    performance of different R expressions and functions.
--   Snapshot Testing
+-   **Integration Testing**: Test if different functions or scripts work
+    together as expected
+-   **Performance Testing**: Analyze the performance of the implemented
+    functions and check whether they meet the requirements (UR/UX)
+-   **Snapshot Testing**: Record the results in a separate human-readable file
+    and compare it to the output during the test; useful for large/complex
+    outputs and binary formats like plots
 
 # Testing in Practice
 
-![[Photo CC0 by markus spiske on
-pexels.com]{.copyright}](thumbnails/coding_markus-spiske.jpg){fig-align="center"}
+![[Photo CC0 by cottonbro studio on
+pexels.com]{.copyright}](thumbnails/coding_cottonbro-studio.jpg){fig-align="center"}
 
 ## How to realize testing with R?
 
--   [testthat](https://cran.r-project.org/package=testthat): popular testing
-    framework for R that is easy to learn and use
+R package [testthat](https://cran.r-project.org/package=testthat)
+
+-   Popular testing framework for R that is easy to learn and use
+-   Unit testing, integration testing, and [snapshot
+    testing](https://cran.r-project.org/web/packages/testthat/vignettes/snapshotting.html)
+    supported
+-   Also performance testing, e.g., with help of
+    [microbenchmark](https://cran.r-project.org/package=microbenchmark) package
 
 ## How to check the package quality?
 
--   [pkgbuild](https://cran.r-project.org/package=pkgbuild): Tools Needed to
-    Build R Packages
+-   [pkgbuild](https://cran.r-project.org/package=pkgbuild): Tools needed to
+    build R packages
 -   [rcmdcheck](https://cran.r-project.org/package=rcmdcheck): Run [R CMD
-    check](https://r-pkgs.org/R-CMD-check.html) from 'R' and Capture Results
--   [devtools](https://cran.r-project.org/package=devtools): Tools to Make
-    Developing R Packages Easier, e.g.,
+    check](https://r-pkgs.org/R-CMD-check.html) from R and capture results
+-   [devtools](https://cran.r-project.org/package=devtools): Tools to make
+    developing R packages easier, e.g.,
     [check()](https://rdrr.io/cran/devtools/man/check.html) automatically builds
-    and checks a source package, using all known best practices.
+    and checks a source package, using all known best practices
+
+## How to improve the test coverage?
+
+[covr](https://cran.r-project.org/package=covr): Track and report code coverage
+for your package
+
+```{r, echo = TRUE, eval = FALSE}
+library(covr)
+x <- package_coverage()
+report(x)
+```
+
+. . .
+
+![](resources/covr_full.png)
+
+## Example on test coverage
+
+Let's assume we have added a generic function to cat a simulation result:
+
+```{r, echo = TRUE, eval = FALSE}
+#' 
+#' @export
+#'
+cat.SimulationResult <- function(... , file = "", sep = " ", 
+        fill = FALSE, labels = NULL, append = FALSE) {
+    args <- list(...)
+}
+```
+
+. . .
+
+But we forgot to finalize the implementation and didn't create unit tests.
+
+Re-execution of
+
+```{r, echo = TRUE, eval = FALSE}
+report(package_coverage())
+```
+then results in...
+
+## Example on test coverage
+
+![](resources/covr_example_1.png)
+
+## Example on test coverage
+
+We can go into the details by clicking on a file name:
+
+![](resources/covr_example_2.png)
+
 
 # Code Style
+
+::: clean-code-rule
+CCR#2: Formatting
+:::
 
 ![[Photo CC0 by Pavel Danilyuk on
 pexels.com]{.copyright}](thumbnails/styling.jpg){fig-align="center"}
 
+## Example of an R script with poor code style
+
+```{r, echo = TRUE, eval = FALSE}
+a<-c(1,2,3,4,5)
+b<-c(6,7,8,9,10)
+for (i in 1:5){x<-a[i]+b[i];print(x)}
+```
+
+This code has several issues with code style:
+
+1.  Inconsistent indentation: There's no clear structure to the code and it's
+    difficult to quickly see what each line of code is doing.
+2.  No white space: The code is difficult to read because there's no white space
+    between expressions and statements.
+3.  Abbreviated variable names: The variable names a, b, and x are not
+    descriptive and make the code less readable.
+4.  Inadequate commenting: There's no commentary explaining what the code does,
+    making it difficult for someone else to understand or use the code.
+
 ## Why is Code Style important?
 
-"Code style is important because it helps make the code more readable,
-maintainable, and consistent. It can also make it easier for others to
-understand and contribute to the codebase. Additionally, adhering to a
-consistent code style can reduce the number of errors and make debugging
-simpler."
+::: clean-code-rule
+CCR#2: Formatting
+:::
 
-Let's summarize:
+-   Make the code more readable, maintainable, and consistent
+-   Make it easier for others to understand and contribute to the codebase
+-   Adhering to a consistent code style can reduce the number of errors and make
+    debugging simpler
+-   "Good coding style is like correct punctuation: you can manage without it,
+    butitsuremakesthingseasiertoread." ([The tidyverse style
+    guide](https://style.tidyverse.org))
 
 ## How to optimize the code styling?
 
+Two popular R packages support the [tidyverse style
+guide](https://style.tidyverse.org):
+
+-   [styler](https://styler.r-lib.org): interactively restyle selected text,
+    files, or entire projects
+-   [lintr](https://github.com/jimhester/lintr): perform automated checks to
+    confirm that you conform to the style guide
+
+```{=html}
+<!--
 -   types, type safety,
--   lintr/styler packages,
 -   spelling,
--   etc.
+-->
+```
+# Refactoring
+
+::: clean-code-rule
+CCR#9: Refactoring
+:::
+
+![[Photo CC0 by Fabio Teixeira on
+pexels.com]{.copyright}](thumbnails/refactoring_Fabio-Teixeira.jpg){fig-align="center"}
+
+## How to do refactoring?
+
+::: clean-code-rule
+CCR#9: Refactoring
+:::
+
+Check if other clean code rules are broken:
+
+-   CCR#5 (DRY): Outsource redundant code blocks to functions
+-   CCR#1 (Naming): Improve the naming of files, classes, functions, and
+    arguments
+-   CCR#3 (Simplicity): Split large[^1] source files into multiple files
+
+[^1]: General guideline: keeping the number of lines to less than 1,000 lines
+    per file can help maintain code readability and manageability
+
+## Example: Don't repeat yourself!
+
+::: clean-code-rule
+CCR#5: DRY
+:::
+
+Suppose you have a code block that performs the same calculation multiple times:
+
+```{r, echo = TRUE}
+result1 <- 2 * 3 + 4
+result2 <- 2 * 5 + 4
+result3 <- 2 * 7 + 4
+```
+
+Create a function to encapsulate this calculation and reuse it multiple times:
+
+```{r, echo = TRUE}
+calculate <- function(x) {
+  2 * x + 4
+}
+
+result1 <- calculate(3)
+result2 <- calculate(5)
+result3 <- calculate(7)
+```
 
 # Exercise
+
+![[Photo CC0 by Pixabay on
+pexels.com]{.copyright}](thumbnails/exercise.jpg){fig-align="center"}
+
+## Preparation
 
 -   Set up testing infrastructure,
 -   add unit tests,
@@ -168,8 +366,6 @@ Let's summarize:
 download zip file, no git stuff here yet, so that it is independent
 
 ## Workflow Example - Refactoring
-
-Important: Don't repeat yourself!
 
 Remember the one-off script:
 

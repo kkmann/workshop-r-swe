@@ -319,48 +319,181 @@
     "href": "slides/04_quality.html#why-are-unit-tests-important",
     "title": "Ensuring Quality",
     "section": "Why are unit tests important?",
-    "text": "Why are unit tests important?\n\nHelp to ensure that individual units of code are working correctly\nEnsure that changes to the codebase do not break existing functionality\nExpress the desired behavior in a way that a human can understand\nHelp to identify and fix bugs early on in the development process\nSave time and resources by catching issues before they become more difficult and costly to fix\nHelp to prevent regressions, or bugs that are reintroduced into the codebase after they have been fixed\n\n\n\n\n\n\nUnit tests help to increase the reliability and maintainability of the code"
+    "text": "Why are unit tests important?\n\nCCR#8: TDD\n\n\nHelp to ensure that individual units of code are working correctly\nEnsure that changes to the codebase do not break existing functionality\nExpress the desired behavior in a way that a human can understand\nHelp to identify and fix bugs early on in the development process\nSave time and resources by catching issues before they become more difficult and costly to fix\n\n\n\n\n\n\nUnit tests help to increase the reliability and maintainability of the code"
   },
   {
     "objectID": "slides/04_quality.html#what-other-important-test-types-exist",
     "href": "slides/04_quality.html#what-other-important-test-types-exist",
     "title": "Ensuring Quality",
     "section": "What other important test types exist?",
-    "text": "What other important test types exist?\n\nIntegration Testing: The ‘testthat’ package also provides integration testing. It allows you to test if different functions or scripts work together as expected.\nPerformance Testing: The ‘microbenchmark’ package allows you to compare the performance of different R expressions and functions.\nSnapshot Testing"
+    "text": "What other important test types exist?\n\nIntegration Testing: Test if different functions or scripts work together as expected\nPerformance Testing: Analyze the performance of the implemented functions and check whether they meet the requirements (UR/UX)\nSnapshot Testing: Record the results in a separate human-readable file and compare it to the output during the test; useful for large/complex outputs and binary formats like plots"
   },
   {
     "objectID": "slides/04_quality.html#how-to-realize-testing-with-r",
     "href": "slides/04_quality.html#how-to-realize-testing-with-r",
     "title": "Ensuring Quality",
     "section": "How to realize testing with R?",
-    "text": "How to realize testing with R?\n\ntestthat: popular testing framework for R that is easy to learn and use"
+    "text": "How to realize testing with R?\nR package testthat\n\nPopular testing framework for R that is easy to learn and use\nUnit testing, integration testing, and snapshot testing supported\nAlso performance testing, e.g., with help of microbenchmark package"
   },
   {
     "objectID": "slides/04_quality.html#how-to-check-the-package-quality",
     "href": "slides/04_quality.html#how-to-check-the-package-quality",
     "title": "Ensuring Quality",
     "section": "How to check the package quality?",
-    "text": "How to check the package quality?\n\npkgbuild: Tools Needed to Build R Packages\nrcmdcheck: Run R CMD check from ‘R’ and Capture Results\ndevtools: Tools to Make Developing R Packages Easier, e.g., check() automatically builds and checks a source package, using all known best practices."
+    "text": "How to check the package quality?\n\npkgbuild: Tools needed to build R packages\nrcmdcheck: Run R CMD check from R and capture results\ndevtools: Tools to make developing R packages easier, e.g., check() automatically builds and checks a source package, using all known best practices"
   },
   {
     "objectID": "slides/04_quality.html#why-is-code-style-important",
     "href": "slides/04_quality.html#why-is-code-style-important",
     "title": "Ensuring Quality",
     "section": "Why is Code Style important?",
-    "text": "Why is Code Style important?\n“Code style is important because it helps make the code more readable, maintainable, and consistent. It can also make it easier for others to understand and contribute to the codebase. Additionally, adhering to a consistent code style can reduce the number of errors and make debugging simpler.”\nLet’s summarize:"
+    "text": "Why is Code Style important?\n\nCCR#2: Formatting\n\n\nMake the code more readable, maintainable, and consistent\nMake it easier for others to understand and contribute to the codebase\nAdhering to a consistent code style can reduce the number of errors and make debugging simpler\n“Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.” (The tidyverse style guide)"
   },
   {
     "objectID": "slides/04_quality.html#how-to-optimize-the-code-styling",
     "href": "slides/04_quality.html#how-to-optimize-the-code-styling",
     "title": "Ensuring Quality",
     "section": "How to optimize the code styling?",
-    "text": "How to optimize the code styling?\n\ntypes, type safety,\nlintr/styler packages,\nspelling,\netc."
+    "text": "How to optimize the code styling?\nTwo popular R packages support the tidyverse style guide:\n\nstyler: interactively restyle selected text, files, or entire projects\nlintr: perform automated checks to confirm that you conform to the style guide"
   },
   {
     "objectID": "slides/04_quality.html#workflow-example---refactoring",
     "href": "slides/04_quality.html#workflow-example---refactoring",
     "title": "Ensuring Quality",
     "section": "Workflow Example - Refactoring",
-    "text": "Workflow Example - Refactoring\nImportant: Don’t repeat yourself!\nRemember the one-off script:\n\ndat <- data.frame(\n    group = c(rep(1, 50), rep(2, 50)),\n    values = c(\n        rnorm(n = 50, mean = 8, sd = 12),\n        rnorm(n = 50, mean = 14, sd = 11)\n    )\n)\n\n\n\nGood Software Engineering Practice with R - Home | Slides | License"
+    "text": "Workflow Example - Refactoring\nRemember the one-off script:\n\ndat <- data.frame(\n    group = c(rep(1, 50), rep(2, 50)),\n    values = c(\n        rnorm(n = 50, mean = 8, sd = 12),\n        rnorm(n = 50, mean = 14, sd = 11)\n    )\n)\n\n\n\nGood Software Engineering Practice with R - Home | Slides | License"
+  },
+  {
+    "objectID": "slides/04_quality.html#why-is-clean-code-important",
+    "href": "slides/04_quality.html#why-is-clean-code-important",
+    "title": "Ensuring Quality",
+    "section": "Why is Clean Code important?",
+    "text": "Why is Clean Code important?\n\nMaintainability: The code is readable and understandable and has a reduced complexity, i.e., it’s easier to fix bugs\nExtensibility: The architecture is simpler, cleaner, and more expressive, i.e., it’s easier to extend the capabilities and the risk of introducing bugs is reduced\nPerformance: The code often runs faster, uses less memory, or is easier to optimize"
+  },
+  {
+    "objectID": "slides/04_quality.html#what-are-common-clean-code-rules",
+    "href": "slides/04_quality.html#what-are-common-clean-code-rules",
+    "title": "Ensuring Quality",
+    "section": "What are common clean code rules?",
+    "text": "What are common clean code rules?\n\n\nNaming: Use descriptive and meaningful names for variables, functions, and classes.\nFormatting: Adhere to consistent indentation, spacing, and bracketing to make the code easy to read.\nSimplicity: Keep the code as simple and straightforward as possible, avoiding unnecessary complexity.\nSingle Responsibility Principle (SRP): Each function should have a single, well-defined purpose.\nDon’t Repeat Yourself (DRY): Avoid duplication of code, either by reusing existing code or creating functions."
+  },
+  {
+    "objectID": "slides/04_quality.html#how-to-apply-clean-code-rules",
+    "href": "slides/04_quality.html#how-to-apply-clean-code-rules",
+    "title": "Ensuring Quality",
+    "section": "How to apply clean code rules?",
+    "text": "How to apply clean code rules?\nRecommended quality workflow for R packages:\n\nStrictly follow the naming policy (#1)\nContinuously write tests and optimize the code coverage with help of tools (#7, #8)\nOptimize the code style and check spelling (#2)\nDocument the package and functions (#6)\nRegularly refactor your code (#3, #4, #5, #7, #9)\nPublish your code on GitHub and invite colleagues to contribute (#10)"
+  },
+  {
+    "objectID": "slides/04_quality.html#example",
+    "href": "slides/04_quality.html#example",
+    "title": "Ensuring Quality",
+    "section": "Example",
+    "text": "Example\nSuppose you have a code block that performs the same calculation multiple times in your script:\n\nresult1 <- 2 * 3 + 4\nresult2 <- 2 * 5 + 4\nresult3 <- 2 * 7 + 4\n\nYou can create a function to encapsulate this calculation and reuse it multiple times:\n\ncalculate <- function(x) {\n  2 * x + 4\n}\n\nresult1 <- calculate(3)\nresult2 <- calculate(5)\nresult3 <- calculate(7)"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-dont-repeat-yourself",
+    "href": "slides/04_quality.html#example-dont-repeat-yourself",
+    "title": "Ensuring Quality",
+    "section": "Example: Don’t repeat yourself!",
+    "text": "Example: Don’t repeat yourself!\n\nCCR#5: DRY\n\nSuppose you have a code block that performs the same calculation multiple times:\n\nresult1 <- 2 * 3 + 4\nresult2 <- 2 * 5 + 4\nresult3 <- 2 * 7 + 4\n\nCreate a function to encapsulate this calculation and reuse it multiple times:\n\ncalculate <- function(x) {\n  2 * x + 4\n}\n\nresult1 <- calculate(3)\nresult2 <- calculate(5)\nresult3 <- calculate(7)"
+  },
+  {
+    "objectID": "slides/04_quality.html#what-are-common-clean-code-rules-1",
+    "href": "slides/04_quality.html#what-are-common-clean-code-rules-1",
+    "title": "Ensuring Quality",
+    "section": "What are common clean code rules?",
+    "text": "What are common clean code rules?\n\n\nComments: Use comments to explain the purpose of code blocks and to clarify complex logic.\nError Handling: Include error handling code to gracefully handle exceptions and unexpected situations.\nTest-Driven Development (TDD): Write tests for your code to ensure it behaves as expected and to catch bugs early.\nRefactoring: Regularly refactor your code to keep it clean, readable, and maintainable.\nCode Review: Have other team members review your code to catch potential issues and improve its quality."
+  },
+  {
+    "objectID": "slides/04_quality.html#apply-clean-code-rules",
+    "href": "slides/04_quality.html#apply-clean-code-rules",
+    "title": "Ensuring Quality",
+    "section": "Apply Clean Code Rules",
+    "text": "Apply Clean Code Rules\n\nPhoto CC0 by Pavel Danilyuk on pexels.com"
+  },
+  {
+    "objectID": "slides/04_quality.html#what-are-common-clean-code-rules-2",
+    "href": "slides/04_quality.html#what-are-common-clean-code-rules-2",
+    "title": "Ensuring Quality",
+    "section": "What are common clean code rules?",
+    "text": "What are common clean code rules?\n\nAvoid redundant code: Don’t repeat yourself!\nUse meaningful and understandable names for files, classes, functions, and arguments\nDon’t build too large source files, i.e., limit the maximum number of lines of code per file to 1,0001\n\nGeneral guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability"
+  },
+  {
+    "objectID": "slides/04_quality.html#how-to-apply-clean-code-rules-1",
+    "href": "slides/04_quality.html#how-to-apply-clean-code-rules-1",
+    "title": "Ensuring Quality",
+    "section": "How to apply clean code rules?",
+    "text": "How to apply clean code rules?\nIf important clean code rules are broken refactor the code:\n\nOutsource redundant code blocks to functions\nImprove the naming of files, classes, functions, and arguments\nSplit large source files into multiple files"
+  },
+  {
+    "objectID": "slides/04_quality.html#how-to-improve-the-test-coverage",
+    "href": "slides/04_quality.html#how-to-improve-the-test-coverage",
+    "title": "Ensuring Quality",
+    "section": "How to improve the test coverage?",
+    "text": "How to improve the test coverage?\ncovr: Track and report code coverage for your package\n\nlibrary(covr)\nx <- package_coverage()\nreport(x)"
+  },
+  {
+    "objectID": "slides/04_quality.html#how-to-apply-other-clean-code-rules",
+    "href": "slides/04_quality.html#how-to-apply-other-clean-code-rules",
+    "title": "Ensuring Quality",
+    "section": "How to apply other clean code rules?",
+    "text": "How to apply other clean code rules?\nIf important clean code rules are broken refactor the code:\n\nCCR#5 (DRY): Outsource redundant code blocks to functions\nCCR#1 (Naming): Improve the naming of files, classes, functions, and arguments\nCCR#3 (Simplicity): Split large1 source files into multiple files\n\nGeneral guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr5-dont-repeat-yourself",
+    "href": "slides/04_quality.html#example-ccr5-dont-repeat-yourself",
+    "title": "Ensuring Quality",
+    "section": "Example CCR#5: Don’t repeat yourself!",
+    "text": "Example CCR#5: Don’t repeat yourself!\nSuppose you have a code block that performs the same calculation multiple times:\n\nresult1 <- 2 * 3 + 4\nresult2 <- 2 * 5 + 4\nresult3 <- 2 * 7 + 4\n\nCreate a function to encapsulate this calculation and reuse it multiple times:\n\ncalculate <- function(x) {\n  2 * x + 4\n}\n\nresult1 <- calculate(3)\nresult2 <- calculate(5)\nresult3 <- calculate(7)"
+  },
+  {
+    "objectID": "slides/04_quality.html#how-to-apply-refactoring",
+    "href": "slides/04_quality.html#how-to-apply-refactoring",
+    "title": "Ensuring Quality",
+    "section": "How to apply refactoring?",
+    "text": "How to apply refactoring?\nIf important clean code rules are broken refactor the code:\n\nCCR#5 (DRY): Outsource redundant code blocks to functions\nCCR#1 (Naming): Improve the naming of files, classes, functions, and arguments\nCCR#3 (Simplicity): Split large1 source files into multiple files\n\nGeneral guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability"
+  },
+  {
+    "objectID": "slides/04_quality.html#how-to-do-refactoring",
+    "href": "slides/04_quality.html#how-to-do-refactoring",
+    "title": "Ensuring Quality",
+    "section": "How to do refactoring?",
+    "text": "How to do refactoring?\n\nCCR#9: Refactoring\n\nCheck if other clean code rules are broken:\n\nCCR#5 (DRY): Outsource redundant code blocks to functions\nCCR#1 (Naming): Improve the naming of files, classes, functions, and arguments\nCCR#3 (Simplicity): Split large1 source files into multiple files\n\nGeneral guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability"
+  },
+  {
+    "objectID": "slides/04_quality.html#preparation",
+    "href": "slides/04_quality.html#preparation",
+    "title": "Ensuring Quality",
+    "section": "Preparation",
+    "text": "Preparation\n\nSet up testing infrastructure,\nadd unit tests,\ntest-driven development,\ncheck,\nlintr, spelling,\ntest coverage.\n\ndownload zip file, no git stuff here yet, so that it is independent"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-of-an-r-script-with-poor-code-style",
+    "href": "slides/04_quality.html#example-of-an-r-script-with-poor-code-style",
+    "title": "Ensuring Quality",
+    "section": "Example of an R script with poor code style",
+    "text": "Example of an R script with poor code style\n\na<-c(1,2,3,4,5)\nb<-c(6,7,8,9,10)\nfor (i in 1:5){x<-a[i]+b[i];print(x)}\n\nThis code has several issues with code style:\n\nInconsistent indentation: There’s no clear structure to the code and it’s difficult to quickly see what each line of code is doing.\nNo white space: The code is difficult to read because there’s no white space between expressions and statements.\nAbbreviated variable names: The variable names a, b, and x are not descriptive and make the code less readable.\nInadequate commenting: There’s no commentary explaining what the code does, making it difficult for someone else to understand or use the code."
+  },
+  {
+    "objectID": "slides/04_quality.html#example-on-test-coverage",
+    "href": "slides/04_quality.html#example-on-test-coverage",
+    "title": "Ensuring Quality",
+    "section": "Example on test coverage",
+    "text": "Example on test coverage\nLet’s assume we have added a generic function to cat a simulation result:\n\n#' \n#' @export\n#'\ncat.SimulationResult <- function(... , file = \"\", sep = \" \", \n        fill = FALSE, labels = NULL, append = FALSE) {\n    args <- list(...)\n}\n\n\nBut we forgot to finalize the implementation and didn’t create unit tests.\nRe-execution of\n\nreport(package_coverage())\n\nthen results in…"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-on-test-coverage-1",
+    "href": "slides/04_quality.html#example-on-test-coverage-1",
+    "title": "Ensuring Quality",
+    "section": "Example on test coverage",
+    "text": "Example on test coverage"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-on-test-coverage-2",
+    "href": "slides/04_quality.html#example-on-test-coverage-2",
+    "title": "Ensuring Quality",
+    "section": "Example on test coverage",
+    "text": "Example on test coverage\nWe can go into the details by clicking on a file name:"
   }
 ]
