@@ -45,6 +45,11 @@ Plus also ask folks to speak up in the room directly
 
 ## Publication
 
+- `pkgdown` can help you easily create a nice website for your package
+- Versions and licenses along with `NEWS` updates are important
+- GitHub helps with tagging of release versions
+- R-Hub helps with checking before CRAN submission
+
 # Closing remarks
 
 ## Thank you!
