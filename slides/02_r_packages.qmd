@@ -237,8 +237,9 @@ export(my_sum)
 
 ## `src` Folder
 
-- Contains sources and headers for any compiled code
-- Should only contain a single language here (e.g. `C++` or `Fortran` but not both)
+- Contains sources and headers for any code that needs compilation
+- Should only contain a single language here
+  - Because R uses it, mixing `C`, `C++` and `Fortran` usually works with OS native compilers
 - Much more complex to write and maintain than an R only package
 - Typically only makes sense for 
   - wrapping existing libraries for use in R

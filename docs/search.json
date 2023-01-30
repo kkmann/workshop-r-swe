@@ -284,7 +284,7 @@
     "href": "slides/02_r_packages.html#src-folder",
     "title": "R packages",
     "section": "src Folder",
-    "text": "src Folder\n\nContains sources and headers for any compiled code\nShould only contain a single language here (e.g. C++ or Fortran but not both)\nMuch more complex to write and maintain than an R only package\nTypically only makes sense for\n\nwrapping existing libraries for use in R\nspeeding up complex computations - starting point: Rcpp::Rcpp.package.skeleton()"
+    "text": "src Folder\n\nContains sources and headers for any code that needs compilation\nShould only contain a single language here\n\nBecause R uses it, mixing C, C++ and Fortran usually works with OS native compilers\n\nMuch more complex to write and maintain than an R only package\nTypically only makes sense for\n\nwrapping existing libraries for use in R\nspeeding up complex computations - starting point: Rcpp::Rcpp.package.skeleton()"
   },
   {
     "objectID": "slides/02_r_packages.html#vignettes-folder",

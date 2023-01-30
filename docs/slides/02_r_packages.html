@@ -671,8 +671,11 @@
 <section id="src-folder" class="slide level2">
 <h2><code>src</code> Folder</h2>
 <ul>
-<li>Contains sources and headers for any compiled code</li>
-<li>Should only contain a single language here (e.g.&nbsp;<code>C++</code> or <code>Fortran</code> but not both)</li>
+<li>Contains sources and headers for any code that needs compilation</li>
+<li>Should only contain a single language here
+<ul>
+<li>Because R uses it, mixing <code>C</code>, <code>C++</code> and <code>Fortran</code> usually works with OS native compilers</li>
+</ul></li>
 <li>Much more complex to write and maintain than an R only package</li>
 <li>Typically only makes sense for
 <ul>
