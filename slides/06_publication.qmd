@@ -130,6 +130,48 @@ reference:
 - Need to provide cross-platform portable code: 
   CRAN runs checks on Windows, Mac, several Linux OS
 
+## CRAN (cont'd)
+
+A CRAN submission can be punishing, painful, and nerve-racking:
+
+The first release of the [rpact](https://cran.r-project.org/package=rpact)
+package took 5 weeks and 6 submission attempts; painful experiences:
+
+-   Some Linux machines may generate different random numbers than expected
+    (despite setting a seed)
+-   Not only errors and warnings lead to the rejection of a submitted package,
+    but also hints
+-   Your local Windows test system may be much faster than the CRAN system,
+    e.g., 5 times
+-   Don't use "R Package for" in your package title
+-   The description of the package must be provided with a doi reference
+
+## CRAN (cont'd)
+
+Example message informing about the rejection of the last
+[rpact](https://cran.r-project.org/package=rpact) submission:
+
+Dear maintainer,
+
+package rpact_3.3.2.tar.gz does not pass the incoming checks automatically,
+please see the following pre-tests: \
+Windows:
+[00check.log](https://cran.r-project.org/web/checks/check_results_rpact.html)
+**Status: OK**, Debian:
+[00check.log](https://cran.r-project.org/web/checks/check_results_rpact.html)
+**Status: OK**
+
+Please fix all problems and resubmit a fixed version via the webform.
+
+Best regards, \
+CRAN teams' auto-check service
+
+r-devel-windows-x86_64 Check: Result: NA, Maintainer: 'Friedrich Pahlke'\
+r-devel-windows-x86_64 Check: Overall checktime, Result: NOTE, Overall checktime
+12 min \> 10 min\
+r-devel-linux-x86_64-debian-gcc Check: Result: Note_to_CRAN_maintainers
+Maintainer: 'Friedrich Pahlke'
+
 ## R-Hub to the Rescue
 
 ::: columns
@@ -149,7 +191,7 @@ reference:
 
 ## Tags
 
-- Tags are a feature of Git, i.e. not specific to GitHub
+- Tags are a feature of Git, i.e., not specific to GitHub
 - Git can tag specific points in the code history as being important
 - Typically, for each release, create a tag `vx.y.z`
 - The value here is that users can later check out the package 
