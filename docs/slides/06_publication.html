@@ -7,7 +7,7 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.1.189">
+  <meta name="generator" content="quarto-1.2.269">
 
   <meta name="author" content="Daniel, Friedrich">
   <title>GSWEP4R Workshop - Publication</title>
@@ -387,11 +387,18 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Publication</h1>
-  <p class="author">Daniel, Friedrich</p>
-</section>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Daniel, Friedrich 
+</div>
+</div>
+</div>
+
+</section>
 <section>
 <section id="website-with-pkgdown" class="title-slide slide level1 center">
 <h1>Website with <code>pkgdown</code></h1>
@@ -551,6 +558,31 @@
 <li>Need to provide cross-platform portable code: CRAN runs checks on Windows, Mac, several Linux OS</li>
 </ul>
 </section>
+<section id="cran-contd-1" class="slide level2">
+<h2>CRAN (cont’d)</h2>
+<p>❗ A CRAN submission can be punishing, painful, and nerve-racking:</p>
+<p>The first release of the <a href="https://cran.r-project.org/package=rpact">rpact</a> package took 5 weeks and 6 submission attempts; painful experiences:</p>
+<ul>
+<li>Some Linux machines may generate different random numbers than expected (despite setting a seed)</li>
+<li>Not only errors and warnings lead to the rejection of a submitted package, but also notes</li>
+<li>Your local Windows test system may be much faster than the CRAN system (e.g., 5 times)</li>
+<li>Don’t use “R Package for” in your package title</li>
+<li>The description of the package must be provided with a doi reference</li>
+</ul>
+</section>
+<section id="cran-contd-2" class="slide level2">
+<h2>CRAN (cont’d)</h2>
+<p>Example message informing about the rejection of the last <a href="https://cran.r-project.org/package=rpact">rpact</a> submission:</p>
+<p>Dear maintainer,</p>
+<p>package rpact_3.3.2.tar.gz does not pass the incoming checks automatically, please see the following pre-tests:<br>
+Windows: <a href="https://cran.r-project.org/web/checks/check_results_rpact.html">00check.log</a> <strong>Status: OK</strong>, Debian: <a href="https://cran.r-project.org/web/checks/check_results_rpact.html">00check.log</a> <strong>Status: OK</strong></p>
+<p>Please fix all problems and resubmit a fixed version via the webform.</p>
+<p>Best regards,<br>
+CRAN teams’ auto-check service</p>
+<p>r-devel-windows-x86_64 Check: Result: NA, Maintainer: ‘Friedrich Pahlke’<br>
+r-devel-windows-x86_64 Check: Overall checktime, Result: NOTE, Overall checktime 12 min &gt; 10 min<br>
+r-devel-linux-x86_64-debian-gcc Check: Result: Note_to_CRAN_maintainers Maintainer: ‘Friedrich Pahlke’</p>
+</section>
 <section id="r-hub-to-the-rescue" class="slide level2">
 <h2>R-Hub to the Rescue</h2>
 <div class="columns">
@@ -574,7 +606,7 @@
 <section id="tags" class="slide level2">
 <h2>Tags</h2>
 <ul>
-<li>Tags are a feature of Git, i.e.&nbsp;not specific to GitHub</li>
+<li>Tags are a feature of Git, i.e., not specific to GitHub</li>
 <li>Git can tag specific points in the code history as being important</li>
 <li>Typically, for each release, create a tag <code>vx.y.z</code></li>
 <li>The value here is that users can later check out the package in the state of this release version
@@ -840,6 +872,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -878,7 +948,24 @@
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -916,24 +1003,42 @@
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>

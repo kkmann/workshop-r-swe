@@ -132,7 +132,7 @@ reference:
 
 ## CRAN (cont'd)
 
-A CRAN submission can be punishing, painful, and nerve-racking:
+`r emoji::emoji("exclamation")` A CRAN submission can be punishing, painful, and nerve-racking:
 
 The first release of the [rpact](https://cran.r-project.org/package=rpact)
 package took 5 weeks and 6 submission attempts; painful experiences:
@@ -140,9 +140,9 @@ package took 5 weeks and 6 submission attempts; painful experiences:
 -   Some Linux machines may generate different random numbers than expected
     (despite setting a seed)
 -   Not only errors and warnings lead to the rejection of a submitted package,
-    but also hints
--   Your local Windows test system may be much faster than the CRAN system,
-    e.g., 5 times
+    but also notes
+-   Your local Windows test system may be much faster than the CRAN system
+    (e.g., 5 times)
 -   Don't use "R Package for" in your package title
 -   The description of the package must be provided with a doi reference
 
@@ -171,6 +171,7 @@ r-devel-windows-x86_64 Check: Overall checktime, Result: NOTE, Overall checktime
 12 min \> 10 min\
 r-devel-linux-x86_64-debian-gcc Check: Result: Note_to_CRAN_maintainers
 Maintainer: 'Friedrich Pahlke'
+
 
 ## R-Hub to the Rescue
 

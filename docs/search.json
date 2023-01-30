@@ -207,7 +207,7 @@
     "href": "slides/06_publication.html#tags",
     "title": "Publication",
     "section": "Tags",
-    "text": "Tags\n\nTags are a feature of Git, i.e. not specific to GitHub\nGit can tag specific points in the code history as being important\nTypically, for each release, create a tag vx.y.z\nThe value here is that users can later check out the package in the state of this release version\n\nDownload in R: remotes::install_github(\"org/package\", ref = \"vx.y.z\")\nComparison of versions are also possible, etc."
+    "text": "Tags\n\nTags are a feature of Git, i.e., not specific to GitHub\nGit can tag specific points in the code history as being important\nTypically, for each release, create a tag vx.y.z\nThe value here is that users can later check out the package in the state of this release version\n\nDownload in R: remotes::install_github(\"org/package\", ref = \"vx.y.z\")\nComparison of versions are also possible, etc."
   },
   {
     "objectID": "slides/06_publication.html#releases",
@@ -257,5 +257,19 @@
     "title": "Publication",
     "section": "Licensing (cont’d)",
     "text": "Licensing (cont’d)\n\nNeed to be careful here when you bundle any code from other software\n\nCare must be taken that any copyright/license statements from copied or modified code are preserved and authorship is not misrepresented\n\nAre the licenses of your package and the source compatible?\n\ne.g. cannot copy/paste code from a GPL package and publish in an MIT package\n\nLICENSE file optionally can contain further restrictions of the license"
+  },
+  {
+    "objectID": "slides/06_publication.html#cran-contd-1",
+    "href": "slides/06_publication.html#cran-contd-1",
+    "title": "Publication",
+    "section": "CRAN (cont’d)",
+    "text": "CRAN (cont’d)\n❗ A CRAN submission can be punishing, painful, and nerve-racking:\nThe first release of the rpact package took 5 weeks and 6 submission attempts; painful experiences:\n\nSome Linux machines may generate different random numbers than expected (despite setting a seed)\nNot only errors and warnings lead to the rejection of a submitted package, but also notes\nYour local Windows test system may be much faster than the CRAN system (e.g., 5 times)\nDon’t use “R Package for” in your package title\nThe description of the package must be provided with a doi reference"
+  },
+  {
+    "objectID": "slides/06_publication.html#cran-contd-2",
+    "href": "slides/06_publication.html#cran-contd-2",
+    "title": "Publication",
+    "section": "CRAN (cont’d)",
+    "text": "CRAN (cont’d)\nExample message informing about the rejection of the last rpact submission:\nDear maintainer,\npackage rpact_3.3.2.tar.gz does not pass the incoming checks automatically, please see the following pre-tests:\nWindows: 00check.log Status: OK, Debian: 00check.log Status: OK\nPlease fix all problems and resubmit a fixed version via the webform.\nBest regards,\nCRAN teams’ auto-check service\nr-devel-windows-x86_64 Check: Result: NA, Maintainer: ‘Friedrich Pahlke’\nr-devel-windows-x86_64 Check: Overall checktime, Result: NOTE, Overall checktime 12 min > 10 min\nr-devel-linux-x86_64-debian-gcc Check: Result: Note_to_CRAN_maintainers Maintainer: ‘Friedrich Pahlke’"
   }
 ]
