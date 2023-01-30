@@ -50,6 +50,8 @@ reference:
       - component
 ```
 
+##  {background-iframe="https://openpharma.github.io/mmrm/main/reference/index.html" background-interactive="true"}
+
 ## Publication as GitHub Page
 
 - It is helpful for users to read the website online
@@ -68,11 +70,19 @@ reference:
 - High level categorization of licenses:
   - "Permissive": Relaxed. Can be freely copied, modified, published (under the same license).
   - "Copyleft": Stricter. Same rights need to be preserved in derivative works.
-- R itself is licensed with the GPL, but packages can choose the license
-    - e.g. `usethis::use_mit_license()` for permissive MIT 
-    - or `usethis::use_gpl_license()` for copyleft GPL
+- R itself is licensed under GPL, but packages can choose, e.g.:
+    - `usethis::use_mit_license()` for permissive MIT 
+    - `usethis::use_gpl_license()` for copyleft GPL
+- Include minimum version, e.g. `GPL (>= 3)`
+    
+## Licensing (cont'd)
+
 - Need to be careful here when you bundle any code from other software
-  - Are the licenses of your package and the source compatible?
+  - Care must be taken that any copyright/license statements from copied or modified
+    code are preserved and authorship is not misrepresented
+- Are the licenses of your package and the source compatible?
+  - e.g. cannot copy/paste code from a GPL package and publish in an MIT package
+- `LICENSE` file optionally can contain further restrictions of the license
 
 ## Open Sourcing
 
@@ -86,16 +96,17 @@ reference:
   
 ## Versioning
 
-- The `Version` field gives the version of the package
-- Syntax: At least two, usually three, integers separate by `.` or `-`
-  - Canonical form is: `x.y-z`, but that is equivalent to `x.y.z`
+- The `Version` field defines the package version
+- Syntax: Three integers separated by `.` or `-`
+  - Canonical form is: `x.y-z`, equivalent to `x.y.z`
 - Useful conventions of "semantic versioning": 
   - `x` is major: Increment this for breaking changes
-  - `y` is minor: Increment this for backwards-compatible new features
+  - `y` is minor: Increment this for new features
   - `z` is patch: Increment this for bug fixes only
-  - `x.y.z.9000` and count up during development before the next release.
+  - `x.y.z.9000` and count up during development
   - `usethis::use_version()` can help with this
-- Keep in mind to update the `NEWS` file for any user-visible change
+
+<!-- Keep in mind to update the `NEWS` file for any user-visible change -->
 
 # Checks before Release
 
@@ -109,13 +120,15 @@ reference:
 
 ## CRAN (cont'd)
 
-- Only source packages can be submitted, no binary executables are allowed
+- Only source packages can be submitted
+<!-- no binary executables are allowed -->
   - But `.rda` data files are allowed
-- Need single designated maintainer (a person, not a mailing list)
+- Need single designated maintainer (person, not mailing list)
   - Additional `Contact` field could be used
-- Citations should be in the author-year style, followed by a `<doi:...>`
+- Citations in author-year style, followed by `<doi:...>`
 - Reducing run time of tests, checks, examples, vignettes is important
-- Need to provide cross-platform portable code: CRAN runs checks on Windows, Mac, Linux OS
+- Need to provide cross-platform portable code: 
+  CRAN runs checks on Windows, Mac, several Linux OS
 
 ## R-Hub to the Rescue
 
@@ -138,7 +151,7 @@ reference:
 
 - Tags are a feature of Git, i.e. not specific to GitHub
 - Git can tag specific points in the code history as being important
-- Typically, for each release you create a tag in the format `vx.y.z`
+- Typically, for each release, create a tag `vx.y.z`
 - The value here is that users can later check out the package 
   in the state of this release version
   - Download in R: `remotes::install_github("org/package", ref = "vx.y.z")`
@@ -169,4 +182,8 @@ reference:
 
 # Exercise
 
+- Run CRAN like checks in RStudio: use `--as-cran` in check options
+- Look at the CI/CD checks reported on your GitHub repository
+  - Where are the `R CMD check` results?
+- Deploy the `pkgdown` website with `usethis`
 

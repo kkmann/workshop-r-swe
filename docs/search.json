@@ -186,7 +186,7 @@
     "href": "slides/06_publication.html#licensing",
     "title": "Publication",
     "section": "Licensing",
-    "text": "Licensing\n\nHigh level categorization of licenses:\n\n“Permissive”: Relaxed. Can be freely copied, modified, published (under the same license).\n“Copyleft”: Stricter. Same rights need to be preserved in derivative works.\n\nR itself is licensed with the GPL, but packages can choose the license\n\ne.g. usethis::use_mit_license() for permissive MIT\nor usethis::use_gpl_license() for copyleft GPL\n\nNeed to be careful here when you bundle any code from other software\n\nAre the licenses of your package and the source compatible?"
+    "text": "Licensing\n\nHigh level categorization of licenses:\n\n“Permissive”: Relaxed. Can be freely copied, modified, published (under the same license).\n“Copyleft”: Stricter. Same rights need to be preserved in derivative works.\n\nR itself is licensed under GPL, but packages can choose, e.g.:\n\nusethis::use_mit_license() for permissive MIT\nusethis::use_gpl_license() for copyleft GPL\n\nInclude minimum version, e.g. GPL (>= 3)"
   },
   {
     "objectID": "slides/06_publication.html#open-sourcing",
@@ -200,14 +200,14 @@
     "href": "slides/06_publication.html#versioning",
     "title": "Publication",
     "section": "Versioning",
-    "text": "Versioning\n\nThe Version field gives the version of the package\nSyntax: At least two, usually three, integers separate by . or -\n\nCanonical form is: x.y-z, but that is equivalent to x.y.z\n\nUseful conventions of “semantic versioning”:\n\nx is major: Increment this for breaking changes\ny is minor: Increment this for backwards-compatible new features\nz is patch: Increment this for bug fixes only\nx.y.z.9000 and count up during development before the next release.\nusethis::use_version() can help with this\n\nKeep in mind to update the NEWS file for any user-visible change"
+    "text": "Versioning\n\nThe Version field defines the package version\nSyntax: Three integers separated by . or -\n\nCanonical form is: x.y-z, equivalent to x.y.z\n\nUseful conventions of “semantic versioning”:\n\nx is major: Increment this for breaking changes\ny is minor: Increment this for new features\nz is patch: Increment this for bug fixes only\nx.y.z.9000 and count up during development\nusethis::use_version() can help with this"
   },
   {
     "objectID": "slides/06_publication.html#tags",
     "href": "slides/06_publication.html#tags",
     "title": "Publication",
     "section": "Tags",
-    "text": "Tags\n\nTags are a feature of Git, i.e. not specific to GitHub\nGit can tag specific points in the code history as being important\nTypically, for each release you create a tag in the format vx.y.z\nThe value here is that users can later check out the package in the state of this release version\n\nDownload in R: remotes::install_github(\"org/package\", ref = \"vx.y.z\")\nComparison of versions are also possible, etc."
+    "text": "Tags\n\nTags are a feature of Git, i.e. not specific to GitHub\nGit can tag specific points in the code history as being important\nTypically, for each release, create a tag vx.y.z\nThe value here is that users can later check out the package in the state of this release version\n\nDownload in R: remotes::install_github(\"org/package\", ref = \"vx.y.z\")\nComparison of versions are also possible, etc."
   },
   {
     "objectID": "slides/06_publication.html#releases",
@@ -228,7 +228,7 @@
     "href": "slides/06_publication.html#cran-contd",
     "title": "Publication",
     "section": "CRAN (cont’d)",
-    "text": "CRAN (cont’d)\n\nOnly source packages can be submitted, no binary executables are allowed\n\nBut .rda data files are allowed\n\nNeed single designated maintainer (a person, not a mailing list)\n\nAdditional Contact field could be used\n\nCitations should be in the author-year style, followed by a <doi:...>\nReducing run time of tests, checks, examples, vignettes is important\nNeed to provide cross-platform portable code: CRAN runs checks on Windows, Mac, Linux OS"
+    "text": "CRAN (cont’d)\n\nOnly source packages can be submitted \n\nBut .rda data files are allowed\n\nNeed single designated maintainer (person, not mailing list)\n\nAdditional Contact field could be used\n\nCitations in author-year style, followed by <doi:...>\nReducing run time of tests, checks, examples, vignettes is important\nNeed to provide cross-platform portable code: CRAN runs checks on Windows, Mac, several Linux OS"
   },
   {
     "objectID": "slides/06_publication.html#r-hub-to-the-rescue",
@@ -243,5 +243,19 @@
     "title": "Publication",
     "section": "Tags: Example",
     "text": "Tags: Example"
+  },
+  {
+    "objectID": "slides/06_publication.html#releases-example",
+    "href": "slides/06_publication.html#releases-example",
+    "title": "Publication",
+    "section": "Releases: Example",
+    "text": "Releases: Example"
+  },
+  {
+    "objectID": "slides/06_publication.html#licensing-contd",
+    "href": "slides/06_publication.html#licensing-contd",
+    "title": "Publication",
+    "section": "Licensing (cont’d)",
+    "text": "Licensing (cont’d)\n\nNeed to be careful here when you bundle any code from other software\n\nCare must be taken that any copyright/license statements from copied or modified code are preserved and authorship is not misrepresented\n\nAre the licenses of your package and the source compatible?\n\ne.g. cannot copy/paste code from a GPL package and publish in an MIT package\n\nLICENSE file optionally can contain further restrictions of the license"
   }
 ]
