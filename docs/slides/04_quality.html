@@ -420,39 +420,296 @@ Friedrich
 <li><strong>Performance</strong>: The code often runs faster, uses less memory, or is easier to optimize</li>
 </ul>
 </section>
-<section id="what-are-common-clean-code-rules" class="slide level2">
-<h2>What are common clean code rules?</h2>
-<div>
-<ol type="1">
-<li class="fragment"><strong>Naming</strong>: Use descriptive and meaningful names for variables, functions, and classes.</li>
-<li class="fragment"><strong>Formatting</strong>: Adhere to consistent indentation, spacing, and bracketing to make the code easy to read.</li>
-<li class="fragment"><strong>Simplicity</strong>: Keep the code as simple and straightforward as possible, avoiding unnecessary complexity.</li>
-<li class="fragment"><strong>Single Responsibility Principle (SRP)</strong>: Each function should have a single, well-defined purpose.</li>
-<li class="fragment"><strong>Don’t Repeat Yourself (DRY)</strong>: Avoid duplication of code, either by reusing existing code or creating functions.</li>
-</ol>
+<section id="example-clean-code-rules---step-by-step" class="slide level2">
+<h2>Example: Clean Code Rules - Step by Step</h2>
+<p>This script breaks all common clean code rules:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>y<span class="ot">=</span><span class="cf">function</span>(x){</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  s1<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="cf">for</span>(v1 <span class="cf">in</span> x){s1<span class="ot">=</span>s1<span class="sc">+</span>v1}</span>
+<span id="cb1-4"><a href="#cb1-4"></a>  m1<span class="ot">=</span>s1<span class="sc">/</span><span class="fu">length</span>(x)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>  i<span class="ot">=</span><span class="fu">ceiling</span>(<span class="fu">length</span>(x)<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="cf">if</span>(<span class="fu">length</span>(x) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){i<span class="ot">=</span><span class="fu">c</span>(i,i<span class="sc">+</span><span class="dv">1</span>)}</span>
+<span id="cb1-7"><a href="#cb1-7"></a>  s2<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>  <span class="cf">for</span>(v2 <span class="cf">in</span> i){s2<span class="ot">=</span>s2<span class="sc">+</span>x[v2]}</span>
+<span id="cb1-9"><a href="#cb1-9"></a>  m2<span class="ot">=</span>s2<span class="sc">/</span><span class="fu">length</span>(i)</span>
+<span id="cb1-10"><a href="#cb1-10"></a>  <span class="fu">c</span>(m1,m2)</span>
+<span id="cb1-11"><a href="#cb1-11"></a>}</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">y</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 16.0  4.5</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>We now refactor it (CCR#9) by applying clean code rules…</p>
 </div>
 </section>
-<section id="what-are-common-clean-code-rules-1" class="slide level2">
-<h2>What are common clean code rules?</h2>
-<div>
-<ol start="6" type="1">
-<li class="fragment"><strong>Comments</strong>: Use comments to explain the purpose of code blocks and to clarify complex logic.</li>
-<li class="fragment"><strong>Error Handling</strong>: Include error handling code to gracefully handle exceptions and unexpected situations.</li>
-<li class="fragment"><strong>Test-Driven Development (TDD)</strong>: Write tests for your code to ensure it behaves as expected and to catch bugs early.</li>
-<li class="fragment"><strong>Refactoring</strong>: Regularly refactor your code to keep it clean, readable, and maintainable.</li>
-<li class="fragment"><strong>Code Review</strong>: Have other team members review your code to catch potential issues and improve its quality.</li>
-</ol>
+<section id="example-ccr1" class="slide level2">
+<h2>Example: CCR#1</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>y<span class="ot">=</span><span class="cf">function</span>(x){</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  s1<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="cf">for</span>(v1 <span class="cf">in</span> x){s1<span class="ot">=</span>s1<span class="sc">+</span>v1}</span>
+<span id="cb3-4"><a href="#cb3-4"></a>  m1<span class="ot">=</span>s1<span class="sc">/</span><span class="fu">length</span>(x)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>  i<span class="ot">=</span><span class="fu">ceiling</span>(<span class="fu">length</span>(x)<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="cf">if</span>(<span class="fu">length</span>(x) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){i<span class="ot">=</span><span class="fu">c</span>(i,i<span class="sc">+</span><span class="dv">1</span>)}</span>
+<span id="cb3-7"><a href="#cb3-7"></a>  s2<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>  <span class="cf">for</span>(v2 <span class="cf">in</span> i){s2<span class="ot">=</span>s2<span class="sc">+</span>x[v2]}</span>
+<span id="cb3-9"><a href="#cb3-9"></a>  m2<span class="ot">=</span>s2<span class="sc">/</span><span class="fu">length</span>(i)</span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">c</span>(m1,m2)</span>
+<span id="cb3-11"><a href="#cb3-11"></a>}</span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="fu">y</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 16.0  4.5</code></pre>
 </div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>CCR#1 <strong>Naming</strong>: Are the names of the variables, functions, and classes descriptive and meaningful?</p>
+</div>
+</div>
+</section>
+<section id="example-ccr1-1" class="slide level2">
+<h2>Example: CCR#1</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>getMeanAndMedian<span class="ot">=</span><span class="cf">function</span>(x){</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    sum1<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="cf">for</span>(value <span class="cf">in</span> x){sum1<span class="ot">=</span>sum1<span class="sc">+</span>value}</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    meanValue<span class="ot">=</span>sum1<span class="sc">/</span><span class="fu">length</span>(x)</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    centerIndices<span class="ot">=</span><span class="fu">ceiling</span>(<span class="fu">length</span>(x)<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="cf">if</span>(<span class="fu">length</span>(x) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb5-7"><a href="#cb5-7"></a>        centerIndices<span class="ot">=</span><span class="fu">c</span>(centerIndices,centerIndices<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    }</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    sum2<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>    <span class="cf">for</span>(centerIndex <span class="cf">in</span> centerIndices){sum2<span class="ot">=</span>sum2<span class="sc">+</span>x[centerIndex]}</span>
+<span id="cb5-11"><a href="#cb5-11"></a>    medianValue<span class="ot">=</span>sum2<span class="sc">/</span><span class="fu">length</span>(centerIndices)</span>
+<span id="cb5-12"><a href="#cb5-12"></a>    <span class="fu">c</span>(meanValue,medianValue)</span>
+<span id="cb5-13"><a href="#cb5-13"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>CCR#1 <strong>Naming</strong> <span class="green"><i class="fa-solid fa-circle-check fa-1x" aria-label="circle-check"></i></span></p>
+<p>CCR#2 <strong>Formatting</strong>: Are indentation, spacing, and bracketing consistent, i.e., is the code easy to read <span class="red"><i class="fa-solid fa-circle-question fa-1x" aria-label="circle-question"></i></span></p>
+</section>
+<section id="example-ccr2" class="slide level2">
+<h2>Example: CCR#2</h2>
+<div class="columns">
+<div class="column" style="width:68%;">
+<div class="cell" style="font-size:0.95em!important;">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>getMeanAndMedian <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    sum1 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="cf">for</span> (value <span class="cf">in</span> x) {</span>
+<span id="cb6-4"><a href="#cb6-4"></a>        sum1 <span class="ot">&lt;-</span> sum1 <span class="sc">+</span> value</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    }</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    meanValue <span class="ot">&lt;-</span> sum1 <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    centerIndices <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">length</span>(x) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    <span class="cf">if</span> (<span class="fu">length</span>(x) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb6-9"><a href="#cb6-9"></a>        centerIndices <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb6-10"><a href="#cb6-10"></a>          centerIndices, centerIndices <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb6-11"><a href="#cb6-11"></a>    }</span>
+<span id="cb6-12"><a href="#cb6-12"></a>    sum2 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>    <span class="cf">for</span> (centerIndex <span class="cf">in</span> centerIndices) {</span>
+<span id="cb6-14"><a href="#cb6-14"></a>        sum2 <span class="ot">&lt;-</span> sum2 <span class="sc">+</span> x[centerIndex]</span>
+<span id="cb6-15"><a href="#cb6-15"></a>    }</span>
+<span id="cb6-16"><a href="#cb6-16"></a>    medianValue <span class="ot">&lt;-</span> sum2 <span class="sc">/</span> <span class="fu">length</span>(centerIndices)</span>
+<span id="cb6-17"><a href="#cb6-17"></a>    <span class="fu">c</span>(meanValue, medianValue)</span>
+<span id="cb6-18"><a href="#cb6-18"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:32%;">
+<p>CCR#2 <strong>Formatting</strong> <span class="green"><i class="fa-solid fa-circle-check fa-1x" aria-label="circle-check"></i></span></p>
+<p>CCR#3 <strong>Simplicity</strong>: Did you keep the code as simple and straightforward as possible, i.e., did you avoid unnecessary complexity <span class="red"><i class="fa-solid fa-circle-question fa-1x" aria-label="circle-question"></i></span></p>
+</div>
+</div>
+</section>
+<section id="example-ccr3" class="slide level2">
+<h2>Example: CCR#3</h2>
+<p>Note:</p>
+<ul>
+<li>From the <strong>Simplicity</strong> rule also follows that large source files should be split into multiple files</li>
+<li>General guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability</li>
+</ul>
+</section>
+<section id="example-ccr3-1" class="slide level2">
+<h2>Example: CCR#3</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="2,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>getMeanAndMedian <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>    meanValue <span class="ot">&lt;-</span> <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    centerIndices <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">length</span>(x) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="cf">if</span> (<span class="fu">length</span>(x) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb7-5"><a href="#cb7-5"></a>        centerIndices <span class="ot">&lt;-</span> <span class="fu">c</span>(centerIndices, centerIndices <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    }</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    medianValue <span class="ot">&lt;-</span> <span class="fu">sum</span>(x[centerIndices]) <span class="sc">/</span> <span class="fu">length</span>(centerIndices)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    <span class="fu">c</span>(meanValue, medianValue)</span>
+<span id="cb7-9"><a href="#cb7-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>CCR#3 <strong>Simplicity</strong> <span class="green"><i class="fa-solid fa-circle-check fa-1x" aria-label="circle-check"></i></span></p>
+<p>CCR#4 <strong>Single Responsibility Principle (SRP)</strong>: Has each function a single, well-defined purpose <span class="red"><i class="fa-solid fa-circle-question fa-1x" aria-label="circle-question"></i></span></p>
+</section>
+<section id="example-ccr4" class="slide level2">
+<h2>Example: CCR#4</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>getMean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>}</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a>isLengthAnEvenNumber <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="fu">length</span>(x) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>}</span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a>getMedian <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    centerIndices <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">length</span>(x) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    <span class="cf">if</span> (<span class="fu">isLengthAnEvenNumber</span>(x)) {</span>
+<span id="cb8-12"><a href="#cb8-12"></a>        centerIndices <span class="ot">&lt;-</span> <span class="fu">c</span>(centerIndices, centerIndices <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb8-13"><a href="#cb8-13"></a>    }</span>
+<span id="cb8-14"><a href="#cb8-14"></a>    <span class="fu">sum</span>(x[centerIndices]) <span class="sc">/</span> <span class="fu">length</span>(centerIndices)</span>
+<span id="cb8-15"><a href="#cb8-15"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>CCR#4 <strong>Single Responsibility Principle (SRP)</strong> <span class="green"><i class="fa-solid fa-circle-check fa-1x" aria-label="circle-check"></i></span></p>
+<p>CCR#5 <strong>Don’t Repeat Yourself (DRY)</strong>: Did you avoid duplication of code, either by reusing existing code or creating functions <span class="red"><i class="fa-solid fa-circle-question fa-1x" aria-label="circle-question"></i></span></p>
+</section>
+<section id="example-ccr5" class="slide level2">
+<h2>Example: CCR#5</h2>
+<div class="clean-code-rule">
+<p>CCR#5: DRY</p>
+</div>
+<p>Suppose you have a code block that performs the same calculation multiple times:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>result1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>result2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>result3 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">7</span> <span class="sc">+</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Create a function to encapsulate this calculation and reuse it multiple times:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>calculate <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>}</span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a>result1 <span class="ot">&lt;-</span> <span class="fu">calculate</span>(<span class="dv">3</span>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a>result2 <span class="ot">&lt;-</span> <span class="fu">calculate</span>(<span class="dv">5</span>)</span>
+<span id="cb10-7"><a href="#cb10-7"></a>result3 <span class="ot">&lt;-</span> <span class="fu">calculate</span>(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="example-ccr5-1" class="slide level2">
+<h2>Example: CCR#5</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>getMean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb11-2"><a href="#cb11-2"></a>    <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb11-3"><a href="#cb11-3"></a>}</span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a>isLengthAnEvenNumber <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="fu">length</span>(x) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>}</span>
+<span id="cb11-8"><a href="#cb11-8"></a></span>
+<span id="cb11-9"><a href="#cb11-9"></a>getMedian <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb11-10"><a href="#cb11-10"></a>    centerIndices <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">length</span>(x) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb11-11"><a href="#cb11-11"></a>    <span class="cf">if</span> (<span class="fu">isLengthAnEvenNumber</span>(x)) {</span>
+<span id="cb11-12"><a href="#cb11-12"></a>        centerIndices <span class="ot">&lt;-</span> <span class="fu">c</span>(centerIndices, centerIndices <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb11-13"><a href="#cb11-13"></a>    }</span>
+<span id="cb11-14"><a href="#cb11-14"></a>    <span class="fu">getMean</span>(x[centerIndices])</span>
+<span id="cb11-15"><a href="#cb11-15"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>CCR#5 <strong>Don’t Repeat Yourself (DRY)</strong> <span class="green"><i class="fa-solid fa-circle-check fa-1x" aria-label="circle-check"></i></span></p>
+<p>CCR#6 <strong>Comments</strong>: Did you use comments to explain the purpose of code blocks and to clarify complex logic <span class="red"><i class="fa-solid fa-circle-question fa-1x" aria-label="circle-question"></i></span></p>
+</section>
+<section id="example-ccr6" class="slide level2">
+<h2>Example: CCR#6</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="cell" style="font-size:0.9em!important;">
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="1,6,7,12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># returns the mean of x</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>getMean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb12-3"><a href="#cb12-3"></a>    <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb12-4"><a href="#cb12-4"></a>}</span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="co"># returns TRUE if the length of x is </span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="co"># an even number; FALSE otherwise</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>isLengthAnEvenNumber <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb12-9"><a href="#cb12-9"></a>    <span class="fu">length</span>(x) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a>}</span>
+<span id="cb12-11"><a href="#cb12-11"></a></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="co"># returns the median of x</span></span>
+<span id="cb12-13"><a href="#cb12-13"></a>getMedian <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb12-14"><a href="#cb12-14"></a>    centerIndices <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">length</span>(x) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb12-15"><a href="#cb12-15"></a>    <span class="cf">if</span> (<span class="fu">isLengthAnEvenNumber</span>(x)) {</span>
+<span id="cb12-16"><a href="#cb12-16"></a>        centerIndices <span class="ot">&lt;-</span> <span class="fu">c</span>(centerIndices, </span>
+<span id="cb12-17"><a href="#cb12-17"></a>             centerIndices <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb12-18"><a href="#cb12-18"></a>    }</span>
+<span id="cb12-19"><a href="#cb12-19"></a>    <span class="fu">getMean</span>(x[centerIndices])</span>
+<span id="cb12-20"><a href="#cb12-20"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:40%;">
+<p>CCR#6 <strong>Comments</strong> <span class="green"><i class="fa-solid fa-circle-check fa-1x" aria-label="circle-check"></i></span></p>
+<p>CCR#7 <strong>Error Handling</strong>: Did you include error handling code to gracefully handle exceptions and unexpected situations <span class="red"><i class="fa-solid fa-circle-question fa-1x" aria-label="circle-question"></i></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getMean</span>(<span class="st">"a"</span><span class="sc">:</span><span class="st">"z"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span class="red-small">Error in “a”:“z” : NA/NaN argument Additionally: Warning messages: In getMean(“a”:“z”) : NAs generated by conversion</span></p>
+</div>
+</div>
+</section>
+<section id="example-ccr7" class="slide level2">
+<h2>Example: CCR#7</h2>
+<div class="cell" style="font-size:0.9em!important;">
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="3,5-7,12,14-16,21,27-29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># returns the mean of x</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>getMean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb14-3"><a href="#cb14-3"></a>    <span class="fu">tryCatch</span>({</span>
+<span id="cb14-4"><a href="#cb14-4"></a>        <span class="fu">sum</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x)      </span>
+<span id="cb14-5"><a href="#cb14-5"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb14-6"><a href="#cb14-6"></a>        <span class="fu">stop</span>(<span class="st">"Failed to calculate the mean of 'x': "</span>, e<span class="sc">$</span>message)</span>
+<span id="cb14-7"><a href="#cb14-7"></a>    })</span>
+<span id="cb14-8"><a href="#cb14-8"></a>}</span>
+<span id="cb14-9"><a href="#cb14-9"></a></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="co"># returns TRUE if the length of x is an even number; FALSE otherwise</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a>isLengthAnEvenNumber <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb14-12"><a href="#cb14-12"></a>    <span class="fu">tryCatch</span>({</span>
+<span id="cb14-13"><a href="#cb14-13"></a>        <span class="fu">length</span>(x) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb14-15"><a href="#cb14-15"></a>        <span class="fu">stop</span>(<span class="st">"Failed to check if 'x' is an even number: "</span>, e<span class="sc">$</span>message)</span>
+<span id="cb14-16"><a href="#cb14-16"></a>    })</span>
+<span id="cb14-17"><a href="#cb14-17"></a>}</span>
+<span id="cb14-18"><a href="#cb14-18"></a></span>
+<span id="cb14-19"><a href="#cb14-19"></a><span class="co"># returns the median of x</span></span>
+<span id="cb14-20"><a href="#cb14-20"></a>getMedian <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb14-21"><a href="#cb14-21"></a>    <span class="fu">tryCatch</span>({</span>
+<span id="cb14-22"><a href="#cb14-22"></a>        centerIndices <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">length</span>(x) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb14-23"><a href="#cb14-23"></a>        <span class="cf">if</span> (<span class="fu">isLengthAnEvenNumber</span>(x)) {</span>
+<span id="cb14-24"><a href="#cb14-24"></a>            centerIndices <span class="ot">&lt;-</span> <span class="fu">c</span>(centerIndices, centerIndices <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb14-25"><a href="#cb14-25"></a>        }</span>
+<span id="cb14-26"><a href="#cb14-26"></a>        <span class="fu">getMean</span>(x[centerIndices])            </span>
+<span id="cb14-27"><a href="#cb14-27"></a>    }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb14-28"><a href="#cb14-28"></a>        <span class="fu">stop</span>(<span class="st">"Failed to calculate the median of 'x': "</span>, e<span class="sc">$</span>message)</span>
+<span id="cb14-29"><a href="#cb14-29"></a>    })</span>
+<span id="cb14-30"><a href="#cb14-30"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>CCR#7 <strong>Error Handling</strong> <span class="green"><i class="fa-solid fa-circle-check fa-1x" aria-label="circle-check"></i></span></p>
+</section>
+<section id="summary-of-clean-code-rules" class="slide level2">
+<h2>Summary of Clean Code Rules</h2>
+<ol type="1">
+<li><strong>Naming</strong>: Use descriptive and meaningful names for variables, functions, and classes</li>
+<li><strong>Formatting</strong>: Adhere to consistent indentation, spacing, and bracketing to make the code easy to read</li>
+<li><strong>Simplicity</strong>: Keep the code as simple and straightforward as possible, avoiding unnecessary complexity</li>
+<li><strong>Single Responsibility Principle (SRP)</strong>: Each function should have a single, well-defined purpose</li>
+<li><strong>Don’t Repeat Yourself (DRY)</strong>: Avoid duplication of code, either by reusing existing code or creating functions</li>
+</ol>
+</section>
+<section id="summary-of-clean-code-rules-1" class="slide level2">
+<h2>Summary of Clean Code Rules</h2>
+<ol start="6" type="1">
+<li><strong>Comments</strong>: Use comments to explain the purpose of code blocks and to clarify complex logic</li>
+<li><strong>Error Handling</strong>: Include error handling code to gracefully handle exceptions and unexpected situations</li>
+<li><span class="blue"><i class="fa-solid fa-star fa-1x" aria-label="star"></i></span> <strong>Test-Driven Development (TDD)</strong>: Write tests for your code to ensure it behaves as expected and to catch bugs early</li>
+<li><strong>Refactoring</strong>: Regularly refactor your code to keep it clean, readable, and maintainable</li>
+<li><span class="blue"><i class="fa-solid fa-star fa-1x" aria-label="star"></i></span> <strong>Code Review</strong>: Have other team members review your code to catch potential issues and improve its quality</li>
+</ol>
 </section>
 <section id="how-to-apply-clean-code-rules" class="slide level2">
-<h2>How to apply clean code rules?</h2>
+<h2>How to apply Clean Code Rules?</h2>
 <p>Recommended quality workflow for R packages:</p>
 <ul>
-<li>Strictly follow the naming policy (#1)</li>
+<li>Follow the naming and styling guidelines (#1, #2)</li>
 <li>Continuously write tests and optimize the code coverage with help of tools (#7, #8)</li>
-<li>Optimize the code style and check spelling (#2)</li>
 <li>Document the package and functions (#6)</li>
-<li>Regularly refactor your code (#3, #4, #5, #7, #9)</li>
+<li>Regularly refactor your code (#1 - #7, #9)</li>
 <li>Publish your code on <a href="https://github.com">GitHub</a> and invite colleagues to contribute (#10)</li>
 </ul>
 </section></section>
@@ -554,9 +811,9 @@ Are we building the right product?</p>
 <h2>How to improve the test coverage?</h2>
 <p><a href="https://cran.r-project.org/package=covr">covr</a>: Track and report code coverage for your package</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(covr)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>x <span class="ot">&lt;-</span> <span class="fu">package_coverage</span>()</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">report</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">library</span>(covr)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>x <span class="ot">&lt;-</span> <span class="fu">package_coverage</span>()</span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="fu">report</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><img data-src="resources/covr_full.png"></p>
@@ -566,19 +823,19 @@ Are we building the right product?</p>
 <h2>Example on test coverage</h2>
 <p>Let’s assume we have added a generic function to cat a simulation result:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#' </span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#' @export</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#'</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>cat.SimulationResult <span class="ot">&lt;-</span> <span class="cf">function</span>(... , <span class="at">file =</span> <span class="st">""</span>, <span class="at">sep =</span> <span class="st">" "</span>, </span>
-<span id="cb2-5"><a href="#cb2-5"></a>        <span class="at">fill =</span> <span class="cn">FALSE</span>, <span class="at">labels =</span> <span class="cn">NULL</span>, <span class="at">append =</span> <span class="cn">FALSE</span>) {</span>
-<span id="cb2-6"><a href="#cb2-6"></a>    args <span class="ot">&lt;-</span> <span class="fu">list</span>(...)</span>
-<span id="cb2-7"><a href="#cb2-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">#' </span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="co">#' @export</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="co">#'</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>cat.SimulationResult <span class="ot">&lt;-</span> <span class="cf">function</span>(... , <span class="at">file =</span> <span class="st">""</span>, <span class="at">sep =</span> <span class="st">" "</span>, </span>
+<span id="cb16-5"><a href="#cb16-5"></a>        <span class="at">fill =</span> <span class="cn">FALSE</span>, <span class="at">labels =</span> <span class="cn">NULL</span>, <span class="at">append =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb16-6"><a href="#cb16-6"></a>    args <span class="ot">&lt;-</span> <span class="fu">list</span>(...)</span>
+<span id="cb16-7"><a href="#cb16-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>But we forgot to finalize the implementation and didn’t create unit tests.</p>
 <p>Re-execution of</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">report</span>(<span class="fu">package_coverage</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report</span>(<span class="fu">package_coverage</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>then results in…</p>
 </div>
@@ -600,21 +857,6 @@ Are we building the right product?</p>
 </div>
 
 <img data-src="thumbnails/styling.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by Pavel Danilyuk on pexels.com</span></p></section>
-<section id="example-of-an-r-script-with-poor-code-style" class="slide level2">
-<h2>Example of an R script with poor code style</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>a<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>b<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){x<span class="ot">&lt;-</span>a[i]<span class="sc">+</span>b[i];<span class="fu">print</span>(x)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This code has several issues with code style:</p>
-<ol type="1">
-<li>Inconsistent indentation: There’s no clear structure to the code and it’s difficult to quickly see what each line of code is doing.</li>
-<li>No white space: The code is difficult to read because there’s no white space between expressions and statements.</li>
-<li>Abbreviated variable names: The variable names a, b, and x are not descriptive and make the code less readable.</li>
-<li>Inadequate commenting: There’s no commentary explaining what the code does, making it difficult for someone else to understand or use the code.</li>
-</ol>
-</section>
 <section id="why-is-code-style-important" class="slide level2">
 <h2>Why is Code Style important?</h2>
 <div class="clean-code-rule">
@@ -631,91 +873,100 @@ Are we building the right product?</p>
 <h2>How to optimize the code styling?</h2>
 <p>Two popular R packages support the <a href="https://style.tidyverse.org">tidyverse style guide</a>:</p>
 <ul>
-<li><a href="https://styler.r-lib.org">styler</a>: interactively restyle selected text, files, or entire projects</li>
+<li><a href="https://styler.r-lib.org">styler</a>: interactively restyle selected text, files, or entire projects:
+<ul>
+<li><a href="https://styler.r-lib.org/reference/style_text.html">style_text</a></li>
+<li><a href="https://styler.r-lib.org/reference/style_file.html">style_file</a></li>
+<li><a href="https://styler.r-lib.org/reference/style_pkg.html">style_pkg</a></li>
+</ul></li>
 <li><a href="https://github.com/jimhester/lintr">lintr</a>: perform automated checks to confirm that you conform to the style guide</li>
 </ul>
+<p>The <a href="https://devtools.r-lib.org">devtools</a> function <a href="https://devtools.r-lib.org/reference/spell_check.html">spell_check</a> runs a spell check on text fields in the package description file, manual pages, and optionally vignettes.</p>
+</section>
+<section id="code-styler-in-rstudio" class="slide level2">
+<h2>Code Styler in RStudio</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Browse addins</a></li><li><a href="#tabset-1-2">Link styler to keyboard shortcut</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="resources/rstudio_addins.png" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="resources/rstudio_keyboard_shortcuts.png" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <!--
 -   types, type safety,
 -   spelling,
 -->
 </section></section>
 <section>
-<section id="refactoring" class="title-slide slide level1 center">
-<h1>Refactoring</h1>
-<div class="clean-code-rule">
-<p>CCR#9: Refactoring</p>
-</div>
-
-<img data-src="thumbnails/refactoring_Fabio-Teixeira.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by Fabio Teixeira on pexels.com</span></p></section>
-<section id="how-to-do-refactoring" class="slide level2">
-<h2>How to do refactoring?</h2>
-<div class="clean-code-rule">
-<p>CCR#9: Refactoring</p>
-</div>
-<p>Check if other clean code rules are broken:</p>
-<ul>
-<li>CCR#5 (DRY): Outsource redundant code blocks to functions</li>
-<li>CCR#1 (Naming): Improve the naming of files, classes, functions, and arguments</li>
-<li>CCR#3 (Simplicity): Split large<sup>1</sup> source files into multiple files</li>
-</ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>General guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability</p></li></ol></aside></section>
-<section id="example-dont-repeat-yourself" class="slide level2">
-<h2>Example: Don’t repeat yourself!</h2>
-<div class="clean-code-rule">
-<p>CCR#5: DRY</p>
-</div>
-<p>Suppose you have a code block that performs the same calculation multiple times:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>result1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">3</span> <span class="sc">+</span> <span class="dv">4</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>result2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">4</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>result3 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">7</span> <span class="sc">+</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Create a function to encapsulate this calculation and reuse it multiple times:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>calculate <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">4</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>}</span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a>result1 <span class="ot">&lt;-</span> <span class="fu">calculate</span>(<span class="dv">3</span>)</span>
-<span id="cb6-6"><a href="#cb6-6"></a>result2 <span class="ot">&lt;-</span> <span class="fu">calculate</span>(<span class="dv">5</span>)</span>
-<span id="cb6-7"><a href="#cb6-7"></a>result3 <span class="ot">&lt;-</span> <span class="fu">calculate</span>(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section></section>
-<section>
 <section id="exercise" class="title-slide slide level1 center">
 <h1>Exercise</h1>
 
 <img data-src="thumbnails/exercise.jpg" class="r-stretch quarto-figure-center"><p class="caption"><span class="copyright">Photo CC0 by Pixabay on pexels.com</span></p></section>
-<section id="preparation" class="slide level2">
-<h2>Preparation</h2>
+<section id="tasks" class="slide level2">
+<h2>Tasks</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Task 1</a></li><li><a href="#tabset-2-2">Task 2</a></li><li><a href="#tabset-2-3">Task 3</a></li><li><a href="#tabset-2-4">Task 4</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>Take your local <em>simulatr</em> package project (see <a href="03_workflow.html#/tasks">previous excercise</a>) and refactor it, i.e., apply the linked clean code rules:</p>
+<ol type="1">
+<li>Optimize naming manually (CCR#1)</li>
+<li>Use the <a href="https://styler.r-lib.org">styler</a> package to optimize the formatting (CCR#2)</li>
+<li>Check and correct where appropriate:
 <ul>
-<li>Set up testing infrastructure,</li>
-<li>add unit tests,</li>
-<li>test-driven development,</li>
-<li>check,</li>
-<li>lintr, spelling,</li>
-<li>test coverage.</li>
-</ul>
-<p>download zip file, no git stuff here yet, so that it is independent</p>
-</section>
-<section id="workflow-example---refactoring" class="slide level2">
-<h2>Workflow Example - Refactoring</h2>
-<p>Remember the one-off script:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-2"><a href="#cb7-2"></a>    <span class="at">group =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">50</span>)),</span>
-<span id="cb7-3"><a href="#cb7-3"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
-<span id="cb7-4"><a href="#cb7-4"></a>        <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">12</span>),</span>
-<span id="cb7-5"><a href="#cb7-5"></a>        <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">14</span>, <span class="at">sd =</span> <span class="dv">11</span>)</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    )</span>
-<span id="cb7-7"><a href="#cb7-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<li>Simplicity (CCR#3)</li>
+<li>SRP (CCR#4)</li>
+<li>DRY (CCR#5)</li>
+</ul></li>
+</ol>
 </div>
+<div id="tabset-2-2">
+<ol type="1">
+<li>Implement appropriate error handling (CCR#7) in the <em>simulatr</em> package</li>
+<li>Add comments to explain the purpose of code blocks (CCR#6)
+<ul>
+<li>If it concerns exported functions use <a href="https://roxygen2.r-lib.org/">Roxygen2</a> notation</li>
+</ul></li>
+<li>Check correct spelling with the <a href="https://cran.r-project.org/package=devtools">devtools</a> function <a href="https://devtools.r-lib.org/reference/spell_check.html">spell_check()</a></li>
+</ol>
+</div>
+<div id="tabset-2-3">
+<p>Apply CCR#8 to the <em>simulatr</em> package project:</p>
+<ol type="1">
+<li>Add unit tests</li>
+<li>Optimize your test coverage with help of the <a href="https://covr.r-lib.org/">covr</a> functions <a href="https://www.rdocumentation.org/packages/covr/versions/3.6.1/topics/package_coverage">package_coverage</a> and <a href="https://www.rdocumentation.org/packages/covr/versions/3.6.1/topics/report">report</a></li>
+</ol>
+</div>
+<div id="tabset-2-4">
+<p>Check if your package is ready for use in production with the <a href="https://cran.r-project.org/package=devtools">devtools</a> function <a href="https://rdrr.io/cran/devtools/man/check.html">check()</a></p>
+</div>
+</div>
+</div>
+</section></section>
+<section id="references" class="title-slide slide level1 center">
+<h1>References</h1>
+<ul>
+<li>Cotton, R. (2017). Testing R Code (Illustrated Edition).<br>
+Taylor &amp; Francis Inc.&nbsp;[<a href="https://amzn.to/3Bk6elt">Book</a>]</li>
+<li>Martin, R. (2008). Clean Code: A Handbook of Agile Software Craftsmanship (1st Edition). Prentice Hall. [<a href="https://amzn.to/3IKuSS4">Book</a>]</li>
+</ul>
 
 <div class="footer footer-default">
 <p>Good Software Engineering Practice with R - <a href="../index.html" title="GSWEP4R Workshop">Home</a> | <a href="listing.html" title="Overview of all slides">Slides</a> | <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="License: CC BY-SA 4.0">License</a></p>
 </div>
-</section></section>
-
+</section>
     </div>
   </div>
 

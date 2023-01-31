@@ -32,7 +32,7 @@
     "href": "index.html#prerequisites-technical-setup",
     "title": "Good Software Engineering Practice for R Packages",
     "section": "Prerequisites & Technical Setup",
-    "text": "Prerequisites & Technical Setup\nPrior to the course, participants should\n\nset up a (free) GitHub.com account. There are other git Platforms like Gitlab or Bitbucket but we made the choice to go with GitHub.com for the course since it is by far the most relevant git platform in the R community.\neither make sure they have a working R software development setup on their own laptop (up-to-date git/Rtools/R/RStudio) or get access to https://posit.cloud. The latter offers a free tier account with 25 hours of computing time per months and can be accessed using ones GitHub.com account.\n\nFor the course, participants are required to bring their own laptop to be able to participate in the exercises.\n\nOptional reading list\n\nExcellent and very comprehensive R Packages (2e)\n(Hardcore) description of how Writing R Extensions works\nGitHub ‘Hello World’ tutorial on how to use GitHub.com (does not require git command line knowledge)\nTutorial on version control with git and SVN (we will be using git)\nCommand line git mini intro trygit\nfirst steps with git & github by RStudio\nRStudio cheatsheets/ Git & GitHub"
+    "text": "Prerequisites & Technical Setup\nPrior to the course, participants should\n\nset up a (free) GitHub.com account. There are other git Platforms like Gitlab or Bitbucket but we made the choice to go with GitHub.com for the course since it is by far the most relevant git platform in the R community.\ndownload and extract simulatr.zip\neither make sure they have a working R software development setup on their own laptop (up-to-date git/Rtools/R/RStudio) or get access to https://posit.cloud. The latter offers a free tier account with 25 hours of computing time per months and can be accessed using ones GitHub.com account.\n\nFor the course, participants are required to bring their own laptop to be able to participate in the exercises.\n\nOptional reading list\n\nExcellent and very comprehensive R Packages (2e)\n(Hardcore) description of how Writing R Extensions works\nGitHub ‘Hello World’ tutorial on how to use GitHub.com (does not require git command line knowledge)\nTutorial on version control with git and SVN (we will be using git)\nCommand line git mini intro trygit\nfirst steps with git & github by RStudio\nRStudio cheatsheets/ Git & GitHub"
   },
   {
     "objectID": "LICENSE.html",
@@ -193,7 +193,7 @@
     "href": "slides/03_workflow.html#frequently-used-workflow-in-practice",
     "title": "An R Package Engineering Workflow",
     "section": "Frequently Used Workflow in Practice",
-    "text": "Frequently Used Workflow in Practice\n\n\n\n\nIdea\nR package programming\nUse in production\nBug fixing\nUse in production\n\n\n\nDocumentation\nUse in production\nDevelop further\nUse in production\n…\n\n\n\n\n\n Bad practice!\n\n\n Why?"
+    "text": "Frequently Used Workflow in Practice\n\n\n\n\nIdea\nR package programming\nUse in production\nBug fixing\nUse in production\n\n\n\nBug fixing + Documentation\nUse in production\nBug fixing + Further development\nUse in production\nBug fixing + …\n\n\n\n\n\n Bad practice!\n\n\n Why?"
   },
   {
     "objectID": "slides/03_workflow.html#why-practice-good-engineering-1",
@@ -207,14 +207,14 @@
     "href": "slides/03_workflow.html#why-practice-good-engineering-2",
     "title": "An R Package Engineering Workflow",
     "section": "Why practice good engineering?",
-    "text": "Why practice good engineering?\n\n\n\nDon’t waste time on maintenance\nBe faster with release on CRAN\nDon’t waste time with inefficient and buggy further development\n\n\n\nFulfill regulatory requirements1\nSave refactoring time when the PoC becomes the release version\nYou don’t have to be shy any longer about inviting other developers to contribute to the package on GitHub\n\n\n\nRegulators want to know: is the package reliable?"
+    "text": "Why practice good engineering?\n\n\n\nDon’t waste time on maintenance\nBe faster with release on CRAN\nDon’t waste time with inefficient and buggy further development\n\n\n\nFulfill regulatory requirements1\nSave refactoring time when the PoC becomes the release version\nYou don’t have to be shy any longer about inviting other developers to contribute to the package on GitHub\n\n\n\nSee also Ensuring Quality by Friedrich"
   },
   {
     "objectID": "slides/03_workflow.html#why-practice-good-engineering-3",
     "href": "slides/03_workflow.html#why-practice-good-engineering-3",
     "title": "An R Package Engineering Workflow",
     "section": "Why practice good engineering?",
-    "text": "Why practice good engineering?\nInvest time in requirements analysis, software design, and architecture…\n\n… but in most cases the workflow must be workable for a single developer or a small team."
+    "text": "Why practice good engineering?\nInvest time in\n\nrequirements analysis,\nsoftware design, and\narchitecture…\n\n\n… but in many cases the workflow must be workable for a single developer or a small team."
   },
   {
     "objectID": "slides/03_workflow.html#example---step-1-idea",
@@ -235,21 +235,21 @@
     "href": "slides/03_workflow.html#example---step-2-design-docs-1",
     "title": "An R Package Engineering Workflow",
     "section": "Example - Step 2: Design docs",
-    "text": "Example - Step 2: Design docs\nPurpose and Scope\nThe R package simlatr shall enable the creation of reproducible fake data.\nPackage Requirements\nsimlatr shall provide a function to generate normal distributed random data for two independent groups. The function shall allow flexible definition of sample size per group, mean per group, standard deviation per group. The reproducibility of the simulated data shall be ensured via an optional seed It should be possible to print the function result. A graphical presentation of the simulated data will also be possible."
+    "text": "Example - Step 2: Design docs\nPurpose and Scope\nThe R package simulatr shall enable the creation of reproducible fake data.\nPackage Requirements\nsimulatr shall provide a function to generate normal distributed random data for two independent groups. The function shall allow flexible definition of sample size per group, mean per group, standard deviation per group. The reproducibility of the simulated data shall be ensured via an optional seed It should be possible to print the function result. A graphical presentation of the simulated data will also be possible."
   },
   {
     "objectID": "slides/03_workflow.html#example---step-2-design-docs-2",
     "href": "slides/03_workflow.html#example---step-2-design-docs-2",
     "title": "An R Package Engineering Workflow",
     "section": "Example - Step 2: Design docs",
-    "text": "Example - Step 2: Design docs\nURS: Rmd, Quarto, README, LaTeX, Word, Polarion, …\nSoftware design specification - A picture is worth a thousand words: http://draw.io"
+    "text": "Example - Step 2: Design docs\n\n\nUseful formats / tools for design docs:\n\nR Markdown1 (*.Rmd)\nQuarto1 (*.qmd)\nOverleaf2\ndraw.io3\n\n\n\nUML Diagram\n\n\n\n\n\n\n\n\nBased on Markdown, the easy-to-use markup languageThe easy to use, online, collaborative LaTeX editorA picture is worth a thousand words"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging",
     "href": "slides/03_workflow.html#example---step-3-packaging",
     "title": "An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nR package programming\n\nCreate basic package project (see R Packages by Daniel)\nC&P existing R scripts (one-off scripts, prototype functions) and refactor it if necessary\nCreate R generic functions\nDocument all functions"
+    "text": "Example - Step 3: Packaging\nR package programming\n\nCreate basic package project (see R Packages by Daniel)\nC&P existing R scripts (one-off scripts, prototype functions) and refactor1 it if necessary\nCreate R generic functions\nDocument all functions\n\nSee also Ensuring Quality by Friedrich"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-1",
@@ -263,28 +263,28 @@
     "href": "slides/03_workflow.html#example---step-3-packaging-2",
     "title": "An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nRefactored script:\n\ngetSimluatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {\n    data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = mean1, sd = sd1),\n            rnorm(n = n2, mean = mean2, sd = sd2)\n        )\n    )\n}\n\nAlmost all functions, arguments, and objects should be self-explanatory due to their names."
+    "text": "Example - Step 3: Packaging\nRefactored script:\n\ngetSimulatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {\n    data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = mean1, sd = sd1),\n            rnorm(n = n2, mean = mean2, sd = sd2)\n        )\n    )\n}\n\nAlmost all functions, arguments, and objects should be self-explanatory due to their names."
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-3",
     "href": "slides/03_workflow.html#example---step-3-packaging-3",
     "title": "An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nDefine that the result is a list1 which is defined as class2:\n\ngetSimluatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {\n    result <- list(n1 = n1, n2 = n2, \n         mean1 = mean1, mean2 = mean2, sd1 = sd1, sd2 = sd2)\n    result$data <- data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = mean1, sd = sd1),\n            rnorm(n = n2, mean = mean2, sd = sd2)\n        )\n    )\n    # set the class attribute\n    result <- structure(result, class = \"SimulationResult\")\n    return(result)\n}\n\nIt’s common practice to add the function arguments to the result \\(\\rightarrow\\) should be a list or classTo implement generics, the result must be a class"
+    "text": "Example - Step 3: Packaging\nDefine that the result is a list1 which is defined as class2:\n\ngetSimulatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {\n    result <- list(n1 = n1, n2 = n2, \n         mean1 = mean1, mean2 = mean2, sd1 = sd1, sd2 = sd2)\n    result$data <- data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = mean1, sd = sd1),\n            rnorm(n = n2, mean = mean2, sd = sd2)\n        )\n    )\n    # set the class attribute\n    result <- structure(result, class = \"SimulationResult\")\n    return(result)\n}\n\nIt’s common practice to add the function arguments to the result \\(\\rightarrow\\) should be a list or classTo implement generics, the result must be a class"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-4",
     "href": "slides/03_workflow.html#example---step-3-packaging-4",
     "title": "An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nThe output is impractical, e.g., we need to scroll down:\n\nx <- getSimluatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)\nx\n\n$n1\n[1] 50\n\n$n2\n[1] 50\n\n$mean1\n[1] 5\n\n$mean2\n[1] 7\n\n$sd1\n[1] 3\n\n$sd2\n[1] 4\n\n$data\n    group      values\n1       1  6.03547630\n2       1  4.18566481\n3       1  6.79682934\n4       1  6.38172513\n5       1  6.85190472\n6       1  4.87129570\n7       1  2.11790887\n8       1  2.09137117\n9       1  4.38782245\n10      1 -1.77950210\n11      1  6.73697920\n12      1  5.19846757\n13      1  8.22383214\n14      1  4.81767313\n15      1  4.79926508\n16      1  8.81616639\n17      1  6.76201801\n18      1  4.19938346\n19      1  5.27904858\n20      1  2.66211594\n21      1  3.37773195\n22      1  5.33218294\n23      1  5.63940466\n24      1  1.53277979\n25      1  4.85021750\n26      1  0.80878444\n27      1  4.05254780\n28      1  6.08427479\n29      1  2.18446974\n30      1 10.05339848\n31      1  4.26959186\n32      1  9.59763754\n33      1  7.92832754\n34      1  4.25735866\n35      1  5.92442736\n36      1  5.73768316\n37      1  9.20863502\n38      1  5.24350588\n39      1  0.94823468\n40      1  1.84796521\n41      1  5.16815000\n42      1  2.61394625\n43      1  2.89934031\n44      1  7.05757115\n45      1  5.58049278\n46      1  5.05964874\n47      1  2.69368397\n48      1  1.48663154\n49      1  3.96008429\n50      1  6.47578878\n51      2  6.33725862\n52      2  6.13997883\n53      2 12.81990913\n54      2  6.20199307\n55      2 11.17558832\n56      2  4.46167505\n57      2  3.55447329\n58      2  0.40521771\n59      2  8.69307079\n60      2  8.51310648\n61      2 10.67609832\n62      2  5.15942126\n63      2  8.80210459\n64      2  3.44217194\n65      2  7.05866394\n66      2 12.31840093\n67      2 11.64466233\n68      2 11.52408013\n69      2  3.60539736\n70      2  3.48546222\n71      2 10.87102387\n72      2 15.87078662\n73      2 15.11801694\n74      2 11.75960818\n75      2 -0.34400290\n76      2  3.24670714\n77      2 -0.17075980\n78      2 -0.01819815\n79      2  3.31673858\n80      2  2.31760463\n81      2  8.36720315\n82      2  5.74023086\n83      2  6.22487057\n84      2  5.98057429\n85      2  3.77147610\n86      2  7.53801356\n87      2  7.76520371\n88      2  5.50178985\n89      2 -0.17709742\n90      2 11.13150108\n91      2  8.28120533\n92      2  5.27641167\n93      2  9.94076098\n94      2  6.68584156\n95      2  8.12658211\n96      2 10.75174842\n97      2  5.94951857\n98      2  7.43595279\n99      2  3.51090741\n100     2  1.79478448\n\nattr(,\"class\")\n[1] \"SimulationResult\"\n\n\n\nSolution: implement generic function print"
+    "text": "Example - Step 3: Packaging\nThe output is impractical, e.g., we need to scroll down:\n\nx <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)\nx\n\n$n1\n[1] 50\n\n$n2\n[1] 50\n\n$mean1\n[1] 5\n\n$mean2\n[1] 7\n\n$sd1\n[1] 3\n\n$sd2\n[1] 4\n\n$data\n    group     values\n1       1  7.7105800\n2       1  5.2753799\n3       1 -0.3799196\n4       1  3.1565106\n5       1  1.5291985\n6       1  5.8045930\n7       1  5.0815875\n8       1  4.1065623\n9       1  7.6935120\n10      1  1.4269623\n11      1  5.0380992\n12      1  1.9144411\n13      1 -0.5245204\n14      1  4.8152554\n15      1 10.7234799\n16      1  7.6731746\n17      1  4.6971718\n18      1  7.4541059\n19      1 -2.9584634\n20      1  6.0135063\n21      1  8.7414776\n22      1  7.3855897\n23      1 11.6806483\n24      1  3.0921494\n25      1  8.1731085\n26      1  1.8897376\n27      1  3.9505627\n28      1  6.6362629\n29      1  6.5342104\n30      1 -2.2421732\n31      1  2.2698619\n32      1  7.8834871\n33      1  0.9690619\n34      1  2.3419044\n35      1  4.3489737\n36      1  6.0652932\n37      1  3.4176847\n38      1  4.0866184\n39      1  3.0327478\n40      1  6.3328628\n41      1  9.3535112\n42      1  7.2166667\n43      1  5.8790529\n44      1  6.3788694\n45      1  7.5905165\n46      1  0.3758047\n47      1  6.1980015\n48      1  3.4038192\n49      1  2.6082501\n50      1  6.8999698\n51      2  7.6035017\n52      2  6.8765579\n53      2  4.2916270\n54      2  3.5624262\n55      2  5.6049685\n56      2  6.6883748\n57      2  2.2861998\n58      2  7.6030061\n59      2  7.2893829\n60      2  5.7441905\n61      2  8.6255675\n62      2  2.2382151\n63      2 10.5234014\n64      2 10.8514894\n65      2  3.8130447\n66      2  9.3906443\n67      2  6.5413613\n68      2 15.6428227\n69      2  5.1151484\n70      2  8.0469999\n71      2 10.1389636\n72      2  5.9749500\n73      2 15.3194491\n74      2  7.9250741\n75      2  7.1319501\n76      2  6.0454230\n77      2 15.4035323\n78      2  5.9269027\n79      2  9.4819710\n80      2  4.7717092\n81      2  8.1734349\n82      2  2.9046707\n83      2 11.1184591\n84      2 10.3112337\n85      2 12.6237088\n86      2  6.8427945\n87      2  1.5077332\n88      2  6.5416302\n89      2  7.9567490\n90      2 15.5831837\n91      2  4.2918637\n92      2 10.0970581\n93      2  6.3304566\n94      2 13.6742984\n95      2  2.2606872\n96      2  2.1937786\n97      2  4.6995036\n98      2  0.2122895\n99      2  3.5946186\n100     2 14.0204847\n\nattr(,\"class\")\n[1] \"SimulationResult\"\n\n\n\nSolution: implement generic function print"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-5",
     "href": "slides/03_workflow.html#example---step-3-packaging-5",
     "title": "An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nGeneric function print:\n\nCodeRoxygenOutput\n\n\n\nprint.SimulationResult <- function(x, ...) {\n    args <- list(n1 = x$n1, n2 = x$n2, \n        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)\n    \n    print(list(\n        args = format(args), \n        data = dplyr::tibble(x$data)\n    ), ...)\n}\nx\n\n\n\n\n#' @title\n#' Print Simulation Result\n#'\n#' @description\n#' Generic function to print a \\code{SimulationResult} object.\n#'\n#' @param x a \\code{SimulationResult} object to print.\n#' @param ... further arguments passed to or from other methods.\n#' \n#' @examples\n#' x <- getSimluatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, \n#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)\n#' print(x)\n#'\n#' @export\n\n\n\n\n\n$args\n   n1    n2 mean1 mean2   sd1   sd2 \n \"50\"  \"50\"   \"5\"   \"7\"   \"3\"   \"4\" \n\n$data\n# A tibble: 100 × 2\n   group values\n   <dbl>  <dbl>\n 1     1   6.04\n 2     1   4.19\n 3     1   6.80\n 4     1   6.38\n 5     1   6.85\n 6     1   4.87\n 7     1   2.12\n 8     1   2.09\n 9     1   4.39\n10     1  -1.78\n# … with 90 more rows"
+    "text": "Example - Step 3: Packaging\nGeneric function print:\n\nCodeRoxygenOutput\n\n\n\nprint.SimulationResult <- function(x, ...) {\n    args <- list(n1 = x$n1, n2 = x$n2, \n        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)\n    \n    print(list(\n        args = format(args), \n        data = dplyr::tibble(x$data)\n    ), ...)\n}\nx\n\n\n\n\n#' @title\n#' Print Simulation Result\n#'\n#' @description\n#' Generic function to print a \\code{SimulationResult} object.\n#'\n#' @param x a \\code{SimulationResult} object to print.\n#' @param ... further arguments passed to or from other methods.\n#' \n#' @examples\n#' x <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, \n#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)\n#' print(x)\n#'\n#' @export\n\n\n\n\n\n$args\n   n1    n2 mean1 mean2   sd1   sd2 \n \"50\"  \"50\"   \"5\"   \"7\"   \"3\"   \"4\" \n\n$data\n# A tibble: 100 × 2\n   group values\n   <dbl>  <dbl>\n 1     1  7.71 \n 2     1  5.28 \n 3     1 -0.380\n 4     1  3.16 \n 5     1  1.53 \n 6     1  5.80 \n 7     1  5.08 \n 8     1  4.11 \n 9     1  7.69 \n10     1  1.43 \n# … with 90 more rows"
   },
   {
     "objectID": "slides/03_workflow.html#preparation",
@@ -298,7 +298,7 @@
     "href": "slides/03_workflow.html#tasks",
     "title": "An R Package Engineering Workflow",
     "section": "Tasks",
-    "text": "Tasks\n\nTask 1Task 2Task 3Task 4Task 5Task 6Task 7\n\n\nAdd assertions to improve the usability and user experience\n\n\n\n\n\n\nTip on assertions\n\n\nUse the package checkmate to validate input arguments.\n\n\n\nExample:\n\nplayWithAssertions <- function(n1) {\n  checkmate::assertInt(n1, lower = 1)\n}\nplayWithAssertions(-1)\n\nError in playWithAssertions(-1) : Assertion on ‘n1’ failed: Element 1 is not >= 1.\n\n\nAdd three additional results:\n\nn total,\ncreation time, and\nallocation ratio\n\n\n\n\n\n\n\nTip on creation time\n\n\nSys.time(), format(Sys.time(), '%B %d, %Y'), Sys.Date()\n\n\n\n\n\nAdd an additional result: t.test result\n\n\nAdd an optional alternative argument and pass it through t.test:\n\n\nalternative = c(\"two.sided\", \"less\", \"greater\")\n\n\n\nImplement the generic functions print and plot.\n\n\n\n\n\n\nTip on print\n\n\nUse the plot example function from above and extend it.\n\n\n\n\n\n\n\n\n\nTip on plot\n\n\nUse R base plot or ggplot2 to create a grouped boxplot of the fake data.\n\n\n\n\n\nImplement the generic functions\n\nsummary,\nkable, and\ncat.\n\n\n\nDocument your functions with Roxygen2\n\n\n\n\n\nGood Software Engineering Practice with R - Home | Slides | License"
+    "text": "Tasks\n\nTask 1Task 2Task 3Task 4Task 5Task 6Task 7\n\n\nAdd assertions to improve the usability and user experience\n\n\n\n\n\n\nTip on assertions\n\n\nUse the package checkmate to validate input arguments.\n\n\n\nExample:\n\nplayWithAssertions <- function(n1) {\n  checkmate::assertInt(n1, lower = 1)\n}\nplayWithAssertions(-1)\n\nError in playWithAssertions(-1) : Assertion on ‘n1’ failed: Element 1 is not >= 1.\n\n\nAdd three additional results:\n\nn total,\ncreation time, and\nallocation ratio\n\n\n\n\n\n\n\nTip on creation time\n\n\nSys.time(), format(Sys.time(), '%B %d, %Y'), Sys.Date()\n\n\n\n\n\nAdd an additional result: t.test result\n\n\nAdd an optional alternative argument and pass it through t.test:\n\n\nalternative = c(\"two.sided\", \"less\", \"greater\")\n\n\n\nImplement the generic functions print and plot.\n\n\n\n\n\n\nTip on print\n\n\nUse the plot example function from above and extend it.\n\n\n\n\n\n\n\n\n\nTip on plot\n\n\nUse R base plot or ggplot2 to create a grouped boxplot of the fake data.\n\n\n\n\n\nImplement the generic functions\n\nsummary,\nkable, and\ncat.\n\n\n\nDocument your functions with Roxygen2"
   },
   {
     "objectID": "slides/04_quality.html#verification-vs-validation",
@@ -354,14 +354,14 @@
     "href": "slides/04_quality.html#how-to-optimize-the-code-styling",
     "title": "Ensuring Quality",
     "section": "How to optimize the code styling?",
-    "text": "How to optimize the code styling?\nTwo popular R packages support the tidyverse style guide:\n\nstyler: interactively restyle selected text, files, or entire projects\nlintr: perform automated checks to confirm that you conform to the style guide"
+    "text": "How to optimize the code styling?\nTwo popular R packages support the tidyverse style guide:\n\nstyler: interactively restyle selected text, files, or entire projects:\n\nstyle_text\nstyle_file\nstyle_pkg\n\nlintr: perform automated checks to confirm that you conform to the style guide\n\nThe devtools function spell_check runs a spell check on text fields in the package description file, manual pages, and optionally vignettes."
   },
   {
     "objectID": "slides/04_quality.html#workflow-example---refactoring",
     "href": "slides/04_quality.html#workflow-example---refactoring",
     "title": "Ensuring Quality",
     "section": "Workflow Example - Refactoring",
-    "text": "Workflow Example - Refactoring\nRemember the one-off script:\n\ndat <- data.frame(\n    group = c(rep(1, 50), rep(2, 50)),\n    values = c(\n        rnorm(n = 50, mean = 8, sd = 12),\n        rnorm(n = 50, mean = 14, sd = 11)\n    )\n)\n\n\n\nGood Software Engineering Practice with R - Home | Slides | License"
+    "text": "Workflow Example - Refactoring\nRemember the one-off script:\n\ndat <- data.frame(\n    group = c(rep(1, 50), rep(2, 50)),\n    values = c(\n        rnorm(n = 50, mean = 8, sd = 12),\n        rnorm(n = 50, mean = 14, sd = 11)\n    )\n)"
   },
   {
     "objectID": "slides/04_quality.html#why-is-clean-code-important",
@@ -375,14 +375,14 @@
     "href": "slides/04_quality.html#what-are-common-clean-code-rules",
     "title": "Ensuring Quality",
     "section": "What are common clean code rules?",
-    "text": "What are common clean code rules?\n\n\nNaming: Use descriptive and meaningful names for variables, functions, and classes.\nFormatting: Adhere to consistent indentation, spacing, and bracketing to make the code easy to read.\nSimplicity: Keep the code as simple and straightforward as possible, avoiding unnecessary complexity.\nSingle Responsibility Principle (SRP): Each function should have a single, well-defined purpose.\nDon’t Repeat Yourself (DRY): Avoid duplication of code, either by reusing existing code or creating functions."
+    "text": "What are common clean code rules?\n\nNaming: Use descriptive and meaningful names for variables, functions, and classes.\nFormatting: Adhere to consistent indentation, spacing, and bracketing to make the code easy to read.\nSimplicity: Keep the code as simple and straightforward as possible, avoiding unnecessary complexity.\nSingle Responsibility Principle (SRP): Each function should have a single, well-defined purpose.\nDon’t Repeat Yourself (DRY): Avoid duplication of code, either by reusing existing code or creating functions."
   },
   {
     "objectID": "slides/04_quality.html#how-to-apply-clean-code-rules",
     "href": "slides/04_quality.html#how-to-apply-clean-code-rules",
     "title": "Ensuring Quality",
-    "section": "How to apply clean code rules?",
-    "text": "How to apply clean code rules?\nRecommended quality workflow for R packages:\n\nStrictly follow the naming policy (#1)\nContinuously write tests and optimize the code coverage with help of tools (#7, #8)\nOptimize the code style and check spelling (#2)\nDocument the package and functions (#6)\nRegularly refactor your code (#3, #4, #5, #7, #9)\nPublish your code on GitHub and invite colleagues to contribute (#10)"
+    "section": "How to apply Clean Code Rules?",
+    "text": "How to apply Clean Code Rules?\nRecommended quality workflow for R packages:\n\nFollow the naming and styling guidelines (#1, #2)\nContinuously write tests and optimize the code coverage with help of tools (#7, #8)\nDocument the package and functions (#6)\nRegularly refactor your code (#1 - #7, #9)\nPublish your code on GitHub and invite colleagues to contribute (#10)"
   },
   {
     "objectID": "slides/04_quality.html#example",
@@ -403,7 +403,7 @@
     "href": "slides/04_quality.html#what-are-common-clean-code-rules-1",
     "title": "Ensuring Quality",
     "section": "What are common clean code rules?",
-    "text": "What are common clean code rules?\n\n\nComments: Use comments to explain the purpose of code blocks and to clarify complex logic.\nError Handling: Include error handling code to gracefully handle exceptions and unexpected situations.\nTest-Driven Development (TDD): Write tests for your code to ensure it behaves as expected and to catch bugs early.\nRefactoring: Regularly refactor your code to keep it clean, readable, and maintainable.\nCode Review: Have other team members review your code to catch potential issues and improve its quality."
+    "text": "What are common clean code rules?\n\nComments: Use comments to explain the purpose of code blocks and to clarify complex logic.\nError Handling: Include error handling code to gracefully handle exceptions and unexpected situations.\nTest-Driven Development (TDD): Write tests for your code to ensure it behaves as expected and to catch bugs early.\nRefactoring: Regularly refactor your code to keep it clean, readable, and maintainable.\nCode Review: Have other team members review your code to catch potential issues and improve its quality."
   },
   {
     "objectID": "slides/04_quality.html#apply-clean-code-rules",
@@ -459,21 +459,21 @@
     "href": "slides/04_quality.html#how-to-do-refactoring",
     "title": "Ensuring Quality",
     "section": "How to do refactoring?",
-    "text": "How to do refactoring?\n\nCCR#9: Refactoring\n\nCheck if other clean code rules are broken:\n\nCCR#5 (DRY): Outsource redundant code blocks to functions\nCCR#1 (Naming): Improve the naming of files, classes, functions, and arguments\nCCR#3 (Simplicity): Split large1 source files into multiple files\n\nGeneral guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability"
+    "text": "How to do refactoring?\n\nCCR#9: Refactoring\n\nCheck if clean code rules are broken:\n\nCCR#5 (DRY): Outsource redundant code blocks to functions\nCCR#1 (Naming): Improve the naming of files, classes, functions, and arguments\nCCR#3 (Simplicity): Split large1 source files into multiple files\n\nGeneral guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability"
   },
   {
     "objectID": "slides/04_quality.html#preparation",
     "href": "slides/04_quality.html#preparation",
     "title": "Ensuring Quality",
     "section": "Preparation",
-    "text": "Preparation\n\nSet up testing infrastructure,\nadd unit tests,\ntest-driven development,\ncheck,\nlintr, spelling,\ntest coverage.\n\ndownload zip file, no git stuff here yet, so that it is independent"
+    "text": "Preparation\n\nSet up testing infrastructure,\nadd unit tests,\ntest-driven development,\ncheck,\n\ndownload zip file, no git stuff here yet, so that it is independent"
   },
   {
     "objectID": "slides/04_quality.html#example-of-an-r-script-with-poor-code-style",
     "href": "slides/04_quality.html#example-of-an-r-script-with-poor-code-style",
     "title": "Ensuring Quality",
     "section": "Example of an R script with poor code style",
-    "text": "Example of an R script with poor code style\n\na<-c(1,2,3,4,5)\nb<-c(6,7,8,9,10)\nfor (i in 1:5){x<-a[i]+b[i];print(x)}\n\nThis code has several issues with code style:\n\nInconsistent indentation: There’s no clear structure to the code and it’s difficult to quickly see what each line of code is doing.\nNo white space: The code is difficult to read because there’s no white space between expressions and statements.\nAbbreviated variable names: The variable names a, b, and x are not descriptive and make the code less readable.\nInadequate commenting: There’s no commentary explaining what the code does, making it difficult for someone else to understand or use the code."
+    "text": "Example of an R script with poor code style\n\na<-c(1,2,3,4,5)\nb<-c(6,7,8,9,10)\nfor (i in 1:5){x<-a[i]+b[i];print(x)}\n\nThis code has several issues with code style:\n\nInconsistent indentation: There’s no clear structure to the code and it’s difficult to quickly see what each line of code is doing\nNo white space: The code is difficult to read because there’s no white space between expressions and statements\nAbbreviated variable names: The variable names a, b, and x are not descriptive and make the code less readable\nInadequate commenting: There’s no commentary explaining what the code does, making it difficult for someone else to understand or use the code"
   },
   {
     "objectID": "slides/04_quality.html#example-on-test-coverage",
@@ -495,5 +495,145 @@
     "title": "Ensuring Quality",
     "section": "Example on test coverage",
     "text": "Example on test coverage\nWe can go into the details by clicking on a file name:"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-broken-clean-code-rules",
+    "href": "slides/04_quality.html#example-broken-clean-code-rules",
+    "title": "Ensuring Quality",
+    "section": "Example: broken clean code rules",
+    "text": "Example: broken clean code rules\n\n\n\ny=function(x) {\n    s1=0\n    for(v1 in x){s1=s1+v1}\n    m1=s1/length(x)\n    \n    i=ceiling(length(x)/2)\n    if(length(x) %% 2 == 0){\n        i=c(i,i+1)\n    }\n    s2=0\n    for(v2 in i){s2=s2+x[v2]}\n    m2=s2/length(i)\n    c(m1,m2)\n}\ny(c(1:7, 100))\n\n[1] 16.0  4.5\n\n\n\n\nNaming\nFormatting\nSimplicity\nSingle Responsibility Principle (SRP)\nDon’t Repeat Yourself (DRY)\nComments\nError Handling\nTest-Driven Development (TDD)"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-broken-clean-code-rules-1",
+    "href": "slides/04_quality.html#example-broken-clean-code-rules-1",
+    "title": "Ensuring Quality",
+    "section": "Example: broken clean code rules",
+    "text": "Example: broken clean code rules\n\ngetMeanAndMedian=function(x) {\n    sum1=0\n    for(value in x){sum1=sum1+value}\n    meanValue=sum1/length(x)\n    \n    centerIndices=ceiling(length(x)/2)\n    if(length(x) %% 2 == 0){\n        centerIndices=c(centerIndices,centerIndices+1)\n    }\n    sum2=0\n    for(centerIndex in centerIndices){sum2=sum2+x[centerIndex]}\n    medianValue=sum2/length(centerIndices)\n    c(meanValue,medianValue)\n}\n\nCCR#1 Naming: Use descriptive and meaningful names for variables, functions, and classes"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr1",
+    "href": "slides/04_quality.html#example-ccr1",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#1",
+    "text": "Example: CCR#1\n\n\n\ny=function(x){\n  s1=0\n  for(v1 in x){s1=s1+v1}\n  m1=s1/length(x)\n  i=ceiling(length(x)/2)\n  if(length(x) %% 2 == 0){i=c(i,i+1)}\n  s2=0\n  for(v2 in i){s2=s2+x[v2]}\n  m2=s2/length(i)\n  c(m1,m2)\n}\ny(c(1:7, 100))\n\n[1] 16.0  4.5\n\n\n\nCCR#1 Naming: Are the names of the variables, functions, and classes descriptive and meaningful?"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr2",
+    "href": "slides/04_quality.html#example-ccr2",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#2",
+    "text": "Example: CCR#2\n\n\n\ngetMeanAndMedian <- function(x) {\n    sum1 <- 0\n    for (value in x) {\n        sum1 <- sum1 + value\n    }\n    meanValue <- sum1 / length(x)\n    centerIndices <- ceiling(length(x) / 2)\n    if (length(x) %% 2 == 0) {\n        centerIndices <- c(\n          centerIndices, centerIndices + 1)\n    }\n    sum2 <- 0\n    for (centerIndex in centerIndices) {\n        sum2 <- sum2 + x[centerIndex]\n    }\n    medianValue <- sum2 / length(centerIndices)\n    c(meanValue, medianValue)\n}\n\n\nCCR#2 Formatting \nCCR#3 Simplicity: Did you keep the code as simple and straightforward as possible, i.e., did you avoid unnecessary complexity"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr3",
+    "href": "slides/04_quality.html#example-ccr3",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#3",
+    "text": "Example: CCR#3\nNote:\n\nFrom the Simplicity rule also follows that large source files should be split into multiple files\nGeneral guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr4",
+    "href": "slides/04_quality.html#example-ccr4",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#4",
+    "text": "Example: CCR#4\n\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, centerIndices + 1)\n    }\n    sum(x[centerIndices]) / length(centerIndices)\n}\n\nCCR#4 Single Responsibility Principle (SRP) \nCCR#5 Don’t Repeat Yourself (DRY): Did you avoid duplication of code, either by reusing existing code or creating functions"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr5",
+    "href": "slides/04_quality.html#example-ccr5",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#5",
+    "text": "Example: CCR#5\n\nCCR#5: DRY\n\nSuppose you have a code block that performs the same calculation multiple times:\n\nresult1 <- 2 * 3 + 4\nresult2 <- 2 * 5 + 4\nresult3 <- 2 * 7 + 4\n\nCreate a function to encapsulate this calculation and reuse it multiple times:\n\ncalculate <- function(x) {\n  2 * x + 4\n}\n\nresult1 <- calculate(3)\nresult2 <- calculate(5)\nresult3 <- calculate(7)"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr6",
+    "href": "slides/04_quality.html#example-ccr6",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#6",
+    "text": "Example: CCR#6\n\n\n\n# returns the mean of x\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\n# returns TRUE if the length of x is \n# an even number; FALSE otherwise\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\n# returns the median of x\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, \n             centerIndices + 1)\n    }\n    getMean(x[centerIndices])\n}\n\n\nCCR#6 Comments \nCCR#7 Error Handling: Did you include error handling code to gracefully handle exceptions and unexpected situations \n\ngetMean(\"a\":\"z\")\n\nError in “a”:“z” : NA/NaN argument Additionally: Warning messages: In getMean(“a”:“z”) : NAs generated by conversion"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr7",
+    "href": "slides/04_quality.html#example-ccr7",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#7",
+    "text": "Example: CCR#7\n\n# returns the mean of x\ngetMean <- function(x) {\n    tryCatch({\n        sum(x) / length(x)      \n    }, error = function(e) {\n        stop(\"Failed to calculate the mean of 'x': \", e$message)\n    })\n}\n\n# returns TRUE if the length of x is an even number; FALSE otherwise\nisLengthAnEvenNumber <- function(x) {\n    tryCatch({\n        length(x) %% 2 == 0\n    }, error = function(e) {\n        stop(\"Failed to check if 'x' is an even number: \", e$message)\n    })\n}\n\n# returns the median of x\ngetMedian <- function(x) {\n    tryCatch({\n        centerIndices <- ceiling(length(x) / 2)\n        if (isLengthAnEvenNumber(x)) {\n            centerIndices <- c(centerIndices, centerIndices + 1)\n        }\n        getMean(x[centerIndices])            \n    }, error = function(e) {\n        stop(\"Failed to calculate the median of 'x': \", e$message)\n    })\n}\n\nCCR#7 Error Handling"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-clean-code-rules---step-by-step",
+    "href": "slides/04_quality.html#example-clean-code-rules---step-by-step",
+    "title": "Ensuring Quality",
+    "section": "Example: Clean Code Rules - Step by Step",
+    "text": "Example: Clean Code Rules - Step by Step\nThis script breaks all common clean code rules:\n\ny=function(x){\n  s1=0\n  for(v1 in x){s1=s1+v1}\n  m1=s1/length(x)\n  i=ceiling(length(x)/2)\n  if(length(x) %% 2 == 0){i=c(i,i+1)}\n  s2=0\n  for(v2 in i){s2=s2+x[v2]}\n  m2=s2/length(i)\n  c(m1,m2)\n}\ny(c(1:7, 100))\n\n[1] 16.0  4.5\n\n\n\nWe now refactor it (CCR#9) by applying clean code rules…"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr6-1",
+    "href": "slides/04_quality.html#example-ccr6-1",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#6",
+    "text": "Example: CCR#6\n\n\n\n# returns the mean of x\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\n# returns TRUE if the length of x is \n# an even number; FALSE otherwise\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\n# returns the median of x\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, \n             centerIndices + 1)\n    }\n    getMean(x[centerIndices])\n}\n\n\nCCR#6 Comments \nCCR#7 Error Handling: Did you include error handling code to gracefully handle exceptions and unexpected situations"
+  },
+  {
+    "objectID": "slides/04_quality.html#summary-of-clean-code-rules",
+    "href": "slides/04_quality.html#summary-of-clean-code-rules",
+    "title": "Ensuring Quality",
+    "section": "Summary of Clean Code Rules",
+    "text": "Summary of Clean Code Rules\n\nNaming: Use descriptive and meaningful names for variables, functions, and classes\nFormatting: Adhere to consistent indentation, spacing, and bracketing to make the code easy to read\nSimplicity: Keep the code as simple and straightforward as possible, avoiding unnecessary complexity\nSingle Responsibility Principle (SRP): Each function should have a single, well-defined purpose\nDon’t Repeat Yourself (DRY): Avoid duplication of code, either by reusing existing code or creating functions"
+  },
+  {
+    "objectID": "slides/04_quality.html#summary-of-clean-code-rules-1",
+    "href": "slides/04_quality.html#summary-of-clean-code-rules-1",
+    "title": "Ensuring Quality",
+    "section": "Summary of Clean Code Rules",
+    "text": "Summary of Clean Code Rules\n\nComments: Use comments to explain the purpose of code blocks and to clarify complex logic\nError Handling: Include error handling code to gracefully handle exceptions and unexpected situations\n Test-Driven Development (TDD): Write tests for your code to ensure it behaves as expected and to catch bugs early\nRefactoring: Regularly refactor your code to keep it clean, readable, and maintainable\n Code Review: Have other team members review your code to catch potential issues and improve its quality"
+  },
+  {
+    "objectID": "slides/04_quality.html#code-styler-in-rstudio",
+    "href": "slides/04_quality.html#code-styler-in-rstudio",
+    "title": "Ensuring Quality",
+    "section": "Code Styler in RStudio",
+    "text": "Code Styler in RStudio\n\nBrowse addinsLink styler to keyboard shortcut"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr9",
+    "href": "slides/04_quality.html#example-ccr9",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#9",
+    "text": "Example: CCR#9\n\n\n\ny=function(x){\n  s1=0\n  for(v1 in x){s1=s1+v1}\n  m1=s1/length(x)\n  i=ceiling(length(x)/2)\n  if(length(x) %% 2 == 0){i=c(i,i+1)}\n  s2=0\n  for(v2 in i){s2=s2+x[v2]}\n  m2=s2/length(i)\n  c(m1,m2)\n}\ny(c(1:7, 100))\n\n[1] 16.0  4.5\n\n\n\nCCR#1 Naming: Are the names of the variables, functions, and classes descriptive and meaningful?"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr1-1",
+    "href": "slides/04_quality.html#example-ccr1-1",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#1",
+    "text": "Example: CCR#1\n\ngetMeanAndMedian=function(x){\n    sum1=0\n    for(value in x){sum1=sum1+value}\n    meanValue=sum1/length(x)\n    centerIndices=ceiling(length(x)/2)\n    if(length(x) %% 2 == 0){\n        centerIndices=c(centerIndices,centerIndices+1)\n    }\n    sum2=0\n    for(centerIndex in centerIndices){sum2=sum2+x[centerIndex]}\n    medianValue=sum2/length(centerIndices)\n    c(meanValue,medianValue)\n}\n\nCCR#1 Naming \nCCR#2 Formatting: Are indentation, spacing, and bracketing consistent, i.e., is the code easy to read"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr3-1",
+    "href": "slides/04_quality.html#example-ccr3-1",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#3",
+    "text": "Example: CCR#3\n\ngetMeanAndMedian <- function(x) {\n    meanValue <- sum(x) / length(x)\n    centerIndices <- ceiling(length(x) / 2)\n    if (length(x) %% 2 == 0) {\n        centerIndices <- c(centerIndices, centerIndices + 1)\n    }\n    medianValue <- sum(x[centerIndices]) / length(centerIndices)\n    c(meanValue, medianValue)\n}\n\nCCR#3 Simplicity \nCCR#4 Single Responsibility Principle (SRP): Has each function a single, well-defined purpose"
+  },
+  {
+    "objectID": "slides/04_quality.html#example-ccr5-1",
+    "href": "slides/04_quality.html#example-ccr5-1",
+    "title": "Ensuring Quality",
+    "section": "Example: CCR#5",
+    "text": "Example: CCR#5\n\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, centerIndices + 1)\n    }\n    getMean(x[centerIndices])\n}\n\nCCR#5 Don’t Repeat Yourself (DRY) \nCCR#6 Comments: Did you use comments to explain the purpose of code blocks and to clarify complex logic"
+  },
+  {
+    "objectID": "slides/04_quality.html#tasks",
+    "href": "slides/04_quality.html#tasks",
+    "title": "Ensuring Quality",
+    "section": "Tasks",
+    "text": "Tasks\n\nTask 1Task 2Task 3Task 4\n\n\nTake your local simulatr package project (see previous excercise) and refactor it, i.e., apply the linked clean code rules:\n\nOptimize naming manually (CCR#1)\nUse the styler package to optimize the formatting (CCR#2)\nCheck and correct where appropriate:\n\nSimplicity (CCR#3)\nSRP (CCR#4)\nDRY (CCR#5)\n\n\n\n\n\nImplement appropriate error handling (CCR#7) in the simulatr package\nAdd comments to explain the purpose of code blocks (CCR#6)\n\nIf it concerns exported functions use Roxygen2 notation\n\nCheck correct spelling with the devtools function spell_check()\n\n\n\nApply CCR#8 to the simulatr package project:\n\nAdd unit tests\nOptimize your test coverage with help of the covr functions package_coverage and report\n\n\n\nCheck if your package is ready for use in production with the devtools function check()"
+  },
+  {
+    "objectID": "slides/04_quality.html",
+    "href": "slides/04_quality.html",
+    "title": "Ensuring Quality",
+    "section": "",
+    "text": "Photo CC0 by Pavel Danilyuk on pexels.com\n\n\n\n\n\nMaintainability: The code is readable and understandable and has a reduced complexity, i.e., it’s easier to fix bugs\nExtensibility: The architecture is simpler, cleaner, and more expressive, i.e., it’s easier to extend the capabilities and the risk of introducing bugs is reduced\nPerformance: The code often runs faster, uses less memory, or is easier to optimize\n\n\n\n\nThis script breaks all common clean code rules:\n\ny=function(x){\n  s1=0\n  for(v1 in x){s1=s1+v1}\n  m1=s1/length(x)\n  i=ceiling(length(x)/2)\n  if(length(x) %% 2 == 0){i=c(i,i+1)}\n  s2=0\n  for(v2 in i){s2=s2+x[v2]}\n  m2=s2/length(i)\n  c(m1,m2)\n}\ny(c(1:7, 100))\n\n[1] 16.0  4.5\n\n\n\nWe now refactor it (CCR#9) by applying clean code rules…\n\n\n\n\n\n\n\ny=function(x){\n  s1=0\n  for(v1 in x){s1=s1+v1}\n  m1=s1/length(x)\n  i=ceiling(length(x)/2)\n  if(length(x) %% 2 == 0){i=c(i,i+1)}\n  s2=0\n  for(v2 in i){s2=s2+x[v2]}\n  m2=s2/length(i)\n  c(m1,m2)\n}\ny(c(1:7, 100))\n\n[1] 16.0  4.5\n\n\n\nCCR#1 Naming: Are the names of the variables, functions, and classes descriptive and meaningful?\n\n\n\n\n\n\ngetMeanAndMedian=function(x){\n    sum1=0\n    for(value in x){sum1=sum1+value}\n    meanValue=sum1/length(x)\n    centerIndices=ceiling(length(x)/2)\n    if(length(x) %% 2 == 0){\n        centerIndices=c(centerIndices,centerIndices+1)\n    }\n    sum2=0\n    for(centerIndex in centerIndices){sum2=sum2+x[centerIndex]}\n    medianValue=sum2/length(centerIndices)\n    c(meanValue,medianValue)\n}\n\nCCR#1 Naming \nCCR#2 Formatting: Are indentation, spacing, and bracketing consistent, i.e., is the code easy to read \n\n\n\n\n\n\ngetMeanAndMedian <- function(x) {\n    sum1 <- 0\n    for (value in x) {\n        sum1 <- sum1 + value\n    }\n    meanValue <- sum1 / length(x)\n    centerIndices <- ceiling(length(x) / 2)\n    if (length(x) %% 2 == 0) {\n        centerIndices <- c(\n          centerIndices, centerIndices + 1)\n    }\n    sum2 <- 0\n    for (centerIndex in centerIndices) {\n        sum2 <- sum2 + x[centerIndex]\n    }\n    medianValue <- sum2 / length(centerIndices)\n    c(meanValue, medianValue)\n}\n\n\nCCR#2 Formatting \nCCR#3 Simplicity: Did you keep the code as simple and straightforward as possible, i.e., did you avoid unnecessary complexity \n\n\n\n\n\nNote:\n\nFrom the Simplicity rule also follows that large source files should be split into multiple files\nGeneral guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability\n\n\n\n\n\ngetMeanAndMedian <- function(x) {\n    meanValue <- sum(x) / length(x)\n    centerIndices <- ceiling(length(x) / 2)\n    if (length(x) %% 2 == 0) {\n        centerIndices <- c(centerIndices, centerIndices + 1)\n    }\n    medianValue <- sum(x[centerIndices]) / length(centerIndices)\n    c(meanValue, medianValue)\n}\n\nCCR#3 Simplicity \nCCR#4 Single Responsibility Principle (SRP): Has each function a single, well-defined purpose \n\n\n\n\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, centerIndices + 1)\n    }\n    sum(x[centerIndices]) / length(centerIndices)\n}\n\nCCR#4 Single Responsibility Principle (SRP) \nCCR#5 Don’t Repeat Yourself (DRY): Did you avoid duplication of code, either by reusing existing code or creating functions \n\n\n\n\nCCR#5: DRY\n\nSuppose you have a code block that performs the same calculation multiple times:\n\nresult1 <- 2 * 3 + 4\nresult2 <- 2 * 5 + 4\nresult3 <- 2 * 7 + 4\n\nCreate a function to encapsulate this calculation and reuse it multiple times:\n\ncalculate <- function(x) {\n  2 * x + 4\n}\n\nresult1 <- calculate(3)\nresult2 <- calculate(5)\nresult3 <- calculate(7)\n\n\n\n\n\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, centerIndices + 1)\n    }\n    getMean(x[centerIndices])\n}\n\nCCR#5 Don’t Repeat Yourself (DRY) \nCCR#6 Comments: Did you use comments to explain the purpose of code blocks and to clarify complex logic \n\n\n\n\n\n\n# returns the mean of x\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\n# returns TRUE if the length of x is \n# an even number; FALSE otherwise\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\n# returns the median of x\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, \n             centerIndices + 1)\n    }\n    getMean(x[centerIndices])\n}\n\n\nCCR#6 Comments \nCCR#7 Error Handling: Did you include error handling code to gracefully handle exceptions and unexpected situations \n\ngetMean(\"a\":\"z\")\n\nError in “a”:“z” : NA/NaN argument Additionally: Warning messages: In getMean(“a”:“z”) : NAs generated by conversion\n\n\n\n\n\n\n# returns the mean of x\ngetMean <- function(x) {\n    tryCatch({\n        sum(x) / length(x)      \n    }, error = function(e) {\n        stop(\"Failed to calculate the mean of 'x': \", e$message)\n    })\n}\n\n# returns TRUE if the length of x is an even number; FALSE otherwise\nisLengthAnEvenNumber <- function(x) {\n    tryCatch({\n        length(x) %% 2 == 0\n    }, error = function(e) {\n        stop(\"Failed to check if 'x' is an even number: \", e$message)\n    })\n}\n\n# returns the median of x\ngetMedian <- function(x) {\n    tryCatch({\n        centerIndices <- ceiling(length(x) / 2)\n        if (isLengthAnEvenNumber(x)) {\n            centerIndices <- c(centerIndices, centerIndices + 1)\n        }\n        getMean(x[centerIndices])            \n    }, error = function(e) {\n        stop(\"Failed to calculate the median of 'x': \", e$message)\n    })\n}\n\nCCR#7 Error Handling \n\n\n\n\nNaming: Use descriptive and meaningful names for variables, functions, and classes\nFormatting: Adhere to consistent indentation, spacing, and bracketing to make the code easy to read\nSimplicity: Keep the code as simple and straightforward as possible, avoiding unnecessary complexity\nSingle Responsibility Principle (SRP): Each function should have a single, well-defined purpose\nDon’t Repeat Yourself (DRY): Avoid duplication of code, either by reusing existing code or creating functions\n\n\n\n\n\nComments: Use comments to explain the purpose of code blocks and to clarify complex logic\nError Handling: Include error handling code to gracefully handle exceptions and unexpected situations\n Test-Driven Development (TDD): Write tests for your code to ensure it behaves as expected and to catch bugs early\nRefactoring: Regularly refactor your code to keep it clean, readable, and maintainable\n Code Review: Have other team members review your code to catch potential issues and improve its quality\n\n\n\n\nRecommended quality workflow for R packages:\n\nFollow the naming and styling guidelines (#1, #2)\nContinuously write tests and optimize the code coverage with help of tools (#7, #8)\nDocument the package and functions (#6)\nRegularly refactor your code (#1 - #7, #9)\nPublish your code on GitHub and invite colleagues to contribute (#10)"
   }
 ]

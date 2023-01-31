@@ -416,19 +416,7 @@ Friedrich
 - Packaging
 - Professional workflow
 -->
-<div class="callout callout-note callout-captioned callout-style-simple">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
 <p><strong>From an idea to a production-grade R package</strong></p>
-</div>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
 <p>Example szenario: in your daily work, you notice that you need certain one-off scripts again and again.</p>
 <div class="fragment">
 <p><span class="blue"><i class="fa-solid fa-lightbulb fa-2x" aria-label="lightbulb"></i></span> The idea of creating an R package was born because you understood that “copy and paste” R scripts is inefficient and on top of that, you want to share your helpful R functions with colleagues and the world…</p>
@@ -479,14 +467,8 @@ Friedrich
 <p><span class="yellow"><i class="fa-solid fa-face-surprise fa-1x" aria-label="face-surprise"></i></span> <span class="yellow"><i class="fa-solid fa-face-flushed fa-2x" aria-label="face-flushed"></i></span> <span class="yellow"><i class="fa-solid fa-face-sad-cry fa-3x" aria-label="face-sad-cry"></i></span></p>
 </div>
 </div>
-<!-- https://en.wikipedia.org/wiki/Software_verification_and_validation -->
 </div>
-</section>
-<section id="agile-model" class="slide level2">
-<h2>Agile Model</h2>
-<!-- https://blog.devart.com/software-development-life-cycle.html -->
-
-<img data-src="resources/agile_model.jpg" title="Agile Model" class="r-stretch"></section></section>
+</section></section>
 <section>
 <section id="workflow-in-practice" class="title-slide slide level1 center">
 <h1>Workflow in Practice</h1>
@@ -506,11 +488,11 @@ Friedrich
 </ol>
 </div><div class="column" style="width:50%;">
 <ol start="6" type="1">
-<li class="fragment">Documentation</li>
+<li class="fragment">Bug fixing + Documentation</li>
 <li class="fragment">Use in production</li>
-<li class="fragment">Develop further</li>
+<li class="fragment">Bug fixing + Further development</li>
 <li class="fragment">Use in production</li>
-<li class="fragment">…</li>
+<li class="fragment">Bug fixing + …</li>
 </ol>
 </div>
 </div>
@@ -555,12 +537,17 @@ Friedrich
 </ul>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Regulators want to know: is the package reliable?</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>See also <a href="04_quality.html">Ensuring Quality</a> by <a href="https://www.linkedin.com/in/pahlke">Friedrich</a></p></li></ol></aside></section>
 <section id="why-practice-good-engineering-3" class="slide level2">
 <h2>Why practice good engineering?</h2>
-<p>Invest time in requirements analysis, software design, and architecture…</p>
+<p>Invest time in</p>
+<ul>
+<li>requirements analysis,</li>
+<li>software design, and</li>
+<li>architecture…</li>
+</ul>
 <div class="fragment">
-<p>… but in most cases the workflow must be workable for a single developer or a small team.</p>
+<p>… but in many cases the workflow must be workable for a single developer or a small team.</p>
 </div>
 </section></section>
 <section id="workable-workflow" class="title-slide slide level1 center">
@@ -630,25 +617,43 @@ Friedrich
 <section id="example---step-2-design-docs-1" class="slide level2">
 <h2>Example - Step 2: Design docs</h2>
 <p><strong>Purpose and Scope</strong></p>
-<p>The R package <em>simlatr</em> shall enable the creation of reproducible fake data.</p>
+<p>The R package <em>simulatr</em> shall enable the creation of reproducible fake data.</p>
 <p><strong>Package Requirements</strong></p>
-<p><em>simlatr</em> <strong>shall</strong> provide a function to generate normal distributed random data for two independent groups. The function <strong>shall</strong> allow flexible definition of sample size per group, mean per group, standard deviation per group. The reproducibility of the simulated data <strong>shall</strong> be ensured via an optional seed It <strong>should</strong> be possible to print the function result. A graphical presentation of the simulated data <strong>will</strong> also be possible.</p>
+<p><em>simulatr</em> <strong>shall</strong> provide a function to generate normal distributed random data for two independent groups. The function <strong>shall</strong> allow flexible definition of sample size per group, mean per group, standard deviation per group. The reproducibility of the simulated data <strong>shall</strong> be ensured via an optional seed It <strong>should</strong> be possible to print the function result. A graphical presentation of the simulated data <strong>will</strong> also be possible.</p>
 </section>
 <section id="example---step-2-design-docs-2" class="slide level2">
 <h2>Example - Step 2: Design docs</h2>
-<p>URS: Rmd, Quarto, README, LaTeX, Word, Polarion, …</p>
-<p>Software design specification - A picture is worth a thousand words: <a href="http://draw.io" class="uri">http://draw.io</a></p>
-</section>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Useful formats / tools for design docs:</p>
+<ul>
+<li><a href="https://rmarkdown.rstudio.com">R Markdown</a><sup>1</sup> (*.Rmd)</li>
+<li><a href="https://quarto.org">Quarto</a><sup>1</sup> (*.qmd)</li>
+<li><a href="https://www.overleaf.com">Overleaf</a><sup>2</sup></li>
+<li><a href="http://draw.io">draw.io</a><sup>3</sup></li>
+</ul>
+</div><div class="column" style="width:55%;">
+<div class="text-align-center">
+<p>UML Diagram</p>
+</div>
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="resources/simulatr.png" style="width:95.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Based on <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>, the easy-to-use markup language</p></li><li id="fn4"><p>The easy to use, online, collaborative LaTeX editor</p></li><li id="fn5"><p>A picture is worth a thousand words</p></li></ol></aside></section>
 <section id="example---step-3-packaging" class="slide level2">
 <h2>Example - Step 3: Packaging</h2>
 <p><strong>R package programming</strong></p>
 <ol type="1">
 <li>Create basic package project (see <a href="02_r_packages.html">R Packages</a> by <a href="https://www.linkedin.com/in/danielsabanesbove/">Daniel</a>)</li>
-<li>C&amp;P existing R scripts (one-off scripts, prototype functions) and refactor it if necessary</li>
+<li>C&amp;P existing R scripts (one-off scripts, prototype functions) and refactor<sup>1</sup> it if necessary</li>
 <li>Create R generic functions</li>
 <li>Document all functions</li>
 </ol>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>See also <a href="04_quality.html">Ensuring Quality</a> by <a href="https://www.linkedin.com/in/pahlke">Friedrich</a></p></li></ol></aside></section>
 <section id="example---step-3-packaging-1" class="slide level2">
 <h2>Example - Step 3: Packaging</h2>
 <p>One-off script as starting point:</p>
@@ -668,7 +673,7 @@ Friedrich
 <h2>Example - Step 3: Packaging</h2>
 <p>Refactored script:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>getSimluatedTwoArmMeans <span class="ot">&lt;-</span> <span class="cf">function</span>(n1, n2, mean1, mean2, sd1, sd2) {</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>getSimulatedTwoArmMeans <span class="ot">&lt;-</span> <span class="cf">function</span>(n1, n2, mean1, mean2, sd1, sd2) {</span>
 <span id="cb3-2"><a href="#cb3-2"></a>    <span class="fu">data.frame</span>(</span>
 <span id="cb3-3"><a href="#cb3-3"></a>        <span class="at">group =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, n1), <span class="fu">rep</span>(<span class="dv">2</span>, n2)),</span>
 <span id="cb3-4"><a href="#cb3-4"></a>        <span class="at">values =</span> <span class="fu">c</span>(</span>
@@ -684,7 +689,7 @@ Friedrich
 <h2>Example - Step 3: Packaging</h2>
 <p>Define that the result is a list<sup>1</sup> which is defined as class<sup>2</sup>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>getSimluatedTwoArmMeans <span class="ot">&lt;-</span> <span class="cf">function</span>(n1, n2, mean1, mean2, sd1, sd2) {</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>getSimulatedTwoArmMeans <span class="ot">&lt;-</span> <span class="cf">function</span>(n1, n2, mean1, mean2, sd1, sd2) {</span>
 <span id="cb4-2"><a href="#cb4-2"></a>    result <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">n1 =</span> n1, <span class="at">n2 =</span> n2, </span>
 <span id="cb4-3"><a href="#cb4-3"></a>         <span class="at">mean1 =</span> mean1, <span class="at">mean2 =</span> mean2, <span class="at">sd1 =</span> sd1, <span class="at">sd2 =</span> sd2)</span>
 <span id="cb4-4"><a href="#cb4-4"></a>    result<span class="sc">$</span>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -699,12 +704,12 @@ Friedrich
 <span id="cb4-13"><a href="#cb4-13"></a>    <span class="fu">return</span>(result)</span>
 <span id="cb4-14"><a href="#cb4-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>It’s common practice to add the function arguments to the result <span class="math inline">\(\rightarrow\)</span> should be a list or class</p></li><li id="fn4"><p>To implement generics, the result must be a class</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn7"><p>It’s common practice to add the function arguments to the result <span class="math inline">\(\rightarrow\)</span> should be a list or class</p></li><li id="fn8"><p>To implement generics, the result must be a class</p></li></ol></aside></section>
 <section id="example---step-3-packaging-4" class="slide level2">
 <h2>Example - Step 3: Packaging</h2>
 <p>The output is impractical, e.g., we need to scroll down:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">getSimluatedTwoArmMeans</span>(<span class="at">n1 =</span> <span class="dv">50</span>, <span class="at">n2 =</span> <span class="dv">50</span>, <span class="at">mean1 =</span> <span class="dv">5</span>, <span class="at">mean2 =</span> <span class="dv">7</span>, <span class="at">sd1 =</span> <span class="dv">3</span>, <span class="at">sd2 =</span> <span class="dv">4</span>)</span>
+<div class="sourceCode cell-code" id="cb5" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">getSimulatedTwoArmMeans</span>(<span class="at">n1 =</span> <span class="dv">50</span>, <span class="at">n2 =</span> <span class="dv">50</span>, <span class="at">mean1 =</span> <span class="dv">5</span>, <span class="at">mean2 =</span> <span class="dv">7</span>, <span class="at">sd1 =</span> <span class="dv">3</span>, <span class="at">sd2 =</span> <span class="dv">4</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$n1
@@ -726,107 +731,107 @@ $sd2
 [1] 4
 
 $data
-    group      values
-1       1  6.03547630
-2       1  4.18566481
-3       1  6.79682934
-4       1  6.38172513
-5       1  6.85190472
-6       1  4.87129570
-7       1  2.11790887
-8       1  2.09137117
-9       1  4.38782245
-10      1 -1.77950210
-11      1  6.73697920
-12      1  5.19846757
-13      1  8.22383214
-14      1  4.81767313
-15      1  4.79926508
-16      1  8.81616639
-17      1  6.76201801
-18      1  4.19938346
-19      1  5.27904858
-20      1  2.66211594
-21      1  3.37773195
-22      1  5.33218294
-23      1  5.63940466
-24      1  1.53277979
-25      1  4.85021750
-26      1  0.80878444
-27      1  4.05254780
-28      1  6.08427479
-29      1  2.18446974
-30      1 10.05339848
-31      1  4.26959186
-32      1  9.59763754
-33      1  7.92832754
-34      1  4.25735866
-35      1  5.92442736
-36      1  5.73768316
-37      1  9.20863502
-38      1  5.24350588
-39      1  0.94823468
-40      1  1.84796521
-41      1  5.16815000
-42      1  2.61394625
-43      1  2.89934031
-44      1  7.05757115
-45      1  5.58049278
-46      1  5.05964874
-47      1  2.69368397
-48      1  1.48663154
-49      1  3.96008429
-50      1  6.47578878
-51      2  6.33725862
-52      2  6.13997883
-53      2 12.81990913
-54      2  6.20199307
-55      2 11.17558832
-56      2  4.46167505
-57      2  3.55447329
-58      2  0.40521771
-59      2  8.69307079
-60      2  8.51310648
-61      2 10.67609832
-62      2  5.15942126
-63      2  8.80210459
-64      2  3.44217194
-65      2  7.05866394
-66      2 12.31840093
-67      2 11.64466233
-68      2 11.52408013
-69      2  3.60539736
-70      2  3.48546222
-71      2 10.87102387
-72      2 15.87078662
-73      2 15.11801694
-74      2 11.75960818
-75      2 -0.34400290
-76      2  3.24670714
-77      2 -0.17075980
-78      2 -0.01819815
-79      2  3.31673858
-80      2  2.31760463
-81      2  8.36720315
-82      2  5.74023086
-83      2  6.22487057
-84      2  5.98057429
-85      2  3.77147610
-86      2  7.53801356
-87      2  7.76520371
-88      2  5.50178985
-89      2 -0.17709742
-90      2 11.13150108
-91      2  8.28120533
-92      2  5.27641167
-93      2  9.94076098
-94      2  6.68584156
-95      2  8.12658211
-96      2 10.75174842
-97      2  5.94951857
-98      2  7.43595279
-99      2  3.51090741
-100     2  1.79478448
+    group     values
+1       1  7.7105800
+2       1  5.2753799
+3       1 -0.3799196
+4       1  3.1565106
+5       1  1.5291985
+6       1  5.8045930
+7       1  5.0815875
+8       1  4.1065623
+9       1  7.6935120
+10      1  1.4269623
+11      1  5.0380992
+12      1  1.9144411
+13      1 -0.5245204
+14      1  4.8152554
+15      1 10.7234799
+16      1  7.6731746
+17      1  4.6971718
+18      1  7.4541059
+19      1 -2.9584634
+20      1  6.0135063
+21      1  8.7414776
+22      1  7.3855897
+23      1 11.6806483
+24      1  3.0921494
+25      1  8.1731085
+26      1  1.8897376
+27      1  3.9505627
+28      1  6.6362629
+29      1  6.5342104
+30      1 -2.2421732
+31      1  2.2698619
+32      1  7.8834871
+33      1  0.9690619
+34      1  2.3419044
+35      1  4.3489737
+36      1  6.0652932
+37      1  3.4176847
+38      1  4.0866184
+39      1  3.0327478
+40      1  6.3328628
+41      1  9.3535112
+42      1  7.2166667
+43      1  5.8790529
+44      1  6.3788694
+45      1  7.5905165
+46      1  0.3758047
+47      1  6.1980015
+48      1  3.4038192
+49      1  2.6082501
+50      1  6.8999698
+51      2  7.6035017
+52      2  6.8765579
+53      2  4.2916270
+54      2  3.5624262
+55      2  5.6049685
+56      2  6.6883748
+57      2  2.2861998
+58      2  7.6030061
+59      2  7.2893829
+60      2  5.7441905
+61      2  8.6255675
+62      2  2.2382151
+63      2 10.5234014
+64      2 10.8514894
+65      2  3.8130447
+66      2  9.3906443
+67      2  6.5413613
+68      2 15.6428227
+69      2  5.1151484
+70      2  8.0469999
+71      2 10.1389636
+72      2  5.9749500
+73      2 15.3194491
+74      2  7.9250741
+75      2  7.1319501
+76      2  6.0454230
+77      2 15.4035323
+78      2  5.9269027
+79      2  9.4819710
+80      2  4.7717092
+81      2  8.1734349
+82      2  2.9046707
+83      2 11.1184591
+84      2 10.3112337
+85      2 12.6237088
+86      2  6.8427945
+87      2  1.5077332
+88      2  6.5416302
+89      2  7.9567490
+90      2 15.5831837
+91      2  4.2918637
+92      2 10.0970581
+93      2  6.3304566
+94      2 13.6742984
+95      2  2.2606872
+96      2  2.1937786
+97      2  4.6995036
+98      2  0.2122895
+99      2  3.5946186
+100     2 14.0204847
 
 attr(,"class")
 [1] "SimulationResult"</code></pre>
@@ -868,7 +873,7 @@ attr(,"class")
 <span id="cb8-8"><a href="#cb8-8"></a><span class="co">#' @param ... further arguments passed to or from other methods.</span></span>
 <span id="cb8-9"><a href="#cb8-9"></a><span class="co">#' </span></span>
 <span id="cb8-10"><a href="#cb8-10"></a><span class="co">#' @examples</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="co">#' x &lt;- getSimluatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, </span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="co">#' x &lt;- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, </span></span>
 <span id="cb8-12"><a href="#cb8-12"></a><span class="co">#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)</span></span>
 <span id="cb8-13"><a href="#cb8-13"></a><span class="co">#' print(x)</span></span>
 <span id="cb8-14"><a href="#cb8-14"></a><span class="co">#'</span></span>
@@ -876,7 +881,7 @@ attr(,"class")
 </div>
 </div>
 <div id="tabset-1-3">
-<div class="cell">
+<div class="cell" style="font-size:0.8em!important;">
 <div class="cell-output cell-output-stdout">
 <pre><code>$args
    n1    n2 mean1 mean2   sd1   sd2 
@@ -886,16 +891,16 @@ $data
 # A tibble: 100 × 2
    group values
    &lt;dbl&gt;  &lt;dbl&gt;
- 1     1   6.04
- 2     1   4.19
- 3     1   6.80
- 4     1   6.38
- 5     1   6.85
- 6     1   4.87
- 7     1   2.12
- 8     1   2.09
- 9     1   4.39
-10     1  -1.78
+ 1     1  7.71 
+ 2     1  5.28 
+ 3     1 -0.380
+ 4     1  3.16 
+ 5     1  1.53 
+ 6     1  5.80 
+ 7     1  5.08 
+ 8     1  4.11 
+ 9     1  7.69 
+10     1  1.43 
 # … with 90 more rows</code></pre>
 </div>
 </div>
@@ -911,7 +916,7 @@ $data
 <section id="preparation" class="slide level2">
 <h2>Preparation</h2>
 <ol type="1">
-<li>Download the unfinished R package <code>simulatr</code></li>
+<li>Download the unfinished R package <a href="download/simulatr.zip">simulatr</a></li>
 <li>Extract the package zip file</li>
 <li>Open the project with RStudio</li>
 <li>Complete the tasks below</li>
@@ -1019,11 +1024,24 @@ $data
 </div>
 </div>
 </div>
+</section></section>
+<section id="references" class="title-slide slide level1 center">
+<h1>References</h1>
+<ul>
+<li>Gillespie, C., &amp; Lovelace, R. (2017). Efficient R Programming: A Practical Guide to Smarter Programming. O’Reilly UK Ltd. [<a href="https://amzn.to/3GU8HUW">Book</a> | <a href="https://csgillespie.github.io/efficientR/">Online</a>]</li>
+<li>Grolemund, G. (2014). Hands-On Programming with R: Write Your Own Functions and Simulations (1. Aufl.).<br>
+O’Reilly and Associates. [<a href="https://amzn.to/3QD7DeL">Book</a> | <a href="https://rstudio-education.github.io/hopr/">Online</a>]</li>
+<li>Rupp, C., &amp; SOPHISTen, die. (2009). Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis (5. Ed.). Carl Hanser Verlag GmbH &amp; Co.&nbsp;KG. [<a href="https://amzn.to/3DdwiBe">Book</a>]</li>
+<li>Wickham, H. (2015). R Packages: Organize, Test, Document, and Share Your Code (1. Aufl.). O’Reilly and Associates. [<a href="https://amzn.to/34U0Fyj">Book</a> | <a href="https://r-pkgs.org/">Online</a>]</li>
+<li>Wickham, H. (2019). Advanced R, Second Edition.<br>
+Taylor &amp; Francis Ltd.&nbsp;[<a href="https://amzn.to/3uLnxLd">Book</a> | <a href="https://adv-r.hadley.nz/">Online</a>]</li>
+</ul>
 
 <div class="footer footer-default">
 <p>Good Software Engineering Practice with R - <a href="../index.html" title="GSWEP4R Workshop">Home</a> | <a href="listing.html" title="Overview of all slides">Slides</a> | <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="License: CC BY-SA 4.0">License</a></p>
 </div>
-</section></section>
+</section>
+
 
     </div>
   </div>

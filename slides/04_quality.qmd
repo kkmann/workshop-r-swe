@@ -43,46 +43,343 @@ pexels.com]{.copyright}](thumbnails/styling.jpg){fig-align="center"}
 -   **Performance**: The code often runs faster, uses less memory, or is easier
     to optimize
 
-## What are common clean code rules?
+## Example: Clean Code Rules - Step by Step
 
-::: incremental
+This script breaks all common clean code rules:
+
+```{r, echo = TRUE}
+y=function(x){
+  s1=0
+  for(v1 in x){s1=s1+v1}
+  m1=s1/length(x)
+  i=ceiling(length(x)/2)
+  if(length(x) %% 2 == 0){i=c(i,i+1)}
+  s2=0
+  for(v2 in i){s2=s2+x[v2]}
+  m2=s2/length(i)
+  c(m1,m2)
+}
+y(c(1:7, 100))
+```
+
+. . .
+
+We now refactor it (CCR#9) by applying clean code rules...
+
+## Example: CCR#1
+
+::: columns
+::: {.column width="50%"}
+```{r, echo = TRUE}
+y=function(x){
+  s1=0
+  for(v1 in x){s1=s1+v1}
+  m1=s1/length(x)
+  i=ceiling(length(x)/2)
+  if(length(x) %% 2 == 0){i=c(i,i+1)}
+  s2=0
+  for(v2 in i){s2=s2+x[v2]}
+  m2=s2/length(i)
+  c(m1,m2)
+}
+y(c(1:7, 100))
+```
+:::
+
+::: {.column width="50%"}
+CCR#1 **Naming**: Are the names of the variables, functions, and classes
+descriptive and meaningful?
+:::
+:::
+
+## Example: CCR#1
+
+```{r, echo = TRUE, eval = FALSE}
+getMeanAndMedian=function(x){
+    sum1=0
+    for(value in x){sum1=sum1+value}
+    meanValue=sum1/length(x)
+    centerIndices=ceiling(length(x)/2)
+    if(length(x) %% 2 == 0){
+        centerIndices=c(centerIndices,centerIndices+1)
+    }
+    sum2=0
+    for(centerIndex in centerIndices){sum2=sum2+x[centerIndex]}
+    medianValue=sum2/length(centerIndices)
+    c(meanValue,medianValue)
+}
+```
+
+CCR#1 **Naming** [{{< fa circle-check size=1x >}}]{.green}
+
+CCR#2 **Formatting**: Are indentation, spacing, and bracketing consistent, i.e.,
+is the code easy to read [{{< fa circle-question size=1x >}}]{.red}
+
+## Example: CCR#2
+
+::: columns
+::: {.column width="68%"}
+```{r, echo = TRUE, eval = FALSE}
+#| style: font-size:0.95em!important;
+getMeanAndMedian <- function(x) {
+    sum1 <- 0
+    for (value in x) {
+        sum1 <- sum1 + value
+    }
+    meanValue <- sum1 / length(x)
+    centerIndices <- ceiling(length(x) / 2)
+    if (length(x) %% 2 == 0) {
+        centerIndices <- c(
+          centerIndices, centerIndices + 1)
+    }
+    sum2 <- 0
+    for (centerIndex in centerIndices) {
+        sum2 <- sum2 + x[centerIndex]
+    }
+    medianValue <- sum2 / length(centerIndices)
+    c(meanValue, medianValue)
+}
+```
+:::
+
+::: {.column width="32%"}
+CCR#2 **Formatting** [{{< fa circle-check size=1x >}}]{.green}
+
+CCR#3 **Simplicity**: Did you keep the code as simple and straightforward as
+possible, i.e., did you avoid unnecessary complexity
+[{{< fa circle-question size=1x >}}]{.red}
+:::
+:::
+
+## Example: CCR#3
+
+Note:
+
+-   From the **Simplicity** rule also follows that large source files should be
+    split into multiple files
+-   General guideline: keeping the number of lines to less than 1,000 lines per
+    file can help maintain code readability and manageability
+
+## Example: CCR#3
+
+```{r, echo = TRUE, eval = FALSE}
+#| code-line-numbers: "2,7"
+getMeanAndMedian <- function(x) {
+    meanValue <- sum(x) / length(x)
+    centerIndices <- ceiling(length(x) / 2)
+    if (length(x) %% 2 == 0) {
+        centerIndices <- c(centerIndices, centerIndices + 1)
+    }
+    medianValue <- sum(x[centerIndices]) / length(centerIndices)
+    c(meanValue, medianValue)
+}
+```
+
+CCR#3 **Simplicity** [{{< fa circle-check size=1x >}}]{.green}
+
+CCR#4 **Single Responsibility Principle (SRP)**: Has each function a single,
+well-defined purpose [{{< fa circle-question size=1x >}}]{.red}
+
+## Example: CCR#4
+
+```{r, echo = TRUE, eval = FALSE}
+getMean <- function(x) {
+    sum(x) / length(x)
+}
+
+isLengthAnEvenNumber <- function(x) {
+    length(x) %% 2 == 0
+}
+
+getMedian <- function(x) {
+    centerIndices <- ceiling(length(x) / 2)
+    if (isLengthAnEvenNumber(x)) {
+        centerIndices <- c(centerIndices, centerIndices + 1)
+    }
+    sum(x[centerIndices]) / length(centerIndices)
+}
+```
+
+CCR#4 **Single Responsibility Principle (SRP)**
+[{{< fa circle-check size=1x >}}]{.green}
+
+CCR#5 **Don't Repeat Yourself (DRY)**: Did you avoid duplication of code, either
+by reusing existing code or creating functions
+[{{< fa circle-question size=1x >}}]{.red}
+
+## Example: CCR#5
+
+::: clean-code-rule
+CCR#5: DRY
+:::
+
+Suppose you have a code block that performs the same calculation multiple times:
+
+```{r, echo = TRUE}
+result1 <- 2 * 3 + 4
+result2 <- 2 * 5 + 4
+result3 <- 2 * 7 + 4
+```
+
+Create a function to encapsulate this calculation and reuse it multiple times:
+
+```{r, echo = TRUE}
+calculate <- function(x) {
+  2 * x + 4
+}
+
+result1 <- calculate(3)
+result2 <- calculate(5)
+result3 <- calculate(7)
+```
+
+## Example: CCR#5
+
+```{r, echo = TRUE, eval = FALSE}
+#| code-line-numbers: "14"
+getMean <- function(x) {
+    sum(x) / length(x)
+}
+
+isLengthAnEvenNumber <- function(x) {
+    length(x) %% 2 == 0
+}
+
+getMedian <- function(x) {
+    centerIndices <- ceiling(length(x) / 2)
+    if (isLengthAnEvenNumber(x)) {
+        centerIndices <- c(centerIndices, centerIndices + 1)
+    }
+    getMean(x[centerIndices])
+}
+```
+
+CCR#5 **Don't Repeat Yourself (DRY)** [{{< fa circle-check size=1x >}}]{.green}
+
+CCR#6 **Comments**: Did you use comments to explain the purpose of code blocks
+and to clarify complex logic [{{< fa circle-question size=1x >}}]{.red}
+
+## Example: CCR#6
+
+::: columns
+::: {.column width="60%"}
+```{r, echo = TRUE, eval = FALSE}
+#| code-line-numbers: "1,6,7,12"
+#| style: font-size:0.9em!important;
+# returns the mean of x
+getMean <- function(x) {
+    sum(x) / length(x)
+}
+
+# returns TRUE if the length of x is 
+# an even number; FALSE otherwise
+isLengthAnEvenNumber <- function(x) {
+    length(x) %% 2 == 0
+}
+
+# returns the median of x
+getMedian <- function(x) {
+    centerIndices <- ceiling(length(x) / 2)
+    if (isLengthAnEvenNumber(x)) {
+        centerIndices <- c(centerIndices, 
+             centerIndices + 1)
+    }
+    getMean(x[centerIndices])
+}
+```
+:::
+
+::: {.column width="40%"}
+CCR#6 **Comments** [{{< fa circle-check size=1x >}}]{.green}
+
+CCR#7 **Error Handling**: Did you include error handling code to gracefully
+handle exceptions and unexpected situations
+[{{< fa circle-question size=1x >}}]{.red}
+
+```{r, echo = TRUE, eval = FALSE}
+#| code-line-numbers: false
+getMean("a":"z")
+```
+
+[Error in "a":"z" : NA/NaN argument Additionally: Warning messages: In
+getMean("a":"z") : NAs generated by conversion]{.red-small}
+:::
+:::
+
+## Example: CCR#7
+
+```{r, echo = TRUE, eval = FALSE}
+#| code-line-numbers: "3,5-7,12,14-16,21,27-29"
+#| style: font-size:0.9em!important;
+# returns the mean of x
+getMean <- function(x) {
+    tryCatch({
+        sum(x) / length(x)      
+    }, error = function(e) {
+        stop("Failed to calculate the mean of 'x': ", e$message)
+    })
+}
+
+# returns TRUE if the length of x is an even number; FALSE otherwise
+isLengthAnEvenNumber <- function(x) {
+    tryCatch({
+        length(x) %% 2 == 0
+    }, error = function(e) {
+        stop("Failed to check if 'x' is an even number: ", e$message)
+    })
+}
+
+# returns the median of x
+getMedian <- function(x) {
+    tryCatch({
+        centerIndices <- ceiling(length(x) / 2)
+        if (isLengthAnEvenNumber(x)) {
+            centerIndices <- c(centerIndices, centerIndices + 1)
+        }
+        getMean(x[centerIndices])            
+    }, error = function(e) {
+        stop("Failed to calculate the median of 'x': ", e$message)
+    })
+}
+```
+
+CCR#7 **Error Handling** [{{< fa circle-check size=1x >}}]{.green}
+
+## Summary of Clean Code Rules
+
 1.  **Naming**: Use descriptive and meaningful names for variables, functions,
-    and classes.
+    and classes
 2.  **Formatting**: Adhere to consistent indentation, spacing, and bracketing to
-    make the code easy to read.
+    make the code easy to read
 3.  **Simplicity**: Keep the code as simple and straightforward as possible,
-    avoiding unnecessary complexity.
+    avoiding unnecessary complexity
 4.  **Single Responsibility Principle (SRP)**: Each function should have a
-    single, well-defined purpose.
+    single, well-defined purpose
 5.  **Don't Repeat Yourself (DRY)**: Avoid duplication of code, either by
-    reusing existing code or creating functions.
-:::
+    reusing existing code or creating functions
 
-## What are common clean code rules?
+## Summary of Clean Code Rules
 
-::: incremental
 6.  **Comments**: Use comments to explain the purpose of code blocks and to
-    clarify complex logic.
+    clarify complex logic
 7.  **Error Handling**: Include error handling code to gracefully handle
-    exceptions and unexpected situations.
-8.  **Test-Driven Development (TDD)**: Write tests for your code to ensure it
-    behaves as expected and to catch bugs early.
+    exceptions and unexpected situations
+8.  [{{< fa star size=1x >}}]{.blue} **Test-Driven Development (TDD)**: Write
+    tests for your code to ensure it behaves as expected and to catch bugs early
 9.  **Refactoring**: Regularly refactor your code to keep it clean, readable,
-    and maintainable.
-10. **Code Review**: Have other team members review your code to catch potential
-    issues and improve its quality.
-:::
+    and maintainable
+10. [{{< fa star size=1x >}}]{.blue} **Code Review**: Have other team members
+    review your code to catch potential issues and improve its quality
 
-## How to apply clean code rules?
+## How to apply Clean Code Rules?
 
 Recommended quality workflow for R packages:
 
--   Strictly follow the naming policy (#1)
+-   Follow the naming and styling guidelines (#1, #2)
 -   Continuously write tests and optimize the code coverage with help of tools
     (#7, #8)
--   Optimize the code style and check spelling (#2)
 -   Document the package and functions (#6)
--   Regularly refactor your code (#3, #4, #5, #7, #9)
+-   Regularly refactor your code (#1 - #7, #9)
 -   Publish your code on [GitHub](https://github.com) and invite colleagues to
     contribute (#10)
 
@@ -225,8 +522,10 @@ But we forgot to finalize the implementation and didn't create unit tests.
 Re-execution of
 
 ```{r, echo = TRUE, eval = FALSE}
+#| code-line-numbers: false
 report(package_coverage())
 ```
+
 then results in...
 
 ## Example on test coverage
@@ -239,7 +538,6 @@ We can go into the details by clicking on a file name:
 
 ![](resources/covr_example_2.png)
 
-
 # Code Style
 
 ::: clean-code-rule
@@ -248,25 +546,6 @@ CCR#2: Formatting
 
 ![[Photo CC0 by Pavel Danilyuk on
 pexels.com]{.copyright}](thumbnails/styling.jpg){fig-align="center"}
-
-## Example of an R script with poor code style
-
-```{r, echo = TRUE, eval = FALSE}
-a<-c(1,2,3,4,5)
-b<-c(6,7,8,9,10)
-for (i in 1:5){x<-a[i]+b[i];print(x)}
-```
-
-This code has several issues with code style:
-
-1.  Inconsistent indentation: There's no clear structure to the code and it's
-    difficult to quickly see what each line of code is doing.
-2.  No white space: The code is difficult to read because there's no white space
-    between expressions and statements.
-3.  Abbreviated variable names: The variable names a, b, and x are not
-    descriptive and make the code less readable.
-4.  Inadequate commenting: There's no commentary explaining what the code does,
-    making it difficult for someone else to understand or use the code.
 
 ## Why is Code Style important?
 
@@ -288,9 +567,29 @@ Two popular R packages support the [tidyverse style
 guide](https://style.tidyverse.org):
 
 -   [styler](https://styler.r-lib.org): interactively restyle selected text,
-    files, or entire projects
+    files, or entire projects:
+    -   [style_text](https://styler.r-lib.org/reference/style_text.html)
+    -   [style_file](https://styler.r-lib.org/reference/style_file.html)
+    -   [style_pkg](https://styler.r-lib.org/reference/style_pkg.html)
 -   [lintr](https://github.com/jimhester/lintr): perform automated checks to
     confirm that you conform to the style guide
+
+The [devtools](https://devtools.r-lib.org) function
+[spell_check](https://devtools.r-lib.org/reference/spell_check.html) runs a
+spell check on text fields in the package description file, manual pages, and
+optionally vignettes.
+
+## Code Styler in RStudio
+
+::: panel-tabset
+## Browse addins
+
+![](resources/rstudio_addins.png){fig-align="center" width="90%"}
+
+## Link styler to keyboard shortcut
+
+![](resources/rstudio_keyboard_shortcuts.png){fig-align="center" width="50%"}
+:::
 
 ```{=html}
 <!--
@@ -298,83 +597,59 @@ guide](https://style.tidyverse.org):
 -   spelling,
 -->
 ```
-# Refactoring
-
-::: clean-code-rule
-CCR#9: Refactoring
-:::
-
-![[Photo CC0 by Fabio Teixeira on
-pexels.com]{.copyright}](thumbnails/refactoring_Fabio-Teixeira.jpg){fig-align="center"}
-
-## How to do refactoring?
-
-::: clean-code-rule
-CCR#9: Refactoring
-:::
-
-Check if other clean code rules are broken:
-
--   CCR#5 (DRY): Outsource redundant code blocks to functions
--   CCR#1 (Naming): Improve the naming of files, classes, functions, and
-    arguments
--   CCR#3 (Simplicity): Split large[^1] source files into multiple files
-
-[^1]: General guideline: keeping the number of lines to less than 1,000 lines
-    per file can help maintain code readability and manageability
-
-## Example: Don't repeat yourself!
-
-::: clean-code-rule
-CCR#5: DRY
-:::
-
-Suppose you have a code block that performs the same calculation multiple times:
-
-```{r, echo = TRUE}
-result1 <- 2 * 3 + 4
-result2 <- 2 * 5 + 4
-result3 <- 2 * 7 + 4
-```
-
-Create a function to encapsulate this calculation and reuse it multiple times:
-
-```{r, echo = TRUE}
-calculate <- function(x) {
-  2 * x + 4
-}
-
-result1 <- calculate(3)
-result2 <- calculate(5)
-result3 <- calculate(7)
-```
-
 # Exercise
 
 ![[Photo CC0 by Pixabay on
 pexels.com]{.copyright}](thumbnails/exercise.jpg){fig-align="center"}
 
-## Preparation
+## Tasks
 
--   Set up testing infrastructure,
--   add unit tests,
--   test-driven development,
--   check,
--   lintr, spelling,
--   test coverage.
+::: panel-tabset
+## Task 1
 
-download zip file, no git stuff here yet, so that it is independent
+Take your local *simulatr* package project (see [previous
+excercise](03_workflow.html#/tasks)) and refactor it, i.e., apply the linked
+clean code rules:
 
-## Workflow Example - Refactoring
+1.  Optimize naming manually (CCR#1)
+2.  Use the [styler](https://styler.r-lib.org) package to optimize the
+    formatting (CCR#2)
+3.  Check and correct where appropriate:
+    -   Simplicity (CCR#3)
+    -   SRP (CCR#4)
+    -   DRY (CCR#5)
 
-Remember the one-off script:
+## Task 2
 
-```{r, echo = TRUE}
-dat <- data.frame(
-    group = c(rep(1, 50), rep(2, 50)),
-    values = c(
-        rnorm(n = 50, mean = 8, sd = 12),
-        rnorm(n = 50, mean = 14, sd = 11)
-    )
-)
-```
+1.  Implement appropriate error handling (CCR#7) in the *simulatr* package
+2.  Add comments to explain the purpose of code blocks (CCR#6)
+    -   If it concerns exported functions use
+        [Roxygen2](https://roxygen2.r-lib.org/) notation
+3.  Check correct spelling with the
+    [devtools](https://cran.r-project.org/package=devtools) function
+    [spell_check()](https://devtools.r-lib.org/reference/spell_check.html)
+
+## Task 3
+
+Apply CCR#8 to the *simulatr* package project:
+
+1.  Add unit tests
+2.  Optimize your test coverage with help of the [covr](https://covr.r-lib.org/)
+    functions
+    [package_coverage](https://www.rdocumentation.org/packages/covr/versions/3.6.1/topics/package_coverage)
+    and
+    [report](https://www.rdocumentation.org/packages/covr/versions/3.6.1/topics/report)
+
+## Task 4
+
+Check if your package is ready for use in production with the
+[devtools](https://cran.r-project.org/package=devtools) function
+[check()](https://rdrr.io/cran/devtools/man/check.html)
+:::
+
+# References
+
+-   Cotton, R. (2017). Testing R Code (Illustrated Edition).\
+    Taylor & Francis Inc. \[[Book](https://amzn.to/3Bk6elt)\]
+-   Martin, R. (2008). Clean Code: A Handbook of Agile Software Craftsmanship
+    (1st Edition). Prentice Hall. \[[Book](https://amzn.to/3IKuSS4)\]

@@ -6,6 +6,7 @@ $theme-blue: #99D9DD;
 $theme-white: #F7F8F9;
 $theme-yellow: #F4BA02;
 $theme-red: #FF0000;
+$theme-green: #0f6234;
 
 $presentation-heading-font-weight: 580;
 $presentation-h1-font-size: 1.8em;
@@ -23,6 +24,21 @@ $tabset-border-color: lighten($body-color, 30%);
 .blue {
   color: $theme-blue;
   font-weight: bold;
+}
+
+.green {
+  color: $theme-green;
+  font-weight: bold;
+}
+
+.red {
+  color: $theme-red;
+  font-weight: bold;
+}
+
+.red-small {
+  color: $theme-red;
+  font-size: 0.8em;
 }
 
 .yellow {
@@ -56,6 +72,14 @@ $tabset-border-color: lighten($body-color, 30%);
 }
 
 .center .caption {
+  text-align: center;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-center {
   text-align: center;
 }
 
