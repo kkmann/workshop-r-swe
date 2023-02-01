@@ -410,14 +410,14 @@
     "href": "slides/03_workflow.html#example---step-3-packaging-4",
     "title": "An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nThe output is impractical, e.g., we need to scroll down:\n\nx <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)\nx\n\n$n1\n[1] 50\n\n$n2\n[1] 50\n\n$mean1\n[1] 5\n\n$mean2\n[1] 7\n\n$sd1\n[1] 3\n\n$sd2\n[1] 4\n\n$data\n    group     values\n1       1  3.4085324\n2       1  7.0430173\n3       1  8.2147797\n4       1  6.6508086\n5       1  8.4369317\n6       1 11.6829297\n7       1  8.6745329\n8       1  8.7052681\n9       1  1.8382985\n10      1  6.5358598\n11      1  0.2896586\n12      1  5.0342110\n13      1  6.2582385\n14      1  7.1252431\n15      1  7.7202194\n16      1  3.2557914\n17      1  8.2017847\n18      1 11.1677650\n19      1  7.8350010\n20      1  7.8229421\n21      1  7.7708133\n22      1  0.3944202\n23      1  7.9179436\n24      1  4.8451376\n25      1  5.1049124\n26      1  2.5572788\n27      1 13.7466662\n28      1 10.3612463\n29      1 10.1735124\n30      1  4.6014221\n31      1  4.2149491\n32      1  4.7761898\n33      1  1.4324115\n34      1  2.4127045\n35      1  6.3990114\n36      1  4.0099361\n37      1  4.5015872\n38      1  1.5115233\n39      1  7.4839582\n40      1  8.0313754\n41      1  4.0300307\n42      1 -1.2020668\n43      1  8.4422817\n44      1  4.7900672\n45      1  6.3006351\n46      1  9.0254161\n47      1  0.4420639\n48      1  2.5239883\n49      1  1.6893510\n50      1  8.2285522\n51      2  0.6721371\n52      2  9.5516874\n53      2  4.3547487\n54      2  2.5009001\n55      2  3.7247732\n56      2  7.6104382\n57      2  5.4385801\n58      2  3.4046241\n59      2  9.9064408\n60      2  8.1632090\n61      2 10.7972148\n62      2  4.3060750\n63      2  5.4412960\n64      2  3.9566351\n65      2  8.0122037\n66      2  9.2780289\n67      2  8.8558552\n68      2  6.1900534\n69      2  2.0973018\n70      2 15.0136406\n71      2  7.5201367\n72      2  7.9518990\n73      2 11.0632641\n74      2 10.3108091\n75      2  4.6874099\n76      2  3.2092537\n77      2  9.6553088\n78      2  9.3976658\n79      2  9.9342050\n80      2  5.6142394\n81      2  4.5089355\n82      2  5.2802372\n83      2  8.9093644\n84      2  7.3764906\n85      2  7.3869766\n86      2  6.7222727\n87      2  6.8511519\n88      2 14.7334531\n89      2  3.1842758\n90      2 11.8360853\n91      2  7.1198133\n92      2  3.4937946\n93      2  7.8138058\n94      2  7.2469688\n95      2  8.4033950\n96      2  1.5178782\n97      2 -0.4112040\n98      2 14.8490067\n99      2  6.1101503\n100     2  6.7490588\n\nattr(,\"class\")\n[1] \"SimulationResult\"\n\n\n\nSolution: implement generic function print"
+    "text": "Example - Step 3: Packaging\nThe output is impractical, e.g., we need to scroll down:\n\nx <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)\nx\n\n$n1\n[1] 50\n\n$n2\n[1] 50\n\n$mean1\n[1] 5\n\n$mean2\n[1] 7\n\n$sd1\n[1] 3\n\n$sd2\n[1] 4\n\n$data\n    group     values\n1       1  5.2689936\n2       1 10.6063996\n3       1  3.7533874\n4       1  5.0640304\n5       1  2.4509106\n6       1  4.9514678\n7       1  6.5559464\n8       1  7.0262227\n9       1  1.4279856\n10      1  3.6809966\n11      1  6.6565209\n12      1  5.0776484\n13      1  2.1255674\n14      1  7.3244750\n15      1  2.1193889\n16      1  5.9889015\n17      1  2.5353525\n18      1  4.6612398\n19      1  3.1696956\n20      1  2.2795092\n21      1  2.4048139\n22      1  1.1136954\n23      1  3.2881613\n24      1  3.6720691\n25      1  1.8618381\n26      1  9.7454410\n27      1  8.4011172\n28      1  8.8933280\n29      1  6.8375060\n30      1  4.1859925\n31      1  3.9953794\n32      1  5.2234026\n33      1  7.7521761\n34      1  1.0599851\n35      1  2.1024385\n36      1  2.7195150\n37      1  6.2780448\n38      1  3.8218197\n39      1  7.8058805\n40      1  4.0111223\n41      1  6.1215738\n42      1  7.6122334\n43      1  6.5432918\n44      1  5.7871338\n45      1  6.3926577\n46      1  8.0463961\n47      1  3.3374234\n48      1  1.9258541\n49      1  3.1822430\n50      1  2.9530779\n51      2  9.8643766\n52      2 13.0181799\n53      2 10.6702942\n54      2  5.2888446\n55      2  6.5527362\n56      2  7.9485750\n57      2 16.4287435\n58      2  4.4401371\n59      2  9.5712443\n60      2  7.0633051\n61      2  2.8012779\n62      2  7.1368930\n63      2 17.1035978\n64      2  4.7401416\n65      2  9.5099236\n66      2  4.9406357\n67      2 -0.5483493\n68      2 10.9810768\n69      2  3.7386232\n70      2 14.1603321\n71      2 11.1729890\n72      2 10.9954548\n73      2  4.7224586\n74      2  2.5390659\n75      2  5.6147477\n76      2 10.3807516\n77      2  2.6198086\n78      2  4.1600096\n79      2 12.1547018\n80      2 10.6372353\n81      2  7.9470806\n82      2  3.2956344\n83      2  5.8511655\n84      2  6.4743565\n85      2  0.5408406\n86      2 -0.5935184\n87      2  3.0008459\n88      2 10.5514524\n89      2 12.0794722\n90      2  5.6985539\n91      2 11.3946432\n92      2  6.6778715\n93      2  4.7713686\n94      2  6.5145421\n95      2  6.4986681\n96      2  6.0415206\n97      2  5.0453049\n98      2  5.9141823\n99      2  8.7275283\n100     2  6.5993946\n\nattr(,\"class\")\n[1] \"SimulationResult\"\n\n\n\nSolution: implement generic function print"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-5",
     "href": "slides/03_workflow.html#example---step-3-packaging-5",
     "title": "An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nGeneric function print:\n\nCodeRoxygenOutput\n\n\n\nprint.SimulationResult <- function(x, ...) {\n    args <- list(n1 = x$n1, n2 = x$n2, \n        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)\n    \n    print(list(\n        args = format(args), \n        data = dplyr::tibble(x$data)\n    ), ...)\n}\nx\n\n\n\n\n#' @title\n#' Print Simulation Result\n#'\n#' @description\n#' Generic function to print a `SimulationResult` object.\n#'\n#' @param x a \\code{SimulationResult} object to print.\n#' @param ... further arguments passed to or from other methods.\n#' \n#' @examples\n#' x <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, \n#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)\n#' print(x)\n#'\n#' @export\n\n\n\n\n\n$args\n   n1    n2 mean1 mean2   sd1   sd2 \n \"50\"  \"50\"   \"5\"   \"7\"   \"3\"   \"4\" \n\n$data\n# A tibble: 100 × 2\n   group values\n   <dbl>  <dbl>\n 1     1   3.41\n 2     1   7.04\n 3     1   8.21\n 4     1   6.65\n 5     1   8.44\n 6     1  11.7 \n 7     1   8.67\n 8     1   8.71\n 9     1   1.84\n10     1   6.54\n# … with 90 more rows"
+    "text": "Example - Step 3: Packaging\nGeneric function print:\n\nCodeRoxygenOutput\n\n\n\nprint.SimulationResult <- function(x, ...) {\n    args <- list(n1 = x$n1, n2 = x$n2, \n        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)\n    \n    print(list(\n        args = format(args), \n        data = dplyr::tibble(x$data)\n    ), ...)\n}\nx\n\n\n\n\n#' @title\n#' Print Simulation Result\n#'\n#' @description\n#' Generic function to print a `SimulationResult` object.\n#'\n#' @param x a \\code{SimulationResult} object to print.\n#' @param ... further arguments passed to or from other methods.\n#' \n#' @examples\n#' x <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, \n#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)\n#' print(x)\n#'\n#' @export\n\n\n\n\n\n$args\n   n1    n2 mean1 mean2   sd1   sd2 \n \"50\"  \"50\"   \"5\"   \"7\"   \"3\"   \"4\" \n\n$data\n# A tibble: 100 × 2\n   group values\n   <dbl>  <dbl>\n 1     1   5.27\n 2     1  10.6 \n 3     1   3.75\n 4     1   5.06\n 5     1   2.45\n 6     1   4.95\n 7     1   6.56\n 8     1   7.03\n 9     1   1.43\n10     1   3.68\n# … with 90 more rows"
   },
   {
     "objectID": "slides/03_workflow.html#preparation",
@@ -665,10 +665,122 @@
     "text": "Demo\ndemo / exercise"
   },
   {
+    "objectID": "slides/06_publication.html#setup-of-pkgdown",
+    "href": "slides/06_publication.html#setup-of-pkgdown",
+    "title": "Publication",
+    "section": "Setup of pkgdown",
+    "text": "Setup of pkgdown\n\npkgdown makes it quick and easy to build a website for your package\nAfter installing pkgdown, just use usethis::use_pkgdown() to get started\nMain configuration happens in _pkgdown.yml file\nMany customizations can be applied, but main work during development is to keep the reference section updated with names of .Rd files"
+  },
+  {
+    "objectID": "slides/06_publication.html#example-_pkgdown.yml-file",
+    "href": "slides/06_publication.html#example-_pkgdown.yml-file",
+    "title": "Publication",
+    "section": "Example _pkgdown.yml file",
+    "text": "Example _pkgdown.yml file\n---\nurl: https://openpharma.github.io/mmrm\n\ntemplate:\n  bootstrap: 5\n  params:\n    ganalytics: UA-125641273-1\n\nnavbar:\n  right:\n    - icon: fa-github\n      href: https://github.com/openpharma/mmrm\n\nreference:\n  - title: Package\n    contents:\n      - mmrm-package\n  - title: Functions\n    contents:\n      - mmrm\n      - fit_mmrm\n      - mmrm_control\n      - fit_single_optimizer\n      - refit_multiple_optimizers\n      - df_1d\n      - df_md\n      - component"
+  },
+  {
+    "objectID": "slides/06_publication.html#publication-as-github-page",
+    "href": "slides/06_publication.html#publication-as-github-page",
+    "title": "Publication",
+    "section": "Publication as GitHub Page",
+    "text": "Publication as GitHub Page\n\nIt is helpful for users to read the website online\nGitHub is very helpful here because it allows\n\nA separate branch gh-pages that stores the rendered website\nGitHub actions automatically render the website when the main branch is updated\n\nTo get started, use usethis::use_pkgdown_github_pages()"
+  },
+  {
+    "objectID": "slides/06_publication.html#licensing",
+    "href": "slides/06_publication.html#licensing",
+    "title": "Publication",
+    "section": "Licensing",
+    "text": "Licensing\n\nHigh level categorization of licenses:\n\n“Permissive”: Relaxed. Can be freely copied, modified, published (under the same license).\n“Copyleft”: Stricter. Same rights need to be preserved in derivative works.\n\nR itself is licensed under GPL, but packages can choose, e.g.:\n\nusethis::use_mit_license() for permissive MIT\nusethis::use_gpl_license() for copyleft GPL\n\nInclude minimum version, e.g. GPL (>= 3)"
+  },
+  {
+    "objectID": "slides/06_publication.html#licensing-contd",
+    "href": "slides/06_publication.html#licensing-contd",
+    "title": "Publication",
+    "section": "Licensing (cont’d)",
+    "text": "Licensing (cont’d)\n\nNeed to be careful here when you bundle any code from other software\n\nCare must be taken that any copyright/license statements from copied or modified code are preserved and authorship is not misrepresented\n\nAre the licenses of your package and the source compatible?\n\ne.g. cannot copy/paste code from a GPL package and publish in an MIT package\n\nLICENSE file optionally can contain further restrictions of the license"
+  },
+  {
+    "objectID": "slides/06_publication.html#open-sourcing",
+    "href": "slides/06_publication.html#open-sourcing",
+    "title": "Publication",
+    "section": "Open Sourcing",
+    "text": "Open Sourcing\n\nThe easiest way to “open source” your R package is to make the GitHub repository public\nThis allows for easy open source contributions from other developers via pull requests\nPlease check with your organization first:\n\nAre they ok to publish the software?\nWhat is the appropriate copyright holder?\n\nAlso allows bugs to be filed and to have the GitHub issues page in the package description"
+  },
+  {
+    "objectID": "slides/06_publication.html#versioning",
+    "href": "slides/06_publication.html#versioning",
+    "title": "Publication",
+    "section": "Versioning",
+    "text": "Versioning\n\nThe Version field defines the package version\nSyntax: Three integers separated by . or -\n\nCanonical form is: x.y-z, equivalent to x.y.z\n\nUseful conventions of “semantic versioning”:\n\nx is major: Increment this for breaking changes\ny is minor: Increment this for new features\nz is patch: Increment this for bug fixes only\nx.y.z.9000 and count up during development\nusethis::use_version() can help with this"
+  },
+  {
+    "objectID": "slides/06_publication.html#cran-the-comprehensive-r-archive-network",
+    "href": "slides/06_publication.html#cran-the-comprehensive-r-archive-network",
+    "title": "Publication",
+    "section": "CRAN (The Comprehensive R Archive Network)",
+    "text": "CRAN (The Comprehensive R Archive Network)\n\nCRAN is the central repository for R packages\nIt has additional requirements beyond the standard package ones, which are described in the Repository Policy\nSubmitting a package indicates agreement with the policy\nIn particular: “The time of the volunteers is CRAN’s most precious resource, and they reserve the right to remove or modify packages on CRAN without notice or explanation (although notification will usually be given).”"
+  },
+  {
+    "objectID": "slides/06_publication.html#cran-contd",
+    "href": "slides/06_publication.html#cran-contd",
+    "title": "Publication",
+    "section": "CRAN (cont’d)",
+    "text": "CRAN (cont’d)\n\nOnly source packages can be submitted \n\nBut .rda data files are allowed\n\nNeed single designated maintainer (person, not mailing list)\n\nAdditional Contact field could be used\n\nCitations in author-year style, followed by <doi:...>\nReducing run time of tests, checks, examples, vignettes is important\nNeed to provide cross-platform portable code: CRAN runs checks on Windows, Mac, several Linux OS"
+  },
+  {
+    "objectID": "slides/06_publication.html#cran-contd-1",
+    "href": "slides/06_publication.html#cran-contd-1",
+    "title": "Publication",
+    "section": "CRAN (cont’d)",
+    "text": "CRAN (cont’d)\n❗ A CRAN submission can be punishing, painful, and nerve-racking:\nThe first release of the rpact package took 5 weeks and 6 submission attempts; painful experiences:\n\nSome Linux machines may generate different random numbers than expected (despite setting a seed)\nNot only errors and warnings lead to the rejection of a submitted package, but also notes\nYour local Windows test system may be much faster than the CRAN system (e.g., 5 times)\nDon’t use “R Package for” in your package title\nThe description of the package must be provided with a doi reference"
+  },
+  {
+    "objectID": "slides/06_publication.html#cran-contd-2",
+    "href": "slides/06_publication.html#cran-contd-2",
+    "title": "Publication",
+    "section": "CRAN (cont’d)",
+    "text": "CRAN (cont’d)\nExample message informing about the rejection of the last rpact submission:\nDear maintainer,\npackage rpact_3.3.2.tar.gz does not pass the incoming checks automatically, please see the following pre-tests:\nWindows: 00check.log Status: OK, Debian: 00check.log Status: OK\nPlease fix all problems and resubmit a fixed version via the webform.\nBest regards,\nCRAN teams’ auto-check service\nr-devel-windows-x86_64 Check: Result: NA, Maintainer: ‘Friedrich Pahlke’\nr-devel-windows-x86_64 Check: Overall checktime, Result: NOTE, Overall checktime 12 min > 10 min\nr-devel-linux-x86_64-debian-gcc Check: Result: Note_to_CRAN_maintainers Maintainer: ‘Friedrich Pahlke’"
+  },
+  {
+    "objectID": "slides/06_publication.html#r-hub-to-the-rescue",
+    "href": "slides/06_publication.html#r-hub-to-the-rescue",
+    "title": "Publication",
+    "section": "R-Hub to the Rescue",
+    "text": "R-Hub to the Rescue\n\n\n\n\n\nFree R CMD check runs on different operating systems before submitting to CRAN\nSupported by the R consortium\nTypically used via the website\nThere is also an R API: rhub::check_for_cran() is comfortable"
+  },
+  {
+    "objectID": "slides/06_publication.html#tags",
+    "href": "slides/06_publication.html#tags",
+    "title": "Publication",
+    "section": "Tags",
+    "text": "Tags\n\nTags are a feature of Git, i.e., not specific to GitHub\nGit can tag specific points in the code history as being important\nTypically, for each release, create a tag vx.y.z\nThe value here is that users can later check out the package in the state of this release version\n\nDownload in R: remotes::install_github(\"org/package\", ref = \"vx.y.z\")\nComparison of versions are also possible, etc."
+  },
+  {
+    "objectID": "slides/06_publication.html#tags-example",
+    "href": "slides/06_publication.html#tags-example",
+    "title": "Publication",
+    "section": "Tags: Example",
+    "text": "Tags: Example"
+  },
+  {
+    "objectID": "slides/06_publication.html#releases",
+    "href": "slides/06_publication.html#releases",
+    "title": "Publication",
+    "section": "Releases",
+    "text": "Releases\n\nBased on Git tags, and a feature of GitHub\nAre “deployable software packages to make them available for a wider audience to download and use”\nContain release notes and links to the binary package files for download\n\nHowever, for R packages these tar.gz package files are rarely used directly"
+  },
+  {
+    "objectID": "slides/06_publication.html#releases-example",
+    "href": "slides/06_publication.html#releases-example",
+    "title": "Publication",
+    "section": "Releases: Example",
+    "text": "Releases: Example"
+  },
+  {
     "objectID": "slides/listing.html",
     "href": "slides/listing.html",
     "title": "Slides",
     "section": "",
-    "text": "Introduction\n\n\n\n\n\nIntroduction of speakers, get-to-know the audience, organisation, outline of program.Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\nStructure of an R package; helpers for setting up a package; writing documentation. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nAn R Package Engineering Workflow\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nWorkflow for creating R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nEnsuring Quality\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nPackage quality + exercisePhoto CC0 by Pixabay on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\n…\n\n\n\n\n\n\nNo matching items"
+    "text": "Introduction\n\n\n\n\n\nIntroduction of speakers, get-to-know the audience, organisation, outline of program.Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\nStructure of an R package; helpers for setting up a package; writing documentation. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nAn R Package Engineering Workflow\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nWorkflow for creating R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nEnsuring Quality\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nPackage quality + exercisePhoto CC0 by Pixabay on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\n\n\n\nHow to prepare the R package for publication, incl. documentation, license, checks. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich\n\n\n\n\n\n\nNo matching items"
   }
 ]
