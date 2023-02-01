@@ -1,9 +1,7 @@
 ---
 title: "Ensuring Quality"
-subtitle: "BBS Course: Good Software Engineering Practice with R"
+subtitle: "BBS Course: Good Software Engineering Practice for R Packages"
 author: "Friedrich"
-affiliation: "RPACT"
-institute: "RPACT"
 date: '2023-02-10'
 date-format: long
 tags: [R, Package]
@@ -19,7 +17,7 @@ format:
     code-line-numbers: true
     mouse-wheel: false
     link-external-newwindow: true
-    footer: 'Good Software Engineering Practice with R - [Home](../index.html "GSWEP4R Workshop") | [Slides](listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
+    footer: 'Good Software Engineering Practice for R Packages - [Home](../index.html "GSWEP4R Workshop") | [Slides](listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
 description: "Package quality + exercise<br/>[Photo CC0 by Pixabay on pexels.com]{.copyright}"
 image: thumbnails/quality.jpg
 lang: en
@@ -182,7 +180,7 @@ well-defined purpose [{{< fa circle-question size=1x >}}]{.red}
 
 ## Example: CCR#4
 
-```{r, echo = TRUE, eval = FALSE}
+```{r, echo = TRUE, eval = TRUE}
 getMean <- function(x) {
     sum(x) / length(x)
 }
@@ -474,6 +472,69 @@ R package [testthat](https://cran.r-project.org/package=testthat)
     supported
 -   Also performance testing, e.g., with help of
     [microbenchmark](https://cran.r-project.org/package=microbenchmark) package
+    
+**Example**: unit test passed
+
+```{r, echo = TRUE}
+library(testthat)
+object <- getMean(c(1, 2, 3))
+expected <- 2
+expect_equal(object, expected)
+```
+
+**Example**: unit test failed
+
+```{r, echo = TRUE, eval = FALSE}
+expect_equal(getMean(1:4), 2)
+```
+
+::: red-small
+Error: mean(1:4) (actual) not equal to 2 (expected).
+:::
+
+## testthat Comparisons Functions (1/2)
+
+::: small
+
+| Function name                  | Does code...                                                                                      |
+|------------------|---------------------------------------------------------|
+| expect_condition      | fulfill a condition?                           |
+| expect_equal          | return the expected value?                                                      |
+| expect_error          | throw an error?                           |
+| expect_false          | return 'FALSE'?                                                       |
+| expect_gt             | return a number greater than the expected value?                           |
+| expect_gte            | return a number greater or equal than the expected value?                           |
+| expect_identical      | return the expected value?                                                      |
+| expect_invisible      | return a invisible object?                                           |
+| expect_length         | return a vector with the specified length?                                      |
+| expect_lt             | return a number less than the expected value?                           |
+| expect_lte            | return a number less or equal than the expected value?                           |
+| expect_mapequal       | return a vector containing the expected values?                                 |
+| expect_message        | show a message?                           |
+| expect_named          | return a vector with (given) names?                                             |
+:::
+
+## testthat Comparisons Functions (2/2)
+
+::: small
+
+| Function name                  | Does code...                                                                                      |
+|------------------|---------------------------------------------------------|
+| expect_no_condition   | run without condition?                        |
+| expect_no_error       | run without error?                        |
+| expect_no_message     | run without message?                        |
+| expect_no_warning     | run without warning?                        |
+| expect_output         | print output to the console?                                                    |
+| expect_s3_class       | return an object inheriting from the expected S3 class? |
+| expect_s4_class       | return an object inheriting from the expected S4 class? |
+| expect_setequal       | return a vector containing the expected values?                                 |
+| expect_silent         | execute silently?                                                               |
+| expect_true           | return 'TRUE'?                                                       |
+| expect_type           | return an object inheriting from the expected base type? |
+| expect_vector         | return a vector with the expected size and/or prototype?                        |
+| expect_visible        | return a visible object?                                           |
+| expect_warning        | throw warning?                           |
+:::
 
 ## How to check the package quality?
 
@@ -581,12 +642,14 @@ optionally vignettes.
 
 ## Code Styler in RStudio
 
+How to link the existing styler package to a keyboard shortcut:
+
 ::: panel-tabset
 ## Browse addins
 
-![](resources/rstudio_addins.png){fig-align="center" width="90%"}
+![](resources/rstudio_addins.png){fig-align="center" width="70%"}
 
-## Link styler to keyboard shortcut
+## Set keyboard shortcut
 
 ![](resources/rstudio_keyboard_shortcuts.png){fig-align="center" width="50%"}
 :::

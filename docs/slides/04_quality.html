@@ -392,17 +392,14 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Ensuring Quality</h1>
-  <p class="subtitle">BBS Course: Good Software Engineering Practice with R</p>
+  <p class="subtitle">BBS Course: Good Software Engineering Practice for R Packages</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
 Friedrich 
 </div>
-        <p class="quarto-title-affiliation">
-            RPACT
-          </p>
-    </div>
+</div>
 </div>
 
   <p class="date">February 10, 2023</p>
@@ -798,6 +795,170 @@ Are we building the right product?</p>
 <li>Unit testing, integration testing, and <a href="https://cran.r-project.org/web/packages/testthat/vignettes/snapshotting.html">snapshot testing</a> supported</li>
 <li>Also performance testing, e.g., with help of <a href="https://cran.r-project.org/package=microbenchmark">microbenchmark</a> package</li>
 </ul>
+<p><strong>Example</strong>: unit test passed</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">library</span>(testthat)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>object <span class="ot">&lt;-</span> <span class="fu">getMean</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb15-3"><a href="#cb15-3"></a>expected <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="fu">expect_equal</span>(object, expected)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Example</strong>: unit test failed</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">expect_equal</span>(<span class="fu">getMean</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="red-small">
+<p>Error: mean(1:4) (actual) not equal to 2 (expected).</p>
+</div>
+</section>
+<section id="testthat-comparisons-functions-12" class="slide level2">
+<h2>testthat Comparisons Functions (1/2)</h2>
+<div class="small">
+<table>
+<colgroup>
+<col style="width: 24%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function name</th>
+<th>Does code…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>expect_condition</td>
+<td>fulfill a condition?</td>
+</tr>
+<tr class="even">
+<td>expect_equal</td>
+<td>return the expected value?</td>
+</tr>
+<tr class="odd">
+<td>expect_error</td>
+<td>throw an error?</td>
+</tr>
+<tr class="even">
+<td>expect_false</td>
+<td>return ‘FALSE’?</td>
+</tr>
+<tr class="odd">
+<td>expect_gt</td>
+<td>return a number greater than the expected value?</td>
+</tr>
+<tr class="even">
+<td>expect_gte</td>
+<td>return a number greater or equal than the expected value?</td>
+</tr>
+<tr class="odd">
+<td>expect_identical</td>
+<td>return the expected value?</td>
+</tr>
+<tr class="even">
+<td>expect_invisible</td>
+<td>return a invisible object?</td>
+</tr>
+<tr class="odd">
+<td>expect_length</td>
+<td>return a vector with the specified length?</td>
+</tr>
+<tr class="even">
+<td>expect_lt</td>
+<td>return a number less than the expected value?</td>
+</tr>
+<tr class="odd">
+<td>expect_lte</td>
+<td>return a number less or equal than the expected value?</td>
+</tr>
+<tr class="even">
+<td>expect_mapequal</td>
+<td>return a vector containing the expected values?</td>
+</tr>
+<tr class="odd">
+<td>expect_message</td>
+<td>show a message?</td>
+</tr>
+<tr class="even">
+<td>expect_named</td>
+<td>return a vector with (given) names?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="testthat-comparisons-functions-22" class="slide level2">
+<h2>testthat Comparisons Functions (2/2)</h2>
+<div class="small">
+<table>
+<colgroup>
+<col style="width: 24%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function name</th>
+<th>Does code…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>expect_no_condition</td>
+<td>run without condition?</td>
+</tr>
+<tr class="even">
+<td>expect_no_error</td>
+<td>run without error?</td>
+</tr>
+<tr class="odd">
+<td>expect_no_message</td>
+<td>run without message?</td>
+</tr>
+<tr class="even">
+<td>expect_no_warning</td>
+<td>run without warning?</td>
+</tr>
+<tr class="odd">
+<td>expect_output</td>
+<td>print output to the console?</td>
+</tr>
+<tr class="even">
+<td>expect_s3_class</td>
+<td>return an object inheriting from the expected S3 class?</td>
+</tr>
+<tr class="odd">
+<td>expect_s4_class</td>
+<td>return an object inheriting from the expected S4 class?</td>
+</tr>
+<tr class="even">
+<td>expect_setequal</td>
+<td>return a vector containing the expected values?</td>
+</tr>
+<tr class="odd">
+<td>expect_silent</td>
+<td>execute silently?</td>
+</tr>
+<tr class="even">
+<td>expect_true</td>
+<td>return ‘TRUE’?</td>
+</tr>
+<tr class="odd">
+<td>expect_type</td>
+<td>return an object inheriting from the expected base type?</td>
+</tr>
+<tr class="even">
+<td>expect_vector</td>
+<td>return a vector with the expected size and/or prototype?</td>
+</tr>
+<tr class="odd">
+<td>expect_visible</td>
+<td>return a visible object?</td>
+</tr>
+<tr class="even">
+<td>expect_warning</td>
+<td>throw warning?</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="how-to-check-the-package-quality" class="slide level2">
 <h2>How to check the package quality?</h2>
@@ -811,9 +972,9 @@ Are we building the right product?</p>
 <h2>How to improve the test coverage?</h2>
 <p><a href="https://cran.r-project.org/package=covr">covr</a>: Track and report code coverage for your package</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">library</span>(covr)</span>
-<span id="cb15-2"><a href="#cb15-2"></a>x <span class="ot">&lt;-</span> <span class="fu">package_coverage</span>()</span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="fu">report</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">library</span>(covr)</span>
+<span id="cb17-2"><a href="#cb17-2"></a>x <span class="ot">&lt;-</span> <span class="fu">package_coverage</span>()</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="fu">report</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p><img data-src="resources/covr_full.png"></p>
@@ -823,19 +984,19 @@ Are we building the right product?</p>
 <h2>Example on test coverage</h2>
 <p>Let’s assume we have added a generic function to cat a simulation result:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">#' </span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="co">#' @export</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="co">#'</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>cat.SimulationResult <span class="ot">&lt;-</span> <span class="cf">function</span>(... , <span class="at">file =</span> <span class="st">""</span>, <span class="at">sep =</span> <span class="st">" "</span>, </span>
-<span id="cb16-5"><a href="#cb16-5"></a>        <span class="at">fill =</span> <span class="cn">FALSE</span>, <span class="at">labels =</span> <span class="cn">NULL</span>, <span class="at">append =</span> <span class="cn">FALSE</span>) {</span>
-<span id="cb16-6"><a href="#cb16-6"></a>    args <span class="ot">&lt;-</span> <span class="fu">list</span>(...)</span>
-<span id="cb16-7"><a href="#cb16-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">#' </span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="co">#' @export</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="co">#'</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>cat.SimulationResult <span class="ot">&lt;-</span> <span class="cf">function</span>(... , <span class="at">file =</span> <span class="st">""</span>, <span class="at">sep =</span> <span class="st">" "</span>, </span>
+<span id="cb18-5"><a href="#cb18-5"></a>        <span class="at">fill =</span> <span class="cn">FALSE</span>, <span class="at">labels =</span> <span class="cn">NULL</span>, <span class="at">append =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb18-6"><a href="#cb18-6"></a>    args <span class="ot">&lt;-</span> <span class="fu">list</span>(...)</span>
+<span id="cb18-7"><a href="#cb18-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>But we forgot to finalize the implementation and didn’t create unit tests.</p>
 <p>Re-execution of</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report</span>(<span class="fu">package_coverage</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">report</span>(<span class="fu">package_coverage</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>then results in…</p>
 </div>
@@ -885,13 +1046,14 @@ Are we building the right product?</p>
 </section>
 <section id="code-styler-in-rstudio" class="slide level2">
 <h2>Code Styler in RStudio</h2>
+<p>How to link the existing styler package to a keyboard shortcut:</p>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Browse addins</a></li><li><a href="#tabset-1-2">Link styler to keyboard shortcut</a></li></ul>
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Browse addins</a></li><li><a href="#tabset-1-2">Set keyboard shortcut</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="resources/rstudio_addins.png" style="width:90.0%"></p>
+<p><img data-src="resources/rstudio_addins.png" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
@@ -964,7 +1126,7 @@ Taylor &amp; Francis Inc.&nbsp;[<a href="https://amzn.to/3Bk6elt">Book</a>]</li>
 </ul>
 
 <div class="footer footer-default">
-<p>Good Software Engineering Practice with R - <a href="../index.html" title="GSWEP4R Workshop">Home</a> | <a href="listing.html" title="Overview of all slides">Slides</a> | <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="License: CC BY-SA 4.0">License</a></p>
+<p>Good Software Engineering Practice for R Packages - <a href="../index.html" title="GSWEP4R Workshop">Home</a> | <a href="listing.html" title="Overview of all slides">Slides</a> | <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="License: CC BY-SA 4.0">License</a></p>
 </div>
 </section>
     </div>

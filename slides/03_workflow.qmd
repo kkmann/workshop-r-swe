@@ -1,9 +1,7 @@
 ---
 title: "An R Package Engineering Workflow"
-subtitle: "BBS Course: Good Software Engineering Practice with R"
+subtitle: "BBS Course: Good Software Engineering Practice for R Packages"
 author: "Friedrich"
-affiliation: "RPACT"
-institute: "RPACT"
 date: '2023-02-10'
 date-format: long
 tags: [R, Package]
@@ -19,7 +17,7 @@ format:
     code-line-numbers: true
     mouse-wheel: false
     link-external-newwindow: true
-    footer: 'Good Software Engineering Practice with R - [Home](../index.html "GSWEP4R Workshop") | [Slides](listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
+    footer: 'Good Software Engineering Practice for R Packages - [Home](../index.html "GSWEP4R Workshop") | [Slides](listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
 description: "Workflow for creating R packages + practical<br/>[Photo CC0 by Andrea Piacquadio on pexels.com]{.copyright}"
 image: thumbnails/workflow.jpg
 lang: en
@@ -69,16 +67,18 @@ pexels.com]{.copyright}](thumbnails/workflow1.jpg){fig-align="center"}
 
 ::: incremental
 ::: columns
-::: {.column width="50%"}
+::: {.column width="55%"}
 1.  Idea
 2.  Concept creation
 3.  Validation planning
-4.  Specification\
-    (URS, FS, and SDS)
-5.  R package programming
+4.  Specification:
+      a. User Requirements Spec (URS), 
+      b. Functional Spec (FS), and 
+      c. Software Design Spec (SDS)
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
+5.  R package programming
 6.  Documented verification
 7.  Completion of formal validation
 8.  R package release
@@ -557,16 +557,27 @@ boxplot of the fake data.
 
 ## Task 6
 
-Implement the generic functions
+*Optional extra tasks:*
 
--   `summary`,
--   `kable`, and
--   `cat`.
+-   Implement the generic functions `summary` and `cat`
+-   Implement the function `kable` known from the package
+    [knitr](https://cran.r-project.org/package=knitr) as generic. *Tip*: use 
+    ```{r, echo = TRUE, eval = FALSE}
+    #| code-line-numbers: false
+    kable <- function(x) UseMethod("kable")
+    ``` 
+    to define kable as generic
 
 ## Task 7
 
+*Optional extra task^1^:*
+
 Document your functions with
 [Roxygen2](https://cran.r-project.org/package=roxygen2)
+
+::: footnote
+1.  If you are already familiar with Roxygen2
+:::
 :::
 
 # References

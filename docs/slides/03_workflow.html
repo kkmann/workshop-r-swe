@@ -392,17 +392,14 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">An R Package Engineering Workflow</h1>
-  <p class="subtitle">BBS Course: Good Software Engineering Practice with R</p>
+  <p class="subtitle">BBS Course: Good Software Engineering Practice for R Packages</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
 Friedrich 
 </div>
-        <p class="quarto-title-affiliation">
-            RPACT
-          </p>
-    </div>
+</div>
 </div>
 
   <p class="date">February 10, 2023</p>
@@ -417,7 +414,7 @@ Friedrich
 - Professional workflow
 -->
 <p><strong>From an idea to a production-grade R package</strong></p>
-<p>Example szenario: in your daily work, you notice that you need certain one-off scripts again and again.</p>
+<p>Example scenario: in your daily work, you notice that you need certain one-off scripts again and again.</p>
 <div class="fragment">
 <p><span class="blue"><i class="fa-solid fa-lightbulb fa-2x" aria-label="lightbulb"></i></span> The idea of creating an R package was born because you understood that “copy and paste” R scripts is inefficient and on top of that, you want to share your helpful R functions with colleagues and the world…</p>
 <div class="columns">
@@ -439,17 +436,21 @@ Friedrich
 <h2>Typical work steps</h2>
 <div>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:55%;">
 <ol type="1">
 <li class="fragment">Idea</li>
 <li class="fragment">Concept creation</li>
 <li class="fragment">Validation planning</li>
-<li class="fragment">Specification<br>
-(URS, FS, and SDS)</li>
-<li class="fragment">R package programming</li>
+<li class="fragment">Specification:
+<ol type="a">
+<li class="fragment">User Requirements Spec (URS),</li>
+<li class="fragment">Functional Spec (FS), and</li>
+<li class="fragment">Software Design Spec (SDS)</li>
+</ol></li>
 </ol>
-</div><div class="column" style="width:50%;">
-<ol start="6" type="1">
+</div><div class="column" style="width:45%;">
+<ol start="5" type="1">
+<li class="fragment">R package programming</li>
 <li class="fragment">Documented verification</li>
 <li class="fragment">Completion of formal validation</li>
 <li class="fragment">R package release</li>
@@ -731,107 +732,107 @@ $sd2
 [1] 4
 
 $data
-    group     values
-1       1  7.7105800
-2       1  5.2753799
-3       1 -0.3799196
-4       1  3.1565106
-5       1  1.5291985
-6       1  5.8045930
-7       1  5.0815875
-8       1  4.1065623
-9       1  7.6935120
-10      1  1.4269623
-11      1  5.0380992
-12      1  1.9144411
-13      1 -0.5245204
-14      1  4.8152554
-15      1 10.7234799
-16      1  7.6731746
-17      1  4.6971718
-18      1  7.4541059
-19      1 -2.9584634
-20      1  6.0135063
-21      1  8.7414776
-22      1  7.3855897
-23      1 11.6806483
-24      1  3.0921494
-25      1  8.1731085
-26      1  1.8897376
-27      1  3.9505627
-28      1  6.6362629
-29      1  6.5342104
-30      1 -2.2421732
-31      1  2.2698619
-32      1  7.8834871
-33      1  0.9690619
-34      1  2.3419044
-35      1  4.3489737
-36      1  6.0652932
-37      1  3.4176847
-38      1  4.0866184
-39      1  3.0327478
-40      1  6.3328628
-41      1  9.3535112
-42      1  7.2166667
-43      1  5.8790529
-44      1  6.3788694
-45      1  7.5905165
-46      1  0.3758047
-47      1  6.1980015
-48      1  3.4038192
-49      1  2.6082501
-50      1  6.8999698
-51      2  7.6035017
-52      2  6.8765579
-53      2  4.2916270
-54      2  3.5624262
-55      2  5.6049685
-56      2  6.6883748
-57      2  2.2861998
-58      2  7.6030061
-59      2  7.2893829
-60      2  5.7441905
-61      2  8.6255675
-62      2  2.2382151
-63      2 10.5234014
-64      2 10.8514894
-65      2  3.8130447
-66      2  9.3906443
-67      2  6.5413613
-68      2 15.6428227
-69      2  5.1151484
-70      2  8.0469999
-71      2 10.1389636
-72      2  5.9749500
-73      2 15.3194491
-74      2  7.9250741
-75      2  7.1319501
-76      2  6.0454230
-77      2 15.4035323
-78      2  5.9269027
-79      2  9.4819710
-80      2  4.7717092
-81      2  8.1734349
-82      2  2.9046707
-83      2 11.1184591
-84      2 10.3112337
-85      2 12.6237088
-86      2  6.8427945
-87      2  1.5077332
-88      2  6.5416302
-89      2  7.9567490
-90      2 15.5831837
-91      2  4.2918637
-92      2 10.0970581
-93      2  6.3304566
-94      2 13.6742984
-95      2  2.2606872
-96      2  2.1937786
-97      2  4.6995036
-98      2  0.2122895
-99      2  3.5946186
-100     2 14.0204847
+    group       values
+1       1  0.005044976
+2       1  9.538758716
+3       1  3.182384075
+4       1  2.602103859
+5       1  9.337498194
+6       1 -1.097946404
+7       1  6.782664655
+8       1  4.275611013
+9       1  9.062776864
+10      1  3.172858669
+11      1  5.838167137
+12      1  5.823055167
+13      1  9.632202340
+14      1  5.539657891
+15      1  4.679425760
+16      1  1.052419985
+17      1  3.942716892
+18      1  3.799552596
+19      1 10.897143061
+20      1  9.465046004
+21      1  4.291601329
+22      1  5.067681107
+23      1  5.961851062
+24      1 -0.317253917
+25      1 -3.572226238
+26      1  1.756635702
+27      1  7.330617616
+28      1  7.218256687
+29      1 12.812208679
+30      1  0.220053972
+31      1  2.054045758
+32      1  7.430722349
+33      1  6.636746227
+34      1  6.625806575
+35      1  7.641401294
+36      1 -1.207398721
+37      1 -0.116798238
+38      1 -1.244496963
+39      1  5.076070655
+40      1  5.243233782
+41      1  4.766338312
+42      1  4.377650834
+43      1 -0.598280537
+44      1  2.801374839
+45      1  6.376230809
+46      1  4.298567770
+47      1  2.394362920
+48      1  1.803488273
+49      1  8.454556693
+50      1  1.619583770
+51      2  4.178445118
+52      2  6.799380370
+53      2  8.290920523
+54      2  7.662502564
+55      2  3.608406737
+56      2  3.175341767
+57      2  5.540748808
+58      2 10.819045815
+59      2  1.431797606
+60      2 10.292903564
+61      2  6.263239838
+62      2  4.215859429
+63      2 -0.057960363
+64      2  7.506793423
+65      2  8.488353313
+66      2  6.266129494
+67      2 11.036135356
+68      2  2.331111626
+69      2  1.295817803
+70      2 11.788312531
+71      2  9.170904472
+72      2 13.321359717
+73      2  2.077721333
+74      2  3.547199626
+75      2  4.091527538
+76      2 11.444533549
+77      2  4.243031106
+78      2  8.789864139
+79      2 11.347103281
+80      2 -1.448318844
+81      2 14.185475170
+82      2 -4.689426442
+83      2  8.641532156
+84      2  4.567311908
+85      2  3.213611711
+86      2  5.971303254
+87      2  4.361755304
+88      2 10.019257757
+89      2  4.029804789
+90      2 12.377948230
+91      2  3.117433410
+92      2  6.836850994
+93      2 11.120490699
+94      2  1.750823880
+95      2  7.128595038
+96      2  3.395628726
+97      2  9.826390548
+98      2  7.704060783
+99      2 11.087608304
+100     2  2.999295499
 
 attr(,"class")
 [1] "SimulationResult"</code></pre>
@@ -867,7 +868,7 @@ attr(,"class")
 <span id="cb8-2"><a href="#cb8-2"></a><span class="co">#' Print Simulation Result</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="co">#'</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a><span class="co">#' @description</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#' Generic function to print a \code{SimulationResult} object.</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#' Generic function to print a `SimulationResult` object.</span></span>
 <span id="cb8-6"><a href="#cb8-6"></a><span class="co">#'</span></span>
 <span id="cb8-7"><a href="#cb8-7"></a><span class="co">#' @param x a \code{SimulationResult} object to print.</span></span>
 <span id="cb8-8"><a href="#cb8-8"></a><span class="co">#' @param ... further arguments passed to or from other methods.</span></span>
@@ -889,18 +890,18 @@ attr(,"class")
 
 $data
 # A tibble: 100 × 2
-   group values
-   &lt;dbl&gt;  &lt;dbl&gt;
- 1     1  7.71 
- 2     1  5.28 
- 3     1 -0.380
- 4     1  3.16 
- 5     1  1.53 
- 6     1  5.80 
- 7     1  5.08 
- 8     1  4.11 
- 9     1  7.69 
-10     1  1.43 
+   group   values
+   &lt;dbl&gt;    &lt;dbl&gt;
+ 1     1  0.00504
+ 2     1  9.54   
+ 3     1  3.18   
+ 4     1  2.60   
+ 5     1  9.34   
+ 6     1 -1.10   
+ 7     1  6.78   
+ 8     1  4.28   
+ 9     1  9.06   
+10     1  3.17   
 # … with 90 more rows</code></pre>
 </div>
 </div>
@@ -1012,15 +1013,24 @@ $data
 </div>
 </div>
 <div id="tabset-2-6">
-<p>Implement the generic functions</p>
+<p><em>Optional extra tasks:</em></p>
 <ul>
-<li><code>summary</code>,</li>
-<li><code>kable</code>, and</li>
-<li><code>cat</code>.</li>
+<li><p>Implement the generic functions <code>summary</code> and <code>cat</code></p></li>
+<li><p>Implement the function <code>kable</code> known from the package <a href="https://cran.r-project.org/package=knitr">knitr</a> as generic. <em>Tip</em>: use</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12" data-code-line-numbers="false"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>kable <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">UseMethod</span>(<span class="st">"kable"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>to define kable as generic</p></li>
 </ul>
 </div>
 <div id="tabset-2-7">
+<p><em>Optional extra task<sup>1</sup>:</em></p>
 <p>Document your functions with <a href="https://cran.r-project.org/package=roxygen2">Roxygen2</a></p>
+<div class="footnote">
+<ol type="1">
+<li>If you are already familiar with Roxygen2</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -1038,7 +1048,7 @@ Taylor &amp; Francis Ltd.&nbsp;[<a href="https://amzn.to/3uLnxLd">Book</a> | <a 
 </ul>
 
 <div class="footer footer-default">
-<p>Good Software Engineering Practice with R - <a href="../index.html" title="GSWEP4R Workshop">Home</a> | <a href="listing.html" title="Overview of all slides">Slides</a> | <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="License: CC BY-SA 4.0">License</a></p>
+<p>Good Software Engineering Practice for R Packages - <a href="../index.html" title="GSWEP4R Workshop">Home</a> | <a href="listing.html" title="Overview of all slides">Slides</a> | <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="License: CC BY-SA 4.0">License</a></p>
 </div>
 </section>
 
