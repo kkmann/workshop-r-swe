@@ -2,8 +2,9 @@
 title: "R packages"
 author: "Daniel"
 format: 
-  revealjs
-description: description. Photo CC0 by cottonbro studio on pexels.com.
+  revealjs: 
+    fontsize: 32px
+description: Structure of an R package; helpers for setting up a package; writing documentation. Photo CC0 by cottonbro studio on pexels.com.
 image: thumbnails/packages.jpg
 ---
 
