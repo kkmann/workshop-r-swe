@@ -642,7 +642,7 @@ optionally vignettes.
 
 ## Code Styler in RStudio
 
-How to link the existing styler package to a keyboard shortcut:
+How to link the [styler](https://styler.r-lib.org)[^10] package to a keyboard shortcut:
 
 ::: panel-tabset
 ## Browse addins
@@ -651,8 +651,10 @@ How to link the existing styler package to a keyboard shortcut:
 
 ## Set keyboard shortcut
 
-![](resources/rstudio_keyboard_shortcuts.png){fig-align="center" width="50%"}
+![](resources/rstudio_keyboard_shortcuts.png){fig-align="right" width="52%"}
 :::
+
+[^10]: If not available, install it first
 
 ```{=html}
 <!--
