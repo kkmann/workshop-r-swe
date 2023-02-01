@@ -440,7 +440,7 @@ x
 #' Print Simulation Result
 #'
 #' @description
-#' Generic function to print a \code{SimulationResult} object.
+#' Generic function to print a `SimulationResult` object.
 #'
 #' @param x a \code{SimulationResult} object to print.
 #' @param ... further arguments passed to or from other methods.
