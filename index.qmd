@@ -27,6 +27,7 @@ readr::read_csv("slides/resources/program.csv", col_types = "cc") |>
 Prior to the course, participants should
 
 -   set up a (free) [GitHub.com account](https://github.com/join). There are other git Platforms like [Gitlab](https://about.gitlab.com/) or [Bitbucket](https://bitbucket.org/) but we made the choice to go with GitHub.com for the course since it is by far the most relevant git platform in the R community.
+-   download and extract [simulatr.zip](slides/download/simulatr.zip)
 -   either make sure they have a working R software development setup on their own laptop (up-to-date git/Rtools/R/RStudio) or get access to <https://posit.cloud>. The latter offers a free tier account with 25 hours of computing time per months and can be accessed using ones GitHub.com account.
 
 For the course, participants are required to bring their own laptop to be able to participate in the exercises.
