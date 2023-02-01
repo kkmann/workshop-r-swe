@@ -6,4 +6,5 @@ Depends:
   ggraph,
   fontawesome,
   emoji,
-  knitr
+  knitr,
+  testthat
