@@ -41,7 +41,7 @@ editor:
 ```
 **From an idea to a production-grade R package**
 
-Example szenario: in your daily work, you notice that you need certain one-off
+Example scenario: in your daily work, you notice that you need certain one-off
 scripts again and again.
 
 . . .
