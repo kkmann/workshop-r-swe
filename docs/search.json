@@ -133,27 +133,6 @@
     "text": "GxP + R  = \n\nCore infrastructure packages only through industry\nQuality, burden sharing: open-source pharmaverse and others\nOpen methodological packages can de-risk innovative methods\nR packages make (statistical/methodological) code\n\ntestable (with documented evidence thereof, CRF 11)\nreusable\nshareable\neasier to document"
   },
   {
-    "objectID": "slides/05_collaboration.html#mermaid-takes-the-pain-out-of-git-diagrams",
-    "href": "slides/05_collaboration.html#mermaid-takes-the-pain-out-of-git-diagrams",
-    "title": "Collaboration",
-    "section": "Mermaid takes the pain out of git diagrams :)",
-    "text": "Mermaid takes the pain out of git diagrams :)\n\n\n\n\ngitGraph\n   commit\n   commit\n   branch develop\n   checkout develop\n   commit\n   commit\n   checkout main\n   merge develop\n   commit\n   commit"
-  },
-  {
-    "objectID": "slides/05_collaboration.html#demo",
-    "href": "slides/05_collaboration.html#demo",
-    "title": "Collaboration",
-    "section": "Demo",
-    "text": "Demo\ndemo / exercise"
-  },
-  {
-    "objectID": "slides/listing.html",
-    "href": "slides/listing.html",
-    "title": "Slides",
-    "section": "",
-    "text": "Introduction\n\n\n\n\n\nIntroduction of speakers, get-to-know the audience, organisation, outline of program.Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\ndescription. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nA Package Engineering Workflow\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nEnsuring Quality\n\n\n\n\n\ndescription. Photo CC0 by Pixabay on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\n…\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "slides/02_r_packages.html#what-you-know-already",
     "href": "slides/02_r_packages.html#what-you-know-already",
     "title": "R packages",
@@ -329,24 +308,31 @@
     "text": "Installing the package\n\nR comes with pre-defined install command for packages: R CMD INSTALL\nIn RStudio: Build > Install\nNote: During development it is usually sufficient to use Build > More > Load All\n\nRuns devtools::load_all()\nRoughly simulates what happens when package would be installed and loaded\nKey: much faster!"
   },
   {
-    "objectID": "slides/02_r_packages.html#exercise",
-    "href": "slides/02_r_packages.html#exercise",
-    "title": "R packages",
-    "section": "Exercise",
-    "text": "Exercise"
-  },
-  {
-    "objectID": "slides/02_r_packages.html#references",
-    "href": "slides/02_r_packages.html#references",
-    "title": "R packages",
-    "section": "References",
-    "text": "References\n\nWriting R Extensions\nRewriting R code in C++\nSuper technical details about R Markdown"
-  },
-  {
     "objectID": "slides/02_r_packages.html#lets-try-this-out-now",
     "href": "slides/02_r_packages.html#lets-try-this-out-now",
     "title": "R packages",
     "section": "Let’s try this out now 😊",
     "text": "Let’s try this out now 😊\n\nSet up a new R package with a fancy name\nFill out the DESCRIPTION file\nInclude a new function\nAdd roxygen documentation\nExport the function to the namespace\nProduce the package documentation\nRun checks\nBuild the package"
+  },
+  {
+    "objectID": "slides/05_collaboration.html#mermaid-takes-the-pain-out-of-git-diagrams",
+    "href": "slides/05_collaboration.html#mermaid-takes-the-pain-out-of-git-diagrams",
+    "title": "Collaboration",
+    "section": "Mermaid takes the pain out of git diagrams :)",
+    "text": "Mermaid takes the pain out of git diagrams :)\n\n\n\n\ngitGraph\n   commit\n   commit\n   branch develop\n   checkout develop\n   commit\n   commit\n   checkout main\n   merge develop\n   commit\n   commit"
+  },
+  {
+    "objectID": "slides/05_collaboration.html#demo",
+    "href": "slides/05_collaboration.html#demo",
+    "title": "Collaboration",
+    "section": "Demo",
+    "text": "Demo\ndemo / exercise"
+  },
+  {
+    "objectID": "slides/listing.html",
+    "href": "slides/listing.html",
+    "title": "Slides",
+    "section": "",
+    "text": "Introduction\n\n\n\n\n\nIntroduction of speakers, get-to-know the audience, organisation, outline of program.Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\nStructure of an R package; helpers for setting up a package; writing documentation. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nA Package Engineering Workflow\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nEnsuring Quality\n\n\n\n\n\ndescription. Photo CC0 by Pixabay on pexels.com.\n\n\n\n\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\n\n\n\ndescription. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\n…\n\n\n\n\n\n\nNo matching items"
   }
 ]
