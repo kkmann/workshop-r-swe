@@ -1,10 +1,17 @@
 ---
 title: "Conclusion"
+subtitle: "BBS Course: Good Software Engineering Practice for R Packages"
 author: "Daniel"
+date: '2023-02-10'
+date-format: long
+tags: [R, Package]
+license: 'CC BY-SA'
+email-obfuscation: javascript
 format: 
   revealjs: 
     fontsize: 32px
-description: "Discussion of learning experience, summary of workflow, conclusion and next steps.</br>Photo by Ann H on pexels.com."
+    footer: 'Good Software Engineering Practice for R Packages - [Home](../index.html "GSWEP4R Workshop") | [Slides](listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
+description: "Discussion of learning experience, summary of workflow, conclusion and next steps.</br>[Photo by Ann H on pexels.com]{.copyright}"
 image: thumbnails/conclusion.jpg
 ---
 
@@ -12,19 +19,19 @@ image: thumbnails/conclusion.jpg
 
 ## What have you learned?
 
-[slido wordcloud here]
+\[slido wordcloud here\]
 
 Plus also ask folks to speak up in the room directly
 
 ## What can you apply in your work now?
 
-[slido wordcloud here]
+\[slido wordcloud here\]
 
 Plus also ask folks to speak up in the room directly
 
 ## What was especially difficult?
 
-[slido wordcloud here]
+\[slido wordcloud here\]
 
 Plus also ask folks to speak up in the room directly
 
@@ -32,23 +39,42 @@ Plus also ask folks to speak up in the room directly
 
 ## R package structure
 
-- R package = folder structure with (many) conventions
-- With modern tools `usethis`, `roxygen2` it is easy to start a new package
-- Packaging a set of functions is an ideal way to share with collaborators and the public
-- Start small and simple and over time you can learn additional options
+-   R package = folder structure with (many) conventions
+-   With modern tools `usethis`, `roxygen2` it is easy to start a new package
+-   Packaging a set of functions is an ideal way to share with collaborators and the public
+-   Start small and simple and over time you can learn additional options
 
-## Workflow
+## Engineering Workflow
 
-## Quality
+-   Use a workable workflow:\
+    Idea $\rightarrow$ Design docs $\rightarrow$ Programming $\rightarrow$ Quality check $\rightarrow$ Publication
+    -   Don't waste time on maintenance
+    -   Be faster with release on CRAN
+    -   Fulfill regulatory requirements
+-   Refactor your one-off scripts that you want to use in a package
+-   Use assertions for all arguments $\rightarrow$ Usability/UX
+-   Implement common generics like `print` and `plot`
+
+## Ensuring Quality
+
+-   Apply common clean code rules, e.g.,
+    -   Use [testthat](https://cran.r-project.org/package=testthat) to test, test, and test
+    -   Use [covr](https://cran.r-project.org/package=covr) to improve the test coverage
+    -   Use [styler](https://styler.r-lib.org) to optimize the code styling
+    -   Don't repeat yourself!
+-   Your rewards are:
+    -   [{{< fa trophy size=1x >}}]{.yellow} **Maintainability**,
+    -   [{{< fa trophy size=1x >}}]{.yellow} **Extensibility**, and
+    -   [{{< fa trophy size=1x >}}]{.yellow} **Performance**!
 
 ## Collaboration
 
 ## Publication
 
-- `pkgdown` can help you easily create a nice website for your package
-- Versions and licenses along with `NEWS` updates are important
-- GitHub helps with tagging of release versions
-- R-Hub helps with checking before CRAN submission
+-   `pkgdown` can help you easily create a nice website for your package
+-   Versions and licenses along with `NEWS` updates are important
+-   GitHub helps with tagging of release versions
+-   R-Hub helps with checking before CRAN submission
 
 # Closing remarks
 
@@ -60,17 +86,15 @@ Plus also ask folks to speak up in the room directly
 :::
 
 ::: {.column width="70%"}
-- It was great to teach you today on how to build R packages
-- Let's keep in touch e.g. via [gitter chat channel](https://gitter.im/workshop-r-swe/community) for this course that you can connect to
-- We might do another course in Basel in the future if we get enough interest
+-   It was great to teach you today on how to build R packages
+-   Let's keep in touch e.g. via [gitter chat channel](https://gitter.im/workshop-r-swe/community) for this course that you can connect to
+-   We might do another course in Basel in the future if we get enough interest
 :::
 :::
 
 ## Possible next steps
 
-- Bring the information back to your colleagues in your organization
-- Start building your first own package and share internally first
-- Later publish it open source on GitHub and submit it to CRAN
-- Learn about more tips and tricks how to extend R
-
-
+-   Bring the information back to your colleagues in your organization
+-   Start building your first own package and share internally first
+-   Later publish it open source on GitHub and submit it to CRAN
+-   Learn about more tips and tricks how to extend R
