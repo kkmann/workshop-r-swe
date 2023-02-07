@@ -1,10 +1,7 @@
 ---
 title: "Publication"
 author: "Daniel, Friedrich"
-format: 
-  revealjs: 
-    fontsize: 32px
-description: "How to prepare the R package for publication, incl. documentation, license, checks. Photo CC0 by Andrea Piacquadio on pexels.com."
+description: "Publication of R packages + practical<br/>[Photo CC0 by Andrea Piacquadio on pexels.com]{.copyright}"
 image: thumbnails/publish.jpg
 ---
 

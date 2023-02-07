@@ -1,10 +1,7 @@
 ---
 title: "Introduction"
 author: "Daniel, Friedrich, Kevin"
-format: 
-  revealjs: 
-    fontsize: 32px
-description: "Introduction of speakers, get-to-know the audience, organisation, outline of program.</br>Photo CC0 by Mabel Amber on pexels.com."
+description: "Introduction and outline of program.</br>[Photo CC0 by Mabel Amber on pexels.com]{.copyright}"
 image: thumbnails/hello.jpg
 ---
 

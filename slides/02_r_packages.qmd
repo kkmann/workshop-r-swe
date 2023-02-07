@@ -1,10 +1,7 @@
 ---
 title: "R packages"
 author: "Daniel"
-format: 
-  revealjs: 
-    fontsize: 32px
-description: Structure of an R package; helpers for setting up a package; writing documentation. Photo CC0 by cottonbro studio on pexels.com.
+description: "R package syntax + practical<br/>[Photo CC0 by cottonbro studio on pexels.com]{.copyright}"
 image: thumbnails/packages.jpg
 ---
 
