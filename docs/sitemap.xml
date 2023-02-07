@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/index.html</loc>
-    <lastmod>2023-02-07T14:12:55.889Z</lastmod>
+    <lastmod>2023-02-07T14:26:43.684Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/LICENSE.html</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/slides/05_collaboration.html</loc>
-    <lastmod>2023-02-07T14:08:04.219Z</lastmod>
+    <lastmod>2023-02-07T14:26:37.080Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/slides/06_publication.html</loc>
@@ -38,6 +38,6 @@
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/listing.html</loc>
-    <lastmod>2023-02-07T14:12:55.437Z</lastmod>
+    <lastmod>2023-02-07T14:25:47.556Z</lastmod>
   </url>
 </urlset>

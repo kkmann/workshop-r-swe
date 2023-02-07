@@ -2,5 +2,5 @@
 title: "Slides"
 listing:
   contents: "slides"
-  sort: "name"
+  sort: "title"
 ---

@@ -653,16 +653,16 @@
   {
     "objectID": "slides/05_collaboration.html#mermaid-takes-the-pain-out-of-git-diagrams",
     "href": "slides/05_collaboration.html#mermaid-takes-the-pain-out-of-git-diagrams",
-    "title": "Collaboration",
+    "title": "5 Collaboration",
     "section": "Mermaid takes the pain out of git diagrams :)",
     "text": "Mermaid takes the pain out of git diagrams :)\n\n\n\n\ngitGraph\n   commit\n   commit\n   branch develop\n   checkout develop\n   commit\n   commit\n   checkout main\n   merge develop\n   commit\n   commit"
   },
   {
     "objectID": "slides/05_collaboration.html#demo",
     "href": "slides/05_collaboration.html#demo",
-    "title": "Collaboration",
+    "title": "5 Collaboration",
     "section": "Demo",
-    "text": "Demo\ndemo / exercise"
+    "text": "Demo\ndemo / exercise\n\n\nGood Software Engineering Practice for R Packages - Home | Slides | License"
   },
   {
     "objectID": "slides/06_publication.html#setup-of-pkgdown",
@@ -830,6 +830,6 @@
     "href": "listing.html",
     "title": "Slides",
     "section": "",
-    "text": "Ensuring Quality\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nPackage quality + exercisePhoto CC0 by Pixabay on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nCollaboration via GitHub + practicalPhoto CC0 by THIS IS ZUN on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nR package syntax + practicalPhoto CC0 by cottonbro studio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nAn R Package Engineering Workflow\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nWorkflow for creating R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nPublication\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nPublication of R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDaniel, Friedrich\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nIntroduction and outline of program.Photo CC0 by Mabel Amber on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\nNo matching items"
+    "text": "1 Introduction\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nIntroduction and outline of program.Photo CC0 by Mabel Amber on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\n2 R packages\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nR package syntax + practicalPhoto CC0 by cottonbro studio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\n3 An R Package Engineering Workflow\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nWorkflow for creating R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\n4 Ensuring Quality\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nPackage quality + exercisePhoto CC0 by Pixabay on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\n5 Collaboration\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nCollaboration via GitHub + practicalPhoto CC0 by THIS IS ZUN on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\n6 Publication\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nPublication of R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDaniel, Friedrich\n\n\n\n\n\n\nNo matching items"
   }
 ]

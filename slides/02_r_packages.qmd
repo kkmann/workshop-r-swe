@@ -1,5 +1,5 @@
 ---
-title: "R packages"
+title: "2 R packages"
 author: "Daniel"
 description: "R package syntax + practical<br/>[Photo CC0 by cottonbro studio on pexels.com]{.copyright}"
 image: thumbnails/packages.jpg
