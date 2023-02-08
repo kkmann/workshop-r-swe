@@ -72,7 +72,7 @@ flowchart LR
   C --> E
 ```
 
--   Merging parallel edits is not trivial (try it in MS Word 365)
+-   Merging parallel edits is not simple (try it in MS Word 365)
 
 ## Enter 'git'
 
