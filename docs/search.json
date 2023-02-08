@@ -417,14 +417,14 @@
     "href": "slides/03_workflow.html#example---step-3-packaging-4",
     "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nThe output is impractical, e.g., we need to scroll down:\n\nx <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)\nx\n\n$n1\n[1] 50\n\n$n2\n[1] 50\n\n$mean1\n[1] 5\n\n$mean2\n[1] 7\n\n$sd1\n[1] 3\n\n$sd2\n[1] 4\n\n$data\n    group      values\n1       1 -1.06426082\n2       1  3.44538973\n3       1  4.15701880\n4       1  7.05937870\n5       1  5.01621485\n6       1  5.96277218\n7       1  8.77683592\n8       1  5.50131673\n9       1  3.50623301\n10      1  5.35986809\n11      1  3.25294839\n12      1 -0.28791618\n13      1  5.78971996\n14      1  5.97875620\n15      1  4.52572024\n16      1  6.67793471\n17      1 -1.40177858\n18      1 13.50423093\n19      1  0.98066969\n20      1  1.99504345\n21      1  1.28409271\n22      1 -0.80017339\n23      1  2.51731192\n24      1  1.40543896\n25      1  3.42734329\n26      1  4.94791032\n27      1  5.56594033\n28      1  2.75726550\n29      1  3.83835264\n30      1  7.05494124\n31      1  5.30518988\n32      1  1.44596214\n33      1 -0.41688611\n34      1  2.72154182\n35      1  6.25470411\n36      1  9.65214642\n37      1  8.64581592\n38      1  6.49677974\n39      1 10.25459057\n40      1 -0.25942885\n41      1  6.88020480\n42      1  5.71978709\n43      1  4.50222683\n44      1  0.03247617\n45      1  5.40675320\n46      1  5.79958855\n47      1  4.76033806\n48      1  4.07218029\n49      1  3.37072039\n50      1  5.17644064\n51      2  5.52551189\n52      2  3.33180725\n53      2  8.62517331\n54      2 11.41862775\n55      2  7.01527643\n56      2 11.10432216\n57      2  5.59567721\n58      2  3.37278595\n59      2  7.45733167\n60      2  1.93616915\n61      2  8.65174456\n62      2 10.57767577\n63      2  5.77398949\n64      2 10.62040560\n65      2  7.37693268\n66      2  8.79951581\n67      2  6.71622811\n68      2  8.69122845\n69      2  7.47063971\n70      2  5.57320260\n71      2  9.73534199\n72      2  2.50908216\n73      2  1.31768769\n74      2  4.42048888\n75      2  0.57830194\n76      2  6.28016200\n77      2 -0.58472329\n78      2  2.35482965\n79      2  8.22259683\n80      2  0.52888247\n81      2 11.58387867\n82      2  5.59366302\n83      2 14.76875823\n84      2 12.96301201\n85      2  0.87399492\n86      2 14.74602924\n87      2  8.79573926\n88      2 -0.94912427\n89      2  5.21465742\n90      2 12.50949878\n91      2 11.32444330\n92      2 14.07557072\n93      2 11.17941024\n94      2  2.28406691\n95      2  4.49327304\n96      2 14.26558483\n97      2 12.13961503\n98      2  6.95252559\n99      2 16.61295967\n100     2 12.29612276\n\nattr(,\"class\")\n[1] \"SimulationResult\"\n\n\n\nSolution: implement generic function print"
+    "text": "Example - Step 3: Packaging\nThe output is impractical, e.g., we need to scroll down:\n\nx <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)\nx\n\n$n1\n[1] 50\n\n$n2\n[1] 50\n\n$mean1\n[1] 5\n\n$mean2\n[1] 7\n\n$sd1\n[1] 3\n\n$sd2\n[1] 4\n\n$data\n    group     values\n1       1  6.5942392\n2       1 10.2273999\n3       1  7.3865754\n4       1  1.9789282\n5       1  0.4533280\n6       1  7.3547381\n7       1 -1.7848953\n8       1  3.6314142\n9       1  4.8192708\n10      1  8.2176530\n11      1  9.6547814\n12      1  6.8749542\n13      1  5.9657532\n14      1  5.4707755\n15      1  3.9614431\n16      1  2.1785485\n17      1  5.5856327\n18      1 10.4678866\n19      1 -0.7428636\n20      1 -0.1365826\n21      1  0.2193225\n22      1  2.4197638\n23      1 10.5779827\n24      1  4.1559751\n25      1  3.3968672\n26      1  9.1694749\n27      1  6.2390207\n28      1  3.0412580\n29      1  9.6862359\n30      1  1.3239768\n31      1  6.8821894\n32      1  7.4644528\n33      1  4.3968588\n34      1  3.0094006\n35      1  4.2512691\n36      1  4.3861512\n37      1  1.9850366\n38      1  9.4607966\n39      1  3.5038513\n40      1  5.0883494\n41      1 10.1994492\n42      1 10.0005265\n43      1 -1.3297131\n44      1  6.3969454\n45      1  4.4404881\n46      1  8.4844001\n47      1  6.0137255\n48      1  1.4175336\n49      1  6.8754360\n50      1  5.9609221\n51      2 10.0437968\n52      2  9.9645111\n53      2  6.9750212\n54      2 10.7487550\n55      2  7.2494812\n56      2  4.3660774\n57      2 11.8239603\n58      2 15.2725520\n59      2  7.5525157\n60      2 -1.1196646\n61      2 13.6158354\n62      2  7.0225136\n63      2  1.9082420\n64      2  8.7218301\n65      2 17.1156717\n66      2 12.7647810\n67      2  7.6082589\n68      2  8.4935504\n69      2  9.3461307\n70      2 10.9432393\n71      2 10.4666945\n72      2  2.3114751\n73      2  7.3242754\n74      2 10.6654655\n75      2 12.3005983\n76      2  7.8380188\n77      2  4.7507099\n78      2 10.7965618\n79      2  9.2243157\n80      2  9.0449508\n81      2  4.2779182\n82      2 10.6997134\n83      2 -0.2559292\n84      2  7.2039774\n85      2  6.3133535\n86      2 11.8862777\n87      2  4.7227612\n88      2  5.1951186\n89      2  7.1987486\n90      2  8.4350786\n91      2 10.4113466\n92      2  3.9607030\n93      2  5.4001500\n94      2  7.4363619\n95      2  9.3818121\n96      2  6.4743930\n97      2  8.3742685\n98      2  9.3077355\n99      2  4.8153015\n100     2  8.5640469\n\nattr(,\"class\")\n[1] \"SimulationResult\"\n\n\n\nSolution: implement generic function print"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-5",
     "href": "slides/03_workflow.html#example---step-3-packaging-5",
     "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nGeneric function print:\n\nCodeRoxygenOutput\n\n\n\nprint.SimulationResult <- function(x, ...) {\n    args <- list(n1 = x$n1, n2 = x$n2, \n        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)\n    \n    print(list(\n        args = format(args), \n        data = dplyr::tibble(x$data)\n    ), ...)\n}\nx\n\n\n\n\n#' @title\n#' Print Simulation Result\n#'\n#' @description\n#' Generic function to print a `SimulationResult` object.\n#'\n#' @param x a \\code{SimulationResult} object to print.\n#' @param ... further arguments passed to or from other methods.\n#' \n#' @examples\n#' x <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, \n#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)\n#' print(x)\n#'\n#' @export\n\n\n\n\n\n$args\n   n1    n2 mean1 mean2   sd1   sd2 \n \"50\"  \"50\"   \"5\"   \"7\"   \"3\"   \"4\" \n\n$data\n# A tibble: 100 × 2\n   group values\n   <dbl>  <dbl>\n 1     1  -1.06\n 2     1   3.45\n 3     1   4.16\n 4     1   7.06\n 5     1   5.02\n 6     1   5.96\n 7     1   8.78\n 8     1   5.50\n 9     1   3.51\n10     1   5.36\n# … with 90 more rows"
+    "text": "Example - Step 3: Packaging\nGeneric function print:\n\nCodeRoxygenOutput\n\n\n\nprint.SimulationResult <- function(x, ...) {\n    args <- list(n1 = x$n1, n2 = x$n2, \n        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)\n    \n    print(list(\n        args = format(args), \n        data = dplyr::tibble(x$data)\n    ), ...)\n}\nx\n\n\n\n\n#' @title\n#' Print Simulation Result\n#'\n#' @description\n#' Generic function to print a `SimulationResult` object.\n#'\n#' @param x a \\code{SimulationResult} object to print.\n#' @param ... further arguments passed to or from other methods.\n#' \n#' @examples\n#' x <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, \n#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)\n#' print(x)\n#'\n#' @export\n\n\n\n\n\n$args\n   n1    n2 mean1 mean2   sd1   sd2 \n \"50\"  \"50\"   \"5\"   \"7\"   \"3\"   \"4\" \n\n$data\n# A tibble: 100 × 2\n   group values\n   <dbl>  <dbl>\n 1     1  6.59 \n 2     1 10.2  \n 3     1  7.39 \n 4     1  1.98 \n 5     1  0.453\n 6     1  7.35 \n 7     1 -1.78 \n 8     1  3.63 \n 9     1  4.82 \n10     1  8.22 \n# … with 90 more rows"
   },
   {
     "objectID": "slides/03_workflow.html#preparation",
@@ -784,27 +784,6 @@
     "text": "Releases: Example"
   },
   {
-    "objectID": "slides/07_conclusion.html#what-have-you-learned",
-    "href": "slides/07_conclusion.html#what-have-you-learned",
-    "title": "7 Conclusion",
-    "section": "What have you learned?",
-    "text": "What have you learned?\n[slido wordcloud here]\nPlus also ask folks to speak up in the room directly"
-  },
-  {
-    "objectID": "slides/07_conclusion.html#what-can-you-apply-in-your-work-now",
-    "href": "slides/07_conclusion.html#what-can-you-apply-in-your-work-now",
-    "title": "7 Conclusion",
-    "section": "What can you apply in your work now?",
-    "text": "What can you apply in your work now?\n[slido wordcloud here]\nPlus also ask folks to speak up in the room directly"
-  },
-  {
-    "objectID": "slides/07_conclusion.html#what-was-especially-difficult",
-    "href": "slides/07_conclusion.html#what-was-especially-difficult",
-    "title": "7 Conclusion",
-    "section": "What was especially difficult?",
-    "text": "What was especially difficult?\n[slido wordcloud here]\nPlus also ask folks to speak up in the room directly"
-  },
-  {
     "objectID": "slides/07_conclusion.html#r-package-structure",
     "href": "slides/07_conclusion.html#r-package-structure",
     "title": "7 Conclusion",
@@ -830,7 +809,7 @@
     "href": "slides/07_conclusion.html#collaboration",
     "title": "7 Conclusion",
     "section": "Collaboration",
-    "text": "Collaboration"
+    "text": "Collaboration\n\nVersion control is key\n\nMultiple people working on code without strong VC \\(\\leadsto\\) disaster!\nThere are different options, but git is the defacto standard for R packages\nGit needs a friend - use platforms like GitHub/GitLab/Bitbucket\n\nAutomated CI/CD allows for much quicker iteration\n\nAutomate tests to avoid bugs slipping back in\n\nTechnology does not solve everything - foster a positive culture\n\nKeep internal and external contributors engaged\nInvest in documentation to make it easier to contribute"
   },
   {
     "objectID": "slides/07_conclusion.html#publication",
@@ -844,7 +823,7 @@
     "href": "slides/07_conclusion.html#thank-you",
     "title": "7 Conclusion",
     "section": "Thank you!",
-    "text": "Thank you!\n\n\n\n\n\nIt was great to teach you today on how to build R packages\nLet’s keep in touch e.g. via gitter chat channel for this course that you can connect to\nWe might do another course in Basel in the future if we get enough interest"
+    "text": "Thank you!\n\n\n\n\n\nIt was great to teach you today on how to build R packages\nLet’s keep in touch e.g. via gitter chat channel for this course that you can connect to\nWe might do another course in Basel in the future if we get enough interest\nWe welcome feedback on topics/format/content - reach out!"
   },
   {
     "objectID": "slides/07_conclusion.html#possible-next-steps",
