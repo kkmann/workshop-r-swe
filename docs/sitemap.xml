@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/index.html</loc>
-    <lastmod>2023-02-01T16:37:57.047Z</lastmod>
+    <lastmod>2023-02-08T19:26:34.272Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/LICENSE.html</loc>
-    <lastmod>2023-02-01T16:37:57.748Z</lastmod>
+    <lastmod>2023-02-08T19:26:34.957Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kkmann.github.io/workshop-r-swe/listing.html</loc>
+    <lastmod>2023-02-08T19:27:03.142Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/slides/01_intro.html</loc>
-    <lastmod>2023-02-01T16:38:00.409Z</lastmod>
+    <lastmod>2023-02-08T19:26:40.259Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/slides/02_r_packages.html</loc>
-    <lastmod>2023-02-01T16:38:02.928Z</lastmod>
+    <lastmod>2023-02-08T19:26:42.850Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/slides/03_workflow.html</loc>
-    <lastmod>2023-02-01T16:38:07.868Z</lastmod>
+    <lastmod>2023-02-08T19:26:48.013Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/slides/04_quality.html</loc>
-    <lastmod>2023-02-01T16:38:11.780Z</lastmod>
+    <lastmod>2023-02-08T19:26:51.971Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/slides/05_collaboration.html</loc>
-    <lastmod>2023-02-01T16:38:12.275Z</lastmod>
+    <lastmod>2023-02-08T19:26:52.556Z</lastmod>
   </url>
   <url>
     <loc>https://kkmann.github.io/workshop-r-swe/slides/06_publication.html</loc>
-    <lastmod>2023-02-01T16:38:58.451Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kkmann.github.io/workshop-r-swe/slides/listing.html</loc>
-    <lastmod>2023-02-01T16:38:53.062Z</lastmod>
+    <lastmod>2023-02-08T19:26:54.542Z</lastmod>
   </url>
 </urlset>

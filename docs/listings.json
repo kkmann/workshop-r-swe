@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/slides/listing.html",
+    "listing": "/listing.html",
     "items": [
       "/slides/01_intro.html",
       "/slides/02_r_packages.html",
