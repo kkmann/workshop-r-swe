@@ -44,743 +44,743 @@
   {
     "objectID": "slides/06_publication.html#setup-of-pkgdown",
     "href": "slides/06_publication.html#setup-of-pkgdown",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Setup of pkgdown",
     "text": "Setup of pkgdown\n\npkgdown makes it quick and easy to build a website for your package\nAfter installing pkgdown, just use usethis::use_pkgdown() to get started\nMain configuration happens in _pkgdown.yml file\nMany customizations can be applied, but main work during development is to keep the reference section updated with names of .Rd files"
   },
   {
     "objectID": "slides/06_publication.html#example-_pkgdown.yml-file",
     "href": "slides/06_publication.html#example-_pkgdown.yml-file",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Example _pkgdown.yml file",
     "text": "Example _pkgdown.yml file\n---\nurl: https://openpharma.github.io/mmrm\n\ntemplate:\n  bootstrap: 5\n  params:\n    ganalytics: UA-125641273-1\n\nnavbar:\n  right:\n    - icon: fa-github\n      href: https://github.com/openpharma/mmrm\n\nreference:\n  - title: Package\n    contents:\n      - mmrm-package\n  - title: Functions\n    contents:\n      - mmrm\n      - fit_mmrm\n      - mmrm_control\n      - fit_single_optimizer\n      - refit_multiple_optimizers\n      - df_1d\n      - df_md\n      - component"
   },
   {
     "objectID": "slides/06_publication.html#publication-as-github-page",
     "href": "slides/06_publication.html#publication-as-github-page",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Publication as GitHub Page",
     "text": "Publication as GitHub Page\n\nIt is helpful for users to read the website online\nGitHub is very helpful here because it allows\n\nA separate branch gh-pages that stores the rendered website\nGitHub actions automatically render the website when the main branch is updated\n\nTo get started, use usethis::use_pkgdown_github_pages()"
   },
   {
     "objectID": "slides/06_publication.html#licensing",
     "href": "slides/06_publication.html#licensing",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Licensing",
     "text": "Licensing\n\nHigh level categorization of licenses:\n\n“Permissive”: Relaxed. Can be freely copied, modified, published (under the same license).\n“Copyleft”: Stricter. Same rights need to be preserved in derivative works.\n\nR itself is licensed under GPL, but packages can choose, e.g.:\n\nusethis::use_mit_license() for permissive MIT\nusethis::use_gpl_license() for copyleft GPL\n\nInclude minimum version, e.g. GPL (>= 3)"
   },
   {
     "objectID": "slides/06_publication.html#licensing-contd",
     "href": "slides/06_publication.html#licensing-contd",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Licensing (cont’d)",
     "text": "Licensing (cont’d)\n\nNeed to be careful here when you bundle any code from other software\n\nCare must be taken that any copyright/license statements from copied or modified code are preserved and authorship is not misrepresented\n\nAre the licenses of your package and the source compatible?\n\ne.g. cannot copy/paste code from a GPL package and publish in an MIT package\n\nLICENSE file optionally can contain further restrictions of the license"
   },
   {
     "objectID": "slides/06_publication.html#open-sourcing",
     "href": "slides/06_publication.html#open-sourcing",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Open Sourcing",
     "text": "Open Sourcing\n\nThe easiest way to “open source” your R package is to make the GitHub repository public\nThis allows for easy open source contributions from other developers via pull requests\nPlease check with your organization first:\n\nAre they ok to publish the software?\nWhat is the appropriate copyright holder?\n\nAlso allows bugs to be filed and to have the GitHub issues page in the package description"
   },
   {
     "objectID": "slides/06_publication.html#versioning",
     "href": "slides/06_publication.html#versioning",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Versioning",
     "text": "Versioning\n\nThe Version field defines the package version\nSyntax: Three integers separated by . or -\n\nCanonical form is: x.y-z, equivalent to x.y.z\n\nUseful conventions of “semantic versioning”:\n\nx is major: Increment this for breaking changes\ny is minor: Increment this for new features\nz is patch: Increment this for bug fixes only\nx.y.z.9000 and count up during development\nusethis::use_version() can help with this"
   },
   {
     "objectID": "slides/06_publication.html#cran-the-comprehensive-r-archive-network",
     "href": "slides/06_publication.html#cran-the-comprehensive-r-archive-network",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "CRAN (The Comprehensive R Archive Network)",
     "text": "CRAN (The Comprehensive R Archive Network)\n\nCRAN is the central repository for R packages\nIt has additional requirements beyond the standard package ones, which are described in the Repository Policy\nSubmitting a package indicates agreement with the policy\nIn particular: “The time of the volunteers is CRAN’s most precious resource, and they reserve the right to remove or modify packages on CRAN without notice or explanation (although notification will usually be given).”"
   },
   {
     "objectID": "slides/06_publication.html#cran-contd",
     "href": "slides/06_publication.html#cran-contd",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "CRAN (cont’d)",
     "text": "CRAN (cont’d)\n\nOnly source packages can be submitted \n\nBut .rda data files are allowed\n\nNeed single designated maintainer (person, not mailing list)\n\nAdditional Contact field could be used\n\nCitations in author-year style, followed by <doi:...>\nReducing run time of tests, checks, examples, vignettes is important\nNeed to provide cross-platform portable code: CRAN runs checks on Windows, Mac, several Linux OS"
   },
   {
     "objectID": "slides/06_publication.html#cran-contd-1",
     "href": "slides/06_publication.html#cran-contd-1",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "CRAN (cont’d)",
     "text": "CRAN (cont’d)\n❗ A CRAN submission can be punishing, painful, and nerve-racking:\nThe first release of the rpact package took 5 weeks and 6 submission attempts; painful experiences:\n\nSome Linux machines may generate different random numbers than expected (despite setting a seed)\nNot only errors and warnings lead to the rejection of a submitted package, but also notes\nYour local Windows test system may be much faster than the CRAN system (e.g., 5 times)\nDon’t use “R Package for” in your package title\nThe description of the package must be provided with a doi reference"
   },
   {
     "objectID": "slides/06_publication.html#cran-contd-2",
     "href": "slides/06_publication.html#cran-contd-2",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "CRAN (cont’d)",
     "text": "CRAN (cont’d)\nExample message informing about the rejection of the last rpact submission:\nDear maintainer,\npackage rpact_3.3.2.tar.gz does not pass the incoming checks automatically, please see the following pre-tests:\nWindows: 00check.log Status: OK, Debian: 00check.log Status: OK\nPlease fix all problems and resubmit a fixed version via the webform.\nBest regards,\nCRAN teams’ auto-check service\nr-devel-windows-x86_64 Check: Result: NA, Maintainer: ‘Friedrich Pahlke’\nr-devel-windows-x86_64 Check: Overall checktime, Result: NOTE, Overall checktime 12 min > 10 min\nr-devel-linux-x86_64-debian-gcc Check: Result: Note_to_CRAN_maintainers Maintainer: ‘Friedrich Pahlke’"
   },
   {
     "objectID": "slides/06_publication.html#r-hub-to-the-rescue",
     "href": "slides/06_publication.html#r-hub-to-the-rescue",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "R-Hub to the Rescue",
     "text": "R-Hub to the Rescue\n\n\n\n\n\nFree R CMD check runs on different operating systems before submitting to CRAN\nSupported by the R consortium\nTypically used via the website\nThere is also an R API: rhub::check_for_cran() is comfortable"
   },
   {
     "objectID": "slides/06_publication.html#tags",
     "href": "slides/06_publication.html#tags",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Tags",
     "text": "Tags\n\nTags are a feature of Git, i.e., not specific to GitHub\nGit can tag specific points in the code history as being important\nTypically, for each release, create a tag vx.y.z\nThe value here is that users can later check out the package in the state of this release version\n\nDownload in R: remotes::install_github(\"org/package\", ref = \"vx.y.z\")\nComparison of versions are also possible, etc."
   },
   {
     "objectID": "slides/06_publication.html#tags-example",
     "href": "slides/06_publication.html#tags-example",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Tags: Example",
     "text": "Tags: Example"
   },
   {
     "objectID": "slides/06_publication.html#releases",
     "href": "slides/06_publication.html#releases",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Releases",
     "text": "Releases\n\nBased on Git tags, and a feature of GitHub\nAre “deployable software packages to make them available for a wider audience to download and use”\nContain release notes and links to the binary package files for download\n\nHowever, for R packages these tar.gz package files are rarely used directly"
   },
   {
     "objectID": "slides/06_publication.html#releases-example",
     "href": "slides/06_publication.html#releases-example",
-    "title": "Publication",
+    "title": "6 Publication",
     "section": "Releases: Example",
     "text": "Releases: Example"
   },
   {
     "objectID": "slides/04_quality.html#why-is-clean-code-important",
     "href": "slides/04_quality.html#why-is-clean-code-important",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Why is Clean Code important?",
     "text": "Why is Clean Code important?\n\nMaintainability: The code is readable and understandable and has a reduced complexity, i.e., it’s easier to fix bugs\nExtensibility: The architecture is simpler, cleaner, and more expressive, i.e., it’s easier to extend the capabilities and the risk of introducing bugs is reduced\nPerformance: The code often runs faster, uses less memory, or is easier to optimize"
   },
   {
     "objectID": "slides/04_quality.html#example-clean-code-rules---step-by-step",
     "href": "slides/04_quality.html#example-clean-code-rules---step-by-step",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: Clean Code Rules - Step by Step",
     "text": "Example: Clean Code Rules - Step by Step\nThis script breaks all common clean code rules:\n\ny=function(x){\n  s1=0\n  for(v1 in x){s1=s1+v1}\n  m1=s1/length(x)\n  i=ceiling(length(x)/2)\n  if(length(x) %% 2 == 0){i=c(i,i+1)}\n  s2=0\n  for(v2 in i){s2=s2+x[v2]}\n  m2=s2/length(i)\n  c(m1,m2)\n}\ny(c(1:7, 100))\n\n[1] 16.0  4.5\n\n\n\nWe now refactor it (CCR#9) by applying clean code rules…"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr1",
     "href": "slides/04_quality.html#example-ccr1",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#1",
     "text": "Example: CCR#1\n\n\n\ny=function(x){\n  s1=0\n  for(v1 in x){s1=s1+v1}\n  m1=s1/length(x)\n  i=ceiling(length(x)/2)\n  if(length(x) %% 2 == 0){i=c(i,i+1)}\n  s2=0\n  for(v2 in i){s2=s2+x[v2]}\n  m2=s2/length(i)\n  c(m1,m2)\n}\ny(c(1:7, 100))\n\n[1] 16.0  4.5\n\n\n\nCCR#1 Naming: Are the names of the variables, functions, and classes descriptive and meaningful?"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr1-1",
     "href": "slides/04_quality.html#example-ccr1-1",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#1",
     "text": "Example: CCR#1\n\ngetMeanAndMedian=function(x){\n    sum1=0\n    for(value in x){sum1=sum1+value}\n    meanValue=sum1/length(x)\n    centerIndices=ceiling(length(x)/2)\n    if(length(x) %% 2 == 0){\n        centerIndices=c(centerIndices,centerIndices+1)\n    }\n    sum2=0\n    for(centerIndex in centerIndices){sum2=sum2+x[centerIndex]}\n    medianValue=sum2/length(centerIndices)\n    c(meanValue,medianValue)\n}\n\nCCR#1 Naming \nCCR#2 Formatting: Are indentation, spacing, and bracketing consistent, i.e., is the code easy to read"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr2",
     "href": "slides/04_quality.html#example-ccr2",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#2",
     "text": "Example: CCR#2\n\n\n\ngetMeanAndMedian <- function(x) {\n    sum1 <- 0\n    for (value in x) {\n        sum1 <- sum1 + value\n    }\n    meanValue <- sum1 / length(x)\n    centerIndices <- ceiling(length(x) / 2)\n    if (length(x) %% 2 == 0) {\n        centerIndices <- c(\n          centerIndices, centerIndices + 1)\n    }\n    sum2 <- 0\n    for (centerIndex in centerIndices) {\n        sum2 <- sum2 + x[centerIndex]\n    }\n    medianValue <- sum2 / length(centerIndices)\n    c(meanValue, medianValue)\n}\n\n\nCCR#2 Formatting \nCCR#3 Simplicity: Did you keep the code as simple and straightforward as possible, i.e., did you avoid unnecessary complexity"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr3",
     "href": "slides/04_quality.html#example-ccr3",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#3",
     "text": "Example: CCR#3\nNote:\n\nFrom the Simplicity rule also follows that large source files should be split into multiple files\nGeneral guideline: keeping the number of lines to less than 1,000 lines per file can help maintain code readability and manageability"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr3-1",
     "href": "slides/04_quality.html#example-ccr3-1",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#3",
     "text": "Example: CCR#3\n\ngetMeanAndMedian <- function(x) {\n    meanValue <- sum(x) / length(x)\n    centerIndices <- ceiling(length(x) / 2)\n    if (length(x) %% 2 == 0) {\n        centerIndices <- c(centerIndices, centerIndices + 1)\n    }\n    medianValue <- sum(x[centerIndices]) / length(centerIndices)\n    c(meanValue, medianValue)\n}\n\nCCR#3 Simplicity \nCCR#4 Single Responsibility Principle (SRP): Has each function a single, well-defined purpose"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr4",
     "href": "slides/04_quality.html#example-ccr4",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#4",
     "text": "Example: CCR#4\n\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, centerIndices + 1)\n    }\n    sum(x[centerIndices]) / length(centerIndices)\n}\n\nCCR#4 Single Responsibility Principle (SRP) \nCCR#5 Don’t Repeat Yourself (DRY): Did you avoid duplication of code, either by reusing existing code or creating functions"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr5",
     "href": "slides/04_quality.html#example-ccr5",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#5",
     "text": "Example: CCR#5\n\nCCR#5: DRY\n\nSuppose you have a code block that performs the same calculation multiple times:\n\nresult1 <- 2 * 3 + 4\nresult2 <- 2 * 5 + 4\nresult3 <- 2 * 7 + 4\n\nCreate a function to encapsulate this calculation and reuse it multiple times:\n\ncalculate <- function(x) {\n  2 * x + 4\n}\n\nresult1 <- calculate(3)\nresult2 <- calculate(5)\nresult3 <- calculate(7)"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr5-1",
     "href": "slides/04_quality.html#example-ccr5-1",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#5",
     "text": "Example: CCR#5\n\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, centerIndices + 1)\n    }\n    getMean(x[centerIndices])\n}\n\nCCR#5 Don’t Repeat Yourself (DRY) \nCCR#6 Comments: Did you use comments to explain the purpose of code blocks and to clarify complex logic"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr6",
     "href": "slides/04_quality.html#example-ccr6",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#6",
     "text": "Example: CCR#6\n\n\n\n# returns the mean of x\ngetMean <- function(x) {\n    sum(x) / length(x)\n}\n\n# returns TRUE if the length of x is \n# an even number; FALSE otherwise\nisLengthAnEvenNumber <- function(x) {\n    length(x) %% 2 == 0\n}\n\n# returns the median of x\ngetMedian <- function(x) {\n    centerIndices <- ceiling(length(x) / 2)\n    if (isLengthAnEvenNumber(x)) {\n        centerIndices <- c(centerIndices, \n             centerIndices + 1)\n    }\n    getMean(x[centerIndices])\n}\n\n\nCCR#6 Comments \nCCR#7 Error Handling: Did you include error handling code to gracefully handle exceptions and unexpected situations \n\ngetMean(\"a\":\"z\")\n\nError in “a”:“z” : NA/NaN argument Additionally: Warning messages: In getMean(“a”:“z”) : NAs generated by conversion"
   },
   {
     "objectID": "slides/04_quality.html#example-ccr7",
     "href": "slides/04_quality.html#example-ccr7",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example: CCR#7",
     "text": "Example: CCR#7\n\n# returns the mean of x\ngetMean <- function(x) {\n    tryCatch({\n        sum(x) / length(x)      \n    }, error = function(e) {\n        stop(\"Failed to calculate the mean of 'x': \", e$message)\n    })\n}\n\n# returns TRUE if the length of x is an even number; FALSE otherwise\nisLengthAnEvenNumber <- function(x) {\n    tryCatch({\n        length(x) %% 2 == 0\n    }, error = function(e) {\n        stop(\"Failed to check if 'x' is an even number: \", e$message)\n    })\n}\n\n# returns the median of x\ngetMedian <- function(x) {\n    tryCatch({\n        centerIndices <- ceiling(length(x) / 2)\n        if (isLengthAnEvenNumber(x)) {\n            centerIndices <- c(centerIndices, centerIndices + 1)\n        }\n        getMean(x[centerIndices])            \n    }, error = function(e) {\n        stop(\"Failed to calculate the median of 'x': \", e$message)\n    })\n}\n\nCCR#7 Error Handling"
   },
   {
     "objectID": "slides/04_quality.html#summary-of-clean-code-rules",
     "href": "slides/04_quality.html#summary-of-clean-code-rules",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Summary of Clean Code Rules",
     "text": "Summary of Clean Code Rules\n\nNaming: Use descriptive and meaningful names for variables, functions, and classes\nFormatting: Adhere to consistent indentation, spacing, and bracketing to make the code easy to read\nSimplicity: Keep the code as simple and straightforward as possible, avoiding unnecessary complexity\nSingle Responsibility Principle (SRP): Each function should have a single, well-defined purpose\nDon’t Repeat Yourself (DRY): Avoid duplication of code, either by reusing existing code or creating functions"
   },
   {
     "objectID": "slides/04_quality.html#summary-of-clean-code-rules-1",
     "href": "slides/04_quality.html#summary-of-clean-code-rules-1",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Summary of Clean Code Rules",
     "text": "Summary of Clean Code Rules\n\nComments: Use comments to explain the purpose of code blocks and to clarify complex logic\nError Handling: Include error handling code to gracefully handle exceptions and unexpected situations\n Test-Driven Development (TDD): Write tests for your code to ensure it behaves as expected and to catch bugs early\nRefactoring: Regularly refactor your code to keep it clean, readable, and maintainable\n Code Review: Have other team members review your code to catch potential issues and improve its quality"
   },
   {
     "objectID": "slides/04_quality.html#how-to-apply-clean-code-rules",
     "href": "slides/04_quality.html#how-to-apply-clean-code-rules",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "How to apply Clean Code Rules?",
     "text": "How to apply Clean Code Rules?\nRecommended quality workflow for R packages:\n\nFollow the naming and styling guidelines (#1, #2)\nContinuously write tests and optimize the code coverage with help of tools (#7, #8)\nDocument the package and functions (#6)\nRegularly refactor your code (#1 - #7, #9)\nPublish your code on GitHub and invite colleagues to contribute (#10)"
   },
   {
     "objectID": "slides/04_quality.html#verification-vs-validation",
     "href": "slides/04_quality.html#verification-vs-validation",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Verification vs Validation",
     "text": "Verification vs Validation\n\n\nVerification:\nAre we building the product right?\n\nThe product meets a set of specified requirements\nActivities: reviews, inspections, and testing\nGoal: ensure that the product has been designed and implemented correctly\n\n\nValidation:\nAre we building the right product?\n\nEvaluate the product during or at the end of the development process\nShow that the product meet the specified requirements\nGoal: confirm that the product is fit for its intended purpose\n\\(\\rightarrow\\) Refers back to the user’s needs"
   },
   {
     "objectID": "slides/04_quality.html#what-are-unit-tests",
     "href": "slides/04_quality.html#what-are-unit-tests",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "What are Unit Tests?",
     "text": "What are Unit Tests?\n\nAutomated tests\nRecord the expected output of a function using code\nCheck individual units of code (functions or methods) for correctness\nTypically written by developers as part of the software development process\nTypically run automatically as part of a CI/CD pipeline\nCan be run before committing code changes"
   },
   {
     "objectID": "slides/04_quality.html#why-are-unit-tests-important",
     "href": "slides/04_quality.html#why-are-unit-tests-important",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Why are unit tests important?",
     "text": "Why are unit tests important?\n\nCCR#8: TDD\n\n\nHelp to ensure that individual units of code are working correctly\nEnsure that changes to the codebase do not break existing functionality\nExpress the desired behavior in a way that a human can understand\nHelp to identify and fix bugs early on in the development process\nSave time and resources by catching issues before they become more difficult and costly to fix\n\n\n\n\n\n\nUnit tests help to increase the reliability and maintainability of the code"
   },
   {
     "objectID": "slides/04_quality.html#what-other-important-test-types-exist",
     "href": "slides/04_quality.html#what-other-important-test-types-exist",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "What other important test types exist?",
     "text": "What other important test types exist?\n\nIntegration Testing: Test if different functions or scripts work together as expected\nPerformance Testing: Analyze the performance of the implemented functions and check whether they meet the requirements (UR/UX)\nSnapshot Testing: Record the results in a separate human-readable file and compare it to the output during the test; useful for large/complex outputs and binary formats like plots"
   },
   {
     "objectID": "slides/04_quality.html#how-to-realize-testing-with-r",
     "href": "slides/04_quality.html#how-to-realize-testing-with-r",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "How to realize testing with R?",
     "text": "How to realize testing with R?\nR package testthat\n\nPopular testing framework for R that is easy to learn and use\nUnit testing, integration testing, and snapshot testing supported\nAlso performance testing, e.g., with help of microbenchmark package\n\nExample: unit test passed\n\nlibrary(testthat)\nobject <- getMean(c(1, 2, 3))\nexpected <- 2\nexpect_equal(object, expected)\n\nExample: unit test failed\n\nexpect_equal(getMean(1:4), 2)\n\n\nError: mean(1:4) (actual) not equal to 2 (expected)."
   },
   {
     "objectID": "slides/04_quality.html#testthat-comparisons-functions-12",
     "href": "slides/04_quality.html#testthat-comparisons-functions-12",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "testthat Comparisons Functions (1/2)",
     "text": "testthat Comparisons Functions (1/2)\n\n\n\n\n\n\n\n\nFunction name\nDoes code…\n\n\n\n\nexpect_condition\nfulfill a condition?\n\n\nexpect_equal\nreturn the expected value?\n\n\nexpect_error\nthrow an error?\n\n\nexpect_false\nreturn ‘FALSE’?\n\n\nexpect_gt\nreturn a number greater than the expected value?\n\n\nexpect_gte\nreturn a number greater or equal than the expected value?\n\n\nexpect_identical\nreturn the expected value?\n\n\nexpect_invisible\nreturn a invisible object?\n\n\nexpect_length\nreturn a vector with the specified length?\n\n\nexpect_lt\nreturn a number less than the expected value?\n\n\nexpect_lte\nreturn a number less or equal than the expected value?\n\n\nexpect_mapequal\nreturn a vector containing the expected values?\n\n\nexpect_message\nshow a message?\n\n\nexpect_named\nreturn a vector with (given) names?"
   },
   {
     "objectID": "slides/04_quality.html#testthat-comparisons-functions-22",
     "href": "slides/04_quality.html#testthat-comparisons-functions-22",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "testthat Comparisons Functions (2/2)",
     "text": "testthat Comparisons Functions (2/2)\n\n\n\n\n\n\n\n\nFunction name\nDoes code…\n\n\n\n\nexpect_no_condition\nrun without condition?\n\n\nexpect_no_error\nrun without error?\n\n\nexpect_no_message\nrun without message?\n\n\nexpect_no_warning\nrun without warning?\n\n\nexpect_output\nprint output to the console?\n\n\nexpect_s3_class\nreturn an object inheriting from the expected S3 class?\n\n\nexpect_s4_class\nreturn an object inheriting from the expected S4 class?\n\n\nexpect_setequal\nreturn a vector containing the expected values?\n\n\nexpect_silent\nexecute silently?\n\n\nexpect_true\nreturn ‘TRUE’?\n\n\nexpect_type\nreturn an object inheriting from the expected base type?\n\n\nexpect_vector\nreturn a vector with the expected size and/or prototype?\n\n\nexpect_visible\nreturn a visible object?\n\n\nexpect_warning\nthrow warning?"
   },
   {
     "objectID": "slides/04_quality.html#how-to-check-the-package-quality",
     "href": "slides/04_quality.html#how-to-check-the-package-quality",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "How to check the package quality?",
     "text": "How to check the package quality?\n\npkgbuild: Tools needed to build R packages\nrcmdcheck: Run R CMD check from R and capture results\ndevtools: Tools to make developing R packages easier, e.g., check() automatically builds and checks a source package, using all known best practices"
   },
   {
     "objectID": "slides/04_quality.html#how-to-improve-the-test-coverage",
     "href": "slides/04_quality.html#how-to-improve-the-test-coverage",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "How to improve the test coverage?",
     "text": "How to improve the test coverage?\ncovr: Track and report code coverage for your package\n\nlibrary(covr)\nx <- package_coverage()\nreport(x)"
   },
   {
     "objectID": "slides/04_quality.html#example-on-test-coverage",
     "href": "slides/04_quality.html#example-on-test-coverage",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example on test coverage",
     "text": "Example on test coverage\nLet’s assume we have added a generic function to cat a simulation result:\n\n#' \n#' @export\n#'\ncat.SimulationResult <- function(... , file = \"\", sep = \" \", \n        fill = FALSE, labels = NULL, append = FALSE) {\n    args <- list(...)\n}\n\n\nBut we forgot to finalize the implementation and didn’t create unit tests.\nRe-execution of\n\nreport(package_coverage())\n\nthen results in…"
   },
   {
     "objectID": "slides/04_quality.html#example-on-test-coverage-1",
     "href": "slides/04_quality.html#example-on-test-coverage-1",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example on test coverage",
     "text": "Example on test coverage"
   },
   {
     "objectID": "slides/04_quality.html#example-on-test-coverage-2",
     "href": "slides/04_quality.html#example-on-test-coverage-2",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Example on test coverage",
     "text": "Example on test coverage\nWe can go into the details by clicking on a file name:"
   },
   {
     "objectID": "slides/04_quality.html#why-is-code-style-important",
     "href": "slides/04_quality.html#why-is-code-style-important",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Why is Code Style important?",
     "text": "Why is Code Style important?\n\nCCR#2: Formatting\n\n\nMake the code more readable, maintainable, and consistent\nMake it easier for others to understand and contribute to the codebase\nAdhering to a consistent code style can reduce the number of errors and make debugging simpler\n“Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.” (The tidyverse style guide)"
   },
   {
     "objectID": "slides/04_quality.html#how-to-optimize-the-code-styling",
     "href": "slides/04_quality.html#how-to-optimize-the-code-styling",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "How to optimize the code styling?",
     "text": "How to optimize the code styling?\nTwo popular R packages support the tidyverse style guide:\n\nstyler: interactively restyle selected text, files, or entire projects:\n\nstyle_text\nstyle_file\nstyle_pkg\n\nlintr: perform automated checks to confirm that you conform to the style guide\n\nThe devtools function spell_check runs a spell check on text fields in the package description file, manual pages, and optionally vignettes."
   },
   {
     "objectID": "slides/04_quality.html#code-styler-in-rstudio",
     "href": "slides/04_quality.html#code-styler-in-rstudio",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Code Styler in RStudio",
     "text": "Code Styler in RStudio\nHow to link the styler1 package to a keyboard shortcut:\n\nBrowse addinsSet keyboard shortcut\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIf not available, install it first"
   },
   {
     "objectID": "slides/04_quality.html#tasks",
     "href": "slides/04_quality.html#tasks",
-    "title": "Ensuring Quality",
+    "title": "4 Ensuring Quality",
     "section": "Tasks",
     "text": "Tasks\n\nTask 1Task 2Task 3Task 4\n\n\nTake your local simulatr package project (see previous excercise) and refactor it, i.e., apply the linked clean code rules:\n\nOptimize naming manually (CCR#1)\nUse the styler package to optimize the formatting (CCR#2)\nCheck and correct where appropriate:\n\nSimplicity (CCR#3)\nSRP (CCR#4)\nDRY (CCR#5)\n\n\n\n\n\nImplement appropriate error handling (CCR#7) in the simulatr package\nAdd comments to explain the purpose of code blocks (CCR#6)\n\nIf it concerns exported functions use Roxygen2 notation\n\nCheck correct spelling with the devtools function spell_check()\n\n\n\nApply CCR#8 to the simulatr package project:\n\nAdd unit tests\nOptimize your test coverage with help of the covr functions package_coverage and report\n\n\n\nCheck if your package is ready for use in production with the devtools function check()"
   },
   {
     "objectID": "slides/01_intro.html#disclaimer",
     "href": "slides/01_intro.html#disclaimer",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "Disclaimer",
     "text": "Disclaimer\n\nAny opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company."
   },
   {
     "objectID": "slides/01_intro.html#daniel",
     "href": "slides/01_intro.html#daniel",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "Daniel",
     "text": "Daniel\n\n\n\n\n\nStatistician (Ph.D. in 2013 on Bayesian Model Selection)\nBiostatistician at Roche for 5 years, Data Scientist at Google for 2 years, Statistical Software Engineer at Roche for the last 3 years\nMultiple R packages on CRAN and Bioconductor, co-wrote book on Likelihood and Bayesian Inference, chair of the ASA BIOP working group on Software Engineering (SWE WG)\nfeel free to connect at  LinkedIn or  Github"
   },
   {
     "objectID": "slides/01_intro.html#friedrich",
     "href": "slides/01_intro.html#friedrich",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "Friedrich",
     "text": "Friedrich\n\n\n\nSince 2008 self-employed consultant for computer science and data science as well as biostatistics\nCo-founder and CEO of RPACT, a company developing the formally validated R package rpact with 21 releases on CRAN since 2018\nTrained software architect; R programmer since 2004; R Shiny developer since 2019\nFeel free to connect at  LinkedIn or  Github"
   },
   {
     "objectID": "slides/01_intro.html#kevin",
     "href": "slides/01_intro.html#kevin",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "Kevin",
     "text": "Kevin\n\n\n\n\n\nTrained in math, ‘statistical engineer’ by heart\nResearch associate in Heidelberg & Cambridge\n\noptimal clinical trial design\nstatistical genetics & high dimensional data\n\nMethodology statistician with BI since ’21\nR-tist, extensive experience with R packages, version control, and high-performance computing\nfeel free to connect at  LinkedIn or  Github"
   },
   {
     "objectID": "slides/01_intro.html#what-you-will-learn-today",
     "href": "slides/01_intro.html#what-you-will-learn-today",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "What you will learn today",
     "text": "What you will learn today\n\nUnderstand the basic structure of an R \nCreate your own R package\nLearn about & apply professional  development workflow\nLearn & apply fundamentals of quality control for R \nGet crash-course in version control to stay organized\nTry out modern collaboration techniques on GitHub.com\nLearn how to make R  available to others"
   },
   {
     "objectID": "slides/01_intro.html#program-outline",
     "href": "slides/01_intro.html#program-outline",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "Program outline",
     "text": "Program outline\n\n\n\n\n\n09:00 - 09:45\nIntroduction and outline\n\n\n09:45 - 10:45\nR packages, what are they? + practical\n\n\n10:45 - 12:00\nWorkflow for creating R packages + practical\n\n\n12:00 - 13:00\nLunch break, chat & network\n\n\n13:00 - 14:00\nPackage quality + exercise\n\n\n14:00 - 15:30\nCollaboration with git & GitHub + group practical\n\n\n15:30 - 16:00\nCoffee break, chat & network\n\n\n16:00 - 17:00\nPublication + practical\n\n\n17:00 - 17:45\nBuffer, recap + wrap-up\n\n\n18:30 - 20:30\nOptional dinner"
   },
   {
     "objectID": "slides/01_intro.html#house-keeping",
     "href": "slides/01_intro.html#house-keeping",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "House-keeping",
     "text": "House-keeping\n\nCourse website at kkmann.github.io/workshop-r-swe\n\nall slides\nsources available at github.com/kkmann/workshop-r-swe\nall materials CC-BY 4.0\n\nWe have a gitter chat channel for this course that you can connect to\n\nuse to ask your peers questions\nwill try to monitor during course\n\nslido.com: #3112331"
   },
   {
     "objectID": "slides/01_intro.html#what-you-will-need",
     "href": "slides/01_intro.html#what-you-will-need",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "What you will need",
     "text": "What you will need\n\nGithub.com (free) account \nRecommended: posit.cloud \n\nFree tier sufficient\nComes with everything installed\nAlternative: local R development environment with\n\ngit \nRtools/R/Rstudio IDE \n\n\nCuriosity 🦝\nPositive attitude 😄"
   },
   {
     "objectID": "slides/01_intro.html#what-do-we-mean-by-gswep4r",
     "href": "slides/01_intro.html#what-do-we-mean-by-gswep4r",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "What do we mean by GSWEP4R*?",
     "text": "What do we mean by GSWEP4R*?\n\n\nApplying concept of GxP to SWE with R\nImprove quality of R code/packages, particularly in regulated enviroments but not limited to!\nNot a fixed term, we share our perspectives\nCollection of best practices\nDo not reinvent the wheel: learn from IT/open source space\n\n\n* Good Software Engineering Practice for R"
   },
   {
     "objectID": "slides/01_intro.html#why-care-about-gswep4r",
     "href": "slides/01_intro.html#why-care-about-gswep4r",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "Why care about GSWEP4R?",
     "text": "Why care about GSWEP4R?\n\nMove to / integration of R in pharma is clear trend\nR is a powerful yet complex ecosystem\n\nCore component: R packages\nMature analysts: users & contributors\nDeep understanding crucial, even to just assess quality\n\nAnalyses increasingly require complex scripts/programs  \\(\\leadsto\\) line between programming and data analysis blurs\nValue: de-risking use of R and efficiency gains"
   },
   {
     "objectID": "slides/01_intro.html#start-small---from-script-to-package",
     "href": "slides/01_intro.html#start-small---from-script-to-package",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "Start small - from script to package",
     "text": "Start small - from script to package\n\nEncapsulate behavior (functions)\nAvoid global state/variables\nAdopt consistent coding style\nDocument well\nAdd test cases\nVersion your code\nShare as ‘bundle’\n\n\\(\\leadsto\\) R package"
   },
   {
     "objectID": "slides/01_intro.html#the-r-package-ecosystem---huge-success",
     "href": "slides/01_intro.html#the-r-package-ecosystem---huge-success",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "The R package ecosystem - huge success",
     "text": "The R package ecosystem - huge success"
   },
   {
     "objectID": "slides/01_intro.html#gxp-r",
     "href": "slides/01_intro.html#gxp-r",
-    "title": "Introduction",
+    "title": "1 Introduction",
     "section": "GxP + R  = ",
-    "text": "GxP + R  = \n\nCore infrastructure packages only through industry\nQuality, burden sharing: open-source pharmaverse and others\nOpen methodological packages can de-risk innovative methods\nR packages make (statistical/methodological) code\n\ntestable (with documented evidence thereof, CRF 11)\nreusable\nshareable\neasier to document"
+    "text": "GxP + R  = \n\nCore infrastructure packages only through industry\nQuality, burden sharing: open-source pharmaverse and others\nOpen methodological packages can de-risk innovative methods\nR packages make (statistical/methodological) code\n\ntestable (with documented evidence thereof, CRF 11)\nreusable\nshareable\neasier to document\n\n\n\n\nGood Software Engineering Practice for R Packages - Home | Slides | License"
   },
   {
     "objectID": "slides/02_r_packages.html#what-you-know-already",
     "href": "slides/02_r_packages.html#what-you-know-already",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "What you know already",
     "text": "What you know already\n\nPackages provide a mechanism for loading optional code, data and documentation as needed.\nA library is a directory into which packages are installed.\ninstall.packages() and R CMD INSTALL is used to install packages into the library.\nlibrary() is used to load packages from the library.\n\nThis attaches the packages at the same time.\n\nRemember that package \\(\\neq\\) library!"
   },
   {
     "objectID": "slides/02_r_packages.html#what-we-want-to-talk-about-now",
     "href": "slides/02_r_packages.html#what-we-want-to-talk-about-now",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "What we want to talk about now",
     "text": "What we want to talk about now\n\nHow to write, build, test, and check your own package 😊\nHow to do this in a good and sustainable way.\nGive tips and tricks based on practical experience."
   },
   {
     "objectID": "slides/02_r_packages.html#how-is-a-package-structured",
     "href": "slides/02_r_packages.html#how-is-a-package-structured",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "How is a package structured?",
     "text": "How is a package structured?\nPackage source = directory with files and subdirectories.\n\n\n\nMandatory:\n\nDESCRIPTION\nNAMESPACE\nR\nman\n\n\n\n\nTypically also:\n\ndata\ninst\nsrc\ntests\nvignettes\nNEWS"
   },
   {
     "objectID": "slides/02_r_packages.html#how-to-get-started-quickly",
     "href": "slides/02_r_packages.html#how-to-get-started-quickly",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "How to get started quickly",
     "text": "How to get started quickly\nOnce upon a time, developers would set up this structure manually. 🥱\nNowadays, it is super fast with:\n\nusethis::create_package()\nRStudio > File > New Project > New Directory > R Package"
   },
   {
     "objectID": "slides/02_r_packages.html#description-file",
     "href": "slides/02_r_packages.html#description-file",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "DESCRIPTION File",
     "text": "DESCRIPTION File\n\nPackage: Choose the name of your package.\n\nNot unimportant!\nCheck CRAN whether your name is still available.\n\nTitle: Add a Title for Your Package. (Title Case)\nVersion: Start with a low package version.\n\nMajor.Minor.Patch syntax\n\nAuthors@R: Add authors and maintainer.\nDescription: Like an abstract, including references."
   },
   {
     "objectID": "slides/02_r_packages.html#description-file-contd",
     "href": "slides/02_r_packages.html#description-file-contd",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "DESCRIPTION File (cont’d)",
     "text": "DESCRIPTION File (cont’d)\n\nLicense: Important for open sourcing.\n\nConsider permissive licenses such as Apache and MIT.\n\nDepends:\n\nWhich R version users need to have at least.\nPackages that are loaded upon loading your package.\n\nImports: Packages which you import functions, methods, classes from.\nSuggests: Packages for documentation processing (roxygen2), running examples, tests (testthat), vignettes."
   },
   {
     "objectID": "slides/02_r_packages.html#r-folder",
     "href": "slides/02_r_packages.html#r-folder",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "R Folder",
     "text": "R Folder\n\nOnly contains R code files (recommended to use .R suffix)\n\nCan create a file with usethis::use_r(\"filename\")\n\nAssigns R objects, i.e. mostly functions, but could also be constant variables, data sets, etc.\nShould not have any side effects, i.e. avoid require(), options() etc.\nIf certain code needs to be sourced first, use on top of file:\n\n\n#' @include dependency.R\nNULL"
   },
   {
     "objectID": "slides/02_r_packages.html#namespace-file",
     "href": "slides/02_r_packages.html#namespace-file",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "NAMESPACE File",
     "text": "NAMESPACE File\n\nDefines the namespace of the package, to work with R’s namespace management system\nNamespace directives in this file allow to specify:\n\nwhich objects are exported to users and other packages\nwhich are imported from other packages"
   },
   {
     "objectID": "slides/02_r_packages.html#namespace-file-contd",
     "href": "slides/02_r_packages.html#namespace-file-contd",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "NAMESPACE File (cont’d)",
     "text": "NAMESPACE File (cont’d)\n\nControls the search strategy for variables:\n\nLocal (in the function body etc.)\nPackage namespace\nImports\nBase namespace\nNormal search() path"
   },
   {
     "objectID": "slides/02_r_packages.html#man-folder",
     "href": "slides/02_r_packages.html#man-folder",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "man Folder",
     "text": "man Folder\n\nContains documentation files for the objects in the package in the .Rd format\n\nThe syntax is a bit similar like LaTeX\n\nAll user level objects should be documented\nInternal objects don’t need to be documented, but may be (and I would recommend it)\nOnce upon a time, developers would set up these .Rd files and the NAMESPACE manually. 🥱\nFortunately, nowadays we have roxygen2! 🚀"
   },
   {
     "objectID": "slides/02_r_packages.html#roxygen2-to-the-rescue",
     "href": "slides/02_r_packages.html#roxygen2-to-the-rescue",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "roxygen2 to the Rescue!",
     "text": "roxygen2 to the Rescue!\n\nWe can include the documentation source directly in the R script, on top of the objects we are documenting\nSyntax is composed of special comments #' and special macros preceded with @\nIn RStudio running Build > More > Document will render the .Rd files and the NAMESPACE file for you\nGet started with usethis::use_roxygen_md()\nInside a function, click Code > Insert Roxygen Skeleton"
   },
   {
     "objectID": "slides/02_r_packages.html#setting-up-roxygen2-in-your-project",
     "href": "slides/02_r_packages.html#setting-up-roxygen2-in-your-project",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "Setting up roxygen2 in your project",
     "text": "Setting up roxygen2 in your project"
   },
   {
     "objectID": "slides/02_r_packages.html#roxygen2-source",
     "href": "slides/02_r_packages.html#roxygen2-source",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "roxygen2 Source",
     "text": "roxygen2 Source\nR/my_sum.R:\n\n#' My Summation Function\n#'\n#' This is my first function and it sums two numbers.\n#'\n#' @param x first summand.\n#' @param y second summand.\n#'\n#' @return The sum of `x` and `y`.\n#' @export\n#' \n#' @note This function is a bit boring but that is ok.\n#' @seealso [Arithmetic] for an easier way.\n#'\n#' @examples\n#' my_sum(1, 2)\nmy_sum <- function(x, y) {\n  x + y\n}"
   },
   {
     "objectID": "slides/02_r_packages.html#roxygen2-output",
     "href": "slides/02_r_packages.html#roxygen2-output",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "roxygen2 Output",
     "text": "roxygen2 Output\nman/my_sum.Rd:\n% Generated by roxygen2: do not edit by hand\n% Please edit documentation in R/bla.R\n\\name{my_sum}\n\\alias{my_sum}\n\\title{My Summation Function}\n\\usage{\nmy_sum(x, y)\n}\n\\arguments{\n\\item{x}{first summand.}\n\n\\item{y}{second summand.}\n}\n\\value{\nThe sum of \\code{x} and \\code{y}.\n}\n\\description{\nThis is my first function and it sums two numbers.\n}\n\\note{\nThis function is a bit boring but that is ok.\n}\n\\examples{\nmy_sum(1, 2)\n}\n\\seealso{\n\\link{Arithmetic} for an easier way.\n}"
   },
   {
     "objectID": "slides/02_r_packages.html#roxygen2-output-contd",
     "href": "slides/02_r_packages.html#roxygen2-output-contd",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "roxygen2 Output (cont’d)",
     "text": "roxygen2 Output (cont’d)\nNAMESPACE:\n# Generated by roxygen2: do not edit by hand\n\nexport(my_sum)"
   },
   {
     "objectID": "slides/02_r_packages.html#tests-folder",
     "href": "slides/02_r_packages.html#tests-folder",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "tests Folder",
     "text": "tests Folder\n\nHere we store the unit tests covering the functionality of the package\nGet started with usethis::use_testthat() and usethis::use_test() and populate tests/testthat folder with unit tests\nRarely, tests cannot be run within testthat framework, then these can go into R scripts directly in tests directory\nWe will look at unit tests in detail later"
   },
   {
     "objectID": "slides/02_r_packages.html#data-folder",
     "href": "slides/02_r_packages.html#data-folder",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "data Folder",
     "text": "data Folder\n\nFor (example) data that you ship in your package to the user\n\nGet started with usethis::use_data()\nNote: Usually we use lazy data loading, therefore no data() call needed before using the data\n\nIf you generate the example data, save the R script, too\n\nPut that into data-raw folder, start with usethis::use_data_raw()"
   },
   {
     "objectID": "slides/02_r_packages.html#inst-folder",
     "href": "slides/02_r_packages.html#inst-folder",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "inst Folder",
     "text": "inst Folder\n\nContents will be copied recursively to installation directory\n\nBe careful not to interfere with standard folder names\n\nFor data that is used by functions in the package itself\n\nThose would typically go into inst/extdata folder\nLoad with system.file(\"path/file\", package = \"mypackage\")\n\n\nCITATION: For custom citation() output\n\nCreate it with usethis::use_citation()\n\ninst/doc can contain documentation files (typically pdf)"
   },
   {
     "objectID": "slides/02_r_packages.html#src-folder",
     "href": "slides/02_r_packages.html#src-folder",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "src Folder",
     "text": "src Folder\n\nContains sources and headers for any code that needs compilation\nShould only contain a single language here\n\nBecause R uses it, mixing C, C++ and Fortran usually works with OS native compilers\n\nMuch more complex to write and maintain than an R only package\nTypically only makes sense for\n\nwrapping existing libraries for use in R\nspeeding up complex computations - starting point: Rcpp::Rcpp.package.skeleton()"
   },
   {
     "objectID": "slides/02_r_packages.html#vignettes-folder",
     "href": "slides/02_r_packages.html#vignettes-folder",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "vignettes Folder",
     "text": "vignettes Folder\n\nSpecial case of documentation files (pdf or html) created by compiling source files\nPackage users don’t need to recompile the vignettes - they are delivered with the package\nStart a new vignette with usethis::use_vignette()\n\nStarts an Rmd vignette, compiled with knitr\n\nImportant for the user to understand the high-level ideas\nComplements function-level documentation from our roxygen2 chunks"
   },
   {
     "objectID": "slides/02_r_packages.html#news-file",
     "href": "slides/02_r_packages.html#news-file",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "NEWS File",
     "text": "NEWS File\n\nLists user-visible changes worth mentioning\nIn each new release, add items at the top under the version they refer to\nDon’t discard old items: leave them in the file after the newer items\nStart one with usethis::use_news_md()"
   },
   {
     "objectID": "slides/02_r_packages.html#documenting-the-package",
     "href": "slides/02_r_packages.html#documenting-the-package",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "Documenting the package",
     "text": "Documenting the package\n\nThe first step is to produce the documentation files and NAMESPACE\nIn RStudio: Build > More > Document"
   },
   {
     "objectID": "slides/02_r_packages.html#checking-the-package",
     "href": "slides/02_r_packages.html#checking-the-package",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "Checking the package",
     "text": "Checking the package\n\nR comes with pre-defined check command for packages: “the R package checker” aka R CMD check\nAbout 22 checks are run (so quite a lot), including things like:\n\npackage can be installed\nis the code syntax ok\nis the documentation complete\ntests are run\nexamples are being run\n\nIn RStudio: Build > Check"
   },
   {
     "objectID": "slides/02_r_packages.html#building-the-package-1",
     "href": "slides/02_r_packages.html#building-the-package-1",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "Building the package",
     "text": "Building the package\n\nThe R package folder can be compressed into a single package file\nTypically we manually only build “source” package\n\nIn RStudio: Build > More > Build Source Package\nMakes it easy to share the package with others and submit to CRAN"
   },
   {
     "objectID": "slides/02_r_packages.html#installing-the-package",
     "href": "slides/02_r_packages.html#installing-the-package",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "Installing the package",
     "text": "Installing the package\n\nR comes with pre-defined install command for packages: R CMD INSTALL\nIn RStudio: Build > Install\nNote: During development it is usually sufficient to use Build > More > Load All\n\nRuns devtools::load_all()\nRoughly simulates what happens when package would be installed and loaded\nKey: much faster!"
   },
   {
     "objectID": "slides/02_r_packages.html#lets-try-this-out-now",
     "href": "slides/02_r_packages.html#lets-try-this-out-now",
-    "title": "R packages",
+    "title": "2 R packages",
     "section": "Let’s try this out now 😊",
     "text": "Let’s try this out now 😊\n\nSet up a new R package with a fancy name\nFill out the DESCRIPTION file\nInclude a new function\nAdd roxygen documentation\nExport the function to the namespace\nProduce the package documentation\nRun checks\nBuild the package"
   },
   {
     "objectID": "slides/05_collaboration.html#mermaid-takes-the-pain-out-of-git-diagrams",
     "href": "slides/05_collaboration.html#mermaid-takes-the-pain-out-of-git-diagrams",
-    "title": "Collaboration",
+    "title": "5 Collaboration",
     "section": "Mermaid takes the pain out of git diagrams :)",
     "text": "Mermaid takes the pain out of git diagrams :)\n\n\n\n\ngitGraph\n   commit\n   commit\n   branch develop\n   checkout develop\n   commit\n   commit\n   checkout main\n   merge develop\n   commit\n   commit"
   },
   {
     "objectID": "slides/05_collaboration.html#demo",
     "href": "slides/05_collaboration.html#demo",
-    "title": "Collaboration",
+    "title": "5 Collaboration",
     "section": "Demo",
-    "text": "Demo\ndemo / exercise"
-  },
-  {
-    "objectID": "slides/listing.html",
-    "href": "slides/listing.html",
-    "title": "Slides",
-    "section": "",
-    "text": "Publication\n\n\n\n\n\nHow to prepare the R package for publication, incl. documentation, license, checks. Photo CC0 by Andrea Piacquadio on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich\n\n\n\n\n\n\n  \n\n\n\n\nEnsuring Quality\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nPackage quality + exercisePhoto CC0 by Pixabay on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction\n\n\n\n\n\nIntroduction of speakers, get-to-know the audience, organisation, outline of program.Photo CC0 by Mabel Amber on pexels.com.\n\n\n\n\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\nR packages\n\n\n\n\n\nStructure of an R package; helpers for setting up a package; writing documentation. Photo CC0 by cottonbro studio on pexels.com.\n\n\n\n\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\nCollaboration\n\n\n\n\n\ndescription. Photo CC0 by THIS IS ZUN on pexels.com.\n\n\n\n\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\nAn R Package Engineering Workflow\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nWorkflow for creating R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\nNo matching items"
+    "text": "Demo\ndemo / exercise\n\n\nGood Software Engineering Practice for R Packages - Home | Slides | License"
   },
   {
     "objectID": "slides/03_workflow.html#typical-work-steps",
     "href": "slides/03_workflow.html#typical-work-steps",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Typical work steps",
     "text": "Typical work steps\n\n\n\n\nIdea\nConcept creation\nValidation planning\nSpecification:\n\nUser Requirements Spec (URS),\nFunctional Spec (FS), and\nSoftware Design Spec (SDS)\n\n\n\n\nR package programming\nDocumented verification\nCompletion of formal validation\nR package release\nUse in production\nMaintenance"
   },
   {
     "objectID": "slides/03_workflow.html#frequently-used-workflow-in-practice",
     "href": "slides/03_workflow.html#frequently-used-workflow-in-practice",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Frequently Used Workflow in Practice",
     "text": "Frequently Used Workflow in Practice\n\n\n\n\nIdea\nR package programming\nUse in production\nBug fixing\nUse in production\n\n\n\nBug fixing + Documentation\nUse in production\nBug fixing + Further development\nUse in production\nBug fixing + …\n\n\n\n\n\n Bad practice!\n\n\n Why?"
   },
   {
     "objectID": "slides/03_workflow.html#why-practice-good-engineering-1",
     "href": "slides/03_workflow.html#why-practice-good-engineering-1",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Why practice good engineering?",
     "text": "Why practice good engineering?\n\n\nOrigin of errors in system development\n\nBoehm, B. (1981). Software Engineering Economics. Prentice Hall."
   },
   {
     "objectID": "slides/03_workflow.html#why-practice-good-engineering-2",
     "href": "slides/03_workflow.html#why-practice-good-engineering-2",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Why practice good engineering?",
     "text": "Why practice good engineering?\n\n\n\nDon’t waste time on maintenance\nBe faster with release on CRAN\nDon’t waste time with inefficient and buggy further development\n\n\n\nFulfill regulatory requirements1\nSave refactoring time when the PoC becomes the release version\nYou don’t have to be shy any longer about inviting other developers to contribute to the package on GitHub\n\n\n\nSee also Ensuring Quality by Friedrich"
   },
   {
     "objectID": "slides/03_workflow.html#why-practice-good-engineering-3",
     "href": "slides/03_workflow.html#why-practice-good-engineering-3",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Why practice good engineering?",
     "text": "Why practice good engineering?\nInvest time in\n\nrequirements analysis,\nsoftware design, and\narchitecture…\n\n\n… but in many cases the workflow must be workable for a single developer or a small team."
   },
   {
     "objectID": "slides/03_workflow.html#example---step-1-idea",
     "href": "slides/03_workflow.html#example---step-1-idea",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 1: Idea",
     "text": "Example - Step 1: Idea\nLet’s assume that you used some lines of code to create simulated data in multiple projects:\n\ndat <- data.frame(\n    group = c(rep(1, 50), rep(2, 50)),\n    values = c(\n        rnorm(n = 50, mean = 8, sd = 12),\n        rnorm(n = 50, mean = 14, sd = 11)\n    )\n)\n\nIdea: put the code into a package"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-2-design-docs",
     "href": "slides/03_workflow.html#example---step-2-design-docs",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 2: Design docs",
     "text": "Example - Step 2: Design docs\n\nDescribe the purpose and scope of the package\nAnalyse and describe the requirements in clear and simple terms (“prose”)\n\n\n\n\nObligation level\nKey word1\nDescription\n\n\n\n\nDuty\nshall\n“must have”\n\n\nDesire\nshould\n“nice to have”\n\n\nIntention\nwill\n“optional”\n\n\n\nRupp, C., & SOPHISTen, die. (2009). Requirements-Engineering und -Management: Professionelle, iterative Anforderungsanalyse für die Praxis (5. Ed.). Carl Hanser Verlag GmbH & Co. KG."
   },
   {
     "objectID": "slides/03_workflow.html#example---step-2-design-docs-1",
     "href": "slides/03_workflow.html#example---step-2-design-docs-1",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 2: Design docs",
     "text": "Example - Step 2: Design docs\nPurpose and Scope\nThe R package simulatr shall enable the creation of reproducible fake data.\nPackage Requirements\nsimulatr shall provide a function to generate normal distributed random data for two independent groups. The function shall allow flexible definition of sample size per group, mean per group, standard deviation per group. The reproducibility of the simulated data shall be ensured via an optional seed It should be possible to print the function result. A graphical presentation of the simulated data will also be possible."
   },
   {
     "objectID": "slides/03_workflow.html#example---step-2-design-docs-2",
     "href": "slides/03_workflow.html#example---step-2-design-docs-2",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 2: Design docs",
     "text": "Example - Step 2: Design docs\n\n\nUseful formats / tools for design docs:\n\nR Markdown1 (*.Rmd)\nQuarto1 (*.qmd)\nOverleaf2\ndraw.io3\n\n\n\nUML Diagram\n\n\n\n\n\n\n\n\nBased on Markdown, the easy-to-use markup languageThe easy to use, online, collaborative LaTeX editorA picture is worth a thousand words"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging",
     "href": "slides/03_workflow.html#example---step-3-packaging",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
     "text": "Example - Step 3: Packaging\nR package programming\n\nCreate basic package project (see R Packages by Daniel)\nC&P existing R scripts (one-off scripts, prototype functions) and refactor1 it if necessary\nCreate R generic functions\nDocument all functions\n\nSee also Ensuring Quality by Friedrich"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-1",
     "href": "slides/03_workflow.html#example---step-3-packaging-1",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
     "text": "Example - Step 3: Packaging\nOne-off script as starting point:\n\nsim.data <- function(n1, n2, m1, m2, s1, s2) {\n    data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = m1, sd = s1),\n            rnorm(n = n2, mean = m2, sd = s2)\n        )\n    )\n}"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-2",
     "href": "slides/03_workflow.html#example---step-3-packaging-2",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
     "text": "Example - Step 3: Packaging\nRefactored script:\n\ngetSimulatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {\n    data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = mean1, sd = sd1),\n            rnorm(n = n2, mean = mean2, sd = sd2)\n        )\n    )\n}\n\nAlmost all functions, arguments, and objects should be self-explanatory due to their names."
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-3",
     "href": "slides/03_workflow.html#example---step-3-packaging-3",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
     "text": "Example - Step 3: Packaging\nDefine that the result is a list1 which is defined as class2:\n\ngetSimulatedTwoArmMeans <- function(n1, n2, mean1, mean2, sd1, sd2) {\n    result <- list(n1 = n1, n2 = n2, \n         mean1 = mean1, mean2 = mean2, sd1 = sd1, sd2 = sd2)\n    result$data <- data.frame(\n        group = c(rep(1, n1), rep(2, n2)),\n        values = c(\n            rnorm(n = n1, mean = mean1, sd = sd1),\n            rnorm(n = n2, mean = mean2, sd = sd2)\n        )\n    )\n    # set the class attribute\n    result <- structure(result, class = \"SimulationResult\")\n    return(result)\n}\n\nIt’s common practice to add the function arguments to the result \\(\\rightarrow\\) should be a list or classTo implement generics, the result must be a class"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-4",
     "href": "slides/03_workflow.html#example---step-3-packaging-4",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nThe output is impractical, e.g., we need to scroll down:\n\nx <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)\nx\n\n$n1\n[1] 50\n\n$n2\n[1] 50\n\n$mean1\n[1] 5\n\n$mean2\n[1] 7\n\n$sd1\n[1] 3\n\n$sd2\n[1] 4\n\n$data\n    group     values\n1       1  2.8098618\n2       1  7.4886685\n3       1  2.9376340\n4       1  4.4258587\n5       1  4.4622355\n6       1  8.4680417\n7       1 -0.4280919\n8       1  4.8764397\n9       1  4.1137676\n10      1  6.7070394\n11      1  3.0273284\n12      1  8.1879550\n13      1  5.5460901\n14      1  1.8404308\n15      1  3.8904504\n16      1  9.8421598\n17      1  6.9686705\n18      1  8.3719221\n19      1  8.0832892\n20      1  9.3673837\n21      1  2.4421346\n22      1  5.5483912\n23      1  6.9008039\n24      1 10.1659807\n25      1  5.1116466\n26      1  9.0016236\n27      1  7.8716334\n28      1  9.6779768\n29      1 -2.4615428\n30      1  4.4125037\n31      1  6.8426222\n32      1  7.8053767\n33      1  4.7673422\n34      1  4.9948090\n35      1  6.4920957\n36      1  7.3018322\n37      1  3.1307857\n38      1  6.2800551\n39      1  2.7744378\n40      1  6.8230786\n41      1  3.4028047\n42      1  2.2840796\n43      1  5.5511901\n44      1  2.4409202\n45      1  2.1054829\n46      1  6.1609617\n47      1  8.0550012\n48      1  4.5879105\n49      1  5.8066694\n50      1  9.1726078\n51      2 10.5769267\n52      2  4.5183862\n53      2  6.2275028\n54      2  7.9073672\n55      2  1.2753548\n56      2  6.8756810\n57      2  5.4800067\n58      2 10.3482716\n59      2 10.4410397\n60      2 10.4727125\n61      2  1.9447465\n62      2 10.3194273\n63      2  8.7787462\n64      2 -5.5080418\n65      2 -2.6619590\n66      2  4.0293508\n67      2  7.4580456\n68      2 11.4535285\n69      2  6.7647069\n70      2 -0.9187490\n71      2  4.6008091\n72      2  9.9365255\n73      2  6.0211774\n74      2  9.0932130\n75      2  5.4481710\n76      2  1.9356042\n77      2  5.4673716\n78      2  8.2632198\n79      2  3.0148847\n80      2 11.8446581\n81      2  1.4113626\n82      2  3.4549550\n83      2  9.3857995\n84      2  8.4418832\n85      2  6.7271562\n86      2  8.0623337\n87      2  8.5890753\n88      2  5.9947845\n89      2  9.6851341\n90      2  5.4112775\n91      2 11.9274289\n92      2 10.7016247\n93      2  8.2534064\n94      2 10.6182001\n95      2 10.2220889\n96      2  1.3999179\n97      2  8.0720942\n98      2 10.3343315\n99      2  7.8773198\n100     2 12.5592667\n\nattr(,\"class\")\n[1] \"SimulationResult\"\n\n\n\nSolution: implement generic function print"
+    "text": "Example - Step 3: Packaging\nThe output is impractical, e.g., we need to scroll down:\n\nx <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3, sd2 = 4)\nx\n\n$n1\n[1] 50\n\n$n2\n[1] 50\n\n$mean1\n[1] 5\n\n$mean2\n[1] 7\n\n$sd1\n[1] 3\n\n$sd2\n[1] 4\n\n$data\n    group      values\n1       1  6.61480245\n2       1  6.02376689\n3       1  6.65465297\n4       1  6.27739465\n5       1  3.57206619\n6       1  9.16133345\n7       1  0.58787928\n8       1  6.39215892\n9       1  4.79822375\n10      1  1.87671090\n11      1  3.33694714\n12      1  6.87022234\n13      1  0.60169595\n14      1  2.25952864\n15      1  1.32912191\n16      1  0.45065157\n17      1  3.61286890\n18      1 -0.01365248\n19      1  8.11978573\n20      1  6.81768565\n21      1  5.97488025\n22      1  3.31157942\n23      1  7.20278542\n24      1  0.56976693\n25      1  6.78390516\n26      1  3.95599167\n27      1  5.39509775\n28      1  6.64059016\n29      1  2.55995889\n30      1  7.32792234\n31      1  0.09797061\n32      1  9.33777177\n33      1 10.44745292\n34      1  2.37237285\n35      1  7.60670495\n36      1  3.85581120\n37      1  5.11719834\n38      1  9.14017647\n39      1  3.59277306\n40      1  6.16825910\n41      1  8.84195225\n42      1  4.84597495\n43      1  3.87246573\n44      1  8.07636977\n45      1  6.29810046\n46      1  4.78015068\n47      1 10.46754006\n48      1 -1.29202975\n49      1  5.57651892\n50      1  6.26463147\n51      2  8.84842565\n52      2 10.92214497\n53      2 12.06190480\n54      2  7.52401949\n55      2  4.25455825\n56      2  3.40801027\n57      2  3.53193099\n58      2  2.37286999\n59      2  1.52272245\n60      2  2.13820308\n61      2  5.89866391\n62      2 13.49742196\n63      2  5.52315413\n64      2  6.13605238\n65      2  8.42878200\n66      2  1.48207886\n67      2 10.17478635\n68      2  6.98824449\n69      2  9.32733002\n70      2  7.00238840\n71      2  2.56741631\n72      2 10.48259016\n73      2  7.65348588\n74      2  3.84079945\n75      2  2.87638422\n76      2  1.64784366\n77      2 -5.22086360\n78      2  6.99981751\n79      2  3.34374133\n80      2  5.18637307\n81      2  4.38423218\n82      2  2.99553337\n83      2  6.99422360\n84      2  0.59530008\n85      2 11.97411887\n86      2 14.14246240\n87      2  7.75095817\n88      2  0.60716707\n89      2  1.66034118\n90      2  2.22029669\n91      2  1.65383923\n92      2  7.14721827\n93      2  4.57656453\n94      2  0.06043565\n95      2  6.08851076\n96      2  6.21162381\n97      2  8.80480152\n98      2  5.83370417\n99      2  5.90335724\n100     2 -1.02076610\n\nattr(,\"class\")\n[1] \"SimulationResult\"\n\n\n\nSolution: implement generic function print"
   },
   {
     "objectID": "slides/03_workflow.html#example---step-3-packaging-5",
     "href": "slides/03_workflow.html#example---step-3-packaging-5",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Example - Step 3: Packaging",
-    "text": "Example - Step 3: Packaging\nGeneric function print:\n\nCodeRoxygenOutput\n\n\n\nprint.SimulationResult <- function(x, ...) {\n    args <- list(n1 = x$n1, n2 = x$n2, \n        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)\n    \n    print(list(\n        args = format(args), \n        data = dplyr::tibble(x$data)\n    ), ...)\n}\nx\n\n\n\n\n#' @title\n#' Print Simulation Result\n#'\n#' @description\n#' Generic function to print a `SimulationResult` object.\n#'\n#' @param x a \\code{SimulationResult} object to print.\n#' @param ... further arguments passed to or from other methods.\n#' \n#' @examples\n#' x <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, \n#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)\n#' print(x)\n#'\n#' @export\n\n\n\n\n\n$args\n   n1    n2 mean1 mean2   sd1   sd2 \n \"50\"  \"50\"   \"5\"   \"7\"   \"3\"   \"4\" \n\n$data\n# A tibble: 100 × 2\n   group values\n   <dbl>  <dbl>\n 1     1  2.81 \n 2     1  7.49 \n 3     1  2.94 \n 4     1  4.43 \n 5     1  4.46 \n 6     1  8.47 \n 7     1 -0.428\n 8     1  4.88 \n 9     1  4.11 \n10     1  6.71 \n# … with 90 more rows"
+    "text": "Example - Step 3: Packaging\nGeneric function print:\n\nCodeRoxygenOutput\n\n\n\nprint.SimulationResult <- function(x, ...) {\n    args <- list(n1 = x$n1, n2 = x$n2, \n        mean1 = x$mean1, mean2 = x$mean2, sd1 = x$sd1, sd2 = x$sd2)\n    \n    print(list(\n        args = format(args), \n        data = dplyr::tibble(x$data)\n    ), ...)\n}\nx\n\n\n\n\n#' @title\n#' Print Simulation Result\n#'\n#' @description\n#' Generic function to print a `SimulationResult` object.\n#'\n#' @param x a \\code{SimulationResult} object to print.\n#' @param ... further arguments passed to or from other methods.\n#' \n#' @examples\n#' x <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, \n#'      mean2 = 7, sd1 = 3, sd2 = 4, seed = 123)\n#' print(x)\n#'\n#' @export\n\n\n\n\n\n$args\n   n1    n2 mean1 mean2   sd1   sd2 \n \"50\"  \"50\"   \"5\"   \"7\"   \"3\"   \"4\" \n\n$data\n# A tibble: 100 × 2\n   group values\n   <dbl>  <dbl>\n 1     1  6.61 \n 2     1  6.02 \n 3     1  6.65 \n 4     1  6.28 \n 5     1  3.57 \n 6     1  9.16 \n 7     1  0.588\n 8     1  6.39 \n 9     1  4.80 \n10     1  1.88 \n# … with 90 more rows"
   },
   {
     "objectID": "slides/03_workflow.html#preparation",
     "href": "slides/03_workflow.html#preparation",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Preparation",
     "text": "Preparation\n\nDownload the unfinished R package simulatr\nExtract the package zip file\nOpen the project with RStudio\nComplete the tasks below"
   },
   {
     "objectID": "slides/03_workflow.html#tasks",
     "href": "slides/03_workflow.html#tasks",
-    "title": "An R Package Engineering Workflow",
+    "title": "3 An R Package Engineering Workflow",
     "section": "Tasks",
     "text": "Tasks\n\nTask 1Task 2Task 3Task 4Task 5Task 6Task 7\n\n\nAdd assertions to improve the usability and user experience\n\n\n\n\n\n\nTip on assertions\n\n\nUse the package checkmate to validate input arguments.\n\n\n\nExample:\n\nplayWithAssertions <- function(n1) {\n  checkmate::assertInt(n1, lower = 1)\n}\nplayWithAssertions(-1)\n\nError in playWithAssertions(-1) : Assertion on ‘n1’ failed: Element 1 is not >= 1.\n\n\nAdd three additional results:\n\nn total,\ncreation time, and\nallocation ratio\n\n\n\n\n\n\n\nTip on creation time\n\n\nSys.time(), format(Sys.time(), '%B %d, %Y'), Sys.Date()\n\n\n\n\n\nAdd an additional result: t.test result\n\n\nAdd an optional alternative argument and pass it through t.test:\n\n\nalternative = c(\"two.sided\", \"less\", \"greater\")\n\n\n\nImplement the generic functions print and plot.\n\n\n\n\n\n\nTip on print\n\n\nUse the plot example function from above and extend it.\n\n\n\n\n\n\n\n\n\nTip on plot\n\n\nUse R base plot or ggplot2 to create a grouped boxplot of the fake data.\n\n\n\n\n\nOptional extra tasks:\n\nImplement the generic functions summary and cat\nImplement the function kable known from the package knitr as generic. Tip: use\n\nkable <- function(x) UseMethod(\"kable\")\n\nto define kable as generic\n\n\n\nOptional extra task1:\nDocument your functions with Roxygen2\n\n\nIf you are already familiar with Roxygen2"
+  },
+  {
+    "objectID": "listing.html",
+    "href": "listing.html",
+    "title": "Slides",
+    "section": "",
+    "text": "1 Introduction\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nIntroduction and outline of program.Photo CC0 by Mabel Amber on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDaniel, Friedrich, Kevin\n\n\n\n\n\n\n  \n\n\n\n\n2 R packages\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nR package syntax + practicalPhoto CC0 by cottonbro studio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDaniel\n\n\n\n\n\n\n  \n\n\n\n\n3 An R Package Engineering Workflow\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nWorkflow for creating R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\n4 Ensuring Quality\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nPackage quality + exercisePhoto CC0 by Pixabay on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nFriedrich\n\n\n\n\n\n\n  \n\n\n\n\n5 Collaboration\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nCollaboration via GitHub + practicalPhoto CC0 by THIS IS ZUN on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nKevin\n\n\n\n\n\n\n  \n\n\n\n\n6 Publication\n\n\nBBS Course: Good Software Engineering Practice for R Packages\n\n\nPublication of R packages + practicalPhoto CC0 by Andrea Piacquadio on pexels.com\n\n\n\n\n\n\nFeb 10, 2023\n\n\nDaniel, Friedrich\n\n\n\n\n\n\nNo matching items"
   }
 ]
