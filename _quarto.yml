@@ -12,7 +12,7 @@ website:
       - href: index.qmd
         text: Home
         icon: "house-fill"
-      - href: slides/listing.qmd
+      - href: listing.qmd
         text: Slides
         icon: "file-earmark-slides"
   page-footer:
@@ -31,4 +31,3 @@ format:
     link-external-newwindow: true
 
 editor: source
-
