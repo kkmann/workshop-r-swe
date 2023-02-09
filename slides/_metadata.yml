@@ -14,7 +14,7 @@ format:
     code-line-numbers: true
     mouse-wheel: false
     link-external-newwindow: true
-    footer: 'Good Software Engineering Practice for R Packages - [Home](index.html "GSWEP4R Workshop") | [Slides](listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
+    footer: 'Good Software Engineering Practice for R Packages - [Home](../index.html "GSWEP4R Workshop") | [Slides](../listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
 lang: en
 editor:
   markdown:
