@@ -15,8 +15,8 @@ image: thumbnails/collaboration.jpg
 ##  {background-image="resources/scratch.jpg"}
 
 ::: {.absolute bottom="100" left="0" right="500"}
--   Only scratching surface
 -   Overview, demo, practical
+-   Can only scratch surface
 -   More resources on [website](https://kkmann.github.io/workshop-r-swe/#optional-reading-list)
 :::
 
