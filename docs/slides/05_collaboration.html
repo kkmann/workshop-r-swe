@@ -11,7 +11,7 @@
 
   <meta name="author" content="Kevin">
   <meta name="dcterms.date" content="2023-02-10">
-  <title>GSWEP4R Workshop - 5 Collaboration</title>
+  <title>GSWEP4R Workshop - 5 Version Control &amp; Collaboration</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -328,7 +328,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">5 Collaboration</h1>
+  <h1 class="title">5 Version Control &amp; Collaboration</h1>
   <p class="subtitle">BBS Course: Good Software Engineering Practice for R Packages</p>
 
 <div class="quarto-title-authors">
@@ -341,27 +341,74 @@ Kevin
 
   <p class="date">February 10, 2023</p>
 </section>
-<section class="slide level2">
-
-<p>VCS (&lt;-&gt; quality), github</p>
+<section id="disclaimer" class="slide level2">
+<h2>Disclaimer</h2>
+<p><br><br><br></p>
+<p><em>Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company.</em></p>
 </section>
-<section id="mermaid-takes-the-pain-out-of-git-diagrams" class="slide level2">
-<h2>Mermaid takes the pain out of git diagrams :)</h2>
+<section id="section" class="slide level2" data-background-image="resources/scratch.jpg">
+<h2></h2>
+<div class="absolute" style="left: 0px; bottom: 100px; right: 500px; ">
+<ul>
+<li>Overview, demo, practical</li>
+<li>Can only scratch surface</li>
+<li>More resources on <a href="https://kkmann.github.io/workshop-r-swe/#optional-reading-list">website</a></li>
+</ul>
+</div>
+<div class="footer">
+<p>Photo by <a href="https://unsplash.com/@rhubbardstockfootage?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Rich @ rhubbardstockfootage</a> on <a href="https://unsplash.com/photos/dEATKItQazc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+</div>
+</section>
+<section id="trade-offs-in-code-development" class="slide level2">
+<h2>Trade-offs in code development</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="working-alone">Working alone</h3>
+<ul>
+<li>no coordination overhead</li>
+<li>no review</li>
+<li>lack of diversity</li>
+<li>can slack on documentation</li>
+<li>fragile long-term maintenance</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="working-in-a-team">Working in a team</h3>
+<ul>
+<li>coordination overhead</li>
+<li>mutual review of code</li>
+<li>different approaches</li>
+<li>forced to document</li>
+<li>more robust long-term maintenance</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="section-1" class="slide level2" data-background-image="resources/complexity.jpg">
+<h2></h2>
+<div class="absolute" style="top: 250px; left: 625px; ">
+<p><strong>Manage complexity</strong> over time or between people</p>
+</div>
+<div class="footer">
+<p>Photo from <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tim Mossholder</a> on <a href="https://unsplash.com/de/fotos/FwzhysPCQZc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+</div>
+</section>
+<section id="version-control-systems-vcs" class="slide level2">
+<h2>Version control systems (VCS)</h2>
+<ul>
+<li>Manage different versions of a piece of work</li>
+<li>Compare and merge diverged versions effectively</li>
+</ul>
 <div class="cell" data-reveal="true">
 <div class="cell-output-display">
 <div>
 <p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">gitGraph
-   commit
-   commit
-   branch develop
-   checkout develop
-   commit
-   commit
-   checkout main
-   merge develop
-   commit
-   commit
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+  A[&lt;font size=4&gt; Kevin v1] --&gt; B[&lt;font size=4&gt; Kevin v2]
+  B --&gt; C[&lt;font size=4&gt; Kevin v3]
+  B --&gt; D[&lt;font size=4&gt; Daniel v1]
+  D --&gt; E[&lt;font size=4&gt; Kevin + Daniel v4]
+  C --&gt; E
 </pre>
 <div id="mermaid-tooltip-1" class="mermaidTooltip">
 
@@ -370,15 +417,364 @@ Kevin
 </div>
 </div>
 </div>
+<ul>
+<li>Merging parallel edits is not simple (try it in MS Word 365)</li>
+</ul>
+</section>
+<section>
+<section id="git-basics" class="title-slide slide level1 center">
+<h1>git basics</h1>
+
+</section>
+<section id="enter-git---the-latin-of-data-science" class="slide level2">
+<h2>Enter ‘git’ - the ‘Latin of data science’</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="resources/linus.jpg"></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li>Author Linus Torvalds, for work on Linux kernel</li>
+<li>Essentially a database of with snapshots of a monitored ‘repository’ (directory)</li>
+<li>Optimized to compute ‘diffs’ (line-based changes)</li>
+<li>Integrated in RStudio IDE, Visual Studio Code</li>
+<li>De facto standard not just in the R world</li>
+<li>Alternatives: mercurial, SCM, …</li>
+</ul>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://commons.wikimedia.org/w/index.php?curid=108824226">Photo</a> by Lf Asia &amp; the Archive Team CC BY 3.0</p>
+</div>
+</section>
+<section id="stage-commit" class="slide level2">
+<h2>Stage &amp; commit</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="resources/commit.jpg"></p>
+</div><div class="column" style="width:70%;">
+<div class="cell" data-reveal="true" data-fig-width="6" data-fig-height="2">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">gitGraph
+   commit
+   commit
+   commit
+   commit
+   commit
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>‘Stage’ changes for inspection</li>
+<li>Permanently ‘commit’ changes to git</li>
+</ol>
+<p><span class="math inline">\(\leadsto\)</span> Chain of versions with incremental changes</p>
+</div>
+</div>
+<div class="footer">
+<p>Photo by <a href="https://unsplash.com/@feliciamontenegro?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Felicia Montenegro</a> on <a href="https://unsplash.com/photos/VKnWrMnxahg?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+</div>
+</section>
+<section id="line-based-differences---the-diff" class="slide level2">
+<h2>Line-based differences - the ‘diff’</h2>
+
+<img data-src="resources/diff-example.jpg" style="width:80.0%" class="r-stretch quarto-figure-center"><ul>
+<li>Changes in git are line-based</li>
+<li>Additions (green) &amp; deletions (red) between commits</li>
+</ul>
+</section>
+<section id="going-back-in-time" class="slide level2">
+<h2>Going back in time</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="resources/delorean.jpg"></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li>Every commit has unique hash value</li>
+<li>Can ‘checkout’ old commit (browse history)</li>
+</ul>
+<pre><code>git checkout [commit hash to browse]</code></pre>
+<ul>
+<li>Can ‘reset’ changes</li>
+</ul>
+<pre><code>git reset --hard [commit hash to reset to]</code></pre>
+<ul>
+<li>Removes need for <code>my-file_final_v2_2019.R</code></li>
+<li>Time travelling has its dangers…<sup>1</sup></li>
+</ul>
+</div>
+</div>
+<div class="footer">
+<p>Photo by <a href="https://unsplash.com/@milatovar?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mila Tovar</a> on <a href="https://unsplash.com/photos/nZ6Gg6zgfbE?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Never change published history!</p></li></ol></aside></section>
+<section id="branching" class="slide level2">
+<h2>Branching</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="resources/branch.jpg"></p>
+</div><div class="column" style="width:70%;">
+<div class="cell" data-reveal="true" data-fig-width="6" data-fig-height="2">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">gitGraph
+   commit
+   commit
+   branch feature
+   checkout feature
+   commit
+   commit
+   checkout main
+   commit
+</pre>
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Variations of repository: ‘branches’</li>
+</ul>
+<pre><code>git checkout -b [my new branch]</code></pre>
+<ul>
+<li>Quick switching between branches</li>
+</ul>
+<pre><code>git checkout [branch name]</code></pre>
+</div>
+</div>
+<div class="footer">
+<p>Photo by <a href="https://unsplash.com/@milatovar?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mila Tovar</a> on <a href="https://unsplash.com/photos/nZ6Gg6zgfbE?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+</div>
+</section>
+<section id="merging-two-branches" class="slide level2">
+<h2>‘Merging’ two branches</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="resources/merge.jpg"></p>
+</div><div class="column" style="width:70%;">
+<div class="cell" data-reveal="true" data-fig-width="6" data-fig-height="2">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-4">gitGraph
+   commit
+   commit
+   branch feature
+   checkout feature
+   commit
+   commit
+   checkout main
+   commit
+   merge feature
+</pre>
+<div id="mermaid-tooltip-4" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Consolidate diverged ‘branches’</li>
+<li>Usually merged automergically</li>
+<li>Conflicting changes <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9c0 .4 0 .7 0 1.1v64c0 26.5 21.5 48 48 48h48V464c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64V464c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48V400c0-.4 0-.7 0-1.1zM224 256c0 35.3-28.7 64-64 64s-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64zm128 64c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"></path></svg></li>
+<li>Line edited in source/target branch - keep which?</li>
+<li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line">Resolving merge conflicts</a> beyond today’s scope</li>
+</ul>
+</div>
+</div>
+<div class="footer">
+<p>Photo by <a href="https://unsplash.com/@maxlarochelle?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Max LaRochelle</a> on <a href="https://unsplash.com/photos/c-vWdiICscA?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+</div>
+</section>
+<section id="example-of-gitflow" class="slide level2">
+<h2>Example of ‘gitflow’</h2>
+<div class="cell" data-reveal="true" data-fig-width="8" data-fig-height="4">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-5">gitGraph
+   commit tag: "v0.0.1"
+   commit
+   branch feature-1
+   checkout feature-1
+   commit
+   commit
+   checkout main
+   branch feature-2
+   checkout feature-2
+   commit
+   checkout feature-1
+   commit
+   checkout main
+   commit tag: "bugfix"
+   merge feature-1 tag: "v0.1.0"
+   checkout feature-2
+   commit
+</pre>
+<div id="mermaid-tooltip-5" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<ul>
+<li>‘gitflow’: specific workflow for git repositories</li>
+<li>features developed on branches, then merged into ‘main’</li>
+</ul>
+</section>
+<section id="version-control-collaboration" class="slide level2">
+<h2>Version Control &amp; Collaboration</h2>
+<ul>
+<li>git itself is command line tool for version control</li>
+<li><strong>git platforms add UI for collaboration</strong><sup>1</sup>
+<ul>
+<li><a href="https://github.com">GitHub.com</a> de facto standard in R (alternative: <a href="https://gitlab.com/">GitLab.com</a>)</li>
+</ul></li>
+<li>git + GitHub
+<ul>
+<li>VCS (git)</li>
+<li>Web hosting of code (GitHub)</li>
+<li>Organisation with issues, discussions (GitHub)</li>
+<li>Automation of checks/test (GitHub)</li>
+</ul></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>All platforms also available on-premise for enterprise use</p></li></ol></aside></section></section>
+<section>
+<section id="git-platforms" class="title-slide slide level1 center">
+<h1>git platforms</h1>
+
+</section>
+<section id="github.com" class="slide level2">
+<h2>GitHub.com</h2>
+<ul>
+<li>Huge number of R packages developed there:
+<ul>
+<li><a href="https://github.com/tidyverse/ggplot2">ggplot2</a></li>
+<li><a href="https://github.com/tidyverse/dplyr">dplyr</a></li>
+<li><a href="https://github.com/pharmaverse">pharmaverse</a></li>
+</ul></li>
+<li>‘Facebook’ of developers / social coding</li>
+<li>100 million developers on GitHub.com (Jan ’23)</li>
+<li>372 million repositories, 28 million public (Jan ’23)</li>
+</ul>
+</section>
+<section id="branches-pull-requests" class="slide level2">
+<h2>Branches &amp; pull requests</h2>
+<ul>
+<li>Branches are a git concept</li>
+<li>Git platforms add concept of ‘pull request’ (PR)<sup>1</sup>
+<ul>
+<li>PR is ‘suggested merge’ from branch A to B</li>
+<li>Usually from ‘feature A’ to ‘main’</li>
+</ul></li>
+<li>Allow to <strong>preview problems before merge</strong> and <strong>discuss changes</strong></li>
+<li>Once everyone is happy, a pull request<sup>2</sup> can be merged</li>
+<li>Every PR has an associated branch, but not every branch has a PR</li>
+<li><strong>More in the demo!</strong></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>The naming is debatable, ask me in the coffee break.</p></li><li id="fn4"><p>technically its associated branch</p></li></ol></aside></section>
+<section id="automating-things-with-github" class="slide level2">
+<h2>Automating things with GitHub</h2>
+<ul>
+<li>GitHub provides
+<ul>
+<li>cloud compute</li>
+<li>scripting framework (<a href="https://github.com/features/actions">GitHub actions</a>)</li>
+</ul></li>
+<li>Allows task automation, e.g.
+<ul>
+<li>run unittests</li>
+<li>build &amp; host documentation</li>
+<li>static code analysis (linting)</li>
+</ul></li>
+<li>Most important actions for R: <a href="https://github.com/r-lib/actions">github.com/r-lib/actions</a></li>
+<li>Extremely useful to enforce best-practices &amp; quality</li>
+</ul>
+</section>
+<section id="a-typical-github-workflow" class="slide level2 scrollable">
+<h2>A typical GitHub workflow</h2>
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-6">sequenceDiagram
+    participant K as Kevin
+    participant GH as GitHub server
+    participant D as Daniel
+    K-&gt;&gt;K: make change locally &amp; commit to &lt;feature&gt;
+    K-&gt;&gt;GH: push commit
+    K-&gt;&gt;GH: open pull request
+    GH-&gt;&gt;GH: run automated checks
+    K-&gt;&gt;D: request review
+    D-&gt;&gt;D: review code
+    D-&gt;&gt;K: request changes
+    K-&gt;&gt;K: implement changes locally &amp; commit
+    K-&gt;&gt;GH: push commit
+    GH-&gt;&gt;GH: run automated checks
+    K-&gt;&gt;D: request review
+    D-&gt;&gt;D: review code
+    D-&gt;&gt;GH: approve changes, unblocking merge
+    K-&gt;&gt;GH: merge &lt;feature&gt; into &lt;main&gt;
+    GH-&gt;&gt;GH: run automated checks on &lt;main&gt;
+    D-&gt;&gt;GH: pull newest version of &lt;main&gt;
+</pre>
+<div id="mermaid-tooltip-6" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="looks-awefully-complicated-why" class="slide level2">
+<h2>Looks awefully complicated, why?</h2>
+<ul>
+<li>Efficient collaboration with novice/untrusted contributors
+<ul>
+<li>Maintainer: automated checks reduce review burden</li>
+<li>Contributor: no need to check manually</li>
+</ul></li>
+<li>Branching promotes asynchronous work on features</li>
+<li>Full history - can always go back</li>
+</ul>
+<p><strong><span class="math inline">\(\leadsto\)</span> making code-collaboration scalable</strong></p>
 </section>
 <section id="demo" class="slide level2">
 <h2>Demo</h2>
-<p>demo / exercise</p>
+<ul>
+<li>We will go through the steps for setting up the next exercise</li>
+<li>Will try to perform a live PR :)</li>
+<li>Don’t panic - steps are all documented!</li>
+</ul>
+</section>
+<section id="practical---collaboration-on-github" class="slide level2">
+<h2>Practical - collaboration on GitHub</h2>
+<ul>
+<li>Work in teams of ~3</li>
+<li>Go to <a href="https://github.com/kkmann/simulatr" class="uri">https://github.com/kkmann/simulatr</a> and read through the instructions in the README.md file</li>
+<li>The repository is a <strong>template</strong> to practice collaboration on GitHub</li>
+<li><strong>Only one member per team needs to use the template</strong> and invite the others as collaborators!</li>
+<li>Take some time to checkout the <code>README.md</code> file and set up your environment in posit cloud.</li>
+<li><strong>Can you fix the errors with some pull requests?</strong></li>
+<li>The purpose of this exercise is to explore the collaboration functionality of GitHub - not to produce a perfect package ;)</li>
+</ul>
 
 <div class="footer footer-default">
 <p>Good Software Engineering Practice for R Packages - <a href="index.html" title="GSWEP4R Workshop">Home</a> | <a href="listing.html" title="Overview of all slides">Slides</a> | <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="License: CC BY-SA 4.0">License</a></p>
 </div>
-</section>
+</section></section>
+
     </div>
   </div>
 
@@ -590,6 +986,44 @@ Kevin
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
