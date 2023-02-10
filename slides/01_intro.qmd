@@ -61,13 +61,13 @@ image: thumbnails/hello.jpg
 
 ## What you will learn today
 
--   Understand the basic structure of an R `r fontawesome::fa("cube")`
--   Create your own R package
+-   Understand the basic structure of an R package
+-   Create your own R `r fontawesome::fa("cube")`
 -   Learn about & apply professional `r fontawesome::fa("cube")` development workflow
 -   Learn & apply fundamentals of quality control for R `r fontawesome::fa("cube")`
 -   Get crash-course in version control to stay organized
 -   Try out modern collaboration techniques on GitHub.com
--   Learn how to make R `r fontawesome::fa("cube")` available to others
+-   Learn how to make an R `r fontawesome::fa("cube")` available to others
 
 ## Program outline
 
@@ -138,7 +138,7 @@ $\leadsto$ R package
 
 ## The R package ecosystem - huge success
 
-```{r cran-pkg-network}
+```{r cran-pkg-network, echo=FALSE}
 if (!file.exists("resources/pkg_graph.png")) { # primitive caching
   library(tidyverse)
   local({
@@ -202,3 +202,5 @@ knitr::include_graphics("resources/pkg_graph.png")
     -   reusable
     -   shareable
     -   easier to document
+
+# Question, Comments? 

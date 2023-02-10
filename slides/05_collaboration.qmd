@@ -53,7 +53,7 @@ Photo by <a href="https://unsplash.com/@rhubbardstockfootage?utm_source=unsplash
 ##  {background-image="resources/complexity.jpg"}
 
 ::: {.absolute top="250" left="625"}
-**Manage complexity** over time or between people
+**Key issue:</br> Manage complexity over time or between people**
 :::
 
 ::: footer
@@ -63,7 +63,7 @@ Photo from <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&utm_
 ## Version control systems (VCS)
 
 -   Manage different versions of a piece of work
--   Compare and merge diverged versions effectively
+-   Compare and merge diverged versions **effectively**^[Merging parallel edits is not simple (try it in MS Word 365)]
 
 ```{mermaid}
 flowchart LR
@@ -74,11 +74,12 @@ flowchart LR
   C --> E
 ```
 
--   Merging parallel edits is not simple (try it in MS Word 365)
+-   Code is complex system $\leadsto$ ideal application of VCS
+-   Compounded by multiple people 'fiddling' with it!
 
 # git basics
 
-## Enter 'git' - the 'Latin of data science'
+## Enter git `r fontawesome::fa("git-alt")` the 'Latin of data science'
 
 ::: columns
 ::: {.column width="30%"}
@@ -87,8 +88,8 @@ flowchart LR
 
 ::: {.column width="70%"}
 -   Author Linus Torvalds, for work on Linux kernel
--   Essentially a database of with snapshots of a monitored 'repository' (directory)
--   Optimized to compute 'diffs' (line-based changes)
+-   Essentially a database with snapshots of a monitored 'repository' (directory)
+-   Optimized to compute line-based changes
 -   Integrated in RStudio IDE, Visual Studio Code
 -   De facto standard not just in the R world
 -   Alternatives: mercurial, SCM, ...
@@ -119,6 +120,7 @@ gitGraph
 ```
 
 1.  'Stage' changes for inspection
+    * allows to inspect propose changes before locking them in
 2.  Permanently 'commit' changes to git
 
 $\leadsto$ Chain of versions with incremental changes
@@ -276,15 +278,17 @@ gitGraph
 
 # git platforms
 
-## GitHub.com
+## GitHub.com `r fontawesome::fa("github")`
 
 - Huge number of R packages developed there:
   - [ggplot2](https://github.com/tidyverse/ggplot2)
   - [dplyr](https://github.com/tidyverse/dplyr)
   - [pharmaverse](https://github.com/pharmaverse)
-- 'Facebook' of developers / social coding
 - 100 million developers on GitHub.com (Jan '23)
 - 372 million repositories, 28 million public (Jan '23)
+- 'Facebook' of developers / social coding
+- Discuss problems / propose changes
+
 
 ## Branches & pull requests
 
@@ -346,9 +350,9 @@ sequenceDiagram
 
 ## Demo
 
--   We will go through the steps for setting up the next exercise
--   Will try to perform a live PR :)
--   Don't panic - steps are all documented!
+-   How does a pull request work?
+-   First steps for setting up the next practical
+-   Don't panic - steps are all documented at </br> <https://github.com/kkmann/simulatr>
 
 ## Practical - collaboration on GitHub
 
@@ -359,7 +363,7 @@ sequenceDiagram
 -   **Only one member per team needs to use the template** and invite the others
     as collaborators!
 -   Take some time to checkout the `README.md` file and set up your
-    environment in posit cloud.
+    environment in posit cloud
 -   **Can you fix the errors with some pull requests?**
 -   The purpose of this exercise is to explore the collaboration 
     functionality of GitHub - not to produce a perfect package ;)
