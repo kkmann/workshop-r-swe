@@ -7,25 +7,27 @@ on:
      - main
 
 jobs:
-  publish:
-    name: Build & Deploy
+  build-site:
     runs-on: ubuntu-latest
-    container:
-      image: kevinkunzmann/r-swe-workshop-container@sha256:7fbbe09aa2acbc1e458c9924fc28944bba8a38a545b40bc67c0b82b1230d98e7
-    permissions:
-      contents: write
-    strategy:
-      max-parallel: 1
     steps:
-      - name: Check out repository
+      - name: Check-out Repository
         uses: actions/checkout@v3
 
-      - name: Render Quarto Project
-        run: quarto render --output-dir _site
-        shell: bash
+      - name: Set-up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Publish Project
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          cache-version: 2
+
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
