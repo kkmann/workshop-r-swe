@@ -1,16 +1,6 @@
 ---
 title: "7 Conclusion"
-subtitle: "BBS Course: Good Software Engineering Practice for R Packages"
 author: "Daniel"
-date: '2023-02-10'
-date-format: long
-tags: [R, Package]
-license: 'CC BY-SA'
-email-obfuscation: javascript
-format: 
-  revealjs: 
-    fontsize: 32px
-    footer: 'Good Software Engineering Practice for R Packages - [Home](../index.html "GSWEP4R Workshop") | [Slides](listing.html "Overview of all slides") | [License](http://creativecommons.org/licenses/by-sa/4.0/ "License: CC BY-SA 4.0")'
 description: "Discussion of learning experience, summary of workflow, conclusion and next steps.</br>[Photo by Ann H on pexels.com]{.copyright}"
 image: thumbnails/conclusion.jpg
 ---
