@@ -7,3 +7,5 @@
 _site
 
 .Rbuildignore
+
+docs

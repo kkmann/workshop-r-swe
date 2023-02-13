@@ -5,7 +5,7 @@ project:
 website:
   title: "GSWEP4R Workshop"
   description: "BBS Course: Good Software Engineering Practice with R"
-  site-url: https://kkmann.github.io/workshop-r-swe
+  site-url: https://openpharma.github.io/workshop-r-swe/
   search: true
   navbar:
     left:
@@ -20,7 +20,7 @@ website:
       - text: "About the Software Engineering Working Group"
         href: https://rconsortium.github.io/asa-biop-swe-wg/
       - text: "Source Code on GitHub"
-        href: https://github.com/kkmann/workshop-r-swe
+        href: https://github.com/openpharma/workshop-r-swe
 
 format:
   html:
