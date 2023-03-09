@@ -2,13 +2,15 @@
 title: "Good Software Engineering Practice for R Packages"
 ---
 
-Welcome to the homepage of the workshop *"Good Software Engineering Practice for R Packages"*. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops.
+Welcome to the homepage of the workshop *"Good Software Engineering Practice for R Packages"*. In this course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and exercises. Participants need to be comfortable with writing functions in R and use their own laptops.
 
 ## Next Event
 
-The next event will be online hosted from Roche Shanghai, so perfect for attendees from Asia!
+The next event will be online, live streamed from Roche Shanghai, so perfect for attendees from Asia!
 Please mark the Friday 24th March 2023 and register here:
+
 ![](resources/asia-24Mar2023-barcode.png)
+
 Please note that all the content will be in English. 
 Workshop invitations and preparation details for the practice will be sent out in emails.
 This event is sponsored/organized by Roche PD China Data Sciences and advertised also through
