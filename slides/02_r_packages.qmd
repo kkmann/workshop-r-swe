@@ -5,6 +5,14 @@ description: "R package syntax + practical<br/>[Photo CC0 by cottonbro studio on
 image: thumbnails/packages.jpg
 ---
 
+<!--
+Creator (initial author): Daniel Sabanes, https://github.com/danielinteractive/ and www.linkedin.com/in/danielsabanesbove/
+License: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+The source files are hosted at https://github.com/kkmann/workshop-r-swe/.
+Important: To use this work you must provide the name of the creator (initial author), a link to the material, a link to the license, and indicate if changes were made.
+--> 
+
 # Introduction
 
 ## What you know already
@@ -313,3 +321,10 @@ export(my_sum)
 - [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
 - [Rewriting R code in C++](https://adv-r.hadley.nz/rcpp.html)
 - [Super technical details about R Markdown](https://www.youtube.com/watch?v=fiy32LjgGUE)
+
+## License information
+
+- Creator (initial author): Daniel Sabanes, [github.com/danielinteractive](https://github.com/danielinteractive/) and [linkedin.com/in/danielsabanesbove](www.linkedin.com/in/danielsabanesbove/)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/)
+- Important: To use this work you must provide the name of the creator (initial author), a link to the material, a link to the license, and indicate if changes were made

@@ -5,6 +5,14 @@ description: "Workflow for creating R packages + practical<br/>[Photo CC0 by And
 image: thumbnails/workflow.jpg
 ---
 
+<!--
+Creator (initial author): Friedrich Pahlke, https://github.com/fpahlke/ and www.linkedin.com/in/pahlke/
+License: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+The source files are hosted at https://github.com/kkmann/workshop-r-swe/.
+Important: To use this work you must provide the name of the creator (initial author), a link to the material, a link to the license, and indicate if changes were made.
+--> 
+
 # [{{< fa face-grin-stars >}}]{.yellow} Motivation
 
 ```{=html}
@@ -579,3 +587,10 @@ Document your functions with
 -   Wickham, H. (2019). Advanced R, Second Edition.\
     Taylor & Francis Ltd. \[[Book](https://amzn.to/3uLnxLd) \|
     [Online](https://adv-r.hadley.nz/)\]
+
+## License information
+
+- Creator (initial author): Friedrich Pahlke, [github.com/fpahlke](https://github.com/fpahlke/) and [linkedin.com/in/pahlke](https://www.linkedin.com/in/pahlke/)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/)
+- Important: To use this work you must provide the name of the creator (initial author), a link to the material, a link to the license, and indicate if changes were made

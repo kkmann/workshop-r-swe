@@ -5,6 +5,16 @@ description: "Publication of R packages + practical<br/>[Photo CC0 by Andrea Pia
 image: thumbnails/publish.jpg
 ---
 
+<!--
+Creators (initial authors): 
+Daniel Sabanes, https://github.com/danielinteractive/ and www.linkedin.com/in/danielsabanesbove/
+Friedrich Pahlke, https://github.com/fpahlke/ and www.linkedin.com/in/pahlke/
+License: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+The source files are hosted at https://github.com/kkmann/workshop-r-swe/.
+Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made.
+--> 
+
 # Website with `pkgdown`
 
 ## Setup of `pkgdown`
@@ -227,3 +237,11 @@ Maintainer: 'Friedrich Pahlke'
   - Where are the `R CMD check` results?
 - Deploy the `pkgdown` website with `usethis`
 
+## License information
+
+- Creators (initial authors): 
+    - Daniel Sabanes, [github.com/danielinteractive](https://github.com/danielinteractive/) and [linkedin.com/in/danielsabanesbove](www.linkedin.com/in/danielsabanesbove/)
+    - Friedrich Pahlke, [github.com/fpahlke](https://github.com/fpahlke/) and [linkedin.com/in/pahlke](https://www.linkedin.com/in/pahlke/)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/)
+- Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made

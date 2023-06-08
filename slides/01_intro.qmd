@@ -5,6 +5,17 @@ description: "Introduction and outline of program.</br>[Photo CC0 by Mabel Amber
 image: thumbnails/hello.jpg
 ---
 
+<!--
+Creators (initial authors): 
+Daniel Sabanes, https://github.com/danielinteractive/ and www.linkedin.com/in/danielsabanesbove/
+Friedrich Pahlke, https://github.com/fpahlke/ and www.linkedin.com/in/pahlke/
+Kevin Kunzmann, https://github.com/kkmann/ and https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/
+License: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+The source files are hosted at https://github.com/kkmann/workshop-r-swe/.
+Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made.
+--> 
+
 ## Disclaimer
 
 </br></br></br>
@@ -204,3 +215,14 @@ knitr::include_graphics("resources/pkg_graph.png")
     -   easier to document
 
 # Question, Comments? 
+
+## License information
+
+- Creators (initial authors): 
+    - Daniel Sabanes, [github.com/danielinteractive](https://github.com/danielinteractive/) and [linkedin.com/in/danielsabanesbove](www.linkedin.com/in/danielsabanesbove/)
+    - Friedrich Pahlke, [github.com/fpahlke](https://github.com/fpahlke/) and [linkedin.com/in/pahlke](https://www.linkedin.com/in/pahlke/)
+    - Kevin Kunzmann, [github.com/kkmann/](https://github.com/kkmann/) and [linkedin.com/in/kevin-kunzmann-6486a11bb](https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/)
+- Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made
+
