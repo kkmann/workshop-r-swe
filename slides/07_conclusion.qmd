@@ -15,16 +15,12 @@ description: "Discussion of learning experience, summary of workflow, conclusion
 image: thumbnails/conclusion.jpg
 ---
 
-<!--
-Creator (initial author): Daniel Sabanes, https://github.com/danielinteractive/ and www.linkedin.com/in/danielsabanesbove/
-License: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
-To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
-The source files are hosted at https://github.com/kkmann/workshop-r-swe/.
-Important: To use this work you must provide the name of the creator (initial author), a link to the material, a link to the license, and indicate if changes were made.
---> 
-
-
 # Temperature check
+
+```{r, echo = FALSE, results = 'hide'}
+# Workaround for the following Quarto issue (do not remove):
+# Quarto will not render embedded R code unless at least one R code chunk exists
+```
 
 ##  {background-iframe="https://wall.sli.do/event/aw8yLdhevoVZxt8CJ5ytHG?section=36e6981e-61e0-418c-aaf4-954adbedfd81" background-interactive="true"}
 
@@ -103,9 +99,9 @@ Important: To use this work you must provide the name of the creator (initial au
 -   Later publish it open source on GitHub and submit it to CRAN
 -   Learn about more tips and tricks how to extend R
 
-## License information
+# License information
 
-- Creator (initial author): Daniel Sabanes, [github.com/danielinteractive](https://github.com/danielinteractive/) and [linkedin.com/in/danielsabanesbove](www.linkedin.com/in/danielsabanesbove/)
+- Creator (initial author): Daniel Sabanes Bove [`r fontawesome::fa("github")`](https://github.com/danielinteractive/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/danielsabanesbove/)
 - This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 - The source files are hosted at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/)
 - Important: To use this work you must provide the name of the creator (initial author), a link to the material, a link to the license, and indicate if changes were made

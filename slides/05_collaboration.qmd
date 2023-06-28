@@ -5,20 +5,17 @@ description: "Collaboration via GitHub + practical<br/>[Photo CC0 by THIS IS ZUN
 image: thumbnails/collaboration.jpg
 ---
 
-<!--
-Creator (initial author): Kevin Kunzmann, https://github.com/kkmann/ and https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/
-License: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
-To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
-The source files are hosted at https://github.com/kkmann/workshop-r-swe/.
-Important: To use this work you must provide the name of the creator (initial author), a link to the material, a link to the license, and indicate if changes were made.
---> 
-
-
 ## Disclaimer
 
 </br></br></br>
 
+```{r, echo = FALSE, results = 'hide'}
+# Workaround for the following Quarto issue (do not remove):
+# Quarto will not render embedded R code unless at least one R code chunk exists
+```
+
 *Any opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of their respective employer or company.*
+
 
 
 ##  {background-image="resources/scratch.jpg"}
@@ -377,9 +374,9 @@ sequenceDiagram
 -   The purpose of this exercise is to explore the collaboration 
     functionality of GitHub - not to produce a perfect package ;)
     
-## License information
+# License information
 
-- Creator (initial author): Kevin Kunzmann, [github.com/kkmann/](https://github.com/kkmann/) and [linkedin.com/in/kevin-kunzmann-6486a11bb](https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/)
+- Creator (initial author): Kevin Kunzmann [`r fontawesome::fa("github")`](https://github.com/kkmann/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/)
 - This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 - The source files are hosted at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/)
 - Important: To use this work you must provide the name of the creator (initial author), a link to the material, a link to the license, and indicate if changes were made
