@@ -2,6 +2,17 @@
 title: "Good Software Engineering Practice for R Packages"
 ---
 
+<!--
+Creators (initial authors): 
+Daniel Sabanes, https://github.com/danielinteractive/ and www.linkedin.com/in/danielsabanesbove/
+Friedrich Pahlke, https://github.com/fpahlke/ and www.linkedin.com/in/pahlke/
+Kevin Kunzmann, https://github.com/kkmann/ and https://www.linkedin.com/in/kevin-kunzmann-6486a11bb/
+License: This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+The source files are hosted at https://github.com/kkmann/workshop-r-swe/.
+Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made.
+--> 
+
 [![](https://badges.gitter.im/workshop-r-swe/community.svg){fig-align="left"}](https://gitter.im/workshop-r-swe/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Welcome to the homepage of the workshop *"Good Software Engineering Practice for R Packages"*. In this face-to-face course participants will learn hands-on skills and tools to engineer reliable R packages used in biostatistics. The day will be a mix of presentations and team exercises to build a small R package. Participants need to be comfortable with writing functions in R and bring their own laptops.

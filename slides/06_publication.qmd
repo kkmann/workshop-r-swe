@@ -7,6 +7,11 @@ image: thumbnails/publish.jpg
 
 # Website with `pkgdown`
 
+```{r, echo = FALSE, results = 'hide'}
+# Workaround for the following Quarto issue (do not remove):
+# Quarto will not render embedded R code unless at least one R code chunk exists
+```
+
 ## Setup of `pkgdown`
 
 - `pkgdown` makes it quick and easy to build a website for your package
@@ -227,3 +232,11 @@ Maintainer: 'Friedrich Pahlke'
   - Where are the `R CMD check` results?
 - Deploy the `pkgdown` website with `usethis`
 
+# License information
+
+- Creators (initial authors): 
+- Daniel Sabanes Bove [`r fontawesome::fa("github")`](https://github.com/danielinteractive/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/danielsabanesbove/)
+- Friedrich Pahlke [`r fontawesome::fa("github")`](https://github.com/fpahlke/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/pahlke/)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/)
+- Important: To use this work you must provide the name of the creators (initial authors), a link to the material, a link to the license, and indicate if changes were made

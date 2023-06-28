@@ -5,6 +5,7 @@ description: "Package quality + exercise<br/>[Photo CC0 by Pixabay on pexels.com
 image: thumbnails/quality.jpg
 ---
 
+
 # Apply Clean Code Rules
 
 ![[Photo CC0 by Pavel Danilyuk on
@@ -697,3 +698,10 @@ Check if your package is ready for use in production with the
     Taylor & Francis Inc. \[[Book](https://amzn.to/3Bk6elt)\]
 -   Martin, R. (2008). Clean Code: A Handbook of Agile Software Craftsmanship
     (1st Edition). Prentice Hall. \[[Book](https://amzn.to/3IKuSS4)\]
+
+# License information
+
+- Creator (initial author): Friedrich Pahlke [`r fontawesome::fa("github")`](https://github.com/fpahlke/) [`r fontawesome::fa("linkedin")`](https://www.linkedin.com/in/pahlke/)
+- This work is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+- The source files are hosted at [github.com/kkmann/workshop-r-swe](https://github.com/kkmann/workshop-r-swe/)
+- Important: To use this work you must provide the name of the creator (initial author), a link to the material, a link to the license, and indicate if changes were made
