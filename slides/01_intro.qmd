@@ -216,7 +216,7 @@ knitr::include_graphics("resources/pkg_graph.png")
 
 # Question, Comments? 
 
-## License information
+# License information
 
 - Creators (initial authors): 
     - Daniel Sabanes, [github.com/danielinteractive](https://github.com/danielinteractive/) and [linkedin.com/in/danielsabanesbove](www.linkedin.com/in/danielsabanesbove/)
